@@ -2,6 +2,7 @@ package com.chefmooon.frightsdelight.common.registry.fabric;
 
 import com.chefmooon.frightsdelight.common.block.*;
 import com.chefmooon.frightsdelight.common.block.drinkableFeastBlocks.*;
+import com.chefmooon.frightsdelight.common.block.glassCupBlocks.*;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -10,6 +11,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+
+import static com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks.slimeApplePunchBowlLight;
+import static com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks.slimeApplePunchLight;
 
 public class FrightsDelightBlocksImpl {
     public static final Block SOUL_BERRY_BUSH = registerBlock(FrightsDelightBlocks.SOUL_BERRY_BUSH, new SoulBerryBushBlock());
@@ -32,12 +36,27 @@ public class FrightsDelightBlocksImpl {
     public static final Block ROTTEN_TOMATO_CRATE = registerBlock(FrightsDelightBlocks.ROTTEN_TOMATO_CRATE,
             new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
+    public static final Block PUNCH_ROTTEN_FLESH = registerBlock(FrightsDelightBlocks.PUNCH_ROTTEN_FLESH,
+            new RottenFleshGlassCupBlock(() -> FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+    public static final Block PUNCH_SLIMEAPPLE = registerBlock(FrightsDelightBlocks.PUNCH_SLIMEAPPLE,
+            new SlimeAppleGlassCupBlock(() -> FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE, BlockBehaviour.Properties.copy(Blocks.GLASS).lightLevel(slimeApplePunchLight())));
+    public static final Block PUNCH_SPIDEREYE = registerBlock(FrightsDelightBlocks.PUNCH_SPIDEREYE,
+            new SpiderEyeGlassCupBlock(() -> FrightsDelightItemsImpl.PUNCH_SPIDEREYE, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+    public static final Block PUNCH_GHASTTEAR = registerBlock(FrightsDelightBlocks.PUNCH_GHASTTEAR,
+            new GhastTearGlassCupBlock(() -> FrightsDelightItemsImpl.PUNCH_GHASTTEAR, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+    public static final Block PUNCH_SOUL_BERRY = registerBlock(FrightsDelightBlocks.PUNCH_SOUL_BERRY,
+            new SoulBerryGlassCupBlock(() -> FrightsDelightItemsImpl.PUNCH_SOUL_BERRY, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+    public static final Block PUNCH_WITHER_BERRY = registerBlock(FrightsDelightBlocks.PUNCH_WITHER_BERRY,
+            new WitherBerryGlassCupBlock(() -> FrightsDelightItemsImpl.PUNCH_WITHER_BERRY, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+    public static final Block PUNCH_COBWEB = registerBlock(FrightsDelightBlocks.PUNCH_COBWEB,
+            new CobwebGlassCupBlock(() -> FrightsDelightItemsImpl.PUNCH_COBWEB, BlockBehaviour.Properties.copy(Blocks.GLASS)));
+
     public static final Block PUNCHBOWL_ROTTEN_FLESH = registerBlock(FrightsDelightBlocks.PUNCHBOWL_ROTTEN_FLESH,
             new RottenFleshDrinkableFeastBlock(() -> FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH,
                     BlockBehaviour.Properties.copy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS)));
     public static final Block PUNCHBOWL_SLIMEAPPLE = registerBlock(FrightsDelightBlocks.PUNCHBOWL_SLIMEAPPLE,
             new SlimeAppleDrinkableFeastBlock(() -> FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE,
-                    BlockBehaviour.Properties.copy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS).lightLevel(value -> 10)));
+                    BlockBehaviour.Properties.copy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS).lightLevel(slimeApplePunchBowlLight())));
     public static final Block PUNCHBOWL_SPIDEREYE = registerBlock(FrightsDelightBlocks.PUNCHBOWL_SPIDEREYE,
             new SpiderEyeDrinkableFeastBlock(() -> FrightsDelightItemsImpl.PUNCH_SPIDEREYE,
                     BlockBehaviour.Properties.copy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS)));

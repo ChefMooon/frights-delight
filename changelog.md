@@ -9,25 +9,12 @@ NeoForge, and Fabric
 
 ### Added
 
-- Punch Bowl Dispenser Interaction
-    - Punch can be added from a dispenser
+- Added the ability to place Punch, which can contain between 1 and 4 servings.
+- As of Ube's Delight 0.3.3 Fright's Delight Cookies can be crafted on the **Baking Mat**
 
 ### Changed
 
-- Made more food items compostable
-    - Slime-Apple, Wither Berry Cookie, Slime-Apple Cookie, Slimeball Cookie, Cobweb Cookie, Ghast Tear Cookie
-- Origin's tags updated
-  - added to "meat"
-    - Slimeball Kebab, Slime-Apple Kebab, Slimeball Cookie, Slime-Apple Cookie, Slimeball Soup,
-        Slime-Apple Soup, Slime-Apple Cider
-  - added to "ignores_diet"
-    - Ghast Tear Kebab, Cobweb Kebab, Ghast Tear Cookie, Cobweb Cookie, Ghast Tear Soup, Cobweb Soup,
-        Ghast Tear Soup, Cobweb Punch
-- Soul Berries chance to spawn bastion chests adjusted
-
-### Fixed
-
-**Forge Only**
-- Soul & Wither Berry Bushes can no longer be planted on dirt and farmland
+- The Slime Apple Punch Bowl now adjusts its light level based on servings.
+    - Increased the maximum light level slightly at full servings.
 
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)

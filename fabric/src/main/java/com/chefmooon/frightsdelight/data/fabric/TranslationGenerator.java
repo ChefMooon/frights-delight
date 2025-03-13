@@ -29,6 +29,8 @@ public class TranslationGenerator extends FabricLanguageProvider {
 
         translationBuilder.add(MOD_ID + ".container.punch_bowl", "Glass Bottle Required.");
 
+        translationBuilder.add(MOD_ID + ".tooltip.glass_cup", "Shift-right-click to place. Right-click with a tool to rotate.");
+
         translationBuilder.add(FrightsDelightEntityTypesImpl.BONE_SHARD.get(), "Bone Shard");
 
         translationBuilder.add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH, "Wither Berry Bush");

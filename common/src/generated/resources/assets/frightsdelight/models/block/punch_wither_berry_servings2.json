@@ -1,0 +1,7 @@
+{
+  "parent": "frightsdelight:block/template_glass_cup_2",
+  "textures": {
+    "cup": "frightsdelight:block/glass_cup",
+    "inside": "frightsdelight:block/punch_wither_berry"
+  }
+}

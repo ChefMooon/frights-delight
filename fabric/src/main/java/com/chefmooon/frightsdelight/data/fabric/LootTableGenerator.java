@@ -2,7 +2,9 @@ package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.common.block.DrinkableFeastBlock;
 import com.chefmooon.frightsdelight.common.block.FrightsDelightBushBlock;
+import com.chefmooon.frightsdelight.common.block.GlassCupBlock;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
+import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -40,6 +42,14 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         this.dropSelf(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE);
         this.dropSelf(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE);
 
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_ROTTEN_FLESH, FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH);
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SLIMEAPPLE, FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE);
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SPIDEREYE, FrightsDelightItemsImpl.PUNCH_SPIDEREYE);
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_GHASTTEAR, FrightsDelightItemsImpl.PUNCH_GHASTTEAR);
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SOUL_BERRY, FrightsDelightItemsImpl.PUNCH_SOUL_BERRY);
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_WITHER_BERRY, FrightsDelightItemsImpl.PUNCH_WITHER_BERRY);
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_COBWEB, FrightsDelightItemsImpl.PUNCH_COBWEB);
+
         // can be used to regen, must change c:tools/knives -> forge:tools/kives
         //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE, FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE);
         //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE, FrightsDelightItemsImpl.PUNCH_SPIDEREYE);
@@ -50,6 +60,23 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         this.createBushDrops(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH);
         this.createBushDrops(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH);
 
+    }
+
+    private void createGlassCupDrops(Block block, Item item) {
+        this.add(block, this.applyExplosionDecay(block, LootTable.lootTable()
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GlassCupBlock.SERVINGS, 3))))
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GlassCupBlock.SERVINGS, 2))))
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GlassCupBlock.SERVINGS, 1))))
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(GlassCupBlock.SERVINGS, 0))))
+        ));
     }
 
     private void createPunchbowlDrops(Block block, Item item) {

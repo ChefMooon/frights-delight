@@ -98,6 +98,7 @@
   "frightsdelight.subtitles.effect_slimed.walk": "Slimy Feet",
   "frightsdelight.subtitles.entity.bone_shard.hit": "Bone Shard shatters",
   "frightsdelight.subtitles.entity.bone_shard.throw": "Bone Shard flies",
+  "frightsdelight.tooltip.glass_cup": "Shift-right-click to place. Right-click with a tool to rotate.",
   "frightsdelight.tooltip.waila.bush_growth_condition": "Growth Condition",
   "frightsdelight.tooltip.waila.bush_transform": "Can Transform",
   "frightsdelight.tooltip.waila.punchbowl_servings": "Servings",
