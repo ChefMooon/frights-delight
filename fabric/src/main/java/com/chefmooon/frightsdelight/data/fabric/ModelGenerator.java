@@ -2,6 +2,7 @@ package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.common.block.DrinkableFeastBlock;
 import com.chefmooon.frightsdelight.common.block.FrightsDelightBushBlock;
+import com.chefmooon.frightsdelight.common.block.GlassCupBlock;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.utility.ModModels;
@@ -39,6 +40,14 @@ public class ModelGenerator extends FabricModelProvider {
         registerCrateBlock(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE, blockStateModelGenerator);
         registerCrateBlock(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE, blockStateModelGenerator);
         registerCrateBlock(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE, blockStateModelGenerator);
+
+        registerGlassCup(FrightsDelightBlocksImpl.PUNCH_ROTTEN_FLESH, blockStateModelGenerator);
+        registerGlassCup(FrightsDelightBlocksImpl.PUNCH_SLIMEAPPLE, blockStateModelGenerator);
+        registerGlassCup(FrightsDelightBlocksImpl.PUNCH_SPIDEREYE, blockStateModelGenerator);
+        registerGlassCup(FrightsDelightBlocksImpl.PUNCH_GHASTTEAR, blockStateModelGenerator);
+        registerGlassCup(FrightsDelightBlocksImpl.PUNCH_SOUL_BERRY, blockStateModelGenerator);
+        registerGlassCup(FrightsDelightBlocksImpl.PUNCH_WITHER_BERRY, blockStateModelGenerator);
+        registerGlassCup(FrightsDelightBlocksImpl.PUNCH_COBWEB, blockStateModelGenerator);
 
         registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_ROTTEN_FLESH, blockStateModelGenerator);
         registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE, blockStateModelGenerator);
@@ -187,6 +196,31 @@ public class ModelGenerator extends FabricModelProvider {
     private static ResourceLocation registerBushModel(String stage, Block block, BlockModelGenerators blockStateModelGenerator) {
         return FrightsDelightModels.TEMPLATE_CROP_CROSS.create(ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + stage),
                 TextureMapping.cross(ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + stage)), blockStateModelGenerator.modelOutput);
+    }
+
+    private static void registerGlassCup(Block block, BlockModelGenerators blockModelGenerators) {
+        ResourceLocation blockLocation = ModelLocationUtils.getModelLocation(block);
+        ResourceLocation cupLocation = TextUtils.res("block/glass_cup");
+        TextureMapping textureMapping = TextureMapping.singleSlot(FrightsDelightTextureSlots.CUP, cupLocation)
+                .put(FrightsDelightTextureSlots.INSIDE, blockLocation);
+        ResourceLocation TEMPLATE_GLASS_CUP_1_LOCATION = blockLocation.withSuffix("_servings1");
+        FrightsDelightModels.TEMPLATE_GLASS_CUP_1.create(TEMPLATE_GLASS_CUP_1_LOCATION, textureMapping, blockModelGenerators.modelOutput);
+        ResourceLocation TEMPLATE_GLASS_CUP_2_LOCATION = blockLocation.withSuffix("_servings2");
+        FrightsDelightModels.TEMPLATE_GLASS_CUP_2.create(TEMPLATE_GLASS_CUP_2_LOCATION, textureMapping, blockModelGenerators.modelOutput);
+        ResourceLocation TEMPLATE_GLASS_CUP_3_LOCATION = blockLocation.withSuffix("_servings3");
+        FrightsDelightModels.TEMPLATE_GLASS_CUP_3.create(TEMPLATE_GLASS_CUP_3_LOCATION, textureMapping, blockModelGenerators.modelOutput);
+        ResourceLocation TEMPLATE_GLASS_CUP_4_LOCATION = blockLocation.withSuffix("_servings4");
+        FrightsDelightModels.TEMPLATE_GLASS_CUP_4.create(TEMPLATE_GLASS_CUP_4_LOCATION, textureMapping, blockModelGenerators.modelOutput);
+
+        blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block)
+                .with(BlockModelGenerators.createHorizontalFacingDispatch())
+                .with(PropertyDispatch.property(GlassCupBlock.SERVINGS)
+                        .select(0, Variant.variant().with(VariantProperties.MODEL, TEMPLATE_GLASS_CUP_1_LOCATION))
+                        .select(1, Variant.variant().with(VariantProperties.MODEL, TEMPLATE_GLASS_CUP_2_LOCATION))
+                        .select(2, Variant.variant().with(VariantProperties.MODEL, TEMPLATE_GLASS_CUP_3_LOCATION))
+                        .select(3, Variant.variant().with(VariantProperties.MODEL, TEMPLATE_GLASS_CUP_4_LOCATION))
+
+                ));
     }
 
 }

@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.Block;
 import java.util.List;
 
 public class FrightsDelightConsumableItemNameBlockItem extends ItemNameBlockItem {
-    private final boolean hasFoodEffectTooltip;
+    protected final boolean hasFoodEffectTooltip;
     public FrightsDelightConsumableItemNameBlockItem(Block block, Properties properties) {
         super(block, properties);
         this.hasFoodEffectTooltip = false;

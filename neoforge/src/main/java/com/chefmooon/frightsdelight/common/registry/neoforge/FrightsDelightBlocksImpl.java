@@ -1,19 +1,25 @@
 package com.chefmooon.frightsdelight.common.registry.neoforge;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
+import com.chefmooon.frightsdelight.common.block.GlassCupBlock;
 import com.chefmooon.frightsdelight.common.block.drinkableFeastBlocks.*;
 import com.chefmooon.frightsdelight.common.block.SoulBerryBushBlock;
 import com.chefmooon.frightsdelight.common.block.WitherBerryBushBlock;
+import com.chefmooon.frightsdelight.common.block.glassCupBlocks.*;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
+
+import static com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks.slimeApplePunchBowlLight;
+import static com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks.slimeApplePunchLight;
 
 public class FrightsDelightBlocksImpl {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, FrightsDelight.MOD_ID);
@@ -38,12 +44,27 @@ public class FrightsDelightBlocksImpl {
     public static final Supplier<Block> ROTTEN_TOMATO_CRATE = registerBlock(FrightsDelightBlocks.ROTTEN_TOMATO_CRATE,
             () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
+    public static final Supplier<Block> PUNCH_ROTTEN_FLESH = registerBlock(FrightsDelightBlocks.PUNCH_ROTTEN_FLESH,
+            () -> new RottenFleshGlassCupBlock(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH, BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+    public static final Supplier<Block> PUNCH_SLIMEAPPLE = registerBlock(FrightsDelightBlocks.PUNCH_SLIMEAPPLE,
+            () -> new SlimeAppleGlassCupBlock(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE, BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).lightLevel(slimeApplePunchLight())));
+    public static final Supplier<Block> PUNCH_SPIDEREYE = registerBlock(FrightsDelightBlocks.PUNCH_SPIDEREYE,
+            () -> new SpiderEyeGlassCupBlock(FrightsDelightItemsImpl.PUNCH_SPIDEREYE, BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+    public static final Supplier<Block> PUNCH_GHASTTEAR = registerBlock(FrightsDelightBlocks.PUNCH_GHASTTEAR,
+            () -> new GhastTearGlassCupBlock(FrightsDelightItemsImpl.PUNCH_GHASTTEAR, BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+    public static final Supplier<Block> PUNCH_SOUL_BERRY = registerBlock(FrightsDelightBlocks.PUNCH_SOUL_BERRY,
+            () -> new SoulBerryGlassCupBlock(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY, BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+    public static final Supplier<Block> PUNCH_WITHER_BERRY = registerBlock(FrightsDelightBlocks.PUNCH_WITHER_BERRY,
+            () -> new WitherBerryGlassCupBlock(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY, BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+    public static final Supplier<Block> PUNCH_COBWEB = registerBlock(FrightsDelightBlocks.PUNCH_COBWEB,
+            () -> new CobwebGlassCupBlock(FrightsDelightItemsImpl.PUNCH_COBWEB, BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS)));
+
     public static final Supplier<Block> PUNCHBOWL_ROTTEN_FLESH = registerBlock(FrightsDelightBlocks.PUNCHBOWL_ROTTEN_FLESH,
             () -> new RottenFleshDrinkableFeastBlock(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH,
                     Block.Properties.ofFullCopy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS)));
     public static final Supplier<Block> PUNCHBOWL_SLIMEAPPLE = registerBlock(FrightsDelightBlocks.PUNCHBOWL_SLIMEAPPLE,
             () -> new SlimeAppleDrinkableFeastBlock(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE,
-                    Block.Properties.ofFullCopy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS).lightLevel(value -> 10)));
+                    Block.Properties.ofFullCopy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS).lightLevel(slimeApplePunchBowlLight())));
     public static final Supplier<Block> PUNCHBOWL_SPIDEREYE = registerBlock(FrightsDelightBlocks.PUNCHBOWL_SPIDEREYE,
             () -> new SpiderEyeDrinkableFeastBlock(FrightsDelightItemsImpl.PUNCH_SPIDEREYE,
                     Block.Properties.ofFullCopy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS)));

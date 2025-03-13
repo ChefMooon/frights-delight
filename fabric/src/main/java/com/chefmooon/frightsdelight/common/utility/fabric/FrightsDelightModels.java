@@ -18,6 +18,11 @@ public class FrightsDelightModels {
     public static final ModelTemplate TEMPLATE_DRINK_FEAST_STAGE3 = block("template_drink_feast_stage3",
             FrightsDelightTextureSlots.DRINK_FEAST_INSIDE, FrightsDelightTextureSlots.PUNCH_BOWL, TextureSlot.PARTICLE);
 
+    public static final ModelTemplate TEMPLATE_GLASS_CUP_1 = block("template_glass_cup_1", FrightsDelightTextureSlots.INSIDE, FrightsDelightTextureSlots.CUP);
+    public static final ModelTemplate TEMPLATE_GLASS_CUP_2 = block("template_glass_cup_2", FrightsDelightTextureSlots.INSIDE, FrightsDelightTextureSlots.CUP);
+    public static final ModelTemplate TEMPLATE_GLASS_CUP_3 = block("template_glass_cup_3", FrightsDelightTextureSlots.INSIDE, FrightsDelightTextureSlots.CUP);
+    public static final ModelTemplate TEMPLATE_GLASS_CUP_4 = block("template_glass_cup_4", FrightsDelightTextureSlots.INSIDE, FrightsDelightTextureSlots.CUP);
+
     public static final ModelTemplate TEMPLATE_CROP_CROSS = block("template_crop_cross", TextureSlot.CROSS);
 
     private static ModelTemplate block(String parent, TextureSlot... textureSlots) {

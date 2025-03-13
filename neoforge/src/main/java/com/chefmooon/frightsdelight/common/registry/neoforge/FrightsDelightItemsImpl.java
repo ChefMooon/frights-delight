@@ -4,7 +4,7 @@ import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.FoodValues;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItemNameBlockItem;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableItem;
+import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableBlockItem;
 import com.chefmooon.frightsdelight.common.item.neoforge.BoneShardItemImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.google.common.collect.Sets;
@@ -120,24 +120,24 @@ public class FrightsDelightItemsImpl {
             () -> new FrightsDelightConsumableItem(foodItem(FoodValues.COOKIE_WITHER_BERRY), true));
 
     public static final Supplier<Item> PUNCH_ROTTEN_FLESH = registerItemWithTab(FrightsDelightItems.PUNCH_ROTTEN_FLESH,
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_ROTTEN_FLESH),
-                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.ZOMBIE_AMBIENT.getLocation()), true));
+            () -> new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_ROTTEN_FLESH.get(), drinkItem(FoodValues.PUNCH_ROTTEN_FLESH),
+                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.ZOMBIE_AMBIENT.getLocation()), true, true));
     public static final Supplier<Item> PUNCH_SPIDEREYE = registerItemWithTab(FrightsDelightItems.PUNCH_SPIDEREYE,
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_SPIDER_EYE),
-                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SPIDER_AMBIENT.getLocation()), true));
+            () -> new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_SPIDEREYE.get(), drinkItem(FoodValues.PUNCH_SPIDER_EYE),
+                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SPIDER_AMBIENT.getLocation()), true, true));
     public static final Supplier<Item> PUNCH_SLIMEAPPLE = registerItemWithTab(FrightsDelightItems.PUNCH_SLIMEAPPLE,
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_SLIME_APPLE),
-                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SLIME_SQUISH.getLocation()), true));
+            () -> new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_SLIMEAPPLE.get(), drinkItem(FoodValues.PUNCH_SLIME_APPLE),
+                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SLIME_SQUISH.getLocation()), true, true));
     public static final Supplier<Item> PUNCH_COBWEB = registerItemWithTab(FrightsDelightItems.PUNCH_COBWEB,
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_COBWEB),
-                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SPIDER_AMBIENT.getLocation()), true));
+            () -> new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_COBWEB.get(), drinkItem(FoodValues.PUNCH_COBWEB),
+                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SPIDER_AMBIENT.getLocation()), true, true));
     public static final Supplier<Item> PUNCH_GHASTTEAR = registerItemWithTab(FrightsDelightItems.PUNCH_GHASTTEAR,
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_GHAST_TEAR),
-                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.GHAST_AMBIENT.getLocation()), true));
+            () -> new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_GHASTTEAR.get(), drinkItem(FoodValues.PUNCH_GHAST_TEAR),
+                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.GHAST_AMBIENT.getLocation()), true, true));
     public static final Supplier<Item> PUNCH_SOUL_BERRY = registerItemWithTab(FrightsDelightItems.PUNCH_SOUL_BERRY,
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_SOUL_BERRY), true));
+            () -> new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_SOUL_BERRY.get(), drinkItem(FoodValues.PUNCH_SOUL_BERRY), true, true));
     public static final Supplier<Item> PUNCH_WITHER_BERRY = registerItemWithTab(FrightsDelightItems.PUNCH_WITHER_BERRY,
-            () -> new FrightsDelightDrinkableItem(drinkItem(FoodValues.PUNCH_WITHER_BERRY), true));
+            () -> new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_WITHER_BERRY.get(), drinkItem(FoodValues.PUNCH_WITHER_BERRY), true, true));
 
     public static final Supplier<Item> PUNCHBOWL_ROTTEN_FLESH = registerItemWithTab(FrightsDelightItems.PUNCHBOWL_ROTTEN_FLESH,
             () -> new BlockItem(FrightsDelightBlocksImpl.PUNCHBOWL_ROTTEN_FLESH.get(), noStack()));
