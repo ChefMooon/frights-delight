@@ -1,7 +1,4 @@
 {
   "parent": "farmersdelight:block/crop_cross",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "cross": "#cross"
-  }
+  "render_type": "minecraft:cutout"
 }
