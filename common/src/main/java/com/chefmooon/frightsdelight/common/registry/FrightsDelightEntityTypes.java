@@ -9,4 +9,8 @@ public class FrightsDelightEntityTypes {
     private static ResourceLocation entityType(String string) {
         return TextUtils.res(string);
     }
+
+    public static void init() {
+    }
+
 }

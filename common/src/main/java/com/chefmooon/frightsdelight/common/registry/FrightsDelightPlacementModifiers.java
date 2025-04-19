@@ -6,4 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 public class FrightsDelightPlacementModifiers {
     public static final ResourceLocation BIOME_IS_NETHER = TextUtils.res("biome_is_nether");
 
+    public static void init() {
+    }
+
 }

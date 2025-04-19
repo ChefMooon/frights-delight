@@ -9,6 +9,6 @@ NeoForge, and Fabric
 
 ### Fixed
 
-- Remove texture reference chain errors for all models
+- Bone Shard Entity now registered properly (Fabric only)
 
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)

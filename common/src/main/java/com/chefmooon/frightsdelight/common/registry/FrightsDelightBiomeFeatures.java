@@ -5,4 +5,8 @@ import net.minecraft.resources.ResourceLocation;
 
 public class FrightsDelightBiomeFeatures {
     public static final ResourceLocation WILD_BUSH = TextUtils.res("wild_bush");
+
+    public static void init() {
+    }
+
 }

@@ -1,9 +1,7 @@
 package com.chefmooon.frightsdelight;
 
 import com.chefmooon.frightsdelight.common.Configuration;
-import com.chefmooon.frightsdelight.common.registry.FrightsDelightEffects;
-import com.chefmooon.frightsdelight.common.registry.FrightsDelightParticleTypes;
-import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
+import com.chefmooon.frightsdelight.common.registry.*;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.resources.ResourceLocation;
 import org.slf4j.Logger;
@@ -18,10 +16,19 @@ public class FrightsDelight {
     }
 
     public static void init() {
+//        FrightsDelightSounds.init();
+//        FrightsDelightEffects.init();
+//        FrightsDelightParticleTypes.init();
+        Configuration.init();
+
         FrightsDelightSounds.init();
+        FrightsDelightBlocks.init();
         FrightsDelightEffects.init();
         FrightsDelightParticleTypes.init();
-        Configuration.init();
+        FrightsDelightItems.init();
+        FrightsDelightEntityTypes.init();
+        FrightsDelightBiomeFeatures.init();
+        FrightsDelightPlacementModifiers.init();
     }
     @ExpectPlatform
     public static void loggerInfo(String s) {
