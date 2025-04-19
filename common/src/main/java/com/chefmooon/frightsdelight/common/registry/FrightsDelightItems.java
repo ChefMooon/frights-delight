@@ -105,4 +105,7 @@ public class FrightsDelightItems {
         return TextUtils.res(string);
     }
 
+    public static void init() {
+    }
+
 }
