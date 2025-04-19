@@ -9,6 +9,6 @@ NeoForge, and Fabric
 
 ### Fixed
 
-- Bone Shard Entity now registered properly (Fabric only)
+- Bone Shard Throwable Entity now appears when thrown (Fabric only)
 
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)
