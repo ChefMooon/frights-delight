@@ -1,6 +1,6 @@
 package com.chefmooon.frightsdelight.common.tag;
 
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -25,10 +25,12 @@ public class CompatibilityTags {
     public static final String CREATE_ADDITION = "createaddition";
     public static final TagKey<Item> CREATE_ADDITION_PLANT_FOODS = getItemTagKey(CREATE_ADDITION, "plant_foods");
 
+    public static final TagKey<Block> FARMERS_DELIGHT_MINEABLE_KNIFE = getBlockTagKey("farmersdelight", "mineable/knife");
+
     public static TagKey<Item> getItemTagKey(String namespace, String path) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation(namespace, path));
+        return TagKey.create(Registry.ITEM.key(), new ResourceLocation(namespace, path));
     }
     public static TagKey<Block> getBlockTagKey(String namespace, String path) {
-        return TagKey.create(Registries.BLOCK, new ResourceLocation(namespace, path));
+        return TagKey.create(Registry.BLOCK.key(), new ResourceLocation(namespace, path));
     }
 }

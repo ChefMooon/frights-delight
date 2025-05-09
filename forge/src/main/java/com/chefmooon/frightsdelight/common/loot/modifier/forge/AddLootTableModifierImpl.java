@@ -42,8 +42,8 @@ public class AddLootTableModifierImpl extends LootModifier {
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext context) {
         if (Configuration.generateSoulBerryLoot()) {
-            LootTable extraTable = context.getResolver().getLootTable(this.lootTable);
-            extraTable.getRandomItemsRaw(context, LootTable.createStackSplitter(context.getLevel(), generatedLoot::add));
+            LootTable extraTable = context.getLootTable(this.lootTable);
+            extraTable.getRandomItems(context, generatedLoot::add);
         }
         return generatedLoot;
     }

@@ -2,6 +2,8 @@ package com.chefmooon.frightsdelight.common.registry;
 
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
@@ -10,23 +12,23 @@ import net.minecraft.world.item.Items;
 public class FrightsDelightItems {
 
     public static Item.Properties basicItem() {
-        return new Item.Properties();
+        return new Item.Properties().tab(FrightsDelightCreativeTabs.getCreativeTab());
     }
 
     public static Item.Properties noStack() {
-        return new Item.Properties().stacksTo(1);
+        return basicItem().stacksTo(1);
     }
 
     public static Item.Properties foodItem(FoodProperties food) {
-        return new Item.Properties().food(food);
+        return basicItem().food(food);
     }
 
     public static Item.Properties bowlFoodItem(FoodProperties food) {
-        return new Item.Properties().food(food).craftRemainder(Items.BOWL).stacksTo(16);
+        return foodItem(food).craftRemainder(Items.BOWL).stacksTo(16);
     }
 
     public static Item.Properties stickFoodItem(FoodProperties food) {
-        return new Item.Properties().food(food).craftRemainder(Items.STICK).stacksTo(16);
+        return foodItem(food).craftRemainder(Items.STICK).stacksTo(16);
     }
 
     @ExpectPlatform
@@ -103,6 +105,9 @@ public class FrightsDelightItems {
 
     private static ResourceLocation item(String string) {
         return TextUtils.res(string);
+    }
+
+    public static void init() {
     }
 
 }

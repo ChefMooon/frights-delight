@@ -14,10 +14,17 @@ loom {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
 
-        //mixinConfig "frightsdelight-common.mixins.json" // for future use
-        mixinConfig "frightsdelight.mixins.json"
+        mixinConfig "${mod_id}-common.mixins.json"
+        mixinConfig "${mod_id}.mixins.json"
+
+        // this works but hangs on caching, must terminate
+        dataGen {
+            mod "${mod_id}"
+        }
     }
 }
+
+
 
 configurations {
     common
@@ -28,12 +35,10 @@ configurations {
 }
 
 dependencies {
-    forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
-    // Remove the next line if you don't want to depend on the API
-    //modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
+    forge "net.minecraftforge:forge:${rootProject.forge_version}"
 
     // Farmer's Delight
-    modImplementation "curse.maven:farmers-delight-398521:${farmersdelight_version}"
+    modImplementation "curse.maven:farmers-delight-398521:${farmersdelight_forge_version}"
 
     // MidnightLib
     modImplementation include("maven.modrinth:midnightlib:${project.midnightlib_forge_version}")
@@ -70,7 +75,6 @@ dependencies {
 }
 
 processResources {
-
 }
 
 shadowJar {
@@ -127,8 +131,9 @@ if (env.MODRINTH_TOKEN) {
         versionType = mod_version_type // This is the default -- can also be `beta` or `alpha`
         changelog = changelogText
         uploadFile = remapJar // With Loom, this MUST be set to `remapJar` instead of `jar`!
-        gameVersions = ["1.20.1"]
-        loaders = ["forge","neoforge"]
+        gameVersions = minecraft_supported_versions.split(",").toList()
+//        gameVersions = ["1.19.2"] // remove after first release
+        loaders = ["forge"]
         dependencies {
             // scope.type
             // The scope can be `required`, `optional`, `incompatible`, or `embedded`
@@ -150,9 +155,11 @@ if (env.CURSEFORGE_TOKEN) {
             changelog = changelogText
             changelogType = 'markdown'
             releaseType = mod_version_type
-            addGameVersion "1.20.1"
+            for (String v : minecraft_supported_versions.split(",").toList()) {
+                addGameVersion v
+            }
+//            addGameVersion "1.19.2" // remove after first release
             addGameVersion "Forge"
-            addGameVersion "NeoForge"
 
             mainArtifact(remapJar) {
                 displayName = vName

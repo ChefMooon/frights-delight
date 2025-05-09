@@ -6,12 +6,8 @@ import com.chefmooon.frightsdelight.common.event.fabric.VillagerEventsImpl;
 import com.chefmooon.frightsdelight.common.fabric.CommonSetupImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.*;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class FrightsDelightImpl implements ModInitializer {
-    public static final Logger LOGGER = LoggerFactory.getLogger(FrightsDelight.MOD_ID);
     @Override
     public void onInitialize() {
         FrightsDelight.init();
@@ -23,7 +19,7 @@ public class FrightsDelightImpl implements ModInitializer {
         FrightsDelightItemsImpl.register();
         FrightsDelightEntityTypesImpl.register();
         FrightsDelightBiomeFeaturesImpl.register();
-        FrightsDelightCreativeTabs.register();
+        FrightsDelightCreativeTabsImpl.register();
         FrightsDelightPlacementModifiersImpl.register();
         FrightsDelightLootTableEvents.registerLootTable();
 
@@ -33,18 +29,4 @@ public class FrightsDelightImpl implements ModInitializer {
 
         FrightsDelightBiomeModifiersImpl.init();
     }
-
-    public static void loggerInfo(String s) {
-        LOGGER.info(s);
-    }
-
-    public static String findVersion() {
-        return FabricLoader.getInstance()
-                .getModContainer(FrightsDelight.MOD_ID)
-                .orElseThrow()
-                .getMetadata()
-                .getVersion()
-                .getFriendlyString();
-    }
-
 }

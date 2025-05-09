@@ -23,7 +23,7 @@
       "com.chefmooon.frightsdelight.client.fabric.FrightsDelightClientImpl"
     ],
     "fabric-datagen": [
-      "com.chefmooon.frightsdelight.data.fabric.DataGenerationFabric"
+        "com.chefmooon.frightsdelight.data.fabric.DataGenerationFabric"
     ],
     "jei_mod_plugin": [
       "com.chefmooon.frightsdelight.integration.jei.fabric.JEIPluginImpl"
@@ -37,7 +37,7 @@
   ],
   "depends": {
     "fabric": "*",
-    "minecraft": ">=${minecraft_min_version} <${minecraft_max_version}",
+    "minecraft": ">=${minecraft_min_version} <=${minecraft_max_version}",
     "farmersdelight": "*"
   },
   "custom": {

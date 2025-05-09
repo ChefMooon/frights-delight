@@ -2,10 +2,10 @@ package com.chefmooon.frightsdelight.common.block;
 
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.chefmooon.frightsdelight.common.tag.FrightsDelightTags;
+import com.chefmooon.frightsdelight.common.utility.HolderLookupHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -33,7 +33,7 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
     public static final int GROW_RANGE = 1;
     public static final TagKey<Block> GROW_CONDITION_BLOCK = FrightsDelightTags.WITHER_BERRY_BUSH_GROW_CONDITIION;
     public WitherBerryBushBlock() {
-        super(Block.Properties.copy(Blocks.SWEET_BERRY_BUSH));
+        super(Properties.copy(Blocks.SWEET_BERRY_BUSH));
     }
 
     @Override
@@ -48,7 +48,8 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
 
     @Override
     public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
-        return new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.WITHER_BERRY));
+//        return new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.WITHER_BERRY));
+        return new ItemStack(HolderLookupHelper.getItem(FrightsDelightItems.WITHER_BERRY));
     }
 
     @Override
@@ -91,7 +92,7 @@ public class WitherBerryBushBlock extends FrightsDelightBushBlock {
             return InteractionResult.PASS;
         } else if (i > 1) {
             int j = 1 + level.random.nextInt(2);
-            popResource(level, pos, new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.WITHER_BERRY), j + (bl ? 1 : 0)));
+            popResource(level, pos, new ItemStack(HolderLookupHelper.getItem(FrightsDelightItems.WITHER_BERRY), j + (bl ? 1 : 0)));
             level.playSound((Player)null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
             BlockState blockState = (BlockState)state.setValue(AGE, 1);
             level.setBlock(pos, blockState, 2);

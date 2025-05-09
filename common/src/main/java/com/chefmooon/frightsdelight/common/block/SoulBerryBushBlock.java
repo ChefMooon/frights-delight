@@ -1,12 +1,11 @@
 package com.chefmooon.frightsdelight.common.block;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.chefmooon.frightsdelight.common.tag.FrightsDelightTags;
+import com.chefmooon.frightsdelight.common.utility.HolderLookupHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -34,7 +33,7 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     public static final TagKey<Block> GROW_CONDITION_BLOCK = FrightsDelightTags.SOUL_BERRY_BUSH_GROW_CONDITIION;
     public static final BooleanProperty TRANSFORM_CONDITION = BooleanProperty.create("transform_condition");
     public SoulBerryBushBlock() {
-        super(Block.Properties.copy(Blocks.SWEET_BERRY_BUSH));
+        super(Properties.copy(Blocks.SWEET_BERRY_BUSH));
     }
 
     @Override
@@ -50,7 +49,7 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
 
     @Override
     public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
-        return new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.SOUL_BERRY));
+        return new ItemStack(HolderLookupHelper.getItem(FrightsDelightItems.SOUL_BERRY));
     }
 
     @Override
@@ -70,7 +69,7 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
             }
         }
         if (i == 3 && hasTransformBrightness(level.getRawBrightness(pos.above(), 0)) && hasTransformCondition(level, pos)) {
-            BlockState blockState = (BlockState)BuiltInRegistries.BLOCK.get(FrightsDelightBlocks.WITHER_BERRY_BUSH).defaultBlockState()
+            BlockState blockState = this.defaultBlockState()
                     .setValue(WitherBerryBushBlock.GROW_CONDITION, Boolean.TRUE)
                     .setValue(WitherBerryBushBlock.AGE, 3);
             level.playSound((Player)null, pos, SoundEvents.SOUL_SAND_PLACE, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
@@ -90,7 +89,7 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
             return InteractionResult.PASS;
         } else if (i > 1) {
             int j = 1 + level.random.nextInt(2);
-            popResource(level, pos, new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.SOUL_BERRY), j + (bl ? 1 : 0)));
+            popResource(level, pos, new ItemStack(HolderLookupHelper.getItem(FrightsDelightItems.SOUL_BERRY), j + (bl ? 1 : 0)));
             level.playSound((Player)null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
             BlockState blockState = (BlockState)state.setValue(AGE, 1);
             level.setBlock(pos, blockState, 2);

@@ -5,11 +5,8 @@ import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableBlockItem
 import com.chefmooon.frightsdelight.common.item.fabric.BoneShardItemImpl;
 import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightConsumableItemImpl;
 import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightConsumableItemNameBlockItemImpl;
-import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightDrinkableItemImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
@@ -21,7 +18,7 @@ import static com.chefmooon.frightsdelight.common.registry.FrightsDelightItems.*
 public class FrightsDelightItemsImpl {
 
     public static Item.Properties boneFoodItem(FoodProperties food) {
-        return new Item.Properties().food(food).craftRemainder(FrightsDelightItemsImpl.BONE_SHARD).stacksTo(16);
+        return new Item.Properties().food(food).craftRemainder(FrightsDelightItemsImpl.BONE_SHARD).stacksTo(16).tab(FrightsDelightCreativeTabsImpl.getCreativeTab());
     }
 
     public static final Item FLESH_CRATE = registerItemWithTab(FrightsDelightItems.FLESH_CRATE,
@@ -113,19 +110,19 @@ public class FrightsDelightItemsImpl {
 
     public static final Item PUNCH_ROTTEN_FLESH = registerItemWithTab(FrightsDelightItems.PUNCH_ROTTEN_FLESH,
             new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_ROTTEN_FLESH, drinkItem(FoodValues.PUNCH_ROTTEN_FLESH),
-                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.ZOMBIE_AMBIENT.getLocation()),true, true));
+                    SoundEvents.ZOMBIE_AMBIENT,true, true));
     public static final Item PUNCH_SPIDEREYE = registerItemWithTab(FrightsDelightItems.PUNCH_SPIDEREYE,
             new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_SPIDEREYE, drinkItem(FoodValues.PUNCH_SPIDER_EYE),
-                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SPIDER_AMBIENT.getLocation()),true, true));
+                    SoundEvents.SPIDER_AMBIENT,true, true));
     public static final Item PUNCH_SLIMEAPPLE = registerItemWithTab(FrightsDelightItems.PUNCH_SLIMEAPPLE,
             new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_SLIMEAPPLE, drinkItem(FoodValues.PUNCH_SLIME_APPLE),
-                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SLIME_SQUISH.getLocation()),true, true));
+                    SoundEvents.SLIME_SQUISH,true, true));
     public static final Item PUNCH_COBWEB = registerItemWithTab(FrightsDelightItems.PUNCH_COBWEB,
             new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_COBWEB, drinkItem(FoodValues.PUNCH_COBWEB),
-                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SPIDER_AMBIENT.getLocation()),true, true));
+                    SoundEvents.SPIDER_AMBIENT,true, true));
     public static final Item PUNCH_GHASTTEAR = registerItemWithTab(FrightsDelightItems.PUNCH_GHASTTEAR,
             new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_GHASTTEAR, drinkItem(FoodValues.PUNCH_GHAST_TEAR),
-                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.GHAST_AMBIENT.getLocation()),true, true));
+                    SoundEvents.GHAST_AMBIENT,true, true));
     public static final Item PUNCH_SOUL_BERRY = registerItemWithTab(FrightsDelightItems.PUNCH_SOUL_BERRY,
             new FrightsDelightDrinkableBlockItem(FrightsDelightBlocksImpl.PUNCH_SOUL_BERRY, drinkItem(FoodValues.PUNCH_SOUL_BERRY), true, true));
     public static final Item PUNCH_WITHER_BERRY = registerItemWithTab(FrightsDelightItems.PUNCH_WITHER_BERRY,
@@ -149,8 +146,7 @@ public class FrightsDelightItemsImpl {
 
 
     public static Item registerItemWithTab(final ResourceLocation location, final Item item) {
-        Registry.register(BuiltInRegistries.ITEM, location, item);
-        ItemGroupEvents.modifyEntriesEvent(FrightsDelightCreativeTabs.ITEM_GROUP).register(entries -> entries.accept(item));
+        Registry.register(Registry.ITEM, location, item);
         return item;
     }
 

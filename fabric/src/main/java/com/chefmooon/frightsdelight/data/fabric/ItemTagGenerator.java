@@ -2,19 +2,18 @@ package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.tag.CompatibilityTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.core.HolderLookup;
-
-import java.util.concurrent.CompletableFuture;
+import org.jetbrains.annotations.Nullable;
 
 public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
-    public ItemTagGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> completableFuture) {
-        super(output, completableFuture);
+
+    public ItemTagGenerator(FabricDataGenerator dataGenerator) {
+        super(dataGenerator, null);
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider arg) {
+    protected void generateTags() {
         registerMinecraftItemTags();
         registerCompatibilityItemTags();
     }

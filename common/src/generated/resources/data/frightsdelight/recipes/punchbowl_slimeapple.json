@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "A": {
       "item": "frightsdelight:punch_slimeapple"
@@ -13,6 +12,5 @@
   ],
   "result": {
     "item": "frightsdelight:punchbowl_slimeapple"
-  },
-  "show_notification": false
+  }
 }

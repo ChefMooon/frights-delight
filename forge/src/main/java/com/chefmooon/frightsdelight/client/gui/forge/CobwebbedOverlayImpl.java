@@ -18,7 +18,7 @@ public class CobwebbedOverlayImpl {
             ForgeGui gui = (ForgeGui) mc.gui;
             boolean isMounted = mc.player != null && mc.player.getVehicle() instanceof LivingEntity;
             if (!isMounted && !mc.options.hideGui && gui.shouldDrawSurvivalElements()) {
-                CobwebbedOverlay.renderCobwebbedOverlay(mc, event.getGuiGraphics(), gui.rightHeight);
+                CobwebbedOverlay.renderCobwebbedOverlay(mc, event.getPoseStack(), gui.rightHeight);
             }
         }
     }

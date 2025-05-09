@@ -6,7 +6,7 @@ import com.chefmooon.frightsdelight.common.block.GlassCupBlock;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.tag.CommonTags;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -26,21 +26,22 @@ import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 public class LootTableGenerator extends FabricBlockLootTableProvider {
 
-    protected LootTableGenerator(FabricDataOutput dataOutput) {
-        super(dataOutput);
+
+    protected LootTableGenerator(FabricDataGenerator dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override
-    public void generate() {
+    protected void generateBlockLootTables() {
 
-        this.dropSelf(FrightsDelightBlocksImpl.FLESH_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.BONE_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.PHANTOM_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.WEB_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE);
+        dropSelf(FrightsDelightBlocksImpl.FLESH_CRATE);
+        dropSelf(FrightsDelightBlocksImpl.BONE_CRATE);
+        dropSelf(FrightsDelightBlocksImpl.PHANTOM_CRATE);
+        dropSelf(FrightsDelightBlocksImpl.WEB_CRATE);
+        dropSelf(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE);
+        dropSelf(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE);
+        dropSelf(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE);
+        dropSelf(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE);
 
         createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_ROTTEN_FLESH, FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH);
         createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SLIMEAPPLE, FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE);
@@ -51,14 +52,16 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_COBWEB, FrightsDelightItemsImpl.PUNCH_COBWEB);
 
         // can be used to regen, must change c:tools/knives -> forge:tools/kives
-        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE, FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE);
-        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE, FrightsDelightItemsImpl.PUNCH_SPIDEREYE);
-        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR, FrightsDelightItemsImpl.PUNCH_GHASTTEAR);
-        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY, FrightsDelightItemsImpl.PUNCH_SOUL_BERRY);
-        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY, FrightsDelightItemsImpl.PUNCH_WITHER_BERRY);
+//        createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_ROTTEN_FLESH, FrightsDelightItemsImpl.PUNCHBOWL_ROTTEN_FLESH);
+//        createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE, FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE);
+//        createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE, FrightsDelightItemsImpl.PUNCH_SPIDEREYE);
+//        createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR, FrightsDelightItemsImpl.PUNCH_GHASTTEAR);
+//        createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY, FrightsDelightItemsImpl.PUNCH_SOUL_BERRY);
+//        createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY, FrightsDelightItemsImpl.PUNCH_WITHER_BERRY);
+//        createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_COBWEB, FrightsDelightItemsImpl.PUNCHBOWL_COBWEB);
 
-        this.createBushDrops(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH);
-        this.createBushDrops(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH);
+        createBushDrops(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH);
+        createBushDrops(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH);
 
     }
 
@@ -80,24 +83,40 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
     }
 
     private void createPunchbowlDrops(Block block, Item item) {
+        // this is without the tool match property(see below from 1.20.1). must research to see if this is possible to generate in 1.19.2. also not needed right now.
         this.add(block, this.applyExplosionDecay(block, LootTable.lootTable()
                 .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f))))
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 4))
-                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 4))))
                 .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0f))))
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 3))
-                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 3))))
                 .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0f))))
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 2))
-                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 2))))
                 .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0f))))
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 1))
-                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 1))))
         ));
+
+//        this.add(block, this.applyExplosionDecay(block, LootTable.lootTable()
+//                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f))))
+//                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+//                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 4))
+//                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+//                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0f))))
+//                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+//                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 3))
+//                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+//                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0f))))
+//                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+//                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 2))
+//                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+//                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0f))))
+//                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+//                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 1))
+//                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+//        ));
     }
 
     private void createBushDrops(Block block) {
@@ -112,6 +131,6 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
                                 .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(FrightsDelightBushBlock.AGE, 2))))
-        ).setRandomSequence(ModelLocationUtils.getModelLocation(block)));
+        ));
     }
 }

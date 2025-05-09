@@ -2,7 +2,6 @@ package com.chefmooon.frightsdelight.common.registry.fabric;
 
 import com.google.common.base.Suppliers;
 import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 
@@ -14,7 +13,7 @@ public class FrightsDelightSoundsImpl {
     static final List<Supplier<?>> SOUNDS = new ArrayList<>();
 
     public static <T extends SoundEvent> Supplier<T> registerSound(ResourceLocation id, Supplier<T> supplier) {
-        var v = Suppliers.memoize(() -> Registry.register(BuiltInRegistries.SOUND_EVENT, id, supplier.get()));
+        var v = Suppliers.memoize(() -> Registry.register(Registry.SOUND_EVENT, id, supplier.get()));
         SOUNDS.add(v);
         return v;
     }
@@ -24,3 +23,4 @@ public class FrightsDelightSoundsImpl {
         SOUNDS.clear();
     }
 }
+

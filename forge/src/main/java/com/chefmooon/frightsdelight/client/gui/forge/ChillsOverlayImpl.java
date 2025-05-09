@@ -18,7 +18,7 @@ public class ChillsOverlayImpl {
             ForgeGui gui = (ForgeGui) mc.gui;
             boolean isMounted = mc.player != null && mc.player.getVehicle() instanceof LivingEntity;
             if (!isMounted && !mc.options.hideGui && gui.shouldDrawSurvivalElements()) {
-                ChillsOverlay.renderChillsOverlay(mc, event.getGuiGraphics(), gui.rightHeight);
+                ChillsOverlay.renderChillsOverlay(mc, event.getPoseStack(), gui.rightHeight);
             }
         }
     }

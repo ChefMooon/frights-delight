@@ -105,7 +105,7 @@ public class GlassCupBlock extends Block {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.below()).isSolid();
+        return level.getBlockState(pos.below()).getMaterial().isSolid();
     }
 
     @Override
@@ -126,7 +126,7 @@ public class GlassCupBlock extends Block {
     }
 
     protected InteractionResult rotate(Level level, BlockPos pos, BlockState state, Player player) {
-        if (player.getBoundingBox().distanceToSqr(pos.getCenter()) < 0.5) return InteractionResult.CONSUME;
+        if (player.getBoundingBox().intersects(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1)) return InteractionResult.CONSUME;
 
         if (level.setBlock(pos, state.setValue(FACING, state.getValue(FACING).getClockWise()), 3)) return InteractionResult.SUCCESS;
 
@@ -249,7 +249,8 @@ public class GlassCupBlock extends Block {
                 rotatedZ += (random.nextDouble() - 0.5D) * smallVariation;
 
                 level.addParticle(particleData, baseX + rotatedX, baseY + ((1.0 - random.nextDouble()) / 20.0), baseZ + rotatedZ, 0.0, 0.0, 0.0);
-                if (level.random.nextInt(10) == 0) level.playLocalSound(pos, soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F, false);
+//                if (level.random.nextInt(10) == 0) level.playLocalSound(pos.getX(), pos.getY(), pos.getZ(), soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F, false);
+                if (level.random.nextInt(10) == 0) level.playSound(null, pos, soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F);
             }
         }
     }

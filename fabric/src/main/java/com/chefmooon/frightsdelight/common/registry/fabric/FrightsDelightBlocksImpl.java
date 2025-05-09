@@ -1,11 +1,11 @@
 package com.chefmooon.frightsdelight.common.registry.fabric;
 
-import com.chefmooon.frightsdelight.common.block.*;
+import com.chefmooon.frightsdelight.common.block.SoulBerryBushBlock;
+import com.chefmooon.frightsdelight.common.block.WitherBerryBushBlock;
 import com.chefmooon.frightsdelight.common.block.drinkableFeastBlocks.*;
 import com.chefmooon.frightsdelight.common.block.glassCupBlocks.*;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;
 import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -74,7 +74,7 @@ public class FrightsDelightBlocksImpl {
                     BlockBehaviour.Properties.copy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS)));
 
     public static Block registerBlock(final ResourceLocation location, final Block block) {
-        return Registry.register(BuiltInRegistries.BLOCK, location, block);
+        return Registry.register(Registry.BLOCK, location, block);
     }
 
     public static void register() {

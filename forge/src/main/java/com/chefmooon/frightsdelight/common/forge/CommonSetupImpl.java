@@ -6,9 +6,9 @@ import com.chefmooon.frightsdelight.common.crafting.condition.forge.FrDVanillaCr
 import com.chefmooon.frightsdelight.common.entity.forge.BoneShardEntityImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.chefmooon.frightsdelight.common.registry.forge.FrightsDelightItemsImpl;
+import com.chefmooon.frightsdelight.common.utility.HolderLookupHelper;
 import net.minecraft.core.Position;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -28,7 +28,7 @@ public class CommonSetupImpl {
     }
 
     public static void registerDispenserBehaviors() {
-        DispenserBlock.registerBehavior(BuiltInRegistries.ITEM.get(FrightsDelightItems.BONE_SHARD), new AbstractProjectileDispenseBehavior() {
+        DispenserBlock.registerBehavior(HolderLookupHelper.getItem(FrightsDelightItems.BONE_SHARD), new AbstractProjectileDispenseBehavior() {
             @Override
             protected Projectile getProjectile(Level level, Position position, ItemStack stack) {
                 return new BoneShardEntityImpl(level, position.x(), position.y(), position.z());

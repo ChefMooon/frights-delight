@@ -9,6 +9,7 @@ import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -49,7 +50,7 @@ public class BoneShardEntityImpl extends ThrowableItemProjectile {
             ParticleOptions iparticledata = new ItemParticleOption(ParticleTypes.ITEM, entityStack);
 
             for (int i = 0; i < 12; ++i) {
-                this.level().addParticle(iparticledata, this.getX(), this.getY(), this.getZ(),
+                this.level.addParticle(iparticledata, this.getX(), this.getY(), this.getZ(),
                         ((double) this.random.nextFloat() * 2.0D - 1.0D) * 0.1F,
                         ((double) this.random.nextFloat() * 2.0D - 1.0D) * 0.1F + 0.1F,
                         ((double) this.random.nextFloat() * 2.0D - 1.0D) * 0.1F);
@@ -61,22 +62,22 @@ public class BoneShardEntityImpl extends ThrowableItemProjectile {
     protected void onHitEntity(EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
-        entity.hurt(this.damageSources().thrown(this, this.getOwner()), 0);
+        entity.hurt(DamageSource.thrown(this, this.getOwner()), 0);
         this.playSound(FrightsDelightSounds.ENTITY_BONE_SHARD_HIT.get(), 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
     }
 
     @Override
     protected void onHit(HitResult result) {
         super.onHit(result);
-        if (!this.level().isClientSide) {
-            this.level().broadcastEntityEvent(this, (byte) 3);
+        if (!this.level.isClientSide) {
+            this.level.broadcastEntityEvent(this, (byte) 3);
             this.playSound(FrightsDelightSounds.ENTITY_BONE_SHARD_HIT.get(), 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
             this.discard();
         }
     }
 
     @Override
-    public Packet<ClientGamePacketListener> getAddEntityPacket() {
+    public Packet<?> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
 }

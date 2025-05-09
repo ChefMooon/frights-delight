@@ -18,7 +18,7 @@ public class HysteriaOverlayImpl {
             ForgeGui gui = (ForgeGui) mc.gui;
             boolean isMounted = mc.player != null && mc.player.getVehicle() instanceof LivingEntity;
             if (!isMounted && !mc.options.hideGui && gui.shouldDrawSurvivalElements()) {
-                HysteriaOverlay.renderHysteriaOverlay(mc, event.getGuiGraphics(), gui.rightHeight);
+                HysteriaOverlay.renderHysteriaOverlay(mc, event.getPoseStack(), gui.rightHeight);
             }
         }
     }

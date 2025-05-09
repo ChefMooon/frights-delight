@@ -182,7 +182,8 @@ public class DrinkableFeastBlock extends Block {
             for(int i = 0; i < 1; ++i) {
                 if (random.nextBoolean()) {
                     level.addParticle(particleData, d + (random.nextDouble() - 0.5) / 2.0, e + ((1.0 - random.nextDouble()) / 20.0), f + (random.nextDouble() - 0.5) / 2.0, 0.0, 0.0, 0.0);
-                    if (level.random.nextInt(10) == 0) level.playLocalSound(pos, soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F, false);
+//                    if (level.random.nextInt(10) == 0) level.playLocalSound(pos.getX(), pos.getY(), pos.getZ(), soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F, false);
+                    if (level.random.nextInt(10) == 0) level.playSound(null, pos, soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F);
                 }
             }
         }
@@ -190,7 +191,7 @@ public class DrinkableFeastBlock extends Block {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.below()).isSolid();
+        return level.getBlockState(pos.below()).getMaterial().isSolid();
     }
 
     @Override

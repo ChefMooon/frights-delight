@@ -1,12 +1,9 @@
 package com.chefmooon.frightsdelight.common.block.drinkableFeastBlocks;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.block.DrinkableFeastBlock;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightParticleTypes;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
@@ -20,7 +17,8 @@ public class RottenFleshDrinkableFeastBlock extends DrinkableFeastBlock {
     }
 
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        particleData = (SimpleParticleType) BuiltInRegistries.PARTICLE_TYPE.get(new ResourceLocation(FrightsDelight.MOD_ID, "rotten_flesh_bubble"));
+//        particleData = (SimpleParticleType) BuiltInRegistries.PARTICLE_TYPE.get(new ResourceLocation(FrightsDelight.MOD_ID, "rotten_flesh_bubble"));
+        particleData = FrightsDelightParticleTypes.ROTTEN_FLESH_BUBBLE.get();
         animate(state, level, pos, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_ROTTEN_FLESH_BUBBLE.get(), random);
     }
 }

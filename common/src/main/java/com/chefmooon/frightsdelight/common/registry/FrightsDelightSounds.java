@@ -27,8 +27,8 @@ public class FrightsDelightSounds {
     public static final Supplier<SoundEvent> ENTITY_BONE_SHARD_THROW = registerSound("entity.bone_shard.throw");
     public static final Supplier<SoundEvent> ENTITY_BONE_SHARD_HIT = registerSound("entity.bone_shard.hit");
 
-    private static Supplier<SoundEvent> registerSound(String string) {
-        return registerSound(TextUtils.res(string), () -> SoundEvent.createVariableRangeEvent(TextUtils.res(string)));
+    public static Supplier<SoundEvent> registerSound(String string) {
+        return registerSound(TextUtils.res(string), () -> new SoundEvent(TextUtils.res(string)));
     }
 
     @ExpectPlatform

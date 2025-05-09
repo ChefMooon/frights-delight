@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:bone_from_bone_crate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

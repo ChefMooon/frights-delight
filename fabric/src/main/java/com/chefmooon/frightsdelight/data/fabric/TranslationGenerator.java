@@ -4,12 +4,12 @@ import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightEntityTypesImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
 public class TranslationGenerator extends FabricLanguageProvider {
-    public TranslationGenerator(FabricDataOutput dataOutput) {
-        super(dataOutput, "en_us");
+    public TranslationGenerator(FabricDataGenerator dataGenerator) {
+        super(dataGenerator, "en_us");
     }
 
     @Override
@@ -26,6 +26,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         String FORMATTED_MOD_ID = "Fright's Delight";
 
         translationBuilder.add("itemGroup." + MOD_ID, FORMATTED_MOD_ID);
+        translationBuilder.add("itemGroup." + MOD_ID + "." + MOD_ID, FORMATTED_MOD_ID); // this is for fabric
 
         translationBuilder.add(MOD_ID + ".container.punch_bowl", "Glass Bottle Required.");
 

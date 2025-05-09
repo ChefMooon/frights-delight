@@ -19,7 +19,7 @@ loom {
             vmArg "-Dfabric-api.datagen"
             vmArg "-Dfabric-api.datagen.output-dir=${common.file("src/generated/resources")}"
             vmArg "-Dfabric-api.datagen.modid=${archives_base_name}"
-            vmArg "-Dporting_lib.datagen.existing_resources=${common.file("src/main/resources")}"
+            programArgs "--existing", file("src/main/resources").absolutePath
 
             environmentVariable("DATAGEN", "TRUE")
         }
@@ -38,24 +38,18 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
     // Remove the next line if you don't want to depend on the API
-    //modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
+//    modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
 
-    // FD Refabricated
-    modImplementation ("vectorwing:FarmersDelight:${minecraft_version}-${fdrf_version}") {
-        exclude(group: "net.fabricmc")
-    }
+    // [Deprecated] Farmer's Delight [Fabric]
+    modImplementation "curse.maven:farmers-delight-fabric-482834:${farmersdelight_fabric_version}"
 
     // MidnightLib
     modImplementation include("maven.modrinth:midnightlib:${project.midnightlib_fabric_version}")
 
     // ModMenu
-    modLocalRuntime("com.terraformersmc:modmenu:${mod_menu_version}")
-
-    // Appleskin // hmmmm
-    //modCompileOnly("squeek.appleskin:appleskin-fabric:${appleskin_fabric_version}:api") { transitive = false }
-    //modLocalRuntime("squeek.appleskin:appleskin-fabric:${appleskin_fabric_version}") {
-    //    exclude module: 'modmenu'
-    //}
+    modLocalRuntime("com.terraformersmc:modmenu:${mod_menu_version}") {
+        exclude(group: "net.fabricmc")
+    }
 
     // Recipe Viewers
     // EMI
@@ -85,7 +79,6 @@ dependencies {
 }
 
 processResources {
-
 }
 
 shadowJar {
@@ -99,7 +92,6 @@ remapJar {
     injectAccessWidener = true
     input.set shadowJar.archiveFile
     dependsOn shadowJar
-
 }
 
 sourcesJar {
@@ -150,9 +142,8 @@ if (env.MODRINTH_TOKEN) {
             // The scope can be `required`, `optional`, `incompatible`, or `embedded`
             // The type can either be `project` or `version`
             required.project "fabric-api"
-            required.project "farmers-delight-refabricated"
+            required.project "farmers-delight-fabric"
             embedded.project "midnightlib"
-            optional.project "farmers-delight-fabric"
             optional.project "modmenu"
             optional.project "jei"
             optional.project "rei"
@@ -181,9 +172,8 @@ if (env.CURSEFORGE_TOKEN) {
 
             relations {
                 requiredDependency "fabric-api"
-                requiredDependency "farmers-delight-refabricated"
+                requiredDependency "farmers-delight-fabric"
                 embeddedLibrary "midnightlib"
-                optionalDependency "farmers-delight-fabric"
                 optionalDependency "modmenu"
                 optionalDependency "jei"
                 optionalDependency "roughly-enough-items"

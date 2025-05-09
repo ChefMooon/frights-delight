@@ -10,7 +10,7 @@ import com.chefmooon.frightsdelight.common.utility.ModModels;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import com.chefmooon.frightsdelight.common.utility.fabric.FrightsDelightModels;
 import com.chefmooon.frightsdelight.common.utility.fabric.FrightsDelightTextureSlots;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
@@ -26,8 +26,8 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import java.util.List;
 
 public class ModelGenerator extends FabricModelProvider {
-    public ModelGenerator(FabricDataOutput output) {
-        super(output);
+    public ModelGenerator(FabricDataGenerator dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override
@@ -158,12 +158,12 @@ public class ModelGenerator extends FabricModelProvider {
                 (new TextureMapping())
                         .put(TextureSlot.SIDE, new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_side"))
                         .put(TextureSlot.TOP, new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_top"))
-                        .put(TextureSlot.BOTTOM, FrightsDelight.res("block/crate_bottom")),
+                        .put(TextureSlot.BOTTOM, new ResourceLocation("farmersdelight", "block/crate_bottom")),
                 ModelTemplates.CUBE_BOTTOM_TOP);
     }
 
     private static void registerDrinkFeast(Block block, BlockModelGenerators blockStateModelGenerator) {
-        ResourceLocation punchBowl = FrightsDelight.res("block/punch_bowl");
+        ResourceLocation punchBowl = TextUtils.res("block/punch_bowl");
         TextureMapping textureMapping = TextureMapping.particle(punchBowl)
                 .put(FrightsDelightTextureSlots.DRINK_FEAST_INSIDE, TextureMapping.getBlockTexture(block))
                 .put(FrightsDelightTextureSlots.PUNCH_BOWL, punchBowl);
@@ -204,13 +204,13 @@ public class ModelGenerator extends FabricModelProvider {
         ResourceLocation cupLocation = TextUtils.res("block/glass_cup");
         TextureMapping textureMapping = TextureMapping.singleSlot(FrightsDelightTextureSlots.CUP, cupLocation)
                 .put(FrightsDelightTextureSlots.INSIDE, blockLocation);
-        ResourceLocation TEMPLATE_GLASS_CUP_1_LOCATION = blockLocation.withSuffix("_servings1");
+        ResourceLocation TEMPLATE_GLASS_CUP_1_LOCATION = TextUtils.res(blockLocation.getPath() + "_servings1");
         FrightsDelightModels.TEMPLATE_GLASS_CUP_1.create(TEMPLATE_GLASS_CUP_1_LOCATION, textureMapping, blockModelGenerators.modelOutput);
-        ResourceLocation TEMPLATE_GLASS_CUP_2_LOCATION = blockLocation.withSuffix("_servings2");
+        ResourceLocation TEMPLATE_GLASS_CUP_2_LOCATION = TextUtils.res(blockLocation.getPath() + "_servings2");
         FrightsDelightModels.TEMPLATE_GLASS_CUP_2.create(TEMPLATE_GLASS_CUP_2_LOCATION, textureMapping, blockModelGenerators.modelOutput);
-        ResourceLocation TEMPLATE_GLASS_CUP_3_LOCATION = blockLocation.withSuffix("_servings3");
+        ResourceLocation TEMPLATE_GLASS_CUP_3_LOCATION = TextUtils.res(blockLocation.getPath() + "_servings3");
         FrightsDelightModels.TEMPLATE_GLASS_CUP_3.create(TEMPLATE_GLASS_CUP_3_LOCATION, textureMapping, blockModelGenerators.modelOutput);
-        ResourceLocation TEMPLATE_GLASS_CUP_4_LOCATION = blockLocation.withSuffix("_servings4");
+        ResourceLocation TEMPLATE_GLASS_CUP_4_LOCATION = TextUtils.res(blockLocation.getPath() + "_servings4");
         FrightsDelightModels.TEMPLATE_GLASS_CUP_4.create(TEMPLATE_GLASS_CUP_4_LOCATION, textureMapping, blockModelGenerators.modelOutput);
 
         blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block)

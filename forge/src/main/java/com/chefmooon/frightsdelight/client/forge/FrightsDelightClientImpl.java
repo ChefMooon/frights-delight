@@ -5,16 +5,19 @@ import com.chefmooon.frightsdelight.client.FrightsDelightClient;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.server.packs.PackResources;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.forgespi.language.IModFileInfo;
 import net.minecraftforge.forgespi.locating.IModFile;
 import net.minecraftforge.resource.PathPackResources;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FrightsDelightClientImpl {
     public static void init(final FMLClientSetupEvent event) {
@@ -23,30 +26,28 @@ public class FrightsDelightClientImpl {
 
     public static void onBuiltinPackRegistration(AddPackFindersEvent event) {
         if (isModLoaded("presencefootsteps")) {
-            registerBuiltinResourcePack(event, Component.literal(FrightsDelight.MOD_ID + "/frdpresencefootsteps"), "frdpresencefootsteps");
+            registerBuiltinResourcePack(event, "FrD Presence Footsteps", "frdpresencefootsteps");
         }
     }
 
-    private static void registerBuiltinResourcePack(AddPackFindersEvent event, MutableComponent name, String folder) {
+    private static void registerBuiltinResourcePack(AddPackFindersEvent event, String name, String folder) {
         IModFileInfo modFileInfo = ModList.get().getModFileById(FrightsDelight.MOD_ID);
         if (modFileInfo == null) {
             return;
         }
-        String path = TextUtils.res(folder).toString();
+        if (event.getPackType() != PackType.CLIENT_RESOURCES) return;
+
         IModFile modFile = modFileInfo.getFile();
-        event.addRepositorySource((consumer) -> {
-            consumer.accept(Pack.create(
-                    path, // Pack ID
-                    name, // Pack name
-                    false,
-                    (p) -> new PathPackResources(path, true, modFile.findResource("resourcepacks/" + folder)), // Your custom resource pack provider
-                    new Pack.Info(Component.literal(FrightsDelight.MOD_ID + "/" + folder), 15, FeatureFlagSet.of()), // Pack description and compatibility version
-                    PackType.CLIENT_RESOURCES,
-                    Pack.Position.TOP,
-                    false,
-                    PackSource.BUILT_IN
-            ));
-        });
+
+        event.addRepositorySource(((packConsumer, packConstructor) -> packConsumer.accept(
+                Pack.create(TextUtils.res(FrightsDelight.MOD_ID).toString(),
+                        false,
+                        () -> new PathPackResources(name, modFile.findResource("resourcepacks/" + folder)),
+                        packConstructor,
+                        Pack.Position.TOP,
+                        PackSource.DEFAULT
+                )
+        )));
     }
 
     public static boolean isModLoaded(String modId) {

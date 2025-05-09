@@ -1,7 +1,8 @@
 package com.chefmooon.frightsdelight.common.tag;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
-import net.minecraft.core.registries.Registries;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -13,16 +14,16 @@ public class FrightsDelightTags {
     public static final TagKey<Block> WITHER_BERRY_BUSH_GROW_CONDITIION = getFrightsDelightBlockTagKey("wither_berry_bush_grow_condition");
 
     public static TagKey<Item> getFrightsDelightItemTagKey(String path) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation(FrightsDelight.MOD_ID, path));
+        return TagKey.create(Registry.ITEM.key(), new ResourceLocation(FrightsDelight.MOD_ID, path));
     }
     public static TagKey<Block> getFrightsDelightBlockTagKey(String path) {
-        return TagKey.create(Registries.BLOCK, new ResourceLocation(FrightsDelight.MOD_ID, path));
+        return TagKey.create(Registry.BLOCK.key(), new ResourceLocation(FrightsDelight.MOD_ID, path));
     }
 
     public static final TagKey<Biome> WILD_SOUL_BERRY_BUSH_WHITELIST = getFrightsDelightBiomeTag("wild_soul_berry_bush_whitelist");
     public static final TagKey<Biome> WILD_SOUL_BERRY_BUSH_BLACKLIST = getFrightsDelightBiomeTag("wild_soul_berry_bush_blacklist");
 
     private static TagKey<Biome> getFrightsDelightBiomeTag(String path) {
-        return TagKey.create(Registries.BIOME, FrightsDelight.res(path));
+        return TagKey.create(Registry.BIOME_REGISTRY, TextUtils.res(path));
     }
 }

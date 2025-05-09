@@ -1,7 +1,7 @@
 package com.chefmooon.frightsdelight.common.item.fabric;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.Configuration;
+import com.nhoryzon.mc.farmersdelight.item.ConsumableItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -15,8 +15,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.Random;
 
-@Deprecated(forRemoval = true)
-public class FrightsDelightDrinkableItemImpl extends FrightsDelightConsumableItemImpl {
+public class FrightsDelightDrinkableItemImpl extends ConsumableItem {
     private final SoundEvent consumeSound;
     private final int defaultConsumeSoundChance = 4; // 25%
     public FrightsDelightDrinkableItemImpl(Properties properties) {

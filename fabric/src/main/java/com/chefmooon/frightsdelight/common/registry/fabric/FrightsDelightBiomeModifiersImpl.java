@@ -6,7 +6,7 @@ import com.chefmooon.frightsdelight.common.tag.FrightsDelightTags;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.minecraft.core.Holder;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -22,7 +22,7 @@ public class FrightsDelightBiomeModifiersImpl {
 
     @NotNull
     private static ResourceKey<PlacedFeature> modFeature(ResourceLocation location) {
-        return ResourceKey.create(Registries.PLACED_FEATURE, location);
+        return ResourceKey.create(Registry.PLACED_FEATURE_REGISTRY, location);
     }
 
     public static void init() {

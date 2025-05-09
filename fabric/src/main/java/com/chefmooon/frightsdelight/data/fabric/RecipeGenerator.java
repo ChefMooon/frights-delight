@@ -1,22 +1,27 @@
 package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import com.nhoryzon.mc.farmersdelight.registry.ItemsRegistry;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.recipes.*;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.function.Consumer;
 
 public class RecipeGenerator extends FabricRecipeProvider {
-    public RecipeGenerator(FabricDataOutput output) {
-        super(output);
+
+
+    public RecipeGenerator(FabricDataGenerator dataGenerator) {
+        super(dataGenerator);
     }
 
     @Override
-    public void buildRecipes(Consumer<FinishedRecipe> exporter) {
+    protected void generateRecipes(Consumer<FinishedRecipe> exporter) {
 
         crateToIngredient(FrightsDelightItemsImpl.FLESH_CRATE, Items.ROTTEN_FLESH, exporter);
         crateToIngredient(FrightsDelightItemsImpl.BONE_CRATE, Items.BONE, exporter);
@@ -25,7 +30,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
         crateToIngredient(FrightsDelightItemsImpl.SPIDER_EYE_CRATE, Items.SPIDER_EYE, exporter);
         crateToIngredient(FrightsDelightItemsImpl.FERMENTED_SPIDER_EYE_CRATE, Items.FERMENTED_SPIDER_EYE, exporter);
         crateToIngredient(FrightsDelightItemsImpl.POISONOUS_POTATO_CRATE, Items.POISONOUS_POTATO, exporter);
-        crateToIngredient(FrightsDelightItemsImpl.ROTTEN_TOMATO_CRATE, ModItems.ROTTEN_TOMATO.get(), exporter);
+        crateToIngredient(FrightsDelightItemsImpl.ROTTEN_TOMATO_CRATE, ItemsRegistry.ROTTEN_TOMATO.get(), exporter);
 
         cookie(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH, Items.ROTTEN_FLESH, exporter);
         cookie(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE, FrightsDelightItemsImpl.APPLE_SLIME, exporter);
@@ -46,14 +51,14 @@ public class RecipeGenerator extends FabricRecipeProvider {
     }
 
     private static void crateToIngredient(Item crate, Item ingredient, Consumer<FinishedRecipe> exporter) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ingredient, 9)
+        ShapelessRecipeBuilder.shapeless(ingredient, 9)
                 .requires(crate)
                 .unlockedBy(RecipeProvider.getHasName(crate), RecipeProvider.has(crate))
                 .save(exporter, RecipeProvider.getSimpleRecipeName(ingredient) + "_from_" + RecipeProvider.getSimpleRecipeName(crate));
     }
 
     private static void cookie(Item cookie, Item ingredient, Consumer<FinishedRecipe> exporter) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, cookie, 8)
+        ShapelessRecipeBuilder.shapeless(cookie, 8)
                 .requires(ingredient)
                 .requires(Items.WHEAT, 2)
                 .unlockedBy(RecipeProvider.getHasName(ingredient), RecipeProvider.has(ingredient))
@@ -62,13 +67,13 @@ public class RecipeGenerator extends FabricRecipeProvider {
     }
 
     private static void punchbowlFromPunch(Item punchbowl, Item punch, Consumer<FinishedRecipe> exporter) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, punchbowl)
+        ShapedRecipeBuilder.shaped(punchbowl)
                 .pattern(" A ")
                 .pattern("A A")
                 .pattern(" A ")
                 .define('A', punch)
                 .unlockedBy(RecipeProvider.getHasName(punch), RecipeProvider.has(punch))
-                .showNotification(false)
+//                .showNotification(false)
                 .save(exporter, RecipeProvider.getSimpleRecipeName(punchbowl));
     }
 }

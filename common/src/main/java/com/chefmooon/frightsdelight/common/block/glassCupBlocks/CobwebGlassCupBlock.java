@@ -1,11 +1,9 @@
 package com.chefmooon.frightsdelight.common.block.glassCupBlocks;
 
 import com.chefmooon.frightsdelight.common.block.GlassCupBlock;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightParticleTypes;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
-import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
@@ -20,7 +18,7 @@ public class CobwebGlassCupBlock extends GlassCupBlock {
 
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
-        particleData = (SimpleParticleType) BuiltInRegistries.PARTICLE_TYPE.get(TextUtils.res( "cobweb_bubble"));
+        particleData = FrightsDelightParticleTypes.COBWEB_BUBBLE.get();
         animate(state, level, pos, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_COBWEB_BUBBLE.get(), random);
     }
 }

@@ -2,13 +2,13 @@ package com.chefmooon.frightsdelight.client.gui;
 
 import com.chefmooon.frightsdelight.common.Configuration;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightEffects;
+import com.mojang.blaze3d.vertex.PoseStack;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.player.Player;
 
 public class ChillsOverlay {
-    public static void renderChillsOverlay(Minecraft mc, GuiGraphics graphics, int foodIconsOffset) {
+    public static void renderChillsOverlay(Minecraft mc, PoseStack poseStack, int foodIconsOffset) {
         if (!Configuration.chillsOverlay()) return;
 
         Player player = mc.player;
@@ -22,7 +22,7 @@ public class ChillsOverlay {
         if (FrightsDelightGUI.hasFDOverlay(player)) return;
 
         if (player.getEffect(FrightsDelightEffects.CHILLS.get()) != null) {
-            FrightsDelightGUI.renderNegativeHungerOverlay(FrightsDelightGUI.HungerType.CHILLS, player, mc, graphics, left, top);
+            FrightsDelightGUI.renderNegativeHungerOverlay(FrightsDelightGUI.HungerType.CHILLS, player, mc, poseStack, left, top);
         }
     }
 

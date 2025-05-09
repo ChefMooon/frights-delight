@@ -12,7 +12,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-@Deprecated(forRemoval = true)
 public class FrightsDelightConsumableItemImpl extends ConsumableItem {
     private final boolean hasFoodEffectTooltip;
     private final boolean hasCustomTooltip;

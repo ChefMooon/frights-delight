@@ -2,7 +2,6 @@ package com.chefmooon.frightsdelight.common.item.fabric;
 
 import com.chefmooon.frightsdelight.common.entity.fabric.BoneShardEntityImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;

@@ -1,10 +1,11 @@
 package com.chefmooon.frightsdelight.common;
 
 
-import com.chefmooon.frightsdelight.FrightsDelight;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightEffects;
+import com.chefmooon.frightsdelight.common.utility.HolderLookupHelper;
 import com.chefmooon.frightsdelight.common.utility.MobEffectInfo;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import dev.architectury.injectables.annotations.ExpectPlatform;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -20,13 +21,13 @@ public class FoodValues {
     private static final MobEffect COMFORT = getComfort();
     private static final MobEffect NOURISHMENT = getNourishment();
 
-    private static final MobEffect FORTIFIED_MIND = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("fortified_mind"));
-    private static final MobEffect CHILLS = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("chills"));
-    private static final MobEffect INFECTED = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("infected"));
-    private static final MobEffect UNDEAD_HUNGER = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("undead_hunger"));
-    private static final MobEffect HYSTERIA = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("hysteria"));
-    private static final MobEffect COBWEBBED = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("cobwebbed"));
-    private static final MobEffect SLIMED = BuiltInRegistries.MOB_EFFECT.get(FrightsDelight.res("slimed"));
+    private static final MobEffect FORTIFIED_MIND = FrightsDelightEffects.FORTIFIED_MIND.get();
+    private static final MobEffect CHILLS = FrightsDelightEffects.CHILLS.get();
+    private static final MobEffect INFECTED = FrightsDelightEffects.INFECTED.get();
+    private static final MobEffect UNDEAD_HUNGER = FrightsDelightEffects.UNDEAD_HUNGER.get();
+    private static final MobEffect HYSTERIA = FrightsDelightEffects.HYSTERIA.get();
+    private static final MobEffect COBWEBBED = FrightsDelightEffects.COBWEBBED.get();
+    private static final MobEffect SLIMED = FrightsDelightEffects.SLIMED.get();
 
     public static final FoodProperties SOUL_BERRY = foodProperty(2, 0.4f,
             List.of(new MobEffectInfo(FORTIFIED_MIND, BRIEF_DURATION, 1.f)));

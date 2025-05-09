@@ -5,27 +5,27 @@ import eu.midnightdust.lib.config.MidnightConfig;
 
 public class ConfigurationImpl extends MidnightConfig{
 
-    @Entry(category = "common") public static boolean enableFrDCrates = true;
-    @Entry(category = "common") public static boolean farmersBuyFrDCrops = true;
-    @Entry(category = "common") public static boolean wanderingTraderSellsFrdDItems = true;
+    @Entry() public static boolean enableFrDCrates = true;
+    @Entry() public static boolean farmersBuyFrDCrops = true;
+    @Entry() public static boolean wanderingTraderSellsFrdDItems = true;
 
-    @Comment(category = "common", centered = true) public static Comment worldGenerationSettings;
-    @Entry(category = "common") public static boolean generateSoulBerryLoot = true;
-    @Entry(category = "common") public static boolean generateWildSoulBerry = true;
+    @Comment(centered = true) public static Comment worldGenerationSettings;
+    @Entry() public static boolean generateSoulBerryLoot = true;
+    @Entry() public static boolean generateWildSoulBerry = true;
 
-    @Entry(category = "client") public static boolean fortifiedMindOverlay = true;
-    @Entry(category = "client") public static boolean undeadHungerOverlay = true;
-    @Entry(category = "client") public static boolean slimedOverlay = true;
-    @Entry(category = "client") public static boolean cobwebbedOverlay = true;
-    @Entry(category = "client") public static boolean infectedOverlay = true;
-    @Entry(category = "client") public static boolean hysteriaOverlay = true;
-    @Entry(category = "client") public static boolean chillsOverlay = true;
-    @Entry(category = "client") public static boolean foodEffectTooltip = true;
-    @Entry(category = "client") public static boolean foodEffectChanceTooltip = true;
+    @Entry() public static boolean fortifiedMindOverlay = true;
+    @Entry() public static boolean undeadHungerOverlay = true;
+    @Entry() public static boolean slimedOverlay = true;
+    @Entry() public static boolean cobwebbedOverlay = true;
+    @Entry() public static boolean infectedOverlay = true;
+    @Entry() public static boolean hysteriaOverlay = true;
+    @Entry() public static boolean chillsOverlay = true;
+    @Entry() public static boolean foodEffectTooltip = true;
+    @Entry() public static boolean foodEffectChanceTooltip = true;
 
-    @Entry(category = "client") public static boolean drinkableFeastParticles = true;
-    @Entry(category = "client") public static boolean punchConsumeSound = true;
-    @Entry(category = "client", isSlider = true,min=0,max=10) public static int punchConsumeChance = 4;
+    @Entry() public static boolean drinkableFeastParticles = true;
+    @Entry() public static boolean punchConsumeSound = true;
+    @Entry(isSlider = true,min=0,max=10) public static int punchConsumeChance = 4;
 
     public static boolean isEnableFrDCrates() {
         return enableFrDCrates;
