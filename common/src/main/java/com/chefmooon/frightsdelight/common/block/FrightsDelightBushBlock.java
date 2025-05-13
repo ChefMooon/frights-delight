@@ -7,6 +7,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -71,10 +72,14 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
                 double d = Math.abs(entity.getX() - entity.xOld);
                 double e = Math.abs(entity.getZ() - entity.zOld);
                 if (d >= HURT_SPEED_THRESHOLD || e >= HURT_SPEED_THRESHOLD) {
-                    entity.hurt(level.damageSources().sweetBerryBush(), 1.0F);  // TODO: custom damage source here?
+                    entity.hurt(getDamageSource(level), 1.0F);
                 }
             }
         }
+    }
+
+    public DamageSource getDamageSource(Level level) {
+        return level.damageSources().sweetBerryBush();
     }
 
     @Override

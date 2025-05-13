@@ -8,8 +8,8 @@ NeoForge, and Fabric
 
 ***
 
-### Fixed
+### Added
 
-- Bone Shard Throwable Entity now appears when thrown (Fabric only)
+- Custom damage source and death messages for Soul and Wither Berry Bushes
 
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)
