@@ -18,6 +18,10 @@ Beta release for Minecraft 1.19.2!
 - Punch Block improved bubble particle consistency
 - Punch Bowl bubble particle spawning now scales with amount of servings
 
+### Fixed
+
+- Punch tooltip
+
 ### Known Bugs
 - Punch Bowls break speed is not faster with knife (Fabric only)
 
