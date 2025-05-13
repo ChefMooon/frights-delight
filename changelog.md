@@ -12,6 +12,10 @@ Beta release for Minecraft 1.19.2!
 
 - Custom damage source and death messages for Soul and Wither Berry Bushes
 
+### Changed
+
+- Punch Bowl break particles texture improved
+
 ### Known Bugs
 - Punch Bowls break speed is not faster with knife (Fabric only)
 
