@@ -24,7 +24,7 @@
 
 Fright’s Delight is an add-on mod for that adds food made from hostile mob drops. Dishes are created with a “Horror” theme, consume with caution.
 
-Detailed information can be found on the [Wiki](https://github.com/ChefMooon/frights-delight/wiki)
+Detailed information can be found on the [Wiki](https://chefmooon.github.io/frightsdelight/wiki/1.21.1/home)
 
 ### Links
 
