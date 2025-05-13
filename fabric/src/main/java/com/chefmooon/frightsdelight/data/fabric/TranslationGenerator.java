@@ -24,6 +24,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         String WAILA = MOD_ID + ".tooltip.waila";
         String WAILA_CONFIG = "config.waila.plugin_" + MOD_ID;
         String FORMATTED_MOD_ID = "Fright's Delight";
+        String DEATH = "death.attack";
 
         translationBuilder.add("itemGroup." + MOD_ID, FORMATTED_MOD_ID);
         translationBuilder.add("itemGroup." + MOD_ID + "." + MOD_ID, FORMATTED_MOD_ID); // this is for fabric
@@ -140,6 +141,12 @@ public class TranslationGenerator extends FabricLanguageProvider {
 
         translationBuilder.add(SUBTITLE + ".entity.bone_shard.throw", "Bone Shard flies");
         translationBuilder.add(SUBTITLE + ".entity.bone_shard.hit", "Bone Shard shatters");
+
+        translationBuilder.add(DEATH + ".soul_berry_bush", "%1$s was pricked to death by a Soul Berry Bush");
+        translationBuilder.add(DEATH + ".soul_berry_bush.player", "%1$s was sent to a prickly grave by %2$s");
+
+        translationBuilder.add(DEATH + ".wither_berry_bush", "%1$s was pricked to death by a Wither Berry Bush");
+        translationBuilder.add(DEATH + ".wither_berry_bush.player", "%1$s was sent to a prickly grave by %2$s");
 
         translationBuilder.add(ADVANCEMENT + ".root", FORMATTED_MOD_ID);
         translationBuilder.add(ADVANCEMENT + ".root.desc", "Welcome to a world of unusual delights. Consume with caution.");
