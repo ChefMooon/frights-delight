@@ -14,7 +14,7 @@ Beta release for Minecraft 1.19.2!
 
 ### Changed
 
-- Punch Bowl break particles texture improved
+- Punch and Punch Bowl break particles texture improved
 - Punch Block improved bubble particle consistency
 
 ### Known Bugs
