@@ -174,17 +174,17 @@ public class DrinkableFeastBlock extends Block {
     }
 
     public void animate(BlockState state, Level level, BlockPos pos, SoundEvent soundEvent, RandomSource random) {
-        if (Configuration.drinkableFeastParticles() && particleData != null && state.getValue(getServingsProperty()) > 0) {
+        int servings = state.getValue(getServingsProperty());
+        if (Configuration.drinkableFeastParticles() && particleData != null && servings > 0) {
             double d = (double)pos.getX() + 0.5D;
-            double e = (double)pos.getY() + 0.03D + (double) state.getValue(getServingsProperty()) / 8;
+            double e = (double)pos.getY() + 0.03D + (double) servings / 8;
             double f = (double)pos.getZ() + 0.5D;
 
-            for(int i = 0; i < 1; ++i) {
-                if (random.nextBoolean()) {
-                    level.addParticle(particleData, d + (random.nextDouble() - 0.5) / 2.0, e + ((1.0 - random.nextDouble()) / 20.0), f + (random.nextDouble() - 0.5) / 2.0, 0.0, 0.0, 0.0);
-//                    if (level.random.nextInt(10) == 0) level.playLocalSound(pos.getX(), pos.getY(), pos.getZ(), soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F, false);
-                    if (level.random.nextInt(10) == 0) level.playSound(null, pos, soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F);
-                }
+            int chance = 10 - servings * 2;
+
+            if (random.nextInt(Math.max(chance, 1)) == 0) {
+                level.addParticle(particleData, d + (random.nextDouble() - 0.5) / 2.0, e + ((1.0 - random.nextDouble()) / 20.0), f + (random.nextDouble() - 0.5) / 2.0, 0.0, 0.0, 0.0);
+                if (level.random.nextInt(10) == 0) level.playSound(null, pos, soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F);
             }
         }
     }
