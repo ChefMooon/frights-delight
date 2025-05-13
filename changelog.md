@@ -11,4 +11,8 @@ NeoForge, and Fabric
 
 - Custom damage source and death messages for Soul and Wither Berry Bushes
 
+### Changed
+
+- Punch Bowl break particles texture improved
+
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)
