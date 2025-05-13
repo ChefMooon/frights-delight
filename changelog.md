@@ -17,4 +17,8 @@ NeoForge, and Fabric
 - Punch Block improved bubble particle consistency 
 - Punch Bowl bubble particle spawning now scales with amount of servings
 
+### Fixed
+
+- Punch tooltip
+
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)
