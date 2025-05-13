@@ -15,6 +15,7 @@ Beta release for Minecraft 1.19.2!
 ### Changed
 
 - Punch Bowl break particles texture improved
+- Punch Block improved bubble particle consistency
 
 ### Known Bugs
 - Punch Bowls break speed is not faster with knife (Fabric only)

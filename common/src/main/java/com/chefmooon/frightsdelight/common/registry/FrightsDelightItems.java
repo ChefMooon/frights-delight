@@ -37,7 +37,7 @@ public class FrightsDelightItems {
     }
 
     public static Item.Properties drinkItem(FoodProperties food) {
-        return new Item.Properties().food(food).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
+        return foodItem(food).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
     }
 
     public static final ResourceLocation FLESH_CRATE = item("flesh_crate");
