@@ -141,5 +141,10 @@
   "item.frightsdelight.soup_ghast_tear": "Ghast Tear Soup",
   "item.frightsdelight.soup_soul_berry": "Soul Berry Soup",
   "item.frightsdelight.soup_wither_berry": "Wither Berry Soup",
-  "item.frightsdelight.soup_slimeapple": "Slime-Apple Soup"
+  "item.frightsdelight.soup_slimeapple": "Slime-Apple Soup",
+  "death.attack.frightsdelight.soul_berry_bush": "%1$s was pricked to death by a Soul Berry Bush",
+  "death.attack.frightsdelight.soul_berry_bush.player": "%1$s was sent to a prickly grave by %2$s",
+  "death.attack.frightsdelight.wither_berry_bush": "%1$s was pricked to death by a Wither Berry Bush",
+  "death.attack.frightsdelight.wither_berry_bush.player": "%1$s was sent to a prickly grave by %2$s",
+  "frightsdelight.tooltip.glass_cup": "Shift-right-click to place. Right-click with a tool to rotate."
 }
