@@ -53,7 +53,6 @@ public class FrightsDelightDrinkableItem extends FrightsDelightConsumableItem {
         if (foodData != null) {
             if (player.canEat(foodData.canAlwaysEat())) {
                 player.startUsingItem(hand);
-                // TODO : after testing decide if null check is needed, if not remove defaultConsumeSoundChance (only on fabric)
                 if (Configuration.punchConsumeSound() && consumeSound != null) {
                     if (new Random().nextInt(Configuration.punchConsumeChance()) == 0) { // 4 = 25% chance of sound on consume
                         BlockPos pos = new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ());

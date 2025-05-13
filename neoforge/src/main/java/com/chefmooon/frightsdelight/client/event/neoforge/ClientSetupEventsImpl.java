@@ -21,22 +21,6 @@ import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 @EventBusSubscriber(modid = FrightsDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientSetupEventsImpl {
-//    public static void registerClientTick(TickEvent.ClientTickEvent event) {
-//        MidnightColorUtil.tick();
-//    }
-//
-//    @SubscribeEvent
-//    public static void onPostInit(final FMLClientSetupEvent event) {
-//        MinecraftForge.EVENT_BUS.addListener(ClientSetupEventsImpl::registerClientTick);
-//        ModList.get().forEachModContainer((modid, modContainer) -> {
-//            if (MidnightConfig.configClass.containsKey(modid)) {
-//                modContainer.registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () ->
-//                        new ConfigScreenHandler.ConfigScreenFactory((client, parent) -> MidnightConfig.getScreen(parent, modid)));
-//            }
-//        });
-//
-//    }
-    // todo - midnight lib init?
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void registerParticles(RegisterParticleProvidersEvent event) {
