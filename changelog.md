@@ -14,5 +14,6 @@ NeoForge, and Fabric
 ### Changed
 
 - Punch Bowl break particles texture improved
+- Punch Block improved bubble particle consistency
 
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)

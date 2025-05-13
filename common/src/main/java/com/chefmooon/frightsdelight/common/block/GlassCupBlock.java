@@ -189,67 +189,63 @@ public class GlassCupBlock extends Block {
             double baseY = pos.getY() + 0.5D;
             double baseZ = pos.getZ() + 0.5D;
 
-            // Only spawn particles if random check passes
-            if (random.nextBoolean()) {
-                // Pick one random particle location from available servings
-                int particleIndex = random.nextInt(servings);
+            for (int i = 0; i < servings; i++) {
+                if (random.nextInt(4) == 0) {
+                    double spread = 0.3D; // Define spread amount
 
-                // Define spread parameters
-                double spread = 0.3D;
+                    double xOffset = 0, zOffset = 0;
 
-                // Calculate offsets based on direction and particle index
-                double xOffset = 0, zOffset = 0;
+                    // Map the serving index (0-3) to corner positions
+                    zOffset = switch (i) {
+                        case 0 -> {
+                            xOffset = -spread;
+                            yield -spread;
+                        }
+                        case 1 -> {
+                            xOffset = spread;
+                            yield -spread;
+                        }
+                        case 2 -> {
+                            xOffset = spread;
+                            yield spread;
+                        }
+                        case 3 -> {
+                            xOffset = -spread;
+                            yield spread;
+                        }
+                        default -> zOffset;
+                    };
 
-                // Map the particleIndex (0-3) to corner positions
-                zOffset = switch (particleIndex) {
-                    case 0 -> {
-                        xOffset = -spread;
-                        yield -spread;
-                    }
-                    case 1 -> {
-                        xOffset = spread;
-                        yield -spread;
-                    }
-                    case 2 -> {
-                        xOffset = spread;
-                        yield spread;
-                    }
-                    case 3 -> {
-                        xOffset = -spread;
-                        yield spread;
-                    }
-                    default -> zOffset;
-                };
+                    // Rotate the offsets based on facing direction
+                    double rotatedX = 0, rotatedZ = 0;
+                    rotatedZ = switch (facing) {
+                        case NORTH -> {
+                            rotatedX = xOffset;
+                            yield zOffset;
+                        }
+                        case SOUTH -> {
+                            rotatedX = -xOffset;
+                            yield -zOffset;
+                        }
+                        case EAST -> {
+                            rotatedX = -zOffset;
+                            yield xOffset;
+                        }
+                        case WEST -> {
+                            rotatedX = zOffset;
+                            yield -xOffset;
+                        }
+                        default -> rotatedZ;
+                    };
 
-                // Rotate the offsets based on facing direction
-                double rotatedX = 0, rotatedZ = 0;
-                rotatedZ = switch (facing) {
-                    case NORTH -> {
-                        rotatedX = xOffset;
-                        yield zOffset;
-                    }
-                    case SOUTH -> {
-                        rotatedX = -xOffset;
-                        yield -zOffset;
-                    }
-                    case EAST -> {
-                        rotatedX = -zOffset;
-                        yield xOffset;
-                    }
-                    case WEST -> {
-                        rotatedX = zOffset;
-                        yield -xOffset;
-                    }
-                    default -> rotatedZ;
-                };
+                    // Add small random variation
+                    double smallVariation = 0.05D;
+                    rotatedX += (random.nextDouble() - 0.5D) * smallVariation;
+                    rotatedZ += (random.nextDouble() - 0.5D) * smallVariation;
 
-                // Add small random variation
-                double smallVariation = 0.05D;
-                rotatedX += (random.nextDouble() - 0.5D) * smallVariation;
-                rotatedZ += (random.nextDouble() - 0.5D) * smallVariation;
-
-                level.addParticle(particleData, baseX + rotatedX, baseY + ((1.0 - random.nextDouble()) / 20.0), baseZ + rotatedZ, 0.0, 0.0, 0.0);
-                if (level.random.nextInt(10) == 0) level.playLocalSound(pos, soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F, false);
+                    level.addParticle(particleData, baseX + rotatedX, baseY + ((1.0 - random.nextDouble()) / 20.0), baseZ + rotatedZ, 0.0, 0.0, 0.0);
+                    if (level.random.nextInt(10) == 0) level.playLocalSound(pos, soundEvent, SoundSource.BLOCKS, 0.2F, 0.8F, false);
+                }
             }
         }
     }
