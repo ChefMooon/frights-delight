@@ -152,7 +152,6 @@ public class FoodValues {
 
     // In Dev only? stops null pointer before effects are fully registered, I think.
     // The below methods[getComfort()/getNourishment()] may fix this
-    // TODO: continue testing, keep an eye on for bug
     public static MobEffect nonNullEffect(MobEffect effect) {
         return effect != null ? effect : MobEffects.HEAL;
     }

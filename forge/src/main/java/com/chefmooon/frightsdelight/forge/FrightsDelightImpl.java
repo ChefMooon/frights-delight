@@ -49,7 +49,7 @@ public class FrightsDelightImpl {
     }
 
     public static void loggerInfo(String s) {
-        LOGGER.warn(s);
+        LOGGER.info(s);
     }
 
     public static String findVersion() {

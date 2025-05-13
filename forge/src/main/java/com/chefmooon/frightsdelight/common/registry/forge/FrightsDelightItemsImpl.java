@@ -5,7 +5,6 @@ import com.chefmooon.frightsdelight.common.FoodValues;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItemNameBlockItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableBlockItem;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableItem;
 import com.chefmooon.frightsdelight.common.item.forge.BoneShardItemImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.google.common.collect.Sets;

@@ -29,8 +29,6 @@ configurations {
 
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
-    // Remove the next line if you don't want to depend on the API
-    //modApi "dev.architectury:architectury-forge:${rootProject.architectury_version}"
 
     // Farmer's Delight
     modImplementation "curse.maven:farmers-delight-398521:${farmersdelight_version}"

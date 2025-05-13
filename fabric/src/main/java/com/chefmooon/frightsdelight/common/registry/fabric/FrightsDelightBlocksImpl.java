@@ -1,6 +1,7 @@
 package com.chefmooon.frightsdelight.common.registry.fabric;
 
-import com.chefmooon.frightsdelight.common.block.*;
+import com.chefmooon.frightsdelight.common.block.SoulBerryBushBlock;
+import com.chefmooon.frightsdelight.common.block.WitherBerryBushBlock;
 import com.chefmooon.frightsdelight.common.block.drinkableFeastBlocks.*;
 import com.chefmooon.frightsdelight.common.block.glassCupBlocks.*;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;

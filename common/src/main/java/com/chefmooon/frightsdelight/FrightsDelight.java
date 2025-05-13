@@ -16,9 +16,6 @@ public class FrightsDelight {
     }
 
     public static void init() {
-//        FrightsDelightSounds.init();
-//        FrightsDelightEffects.init();
-//        FrightsDelightParticleTypes.init();
         Configuration.init();
 
         FrightsDelightSounds.init();

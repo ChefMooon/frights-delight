@@ -5,7 +5,6 @@ import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableBlockItem
 import com.chefmooon.frightsdelight.common.item.fabric.BoneShardItemImpl;
 import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightConsumableItemImpl;
 import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightConsumableItemNameBlockItemImpl;
-import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightDrinkableItemImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;

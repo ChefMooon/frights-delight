@@ -1,6 +1,5 @@
 package com.chefmooon.frightsdelight.common.item.fabric;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.Configuration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
@@ -56,7 +55,6 @@ public class FrightsDelightDrinkableItemImpl extends FrightsDelightConsumableIte
             if (player.canEat(heldStack.getItem().getFoodProperties().canAlwaysEat())) {
                 player.startUsingItem(hand);
                 if (Configuration.punchConsumeSound() && consumeSound != null) {
-                    // TODO : after testing decide if null check is needed, if not remove defaultConsumeSoundChance
                     if (new Random().nextInt(Configuration.punchConsumeChance()) == 0) { // 4 = 25% chance of sound on consume
                         BlockPos pos = new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ());
                         level.playSound((Player)null, pos, consumeSound, SoundSource.HOSTILE, 0.5F, 0.8F + level.random.nextFloat() * 0.4F);

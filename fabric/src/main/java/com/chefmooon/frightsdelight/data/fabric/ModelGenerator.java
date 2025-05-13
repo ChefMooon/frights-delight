@@ -158,7 +158,7 @@ public class ModelGenerator extends FabricModelProvider {
                 (new TextureMapping())
                         .put(TextureSlot.SIDE, new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_side"))
                         .put(TextureSlot.TOP, new ResourceLocation(ModelLocationUtils.getModelLocation(block) + "_top"))
-                        .put(TextureSlot.BOTTOM, FrightsDelight.res("block/crate_bottom")),
+                        .put(TextureSlot.BOTTOM, new ResourceLocation("farmersdelight", "block/crate_bottom")),
                 ModelTemplates.CUBE_BOTTOM_TOP);
     }
 
