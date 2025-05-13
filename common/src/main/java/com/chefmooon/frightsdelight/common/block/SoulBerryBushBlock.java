@@ -1,7 +1,7 @@
 package com.chefmooon.frightsdelight.common.block;
 
-import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightDamageTypes;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.chefmooon.frightsdelight.common.tag.FrightsDelightTags;
 import net.minecraft.core.BlockPos;
@@ -14,6 +14,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -105,6 +106,11 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
         updateConditions(state, level, pos);
         super.performBonemeal(level, random, pos, state);
+    }
+
+    @Override
+    public DamageSource getDamageSource(Level level) {
+        return FrightsDelightDamageTypes.getSimpleDamageSource(level, FrightsDelightDamageTypes.SOUL_BERRY_BUSH);
     }
 
     @Override
