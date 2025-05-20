@@ -18,4 +18,9 @@ NeoForge, and Fabric
 - Punch Block improved bubble particle consistency
 - Punch Bowl bubble particle spawning now scales with amount of servings
 
+### Fixed
+
+- Added blocks/items to tags: c:storage_blocks, c:storage_blocks/[item], c:foods/berry,
+c:foods/soup, c:foods/cookie (Thank you, ffuentesm!)
+
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)

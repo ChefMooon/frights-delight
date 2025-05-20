@@ -45,6 +45,25 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY)
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY)
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_COBWEB);
+
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_BONE)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_PHANTOM_MEMBRANE)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_COBWEB)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_SPIDER_EYE)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_FERMENTED_SPIDER_EYE)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_POISONOUS_POTATO)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_ROTTEN_TOMATO);
+
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH).add(FrightsDelightBlocksImpl.FLESH_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_BONE).add(FrightsDelightBlocksImpl.BONE_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_PHANTOM_MEMBRANE).add(FrightsDelightBlocksImpl.PHANTOM_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_COBWEB).add(FrightsDelightBlocksImpl.WEB_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_SPIDER_EYE).add(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_FERMENTED_SPIDER_EYE).add(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_POISONOUS_POTATO).add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_TOMATO).add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE);
     }
 
     private void registerMinecraftBlockTags() {

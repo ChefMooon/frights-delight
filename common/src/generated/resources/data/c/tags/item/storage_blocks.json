@@ -1,0 +1,12 @@
+{
+  "values": [
+    "#c:storage_blocks/rotten_flesh",
+    "#c:storage_blocks/bone",
+    "#c:storage_blocks/phantom_membrane",
+    "#c:storage_blocks/cobweb",
+    "#c:storage_blocks/spider_eye",
+    "#c:storage_blocks/fermented_spider_eye",
+    "#c:storage_blocks/poisonous_potato",
+    "#c:storage_blocks/rotten_tomato"
+  ]
+}

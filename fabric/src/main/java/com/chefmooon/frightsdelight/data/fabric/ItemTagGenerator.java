@@ -1,6 +1,7 @@
 package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
+import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import com.chefmooon.frightsdelight.common.tag.CompatibilityTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -16,6 +17,7 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void addTags(HolderLookup.Provider arg) {
         registerMinecraftItemTags();
+        registerCommonTags();
         registerCompatibilityItemTags();
     }
 
@@ -23,6 +25,51 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
         // Save for Fox harvesting implementation
         //getOrCreateTagBuilder(ItemTags.FOX_FOOD)
         //        .add(FrightsDelightItemsImpl.SOUL_BERRY);
+    }
+
+    private void registerCommonTags() {
+        getOrCreateTagBuilder(CommonTags.C_FOODS_BERRY)
+                .add(FrightsDelightItemsImpl.SOUL_BERRY)
+                .add(FrightsDelightItemsImpl.WITHER_BERRY);
+
+        getOrCreateTagBuilder(CommonTags.C_FOODS_SOUP)
+                .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH)
+                .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE)
+                .add(FrightsDelightItemsImpl.SOUP_SLIME)
+                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE)
+                .add(FrightsDelightItemsImpl.SOUP_COBWEB)
+                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR)
+                .add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY)
+                .add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY);
+
+        getOrCreateTagBuilder(CommonTags.C_FOODS_COOKIE)
+                .add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH)
+                .add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE)
+                .add(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE)
+                .add(FrightsDelightItemsImpl.COOKIE_SLIME)
+                .add(FrightsDelightItemsImpl.COOKIE_COBWEB)
+                .add(FrightsDelightItemsImpl.COOKIE_GHAST_TEAR)
+                .add(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY)
+                .add(FrightsDelightItemsImpl.COOKIE_WITHER_BERRY);
+
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_FLESH)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_BONE)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_PHANTOM_MEMBRANE)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_COBWEB)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_SPIDER_EYE)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_FERMENTED_SPIDER_EYE)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO)
+                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO);
+
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_FLESH).add(FrightsDelightItemsImpl.FLESH_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_BONE).add(FrightsDelightItemsImpl.BONE_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_PHANTOM_MEMBRANE).add(FrightsDelightItemsImpl.PHANTOM_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_COBWEB).add(FrightsDelightItemsImpl.WEB_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_SPIDER_EYE).add(FrightsDelightItemsImpl.SPIDER_EYE_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_FERMENTED_SPIDER_EYE).add(FrightsDelightItemsImpl.FERMENTED_SPIDER_EYE_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO).add(FrightsDelightItemsImpl.POISONOUS_POTATO_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO).add(FrightsDelightItemsImpl.ROTTEN_TOMATO_CRATE);
     }
 
     private void registerCompatibilityItemTags() {
