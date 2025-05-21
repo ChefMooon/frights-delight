@@ -20,7 +20,7 @@ NeoForge, and Fabric
 
 ### Fixed
 
-- Added blocks/items to tags: c:storage_blocks, c:storage_blocks/[item], c:foods/berry,
+- Added blocks/items to tags: c:foods, c:storage_blocks, c:storage_blocks/[item], c:foods/berry,
 c:foods/soup, c:foods/cookie (Thank you, ffuentesm!)
 
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)

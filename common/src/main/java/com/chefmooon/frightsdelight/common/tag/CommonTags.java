@@ -30,6 +30,8 @@ public class CommonTags {
     public static final TagKey<Item> C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO = getCommonItemTagKey("storage_blocks/poisonous_potato");
     public static final TagKey<Item> C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO = getCommonItemTagKey("storage_blocks/rotten_tomato");
 
+    public static final TagKey<Item> C_FOODS = getCommonItemTagKey("foods");
+
     public static final TagKey<Item> C_FOODS_BERRY = getCommonItemTagKey("foods/berry");
     public static final TagKey<Item> C_FOODS_SOUP = getCommonItemTagKey("foods/soup");
     public static final TagKey<Item> C_FOODS_COOKIE = getCommonItemTagKey("foods/cookie");

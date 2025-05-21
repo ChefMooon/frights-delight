@@ -70,6 +70,20 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_FERMENTED_SPIDER_EYE).add(FrightsDelightItemsImpl.FERMENTED_SPIDER_EYE_CRATE);
         getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO).add(FrightsDelightItemsImpl.POISONOUS_POTATO_CRATE);
         getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO).add(FrightsDelightItemsImpl.ROTTEN_TOMATO_CRATE);
+
+        getOrCreateTagBuilder(CommonTags.C_FOODS)
+                .add(FrightsDelightItemsImpl.APPLE_SLIME)
+                .add(FrightsDelightItemsImpl.UNDEAD_KEBAB)
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH)
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SPIDER_EYE)
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIMEAPPLE)
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIME)
+                .add(FrightsDelightItemsImpl.WEB_ON_STICK)
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_GHAST_TEAR)
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SOUL_BERRY)
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_WITHER_BERRY)
+                .add(FrightsDelightItemsImpl.MONSTER_MASH)
+                .add(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS);
     }
 
     private void registerCompatibilityItemTags() {
