@@ -19,6 +19,9 @@ NeoForge, and Fabric
 
 ### Fixed
 
-- Punch tooltip
+- Punch tooltip (Fabric only)
+- Added blocks/items to tags: 
+  - Fabric: c:foods
+  - Forge: forge:storage_blocks, forge:storage_blocks/[item], forge:berries
 
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)
