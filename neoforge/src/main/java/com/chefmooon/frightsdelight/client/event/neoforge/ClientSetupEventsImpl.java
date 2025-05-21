@@ -38,7 +38,7 @@ public class ClientSetupEventsImpl {
         event.registerEntityRenderer(FrightsDelightEntityTypesImpl.BONE_SHARD.get(), ThrownItemRenderer::new);
     }
 
-    @SubscribeEvent
+    @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerGuiLayers(RegisterGuiLayersEvent event) {
         FrightsDelightGUIImpl.register(event);
     }
