@@ -10,7 +10,7 @@ NeoForge, and Fabric
 ### Added
 
 - Custom damage source and death messages for Soul and Wither Berry Bushes
-- Soul and Wither Berries can now be used as Create Potato Cannon ammo
+- Soul and Wither Berries can now be used as Create Potato Cannon ammo (Create 6.0.0+)
 
 ### Changed
 
