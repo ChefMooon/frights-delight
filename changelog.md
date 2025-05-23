@@ -11,6 +11,7 @@ Beta release for Minecraft 1.19.2!
 ### Added
 
 - Custom damage source and death messages for Soul and Wither Berry Bushes
+- Soul and Wither Berries can now be used as Create Potato Cannon ammo (Create 0.5.1 Compatible)
 
 ### Changed
 
