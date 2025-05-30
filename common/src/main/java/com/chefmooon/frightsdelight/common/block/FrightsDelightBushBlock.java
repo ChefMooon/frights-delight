@@ -65,7 +65,7 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
                 double d = Math.abs(entity.getX() - entity.xOld);
                 double e = Math.abs(entity.getZ() - entity.zOld);
                 if (d >= HURT_SPEED_THRESHOLD || e >= HURT_SPEED_THRESHOLD) {
-                    entity.hurt(getDamageSource(), 1.0F); // TODO: custom damage source here?
+                    entity.hurt(getDamageSource(), 1.0F);
                 }
             }
         }

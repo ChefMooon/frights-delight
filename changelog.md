@@ -6,7 +6,7 @@ This mod is compatible with Minecraft 1.19.2 and Farmer's Delight Forge and Fabr
 
 ***
 
-Beta release for Minecraft 1.19.2!
+Release for Minecraft 1.19.2!
 
 ### Added
 
