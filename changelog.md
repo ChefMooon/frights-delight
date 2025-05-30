@@ -4,7 +4,7 @@ may contain some instability. Greatly appreciate any bug reports on the
 actively watching the issues page to resolve any bugs as soon as possible.
 This mod is compatible with Minecraft 1.21-1.21.1 and Farmer's Delight 
 NeoForge, and Fabric
-([details](https://github.com/ChefMooon/frights-delight/wiki#compatible-versions)).
+([details](https://chefmooon.github.io/frightsdelight/wiki/1.21.1/home#compatible-versions)).
 
 ***
 
@@ -24,4 +24,4 @@ NeoForge, and Fabric
 - Added blocks/items to tags: c:foods, c:storage_blocks, c:storage_blocks/[item], c:foods/berry,
 c:foods/soup, c:foods/cookie (Thank you, ffuentesm!)
 
-[Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)
+[Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
