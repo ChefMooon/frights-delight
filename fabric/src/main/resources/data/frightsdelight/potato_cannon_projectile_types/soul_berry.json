@@ -1,0 +1,10 @@
+{
+  "damage": 3,
+  "items": [
+    "frightsdelight:soul_berry"
+  ],
+  "knockback": 0.1,
+  "sound_pitch": 1.2,
+  "split": 3,
+  "velocity_multiplier": 1.05
+}

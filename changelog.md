@@ -7,22 +7,8 @@ NeoForge, and Fabric
 
 ***
 
-### Added
-
-- Custom damage source and death messages for Soul and Wither Berry Bushes
-- Soul and Wither Berries can now be used as Create Potato Cannon ammo (Create 6.0.0+)
-
-### Changed
-
-- Punch and Punch Bowl break particles texture improved
-- Punch Block improved bubble particle consistency 
-- Punch Bowl bubble particle spawning now scales with amount of servings
-
 ### Fixed
 
-- Punch tooltip (Fabric only)
-- Added blocks/items to tags: 
-  - Fabric: c:foods
-  - Forge: forge:storage_blocks, forge:storage_blocks/[item], forge:berries
+- [Fabric 1.20.1 Only] Fix Potato Cannon projectile format to Create 0.5.1
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
