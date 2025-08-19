@@ -4,11 +4,14 @@ import com.chefmooon.frightsdelight.common.Configuration;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.TooltipDisplay;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class FrightsDelightConsumableItem extends ConsumableItem {
     private final boolean hasFoodEffectTooltip;
@@ -32,16 +35,16 @@ public class FrightsDelightConsumableItem extends ConsumableItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay tooltipDisplay, Consumer<Component> tooltipAdder, TooltipFlag flag) {
         if ((Boolean) Configuration.foodEffectTooltip()) {
             if (this.hasCustomTooltip) {
-                tooltip.add(TextUtils.getTranslatable("tooltip." + this).withStyle(ChatFormatting.BLUE));
+                tooltipAdder.accept(TextUtils.getTranslatable("tooltip." + this).withStyle(ChatFormatting.BLUE));
             }
             if (this.hasFoodEffectTooltip) {
                 if ((Boolean) Configuration.foodEffectChanceTooltip()) {
-                    TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip::add, 1.0F, context.tickRate());
+                    TextUtils.addFoodEffectTooltipWithDetail(stack, tooltipAdder, 1.0F, context.tickRate());
                 } else {
-                    TextUtils.addFoodEffectTooltip(stack, tooltip::add, 1.0F, context.tickRate());
+                    TextUtils.addFoodEffectTooltip(stack, tooltipAdder, 1.0F, context.tickRate());
                 }
             }
         }

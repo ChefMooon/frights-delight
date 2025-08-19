@@ -12,18 +12,10 @@ import java.util.List;
 
 public class FoodValuesImpl {
 
-    public static FoodProperties foodProperty(int nutrition, float saturation, boolean isFast, boolean alwaysEat, List<MobEffectInfo> effects) {
+    public static FoodProperties foodProperty(int nutrition, float saturation, boolean alwaysEat) {
         FoodProperties.Builder builder = new FoodProperties.Builder()
                 .nutrition(nutrition)
                 .saturationModifier(saturation);
-
-        for (MobEffectInfo effectInfo : effects) {
-            builder.effect(new MobEffectInstance(FoodValues.nonNullEffect(effectInfo.effect()), effectInfo.duration()), effectInfo.probability());
-        }
-
-        if (isFast) {
-            builder.fast();
-        }
 
         if (alwaysEat) {
             builder.alwaysEdible();

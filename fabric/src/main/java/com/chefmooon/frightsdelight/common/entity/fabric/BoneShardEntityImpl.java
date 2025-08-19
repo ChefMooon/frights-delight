@@ -24,16 +24,16 @@ public class BoneShardEntityImpl extends ThrowableItemProjectile {
     }
 
     public BoneShardEntityImpl(Level level, LivingEntity entity) {
-        super(FrightsDelightEntityTypesImpl.BONE_SHARD.get(), entity, level);
+        super(FrightsDelightEntityTypesImpl.BONE_SHARD.get(), entity, level, FrightsDelightItemsImpl.BONE_SHARD.get().getDefaultInstance());
     }
 
     public BoneShardEntityImpl(Level level, double x, double y, double z) {
-        super(FrightsDelightEntityTypesImpl.BONE_SHARD.get(), x, y, z, level);
+        super(FrightsDelightEntityTypesImpl.BONE_SHARD.get(), x, y, z, level, FrightsDelightItemsImpl.BONE_SHARD.get().getDefaultInstance());
     }
 
     @Override
     protected Item getDefaultItem() {
-        return FrightsDelightItemsImpl.BONE_SHARD;
+        return FrightsDelightItemsImpl.BONE_SHARD.get();
     }
 
     @Override

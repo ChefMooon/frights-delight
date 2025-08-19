@@ -10,7 +10,7 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -18,15 +18,15 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -36,7 +36,7 @@ import java.util.function.Supplier;
 
 public class DrinkableFeastBlock extends Block {
     public static final int MAX_SERVINGS = 4;
-    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+    public static final Property<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final IntegerProperty SERVINGS = IntegerProperty.create("servings", 0, MAX_SERVINGS);
     protected static final VoxelShape SHAPE = Block.box(1.d, .0d, 1.d, 15.d, 8.d, 15.d);
     public Supplier<Item> servingItem;
@@ -73,8 +73,8 @@ public class DrinkableFeastBlock extends Block {
         return SHAPE;
     }
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
-        return direction == Direction.DOWN && !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+    public BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
+        return direction == Direction.DOWN && !state.canSurvive(level, pos) ? Blocks.AIR.defaultBlockState() : super.updateShape(state, level, scheduledTickAccess, pos, direction, neighborPos, neighborState, random);
     }
 
     @Override
@@ -89,18 +89,18 @@ public class DrinkableFeastBlock extends Block {
     }
 
     @Override
-    public ItemInteractionResult useItemOn(ItemStack heldStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    public InteractionResult useItemOn(ItemStack heldStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         ItemStack serving = getServingItem(state);
         ItemStack heldItem = player.getItemInHand(hand);
 
         if (level.isClientSide()) {
             if (heldItem.is(serving.getItem())) {
                 if (addDrink(level, pos, state, player, hand).consumesAction()) {
-                    return ItemInteractionResult.SUCCESS;
+                    return InteractionResult.SUCCESS;
                 }
             } else {
                 if (dispenseDrink(level, pos, state, player, hand).consumesAction()) {
-                    return ItemInteractionResult.SUCCESS;
+                    return InteractionResult.SUCCESS;
                 }
             }
         }
@@ -112,11 +112,11 @@ public class DrinkableFeastBlock extends Block {
         }
     }
 
-    protected ItemInteractionResult dispenseDrink(Level world, BlockPos pos, BlockState state, Player player, InteractionHand hand) {
+    protected InteractionResult dispenseDrink(Level world, BlockPos pos, BlockState state, Player player, InteractionHand hand) {
         int servings = state.getValue(getServingsProperty());
 
         if (servings == 0) {
-            return ItemInteractionResult.FAIL;
+            return InteractionResult.FAIL;
         }
 
         if (servings > 0 ) {
@@ -137,10 +137,10 @@ public class DrinkableFeastBlock extends Block {
             }
         }
 
-        return ItemInteractionResult.SUCCESS;
+        return InteractionResult.SUCCESS;
     }
 
-    protected ItemInteractionResult addDrink(Level world, BlockPos pos, BlockState state, Player player, InteractionHand hand) {
+    protected InteractionResult addDrink(Level world, BlockPos pos, BlockState state, Player player, InteractionHand hand) {
         int servings = state.getValue(getServingsProperty());
 
         if (servings < MAX_SERVINGS) {
@@ -154,10 +154,10 @@ public class DrinkableFeastBlock extends Block {
                     player.drop(container, false);
                 }
             }
-            return ItemInteractionResult.SUCCESS;
+            return InteractionResult.SUCCESS;
         }
 
-        return ItemInteractionResult.FAIL;
+        return InteractionResult.FAIL;
     }
 
     public boolean addDrinkFromDispenser(Level world, BlockPos pos, BlockState state) {

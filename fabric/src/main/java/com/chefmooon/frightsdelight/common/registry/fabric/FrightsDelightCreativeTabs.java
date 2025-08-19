@@ -17,7 +17,7 @@ public class FrightsDelightCreativeTabs {
     public static void register() {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ITEM_GROUP, FabricItemGroup.builder()
                 .title(Component.translatable("itemGroup." + FrightsDelight.MOD_ID))
-                .icon(() -> new ItemStack(FrightsDelightItemsImpl.APPLE_SLIME))
+                .icon(() -> new ItemStack(FrightsDelightItemsImpl.APPLE_SLIME.get()))
                 .build());
     }
 }

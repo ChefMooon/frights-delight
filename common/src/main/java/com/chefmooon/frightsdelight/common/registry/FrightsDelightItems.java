@@ -2,10 +2,14 @@ package com.chefmooon.frightsdelight.common.registry;
 
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import dev.architectury.injectables.annotations.ExpectPlatform;
+import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.annotation.Nullable;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.Consumables;
 
 public class FrightsDelightItems {
 
@@ -18,15 +22,21 @@ public class FrightsDelightItems {
     }
 
     public static Item.Properties foodItem(FoodProperties food) {
-        return new Item.Properties().food(food);
+        return foodItem(food, null);
+    }
+public static Item.Properties foodItem(FoodProperties food, @Nullable Consumable consumable) {
+        return new Item.Properties().food(food)
+                .component(DataComponents.CONSUMABLE, consumable != null ? consumable : Consumables.DEFAULT_FOOD);
     }
 
     public static Item.Properties bowlFoodItem(FoodProperties food) {
-        return new Item.Properties().food(food).craftRemainder(Items.BOWL).stacksTo(16);
+        return bowlFoodItem(food, null);
     }
 
-    public static Item.Properties stickFoodItem(FoodProperties food) {
-        return new Item.Properties().food(food).craftRemainder(Items.STICK).stacksTo(16);
+    public static Item.Properties bowlFoodItem(FoodProperties food, @Nullable Consumable consumable) {
+        return new Item.Properties().food(food)
+                .component(DataComponents.CONSUMABLE, consumable != null ? consumable : Consumables.DEFAULT_FOOD)
+                .craftRemainder(Items.BOWL).stacksTo(16);
     }
 
     @ExpectPlatform
@@ -35,7 +45,14 @@ public class FrightsDelightItems {
     }
 
     public static Item.Properties drinkItem(FoodProperties food) {
-        return new Item.Properties().food(food).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
+        return drinkItem(food, null);
+//        return new Item.Properties().food(food).craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
+    }
+
+    public static Item.Properties drinkItem(FoodProperties food, @Nullable Consumable consumable) {
+        return new Item.Properties().food(food)
+                .component(DataComponents.CONSUMABLE, consumable != null ? consumable : Consumables.DEFAULT_DRINK)
+                .craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
     }
 
     public static final ResourceLocation FLESH_CRATE = item("flesh_crate");

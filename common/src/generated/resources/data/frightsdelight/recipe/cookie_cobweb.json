@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:cobweb"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    }
+    "minecraft:cobweb",
+    "minecraft:wheat",
+    "minecraft:wheat"
   ],
   "result": {
     "count": 8,

@@ -6,13 +6,13 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.item.ItemUtils;
-import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 import java.util.Random;
@@ -42,12 +42,12 @@ public class FrightsDelightDrinkableItem extends FrightsDelightConsumableItem {
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.DRINK;
+    public ItemUseAnimation getUseAnimation(ItemStack stack) {
+        return ItemUseAnimation.DRINK;
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack heldStack = player.getItemInHand(hand);
         FoodProperties foodData = heldStack.get(DataComponents.FOOD);
         if (foodData != null) {
@@ -59,9 +59,9 @@ public class FrightsDelightDrinkableItem extends FrightsDelightConsumableItem {
                         level.playSound((Player)null, pos, consumeSound, SoundSource.HOSTILE, 0.5F, 0.8F + level.random.nextFloat() * 0.4F);
                     }
                 }
-                return InteractionResultHolder.consume(heldStack);
+                return InteractionResult.CONSUME;
             } else {
-                return InteractionResultHolder.fail(heldStack);
+                return InteractionResult.FAIL;
             }
         }
         return ItemUtils.startUsingInstantly(level, player, hand);

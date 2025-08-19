@@ -7,7 +7,7 @@ import net.minecraft.core.Position;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Item;
@@ -21,7 +21,7 @@ public class BoneShardItemImpl extends Item implements ProjectileItem {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
         ItemStack heldStack = player.getItemInHand(hand);
         level.playSound(null, player.getX(), player.getY(), player.getZ(), FrightsDelightSounds.ENTITY_BONE_SHARD_THROW.get(), SoundSource.NEUTRAL, 0.5F, 0.4F / (level.random.nextFloat() * 0.4F + 0.8F));
         if (!level.isClientSide) {
@@ -36,7 +36,8 @@ public class BoneShardItemImpl extends Item implements ProjectileItem {
             heldStack.shrink(1);
         }
 
-        return InteractionResultHolder.sidedSuccess(heldStack, level.isClientSide());
+//        return InteractionResultHolder.sidedSuccess(heldStack, level.isClientSide());
+        return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
     }
 
     @Override

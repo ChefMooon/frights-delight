@@ -20,14 +20,14 @@ public class CommonSetupImpl {
     }
 
     public static void registerDispenserBehaviors() {
-        DispenserBlock.registerProjectileBehavior(BuiltInRegistries.ITEM.get(FrightsDelightItems.BONE_SHARD));
+        DispenserBlock.registerProjectileBehavior(FrightsDelightItemsImpl.BONE_SHARD.get());
 
-        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH, new DrinkableFeastDispenseBehavior());
-        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE, new DrinkableFeastDispenseBehavior());
-        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_SPIDEREYE, new DrinkableFeastDispenseBehavior());
-        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_GHASTTEAR, new DrinkableFeastDispenseBehavior());
-        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY, new DrinkableFeastDispenseBehavior());
-        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY, new DrinkableFeastDispenseBehavior());
-        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_COBWEB, new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get(), new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get(), new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get(), new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get(), new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get(), new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get(), new DrinkableFeastDispenseBehavior());
+        DispenserBlock.registerBehavior(FrightsDelightItemsImpl.PUNCH_COBWEB.get(), new DrinkableFeastDispenseBehavior());
     }
 }

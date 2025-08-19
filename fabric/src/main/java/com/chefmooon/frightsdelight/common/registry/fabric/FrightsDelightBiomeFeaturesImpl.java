@@ -8,6 +8,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
+import vectorwing.farmersdelight.refabricated.RegUtils;
 
 public class FrightsDelightBiomeFeaturesImpl {
     public static final Feature<? extends FeatureConfiguration> WILD_BUSH = registerFeature(FrightsDelightBiomeFeatures.WILD_BUSH, new WildBushFeature(WildBushConfiguration.CODEC));
@@ -17,6 +18,5 @@ public class FrightsDelightBiomeFeaturesImpl {
     }
 
     public static void register() {
-
     }
 }

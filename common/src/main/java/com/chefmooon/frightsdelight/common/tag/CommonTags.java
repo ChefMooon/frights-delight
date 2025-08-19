@@ -37,7 +37,7 @@ public class CommonTags {
     public static final TagKey<Item> C_FOODS_COOKIE = getCommonItemTagKey("foods/cookie");
 
     public static final TagKey<Item> C_TOOLS = getCommonItemTagKey("tools");
-    public static final TagKey<Item> C_TOOLS_KNIVES = getCommonItemTagKey("tools/knives");
+    public static final TagKey<Item> C_TOOLS_KNIFE = getCommonItemTagKey("tools/knife");
     public static final TagKey<Block> C_MINEABLE_KNIFE = getCommonBlockTagKey("mineable/knife");
 
     public static final TagKey<Item> C_FOODS_VEGETABLE = getCommonItemTagKey("foods/vegetable");

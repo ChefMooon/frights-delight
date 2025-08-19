@@ -12,6 +12,6 @@ public class FrightsDelightDamageTypes {
     public static final ResourceKey<DamageType> WITHER_BERRY_BUSH = ResourceKey.create(Registries.DAMAGE_TYPE, TextUtils.res("wither_berry_bush"));
 
     public static DamageSource getSimpleDamageSource(Level level, ResourceKey<DamageType> type) {
-        return new DamageSource(level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(type));
+        return new DamageSource(level.registryAccess().lookupOrThrow(Registries.DAMAGE_TYPE).getOrThrow(type));
     }
 }

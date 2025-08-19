@@ -10,9 +10,10 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.client.data.models.model.ModelLocationUtils;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.models.model.ModelLocationUtils;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -37,33 +38,33 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
+        HolderGetter<Item> itemGetter = this.registries.lookupOrThrow(Registries.ITEM);
 
-        this.dropSelf(FrightsDelightBlocksImpl.FLESH_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.BONE_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.PHANTOM_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.WEB_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE);
-        this.dropSelf(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE);
+        this.dropSelf(FrightsDelightBlocksImpl.FLESH_CRATE.get());
+        this.dropSelf(FrightsDelightBlocksImpl.BONE_CRATE.get());
+        this.dropSelf(FrightsDelightBlocksImpl.PHANTOM_CRATE.get());
+        this.dropSelf(FrightsDelightBlocksImpl.WEB_CRATE.get());
+        this.dropSelf(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE.get());
+        this.dropSelf(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE.get());
+        this.dropSelf(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE.get());
+        this.dropSelf(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get());
 
-        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_ROTTEN_FLESH, FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH);
-        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SLIMEAPPLE, FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE);
-        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SPIDEREYE, FrightsDelightItemsImpl.PUNCH_SPIDEREYE);
-        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_GHASTTEAR, FrightsDelightItemsImpl.PUNCH_GHASTTEAR);
-        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SOUL_BERRY, FrightsDelightItemsImpl.PUNCH_SOUL_BERRY);
-        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_WITHER_BERRY, FrightsDelightItemsImpl.PUNCH_WITHER_BERRY);
-        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_COBWEB, FrightsDelightItemsImpl.PUNCH_COBWEB);
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_ROTTEN_FLESH.get(), FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get());
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SLIMEAPPLE.get(), FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get());
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SPIDEREYE.get(), FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get());
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_GHASTTEAR.get(), FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get());
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SOUL_BERRY.get(), FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get());
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_WITHER_BERRY.get(), FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get());
+        createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_COBWEB.get(), FrightsDelightItemsImpl.PUNCH_COBWEB.get());
 
-        // can be used to regen, must change c:tools/knives -> forge:tools/kives TODO: remove manual recipes and use this datagen
-        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE, FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE);
-        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE, FrightsDelightItemsImpl.PUNCH_SPIDEREYE);
-        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR, FrightsDelightItemsImpl.PUNCH_GHASTTEAR);
-        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY, FrightsDelightItemsImpl.PUNCH_SOUL_BERRY);
-        //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY, FrightsDelightItemsImpl.PUNCH_WITHER_BERRY);
+        createPunchbowlDrops(itemGetter, FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE.get(), FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get());
+        createPunchbowlDrops(itemGetter, FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE.get(), FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get());
+        createPunchbowlDrops(itemGetter, FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR.get(), FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get());
+        createPunchbowlDrops(itemGetter, FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY.get(), FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get());
+        createPunchbowlDrops(itemGetter, FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY.get(), FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get());
 
-        this.createBushDrops(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH);
-        this.createBushDrops(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH);
+        createBushDrops(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get());
+        createBushDrops(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get());
 
     }
 
@@ -84,24 +85,24 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         ));
     }
 
-    private void createPunchbowlDrops(Block block, Item item) {
+    private void createPunchbowlDrops(HolderGetter<Item> itemGetter, Block block, Item item) {
         this.add(block, this.applyExplosionDecay(block, LootTable.lootTable()
                 .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f))))
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 4))
-                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemGetter, CommonTags.C_TOOLS_KNIFE)))))
                 .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0f))))
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 3))
-                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemGetter, CommonTags.C_TOOLS_KNIFE)))))
                 .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0f))))
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 2))
-                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemGetter, CommonTags.C_TOOLS_KNIFE)))))
                 .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0f))))
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(DrinkableFeastBlock.SERVINGS, 1))
-                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemGetter, CommonTags.C_TOOLS_KNIFE)))))
         ));
     }
 

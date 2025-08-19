@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "frightsdelight:apple_slime"
-    },
-    {
-      "item": "minecraft:wheat"
-    },
-    {
-      "item": "minecraft:wheat"
-    }
+    "frightsdelight:apple_slime",
+    "minecraft:wheat",
+    "minecraft:wheat"
   ],
   "result": {
     "count": 8,

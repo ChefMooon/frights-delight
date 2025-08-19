@@ -26,7 +26,7 @@ public class FrightsDelightLootTableEvents {
                     LootPool.Builder poolBuilder = LootPool.lootPool()
                             .setRolls(ConstantValue.exactly(1.0F))
                             .conditionally(LootItemRandomChanceCondition.randomChance(0.5F).build())
-                            .add(LootItem.lootTableItem(FrightsDelightItemsImpl.SOUL_BERRY))
+                            .add(LootItem.lootTableItem(FrightsDelightItemsImpl.SOUL_BERRY.get()))
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
@@ -35,7 +35,7 @@ public class FrightsDelightLootTableEvents {
                     LootPool.Builder poolBuilder = LootPool.lootPool()
                             .setRolls(ConstantValue.exactly(1.0F))
                             .conditionally(LootItemRandomChanceCondition.randomChance(0.5F).build())
-                            .add(LootItem.lootTableItem(FrightsDelightItemsImpl.SOUL_BERRY))
+                            .add(LootItem.lootTableItem(FrightsDelightItemsImpl.SOUL_BERRY.get()))
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0f, 2.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }
@@ -44,7 +44,7 @@ public class FrightsDelightLootTableEvents {
                     LootPool.Builder poolBuilder = LootPool.lootPool()
                             .setRolls(ConstantValue.exactly(1.0F))
                             .conditionally(LootItemRandomChanceCondition.randomChance(1.0F).build())
-                            .add(LootItem.lootTableItem(FrightsDelightItemsImpl.SOUL_BERRY))
+                            .add(LootItem.lootTableItem(FrightsDelightItemsImpl.SOUL_BERRY.get()))
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(3.0f, 5.0f)).build());
                     tableBuilder.pool(poolBuilder.build());
                 }

@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "frightsdelight:phantom_crate"
-    }
+    "frightsdelight:phantom_crate"
   ],
   "result": {
     "count": 9,

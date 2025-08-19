@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "frightsdelight:punch_slimeapple"
-    }
+    "A": "frightsdelight:punch_slimeapple"
   },
   "pattern": [
     " A ",

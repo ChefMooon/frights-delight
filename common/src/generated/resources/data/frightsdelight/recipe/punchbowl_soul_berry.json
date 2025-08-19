@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": {
-      "item": "frightsdelight:punch_soul_berry"
-    }
+    "A": "frightsdelight:punch_soul_berry"
   },
   "pattern": [
     " A ",

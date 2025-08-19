@@ -29,28 +29,28 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
 
     private void registerCommonTags() {
         getOrCreateTagBuilder(CommonTags.C_FOODS_BERRY)
-                .add(FrightsDelightItemsImpl.SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.WITHER_BERRY);
+                .add(FrightsDelightItemsImpl.SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY.get());
 
         getOrCreateTagBuilder(CommonTags.C_FOODS_SOUP)
-                .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE)
-                .add(FrightsDelightItemsImpl.SOUP_SLIME)
-                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.SOUP_COBWEB)
-                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR)
-                .add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY);
+                .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE.get())
+                .add(FrightsDelightItemsImpl.SOUP_SLIME.get())
+                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.SOUP_COBWEB.get())
+                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR.get())
+                .add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY.get());
 
         getOrCreateTagBuilder(CommonTags.C_FOODS_COOKIE)
-                .add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE)
-                .add(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.COOKIE_SLIME)
-                .add(FrightsDelightItemsImpl.COOKIE_COBWEB)
-                .add(FrightsDelightItemsImpl.COOKIE_GHAST_TEAR)
-                .add(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.COOKIE_WITHER_BERRY);
+                .add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE.get())
+                .add(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.COOKIE_SLIME.get())
+                .add(FrightsDelightItemsImpl.COOKIE_COBWEB.get())
+                .add(FrightsDelightItemsImpl.COOKIE_GHAST_TEAR.get())
+                .add(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.COOKIE_WITHER_BERRY.get());
 
         getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM)
                 .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_FLESH)
@@ -62,122 +62,122 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO)
                 .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO);
 
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_FLESH).add(FrightsDelightItemsImpl.FLESH_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_BONE).add(FrightsDelightItemsImpl.BONE_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_PHANTOM_MEMBRANE).add(FrightsDelightItemsImpl.PHANTOM_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_COBWEB).add(FrightsDelightItemsImpl.WEB_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_SPIDER_EYE).add(FrightsDelightItemsImpl.SPIDER_EYE_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_FERMENTED_SPIDER_EYE).add(FrightsDelightItemsImpl.FERMENTED_SPIDER_EYE_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO).add(FrightsDelightItemsImpl.POISONOUS_POTATO_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO).add(FrightsDelightItemsImpl.ROTTEN_TOMATO_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_FLESH).add(FrightsDelightItemsImpl.FLESH_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_BONE).add(FrightsDelightItemsImpl.BONE_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_PHANTOM_MEMBRANE).add(FrightsDelightItemsImpl.PHANTOM_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_COBWEB).add(FrightsDelightItemsImpl.WEB_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_SPIDER_EYE).add(FrightsDelightItemsImpl.SPIDER_EYE_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_FERMENTED_SPIDER_EYE).add(FrightsDelightItemsImpl.FERMENTED_SPIDER_EYE_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO).add(FrightsDelightItemsImpl.POISONOUS_POTATO_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO).add(FrightsDelightItemsImpl.ROTTEN_TOMATO_CRATE.get());
 
         getOrCreateTagBuilder(CommonTags.C_FOODS)
-                .add(FrightsDelightItemsImpl.APPLE_SLIME)
-                .add(FrightsDelightItemsImpl.UNDEAD_KEBAB)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_SPIDER_EYE)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIME)
-                .add(FrightsDelightItemsImpl.WEB_ON_STICK)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_GHAST_TEAR)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_WITHER_BERRY)
-                .add(FrightsDelightItemsImpl.MONSTER_MASH)
-                .add(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS);
+                .add(FrightsDelightItemsImpl.APPLE_SLIME.get())
+                .add(FrightsDelightItemsImpl.UNDEAD_KEBAB.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SPIDER_EYE.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIME.get())
+                .add(FrightsDelightItemsImpl.WEB_ON_STICK.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_GHAST_TEAR.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_WITHER_BERRY.get())
+                .add(FrightsDelightItemsImpl.MONSTER_MASH.get())
+                .add(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS.get());
     }
 
     private void registerCompatibilityItemTags() {
         // Create Item Tags
         getOrCreateTagBuilder(CompatibilityTags.CREATE_UPRIGHT_ON_BELT)
-                .add(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE)
-                .add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR)
-                .add(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY)
-                .add(FrightsDelightItemsImpl.PUNCH_COBWEB)
-                .add(FrightsDelightItemsImpl.PUNCHBOWL_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE)
-                .add(FrightsDelightItemsImpl.PUNCHBOWL_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.PUNCHBOWL_GHASTTEAR)
-                .add(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY)
-                .add(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB)
-                .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE)
-                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.SOUP_SLIME)
-                .add(FrightsDelightItemsImpl.SOUP_COBWEB)
-                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR)
-                .add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY);
+                .add(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get())
+                .add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get())
+                .add(FrightsDelightItemsImpl.PUNCH_COBWEB.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_GHASTTEAR.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB.get())
+                .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE.get())
+                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.SOUP_SLIME.get())
+                .add(FrightsDelightItemsImpl.SOUP_COBWEB.get())
+                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR.get())
+                .add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY.get());
 
         // Create: Craft's and Additions
         getOrCreateTagBuilder(CompatibilityTags.CREATE_ADDITION_PLANT_FOODS)
-                .add(FrightsDelightItemsImpl.SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.WITHER_BERRY);
+                .add(FrightsDelightItemsImpl.SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY.get());
 
         // Supplementaries Item Tags
         getOrCreateTagBuilder(CompatibilityTags.SUPPLEMENTARIES_COOKIES)
-                .add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE)
-                .add(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.COOKIE_SLIME)
-                .add(FrightsDelightItemsImpl.COOKIE_COBWEB)
-                .add(FrightsDelightItemsImpl.COOKIE_GHAST_TEAR)
-                .add(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.COOKIE_WITHER_BERRY);
+                .add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE.get())
+                .add(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.COOKIE_SLIME.get())
+                .add(FrightsDelightItemsImpl.COOKIE_COBWEB.get())
+                .add(FrightsDelightItemsImpl.COOKIE_GHAST_TEAR.get())
+                .add(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.COOKIE_WITHER_BERRY.get());
 
         // Dehydration Item Tags
         getOrCreateTagBuilder(CompatibilityTags.DEHYDRATION_HYDRATING_DRINKS)
-                .add(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE)
-                .add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR)
-                .add(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY)
-                .add(FrightsDelightItemsImpl.PUNCH_COBWEB);
+                .add(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get())
+                .add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get())
+                .add(FrightsDelightItemsImpl.PUNCH_COBWEB.get());
 
         getOrCreateTagBuilder(CompatibilityTags.DEHYDRATION_HYDRATING_STEW)
-                .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE)
-                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.SOUP_SLIME)
-                .add(FrightsDelightItemsImpl.SOUP_COBWEB)
-                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR)
-                .add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY);
+                .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE.get())
+                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.SOUP_SLIME.get())
+                .add(FrightsDelightItemsImpl.SOUP_COBWEB.get())
+                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR.get())
+                .add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY.get());
 
         // Origins Item Tags
         getOrCreateTagBuilder(CompatibilityTags.ORIGINS_MEAT)
-                .add(FrightsDelightItemsImpl.UNDEAD_KEBAB)
-                .add(FrightsDelightItemsImpl.MONSTER_MASH)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_SPIDER_EYE)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIME)
-                .add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE)
-                .add(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.COOKIE_SLIME)
-                .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE)
-                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE)
-                .add(FrightsDelightItemsImpl.SOUP_SLIME)
-                .add(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH)
-                .add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE)
-                .add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE)
+                .add(FrightsDelightItemsImpl.UNDEAD_KEBAB.get())
+                .add(FrightsDelightItemsImpl.MONSTER_MASH.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SPIDER_EYE.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_SLIME.get())
+                .add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE.get())
+                .add(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.COOKIE_SLIME.get())
+                .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE.get())
+                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.SOUP_SLIME.get())
+                .add(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get())
         ;
 
         getOrCreateTagBuilder(CompatibilityTags.ORIGINS_IGNORE_DIET)
-                .add(FrightsDelightItemsImpl.BONE_KEBAB_GHAST_TEAR)
-                .add(FrightsDelightItemsImpl.WEB_ON_STICK)
-                .add(FrightsDelightItemsImpl.COOKIE_GHAST_TEAR)
-                .add(FrightsDelightItemsImpl.COOKIE_COBWEB)
-                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR)
-                .add(FrightsDelightItemsImpl.SOUP_COBWEB)
-                .add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR)
-                .add(FrightsDelightItemsImpl.PUNCH_COBWEB)
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_GHAST_TEAR.get())
+                .add(FrightsDelightItemsImpl.WEB_ON_STICK.get())
+                .add(FrightsDelightItemsImpl.COOKIE_GHAST_TEAR.get())
+                .add(FrightsDelightItemsImpl.COOKIE_COBWEB.get())
+                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR.get())
+                .add(FrightsDelightItemsImpl.SOUP_COBWEB.get())
+                .add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get())
+                .add(FrightsDelightItemsImpl.PUNCH_COBWEB.get())
         ;
     }
 }

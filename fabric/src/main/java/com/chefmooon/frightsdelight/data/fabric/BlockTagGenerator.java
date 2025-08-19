@@ -38,13 +38,13 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
 
     private void registerCommonBlockTags() {
         getOrCreateTagBuilder(CommonTags.C_MINEABLE_KNIFE)
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_ROTTEN_FLESH)
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE)
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE)
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR)
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY)
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY)
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_COBWEB);
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_ROTTEN_FLESH.get())
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE.get())
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE.get())
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR.get())
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY.get())
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY.get())
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_COBWEB.get());
 
         getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS)
                 .addTag(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH)
@@ -56,35 +56,35 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .addTag(CommonTags.C_STORAGE_BLOCKS_POISONOUS_POTATO)
                 .addTag(CommonTags.C_STORAGE_BLOCKS_ROTTEN_TOMATO);
 
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH).add(FrightsDelightBlocksImpl.FLESH_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_BONE).add(FrightsDelightBlocksImpl.BONE_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_PHANTOM_MEMBRANE).add(FrightsDelightBlocksImpl.PHANTOM_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_COBWEB).add(FrightsDelightBlocksImpl.WEB_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_SPIDER_EYE).add(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_FERMENTED_SPIDER_EYE).add(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_POISONOUS_POTATO).add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE);
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_TOMATO).add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE);
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH).add(FrightsDelightBlocksImpl.FLESH_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_BONE).add(FrightsDelightBlocksImpl.BONE_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_PHANTOM_MEMBRANE).add(FrightsDelightBlocksImpl.PHANTOM_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_COBWEB).add(FrightsDelightBlocksImpl.WEB_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_SPIDER_EYE).add(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_FERMENTED_SPIDER_EYE).add(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_POISONOUS_POTATO).add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_TOMATO).add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get());
     }
 
     private void registerMinecraftBlockTags() {
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
-                .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH)
-                .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH)
-                .add(FrightsDelightBlocksImpl.FLESH_CRATE)
-                .add(FrightsDelightBlocksImpl.BONE_CRATE)
-                .add(FrightsDelightBlocksImpl.PHANTOM_CRATE)
-                .add(FrightsDelightBlocksImpl.WEB_CRATE)
-                .add(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE)
-                .add(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE)
-                .add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE)
-                .add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE);
+                .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get())
+                .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get())
+                .add(FrightsDelightBlocksImpl.FLESH_CRATE.get())
+                .add(FrightsDelightBlocksImpl.BONE_CRATE.get())
+                .add(FrightsDelightBlocksImpl.PHANTOM_CRATE.get())
+                .add(FrightsDelightBlocksImpl.WEB_CRATE.get())
+                .add(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE.get())
+                .add(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE.get())
+                .add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE.get())
+                .add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get());
 
         getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
-                .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH)
-                .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH);
+                .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get())
+                .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get());
 
         getOrCreateTagBuilder(BlockTags.FALL_DAMAGE_RESETTING)
-                .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH)
-                .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH);
+                .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get())
+                .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get());
     }
 }

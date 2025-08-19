@@ -22,6 +22,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -34,8 +35,8 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     public static final int GROW_RANGE = 5;
     public static final TagKey<Block> GROW_CONDITION_BLOCK = FrightsDelightTags.SOUL_BERRY_BUSH_GROW_CONDITIION;
     public static final BooleanProperty TRANSFORM_CONDITION = BooleanProperty.create("transform_condition");
-    public SoulBerryBushBlock() {
-        super(Block.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH));
+    public SoulBerryBushBlock(Properties properties) {
+        super(properties);
     }
 
     @Override
@@ -50,8 +51,8 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
-        return new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.SOUL_BERRY));
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
+        return new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.SOUL_BERRY).get());
     }
 
     @Override
@@ -71,7 +72,7 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
             }
         }
         if (i == 3 && hasTransformBrightness(level.getRawBrightness(pos.above(), 0)) && hasTransformCondition(level, pos)) {
-            BlockState blockState = (BlockState)BuiltInRegistries.BLOCK.get(FrightsDelightBlocks.WITHER_BERRY_BUSH).defaultBlockState()
+            BlockState blockState = (BlockState)BuiltInRegistries.BLOCK.get(FrightsDelightBlocks.WITHER_BERRY_BUSH).get().value().defaultBlockState()
                     .setValue(WitherBerryBushBlock.GROW_CONDITION, Boolean.TRUE)
                     .setValue(WitherBerryBushBlock.AGE, 3);
             level.playSound((Player)null, pos, SoundEvents.SOUL_SAND_PLACE, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
@@ -92,12 +93,12 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
             return InteractionResult.PASS;
         } else if (i > 1) {
             int j = 1 + level.random.nextInt(2);
-            popResource(level, pos, new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.SOUL_BERRY), j + (bl ? 1 : 0)));
+            popResource(level, pos, new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.SOUL_BERRY).get(), j + (bl ? 1 : 0)));
             level.playSound((Player)null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
             BlockState blockState = (BlockState)state.setValue(AGE, 1);
             level.setBlock(pos, blockState, 2);
             level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, blockState));
-            return InteractionResult.sidedSuccess(level.isClientSide);
+            return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
         } else {
             return super.useWithoutItem(state, level, pos, player, hit);
         }
@@ -115,11 +116,13 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     }
 
     @Override
-    public BlockState updateShape(BlockState state, Direction direction, BlockState neighborState, LevelAccessor level, BlockPos pos, BlockPos neighborPos) {
+    public BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
         if (!level.isClientSide()) {
-            updateConditions(state, level, pos);
+            if (level instanceof LevelAccessor levelAccessor) { // TODO: test this?
+                updateConditions(state, levelAccessor, pos);
+            }
         }
-        return super.updateShape(state, direction, neighborState, level, pos, neighborPos);
+        return super.updateShape(state, level, scheduledTickAccess, pos, direction, neighborPos, neighborState, random);
     }
 
     @Override

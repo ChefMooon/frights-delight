@@ -18,16 +18,17 @@ public class VillagerEventsImpl {
     public static void addTrades() {
         if (Configuration.farmersBuyFrDCrops()) {
             TradeOfferHelper.registerVillagerOffers(VillagerProfession.BUTCHER, 3, (trades) -> {
-                trades.add(emeraldForItemsTrade(FrightsDelightItemsImpl.SOUL_BERRY,10, 12, 30));
+                trades.add(emeraldForItemsTrade(FrightsDelightItemsImpl.SOUL_BERRY.get(),10, 12, 30));
             });
             TradeOfferHelper.registerVillagerOffers(VillagerProfession.BUTCHER, 3, (trades) -> {
-                trades.add(emeraldForItemsTrade(FrightsDelightItemsImpl.WITHER_BERRY,5, 12, 40));
+                trades.add(emeraldForItemsTrade(FrightsDelightItemsImpl.WITHER_BERRY.get(),5, 12, 40));
             });
         }
 
         if (Configuration.wanderingTraderSellsFrdDItems()) {
-            TradeOfferHelper.registerWanderingTraderOffers(1, (trades) -> {
-                trades.add(itemForEmeraldTrade(FrightsDelightItemsImpl.SOUL_BERRY,1, 12));
+            TradeOfferHelper.registerWanderingTraderOffers(trades -> {
+                trades.addOffersToPool(TradeOfferHelper.WanderingTraderOffersBuilder.BUY_ITEMS_POOL,
+                        itemForEmeraldTrade(FrightsDelightItemsImpl.SOUL_BERRY.get(), 12, 1));
             });
         }
     }

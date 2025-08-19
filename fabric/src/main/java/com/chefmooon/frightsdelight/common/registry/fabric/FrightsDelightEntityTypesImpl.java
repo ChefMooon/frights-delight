@@ -2,8 +2,11 @@ package com.chefmooon.frightsdelight.common.registry.fabric;
 
 import com.chefmooon.frightsdelight.common.entity.fabric.BoneShardEntityImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightEntityTypes;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -16,7 +19,7 @@ public class FrightsDelightEntityTypesImpl {
                     .sized(0.25F, 0.25F)
                     .clientTrackingRange(4)
                     .updateInterval(10)
-                    .build())
+                    .build(ResourceKey.create(Registries.ENTITY_TYPE, TextUtils.res(FrightsDelightEntityTypes.BONE_SHARD.getPath()))))
     );
 
 

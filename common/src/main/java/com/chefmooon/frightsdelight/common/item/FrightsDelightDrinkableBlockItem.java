@@ -14,19 +14,21 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.BlocksAttacks;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.equipment.Equippable;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-import java.util.List;
-import java.util.Objects;
 import java.util.Random;
+import java.util.function.Consumer;
 
 public class FrightsDelightDrinkableBlockItem extends FrightsDelightConsumableItemNameBlockItem {
     protected final boolean hasCustomTooltip;
@@ -46,29 +48,19 @@ public class FrightsDelightDrinkableBlockItem extends FrightsDelightConsumableIt
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.DRINK;
+    public ItemUseAnimation getUseAnimation(ItemStack stack) {
+        return ItemUseAnimation.DRINK;
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack heldStack = player.getItemInHand(hand);
-        FoodProperties foodData = heldStack.get(DataComponents.FOOD);
-        if (foodData != null) {
-            if (player.canEat(foodData.canAlwaysEat())) {
-                player.startUsingItem(hand);
-                if (Configuration.punchConsumeSound() && consumeSound != null) {
-                    if (new Random().nextInt(Configuration.punchConsumeChance()) == 0) { // 4 = 25% chance of sound on consume
-                        BlockPos pos = new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ());
-                        level.playSound((Player)null, pos, consumeSound, SoundSource.HOSTILE, 0.5F, 0.8F + level.random.nextFloat() * 0.4F);
-                    }
-                }
-                return InteractionResultHolder.consume(heldStack);
-            } else {
-                return InteractionResultHolder.fail(heldStack);
+    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+        if (Configuration.punchConsumeSound() && consumeSound != null) {
+            if (new Random().nextInt(Configuration.punchConsumeChance()) == 0) { // 4 = 25% chance of sound on consume
+                BlockPos pos = new BlockPos((int) player.getX(), (int) player.getY(), (int) player.getZ());
+                level.playSound(player, pos, consumeSound, SoundSource.HOSTILE, 0.5F, 0.8F + level.random.nextFloat() * 0.4F);
             }
         }
-        return ItemUtils.startUsingInstantly(level, player, hand);
+        return super.use(level, player, hand);
     }
 
     @Override
@@ -77,12 +69,11 @@ public class FrightsDelightDrinkableBlockItem extends FrightsDelightConsumableIt
             this.affectConsumer(stack, level, consumer);
         }
 
-        ItemStack containerStack = new ItemStack(Objects.requireNonNull(stack.getItem().getCraftingRemainingItem()));
-        Player player;
-        if (stack.get(DataComponents.FOOD) != null) {
+        ItemStack containerStack = stack.getRecipeRemainder();
+        if (stack.get(DataComponents.FOOD) != null || stack.get(DataComponents.CONSUMABLE) != null) {
             super.finishUsingItem(stack, level, consumer);
         } else {
-            player = consumer instanceof Player ? (Player)consumer : null;
+            Player player = consumer instanceof Player ? (Player)consumer : null;
             if (player instanceof ServerPlayer) {
                 CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer)player, stack);
             }
@@ -98,13 +89,11 @@ public class FrightsDelightDrinkableBlockItem extends FrightsDelightConsumableIt
         if (stack.isEmpty()) {
             return containerStack;
         } else {
-            if (consumer instanceof Player) {
-                player = (Player)consumer;
-                if (!((Player)consumer).getAbilities().instabuild && !player.getInventory().add(containerStack)) {
+            if (consumer instanceof Player player && !((Player) consumer).getAbilities().instabuild) {
+                if (!player.getInventory().add(containerStack)) {
                     player.drop(containerStack, false);
                 }
             }
-
             return stack;
         }
     }
@@ -140,17 +129,17 @@ public class FrightsDelightDrinkableBlockItem extends FrightsDelightConsumableIt
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay tooltip, Consumer<Component> tooltipAdder, TooltipFlag flag) {
         if (Configuration.foodEffectTooltip()) { // todo - add new config BlockItem tooltips?
             if (hasCustomTooltip) {
-                tooltip.add(TextUtils.getTranslatable("tooltip.glass_cup").withStyle(ChatFormatting.DARK_GRAY));
+                tooltipAdder.accept(TextUtils.getTranslatable("tooltip.glass_cup").withStyle(ChatFormatting.DARK_GRAY));
             }
 
             if (hasFoodEffectTooltip) {
                 if (Configuration.foodEffectChanceTooltip()) {
-                    TextUtils.addFoodEffectTooltipWithDetail(stack, tooltip::add, 1.0F, context.tickRate());
+                    TextUtils.addFoodEffectTooltipWithDetail(stack, tooltipAdder, 1.0F, context.tickRate());
                 } else {
-                    TextUtils.addFoodEffectTooltip(stack, tooltip::add, 1.0F, context.tickRate());
+                    TextUtils.addFoodEffectTooltip(stack, tooltipAdder, 1.0F, context.tickRate());
                 }
             }
         }

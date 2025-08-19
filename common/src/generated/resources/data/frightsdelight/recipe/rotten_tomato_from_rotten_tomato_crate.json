@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "frightsdelight:rotten_tomato_crate"
-    }
+    "frightsdelight:rotten_tomato_crate"
   ],
   "result": {
     "count": 9,
