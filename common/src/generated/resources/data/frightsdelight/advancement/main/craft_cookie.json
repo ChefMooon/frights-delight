@@ -1,37 +1,11 @@
 {
   "parent": "frightsdelight:main/get_monster_drop",
   "criteria": {
-    "has_cookie_flesh": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "frightsdelight:cookie_flesh"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_cookie_spidereye": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "frightsdelight:cookie_spidereye"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_cookie_cobweb": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "frightsdelight:cookie_cobweb"
-            ]
+            "items": "frightsdelight:cookie_cobweb"
           }
         ]
       },
@@ -41,21 +15,17 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "frightsdelight:cookie_ghast_tear"
-            ]
+            "items": "frightsdelight:cookie_ghast_tear"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_cookie_slimeapple": {
+    "has_cookie_rotten_flesh": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "frightsdelight:cookie_slimeapple"
-            ]
+            "items": "frightsdelight:cookie_flesh"
           }
         ]
       },
@@ -65,9 +35,17 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "frightsdelight:cookie_slime"
-            ]
+            "items": "frightsdelight:cookie_slime"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_slimeapple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:cookie_slimeapple"
           }
         ]
       },
@@ -77,9 +55,17 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "frightsdelight:cookie_soul_berry"
-            ]
+            "items": "frightsdelight:cookie_soul_berry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cookie_spidereye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:cookie_spidereye"
           }
         ]
       },
@@ -89,9 +75,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "frightsdelight:cookie_wither_berry"
-            ]
+            "items": "frightsdelight:cookie_wither_berry"
           }
         ]
       },
@@ -99,24 +83,20 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "frightsdelight.advancement.craft_cookie.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "count": 1,
       "id": "frightsdelight:cookie_flesh"
     },
-    "show_toast": true,
     "title": {
       "translate": "frightsdelight.advancement.craft_cookie"
     }
   },
   "requirements": [
     [
-      "has_cookie_flesh",
+      "has_cookie_rotten_flesh",
       "has_cookie_spidereye",
       "has_cookie_cobweb",
       "has_cookie_ghast_tear",

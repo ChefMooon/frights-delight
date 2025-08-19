@@ -1,0 +1,94 @@
+{
+  "parent": "frightsdelight:main/craft_cookie",
+  "criteria": {
+    "has_bottle_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:punch_rotten_flesh"
+          },
+          {
+            "items": "frightsdelight:punch_slimeapple"
+          },
+          {
+            "items": "frightsdelight:punch_spidereye"
+          },
+          {
+            "items": "frightsdelight:punch_ghasttear"
+          },
+          {
+            "items": "frightsdelight:punch_soul_berry"
+          },
+          {
+            "items": "frightsdelight:punch_wither_berry"
+          },
+          {
+            "items": "frightsdelight:punch_cobweb"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bowl_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:soup_rotten_flesh"
+          },
+          {
+            "items": "frightsdelight:soup_spider_eye"
+          },
+          {
+            "items": "frightsdelight:soup_slime"
+          },
+          {
+            "items": "frightsdelight:soup_cobweb"
+          },
+          {
+            "items": "frightsdelight:soup_ghast_tear"
+          },
+          {
+            "items": "frightsdelight:soup_soul_berry"
+          },
+          {
+            "items": "frightsdelight:soup_wither_berry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_plate_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:pasta_with_slimeballs"
+          },
+          {
+            "items": "frightsdelight:monster_mash"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "frightsdelight.advancement.craft_best.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "frightsdelight:pasta_with_slimeballs"
+    },
+    "title": {
+      "translate": "frightsdelight.advancement.craft_best"
+    }
+  },
+  "requirements": [
+    [
+      "has_plate_item",
+      "has_bowl_item",
+      "has_bottle_item"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

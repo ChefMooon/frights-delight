@@ -162,14 +162,14 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ADVANCEMENT + ".craft_cookie.desc", "Cooking the food in different ways seems to make the effect less common");
         translationBuilder.add(ADVANCEMENT + ".craft_best", "Almost Edible");
         translationBuilder.add(ADVANCEMENT + ".craft_best.desc", "Food in plates, bowls, and drinks seem to be the \"safest\" to consume");
-        translationBuilder.add(ADVANCEMENT + ".craft_punch_bowl", "Something's in my Punch");
-        translationBuilder.add(ADVANCEMENT + ".craft_punch_bowl.desc", "Drinks can be combined and placed. Grab a bottle and have a sip!");
+        translationBuilder.add(ADVANCEMENT + ".craft_punchbowl", "Something's in my Punch");
+        translationBuilder.add(ADVANCEMENT + ".craft_punchbowl.desc", "Drinks can be combined and placed. Grab a bottle and have a sip!");
         translationBuilder.add(ADVANCEMENT + ".craft_bone_shard", "Bone Kebab");
         translationBuilder.add(ADVANCEMENT + ".craft_bone_shard.desc", "Cut a Bone with a Knife on a Cutting Board. Can be used to protect, attack, or to make a light snack.");
         translationBuilder.add(ADVANCEMENT + ".hit_skeleton_with_bone_shard", "Bone Shattering");
         translationBuilder.add(ADVANCEMENT + ".hit_skeleton_with_bone_shard.desc", "Throw a Bone Shard at a skeleton!");
-        translationBuilder.add(ADVANCEMENT + ".master_chef", "Master of Fright");
-        translationBuilder.add(ADVANCEMENT + ".master_chef.desc", "Conquer all food and drink items in " + FORMATTED_MOD_ID);
+        translationBuilder.add(ADVANCEMENT + ".frd_master", "Master of Fright");
+        translationBuilder.add(ADVANCEMENT + ".frd_master.desc", "Conquer all food and drink items in " + FORMATTED_MOD_ID);
 
         translationBuilder.add(CONFIG + "title", FORMATTED_MOD_ID + " Settings");
         translationBuilder.add(CONFIG + "category.common", "Common Settings");

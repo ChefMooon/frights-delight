@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "frightsdelight:bone_shard"
-            ]
+            "items": "frightsdelight:bone_shard"
           }
         ]
       },
@@ -15,17 +13,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "frightsdelight.advancement.craft_bone_shard.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "count": 1,
-      "id": "minecraft:bone"
+      "id": "frightsdelight:bone_shard"
     },
-    "show_toast": true,
     "title": {
       "translate": "frightsdelight.advancement.craft_bone_shard"
     }

@@ -1,0 +1,77 @@
+{
+  "parent": "frightsdelight:main/root",
+  "criteria": {
+    "has_punch_ghasttear": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:punch_ghasttear"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_slimeapple": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:punch_slimeapple"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_soul_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:punch_soul_berry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_spidereye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:punch_spidereye"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_wither_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:punch_wither_berry"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "frightsdelight.advancement.craft_punchbowl.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "frightsdelight:punch_spidereye"
+    },
+    "title": {
+      "translate": "frightsdelight.advancement.craft_punchbowl"
+    }
+  },
+  "requirements": [
+    [
+      "has_punch_spidereye",
+      "has_punch_slimeapple",
+      "has_punch_ghasttear",
+      "has_punch_soul_berry",
+      "has_punch_wither_berry"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

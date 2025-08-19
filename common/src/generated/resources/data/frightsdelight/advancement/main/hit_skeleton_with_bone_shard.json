@@ -1,7 +1,7 @@
 {
   "parent": "frightsdelight:main/craft_bone_shard",
   "criteria": {
-    "hit_skeleton_with_bone_shard": {
+    "hit_skelton_with_bone_shard": {
       "conditions": {
         "damage": {
           "type": {
@@ -30,24 +30,20 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "frightsdelight.advancement.hit_skeleton_with_bone_shard.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "count": 1,
       "id": "frightsdelight:bone_shard"
     },
-    "show_toast": true,
     "title": {
       "translate": "frightsdelight.advancement.hit_skeleton_with_bone_shard"
     }
   },
   "requirements": [
     [
-      "hit_skeleton_with_bone_shard"
+      "hit_skelton_with_bone_shard"
     ]
   ],
   "sends_telemetry_event": true

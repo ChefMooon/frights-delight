@@ -8,20 +8,10 @@ NeoForge, and Fabric
 
 ***
 
-### Added
-
-- Custom damage source and death messages for Soul and Wither Berry Bushes
-- Soul and Wither Berries can now be used as Create Potato Cannon ammo (Create 6.0.0+)
-
-### Changed
-
-- Punch and Punch Bowl break particles texture improved
-- Punch Block improved bubble particle consistency
-- Punch Bowl bubble particle spawning now scales with amount of servings
+Minecraft 1.21.5 Fabric Release!
 
 ### Fixed
 
-- Added blocks/items to tags: c:foods, c:storage_blocks, c:storage_blocks/[item], c:foods/berry,
-c:foods/soup, c:foods/cookie (Thank you, ffuentesm!)
+- Added missing Slime Apple Soup to Master of Fright advancement
 
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)
