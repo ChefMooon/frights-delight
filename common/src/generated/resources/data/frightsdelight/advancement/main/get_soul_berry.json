@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "frightsdelight:soul_berry"
-            ]
+            "items": "frightsdelight:soul_berry"
           }
         ]
       },
@@ -15,17 +13,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "frightsdelight.advancement.get_soul_berry.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "count": 1,
       "id": "frightsdelight:soul_berry"
     },
-    "show_toast": true,
     "title": {
       "translate": "frightsdelight.advancement.get_soul_berry"
     }

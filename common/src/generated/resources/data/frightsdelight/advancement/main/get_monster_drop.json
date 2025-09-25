@@ -1,25 +1,21 @@
 {
   "parent": "frightsdelight:main/root",
   "criteria": {
-    "has_rotten_flesh": {
+    "has_cobweb": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:rotten_flesh"
-            ]
+            "items": "minecraft:cobweb"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_spider_eye": {
+    "has_monster_drop": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:spider_eye"
-            ]
+            "items": "minecraft:cobweb"
           }
         ]
       },
@@ -29,9 +25,17 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:phantom_membrane"
-            ]
+            "items": "minecraft:phantom_membrane"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rotten_flesh": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:rotten_flesh"
           }
         ]
       },
@@ -41,21 +45,17 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:slime_ball"
-            ]
+            "items": "minecraft:slime_ball"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_cobweb": {
+    "has_spdier_eye": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:cobweb"
-            ]
+            "items": "minecraft:spider_eye"
           }
         ]
       },
@@ -63,25 +63,22 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "frightsdelight.advancement.get_monster_drop.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "count": 1,
       "id": "minecraft:cobweb"
     },
-    "show_toast": true,
     "title": {
       "translate": "frightsdelight.advancement.get_monster_drop"
     }
   },
   "requirements": [
     [
+      "has_monster_drop",
       "has_rotten_flesh",
-      "has_spider_eye",
+      "has_spdier_eye",
       "has_phantom_membrane",
       "has_slime_ball",
       "has_cobweb"

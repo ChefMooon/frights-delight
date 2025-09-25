@@ -4,9 +4,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:dirt"
-            ]
+            "items": "minecraft:dirt"
           }
         ]
       },
@@ -14,18 +12,15 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
+    "announce_to_chat": false,
     "background": "minecraft:textures/block/soul_sand.png",
     "description": {
       "translate": "frightsdelight.advancement.root.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "count": 1,
       "id": "frightsdelight:apple_slime"
     },
-    "show_toast": true,
     "title": {
       "translate": "frightsdelight.advancement.root"
     }

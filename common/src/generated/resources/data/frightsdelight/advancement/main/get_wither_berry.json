@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "frightsdelight:wither_berry"
-            ]
+            "items": "frightsdelight:wither_berry"
           }
         ]
       },
@@ -15,17 +13,13 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
     "description": {
       "translate": "frightsdelight.advancement.get_wither_berry.desc"
     },
-    "frame": "task",
-    "hidden": false,
     "icon": {
       "count": 1,
       "id": "frightsdelight:wither_berry"
     },
-    "show_toast": true,
     "title": {
       "translate": "frightsdelight.advancement.get_wither_berry"
     }
@@ -35,8 +29,5 @@
       "has_wither_berry"
     ]
   ],
-  "rewards": {
-    "experience": 50
-  },
   "sends_telemetry_event": true
 }
