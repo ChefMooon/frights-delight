@@ -7,8 +7,4 @@ NeoForge, and Fabric
 
 ***
 
-### Fixed
-
-- Added missing Slime Apple Soup to Master of Fright advancement
-
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
