@@ -12,5 +12,6 @@ Minecraft 1.21.5 Fabric Release!
 ### Fixed
 
 - Added missing Slime Apple Soup to Master of Fright advancement
+- Adding missing translations for mod tags
 
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)

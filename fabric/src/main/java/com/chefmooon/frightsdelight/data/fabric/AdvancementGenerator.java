@@ -12,6 +12,7 @@ import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.critereon.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.entity.EntityType;
@@ -62,25 +63,24 @@ public class AdvancementGenerator extends FabricAdvancementProvider {
                 .save(consumer, getAdvancementName("craft_cookie"));
 
         AdvancementHolder craftBest = getAdvancement(craftCookie, FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS.get(), "craft_best", AdvancementType.TASK, true, true, false)
-                .addCriterion("has_plate_item", InventoryChangeTrigger.TriggerInstance.hasItems(
-                        FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS.get(),
-                        FrightsDelightItemsImpl.MONSTER_MASH.get()))
-                .addCriterion("has_bowl_item", InventoryChangeTrigger.TriggerInstance.hasItems(
-                        FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH.get(),
-                        FrightsDelightItemsImpl.SOUP_SPIDER_EYE.get(),
-                        FrightsDelightItemsImpl.SOUP_SLIME.get(),
-                        FrightsDelightItemsImpl.SOUP_COBWEB.get(),
-                        FrightsDelightItemsImpl.SOUP_GHAST_TEAR.get(),
-                        FrightsDelightItemsImpl.SOUP_SOUL_BERRY.get(),
-                        FrightsDelightItemsImpl.SOUP_WITHER_BERRY.get()))
-                .addCriterion("has_bottle_item", InventoryChangeTrigger.TriggerInstance.hasItems(
-                        FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get(),
-                        FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get(),
-                        FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get(),
-                        FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get(),
-                        FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get(),
-                        FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get(),
-                        FrightsDelightItemsImpl.PUNCH_COBWEB.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.MONSTER_MASH.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.MONSTER_MASH.get()))
+
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SOUP_SPIDER_EYE.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUP_SPIDER_EYE.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SOUP_SLIME.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUP_SLIME.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SOUP_COBWEB.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUP_COBWEB.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SOUP_GHAST_TEAR.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUP_GHAST_TEAR.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SOUP_SOUL_BERRY.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUP_SOUL_BERRY.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SOUP_WITHER_BERRY.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUP_WITHER_BERRY.get()))
+
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.PUNCH_COBWEB.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_COBWEB.get()))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getAdvancementName("craft_best"));
 

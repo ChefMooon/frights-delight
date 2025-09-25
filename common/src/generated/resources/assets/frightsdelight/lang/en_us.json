@@ -144,5 +144,13 @@
   "item.frightsdelight.undead_kebab": "Undead Kebab",
   "item.frightsdelight.web_on_stick": "Cobweb Kebab",
   "item.frightsdelight.wither_berry": "Wither Berries",
-  "itemGroup.frightsdelight": "Fright's Delight"
+  "itemGroup.frightsdelight": "Fright's Delight",
+  "tag.item.c.storage_blocks.bone": "Bone Storage Blocks",
+  "tag.item.c.storage_blocks.cobweb": "Cobweb Storage Blocks",
+  "tag.item.c.storage_blocks.fermented_spider_eye": "Fermented Spider Eye Storage Blocks",
+  "tag.item.c.storage_blocks.phantom_membrane": "Phantom Membrane Storage Blocks",
+  "tag.item.c.storage_blocks.poisonous_potato": "Poisonous Potato Storage Blocks",
+  "tag.item.c.storage_blocks.rotten_flesh": "Rotten Flesh Storage Blocks",
+  "tag.item.c.storage_blocks.rotten_tomato": "Rotten Tomato Storage Blocks",
+  "tag.item.c.storage_blocks.spider_eye": "Spider Eye Storage Blocks"
 }
