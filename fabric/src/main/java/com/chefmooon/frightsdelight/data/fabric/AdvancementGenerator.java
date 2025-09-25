@@ -105,11 +105,13 @@ public class AdvancementGenerator extends FabricAdvancementProvider {
                 .save(consumer, getAdvancementName("get_wither_berry"));
 
         AdvancementHolder craftPunchBowl = getAdvancement(root, FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get(), "craft_punchbowl", AdvancementType.TASK, true, true, false)
-                .addCriterion("has_punch_spidereye", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get()))
-                .addCriterion("has_punch_slimeapple", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get()))
-                .addCriterion("has_punch_ghasttear", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get()))
-                .addCriterion("has_punch_soul_berry", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get()))
-                .addCriterion("has_punch_wither_berry", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get()))
+                .addCriterion("has_punchbowl_rotten_flesh", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCHBOWL_ROTTEN_FLESH.get()))
+                .addCriterion("has_punchbowl_spidereye", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE.get()))
+                .addCriterion("has_punchbowl_slimeapple", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCHBOWL_SLIMEAPPLE.get()))
+                .addCriterion("has_punchbowl_cobweb", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB.get()))
+                .addCriterion("has_punchbowl_ghasttear", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCHBOWL_GHASTTEAR.get()))
+                .addCriterion("has_punchbowl_soul_berry", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY.get()))
+                .addCriterion("has_punchbowl_wither_berry", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY.get()))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getAdvancementName("craft_punchbowl"));
 
