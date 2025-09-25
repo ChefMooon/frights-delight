@@ -1,60 +1,84 @@
 {
   "parent": "frightsdelight:main/root",
   "criteria": {
-    "has_punch_ghasttear": {
+    "has_punchbowl_cobweb": {
       "conditions": {
         "items": [
           {
             "items": [
-              "frightsdelight:punch_ghasttear"
+              "frightsdelight:punchbowl_cobweb"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_punch_slimeapple": {
+    "has_punchbowl_ghasttear": {
       "conditions": {
         "items": [
           {
             "items": [
-              "frightsdelight:punch_slimeapple"
+              "frightsdelight:punchbowl_ghasttear"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_punch_soul_berry": {
+    "has_punchbowl_rotten_flesh": {
       "conditions": {
         "items": [
           {
             "items": [
-              "frightsdelight:punch_soul_berry"
+              "frightsdelight:punchbowl_rotten_flesh"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_punch_spidereye": {
+    "has_punchbowl_slimeapple": {
       "conditions": {
         "items": [
           {
             "items": [
-              "frightsdelight:punch_spidereye"
+              "frightsdelight:punchbowl_slimeapple"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_punch_wither_berry": {
+    "has_punchbowl_soul_berry": {
       "conditions": {
         "items": [
           {
             "items": [
-              "frightsdelight:punch_wither_berry"
+              "frightsdelight:punchbowl_soul_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punchbowl_spidereye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punchbowl_spidereye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punchbowl_wither_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punchbowl_wither_berry"
             ]
           }
         ]
@@ -79,11 +103,13 @@
   },
   "requirements": [
     [
-      "has_punch_spidereye",
-      "has_punch_slimeapple",
-      "has_punch_ghasttear",
-      "has_punch_soul_berry",
-      "has_punch_wither_berry"
+      "has_punchbowl_rotten_flesh",
+      "has_punchbowl_spidereye",
+      "has_punchbowl_slimeapple",
+      "has_punchbowl_cobweb",
+      "has_punchbowl_ghasttear",
+      "has_punchbowl_soul_berry",
+      "has_punchbowl_wither_berry"
     ]
   ],
   "sends_telemetry_event": true
