@@ -9,6 +9,6 @@ NeoForge, and Fabric
 
 ### Fixed
 
-- [Fabric 1.20.1 Only] Fix Potato Cannon projectile format to Create 0.5.1
+- Added missing Slime Apple Soup to Master of Fright advancement
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)

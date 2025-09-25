@@ -1,7 +1,7 @@
 {
   "parent": "frightsdelight:main/craft_bone_shard",
   "criteria": {
-    "hit_skeleton_with_bone_shard": {
+    "hit_skelton_with_bone_shard": {
       "conditions": {
         "damage": {
           "type": {
@@ -46,7 +46,7 @@
   },
   "requirements": [
     [
-      "hit_skeleton_with_bone_shard"
+      "hit_skelton_with_bone_shard"
     ]
   ],
   "sends_telemetry_event": true

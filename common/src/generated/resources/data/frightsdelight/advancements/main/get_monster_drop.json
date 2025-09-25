@@ -1,24 +1,24 @@
 {
   "parent": "frightsdelight:main/root",
   "criteria": {
-    "has_rotten_flesh": {
+    "has_cobweb": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:rotten_flesh"
+              "minecraft:cobweb"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_spider_eye": {
+    "has_monster_drop": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:spider_eye"
+              "minecraft:cobweb"
             ]
           }
         ]
@@ -37,6 +37,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_rotten_flesh": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:rotten_flesh"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_slime_ball": {
       "conditions": {
         "items": [
@@ -49,12 +61,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_cobweb": {
+    "has_spdier_eye": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:cobweb"
+              "minecraft:spider_eye"
             ]
           }
         ]
@@ -79,8 +91,9 @@
   },
   "requirements": [
     [
+      "has_monster_drop",
       "has_rotten_flesh",
-      "has_spider_eye",
+      "has_spdier_eye",
       "has_phantom_membrane",
       "has_slime_ball",
       "has_cobweb"

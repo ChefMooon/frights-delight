@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-21T14:23:18.7125756	Fright's Delight/Model Definitions
+// 1.20.1	2025-09-25T13:38:59.7582963	Fright's Delight/Model Definitions
 c41a132762f79822023682e72b5d32def9c53235 assets\frightsdelight\models\block\soul_berry_bush_stage3.json
 c02d3649db1f37c30cd5c98d144b3c0c11fff600 assets\frightsdelight\models\item\soup_slime.json
 da62072b0f61a0ba0839516e5d0b67223916ef39 assets\frightsdelight\models\block\punchbowl_wither_berry_stage1.json
@@ -67,8 +67,8 @@ edd6f54e8415a19f709faa2781ec2924b8e4cd0e assets\frightsdelight\models\block\punc
 d995705a4ea8be566061c87d09b6300212d048d1 assets\frightsdelight\models\block\punchbowl_spidereye_stage3.json
 bfc2989e7e4f96ba0a9480dc00cd9cd27ffa2cac assets\frightsdelight\models\block\punchbowl_spidereye_stage0.json
 1a6818b0b24ce6aa405a2707eb899a05ed203485 assets\frightsdelight\models\block\punch_wither_berry_servings3.json
-2a53db77a3792835e8eeb2f6e53f124e49787212 assets\frightsdelight\models\item\punch_ghasttear.json
 59d403aec0c436731c73c2b038b9a1a244862f87 assets\frightsdelight\blockstates\fermented_spider_eye_crate.json
+2a53db77a3792835e8eeb2f6e53f124e49787212 assets\frightsdelight\models\item\punch_ghasttear.json
 e86ffdc59c1101a9eba06ed33ce00c8e1b0cbdb8 assets\frightsdelight\blockstates\punchbowl_slimeapple.json
 05e0cd75c6b04087130956127c24a5bb1dc94274 assets\frightsdelight\models\block\punchbowl_cobweb_leftover.json
 4b970add1a791bd8c1640cb3307f0126e1f6359b assets\frightsdelight\models\item\soup_spider_eye.json
