@@ -152,5 +152,13 @@
   "item.frightsdelight.soup_ghast_tear": "Ghast Tear Soup",
   "item.frightsdelight.soup_slimeapple": "Slime-Apple Soup",
   "item.frightsdelight.soup_soul_berry": "Soul Berry Soup",
-  "item.frightsdelight.soup_wither_berry": "Wither Berry Soup"
+  "item.frightsdelight.soup_wither_berry": "Wither Berry Soup",
+  "tag.item.c.storage_blocks.bone": "Bone Storage Blocks",
+  "tag.item.c.storage_blocks.cobweb": "Cobweb Storage Blocks",
+  "tag.item.c.storage_blocks.fermented_spider_eye": "Fermented Spider Eye Storage Blocks",
+  "tag.item.c.storage_blocks.phantom_membrane": "Phantom Membrane Storage Blocks",
+  "tag.item.c.storage_blocks.poisonous_potato": "Poisonous Potato Storage Blocks",
+  "tag.item.c.storage_blocks.rotten_flesh": "Rotten Flesh Storage Blocks",
+  "tag.item.c.storage_blocks.rotten_tomato": "Rotten Tomato Storage Blocks",
+  "tag.item.c.storage_blocks.spider_eye": "Spider Eye Storage Blocks"
 }

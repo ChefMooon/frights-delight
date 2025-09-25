@@ -8,8 +8,13 @@ NeoForge, and Fabric
 
 ***
 
+### Updated
+
+- Updated MidnightLib version to 1.7.5
+
 ### Fixed
 
 - Added missing Slime Apple Soup to Master of Fright advancement
+- Adding missing translations for mod tags
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)

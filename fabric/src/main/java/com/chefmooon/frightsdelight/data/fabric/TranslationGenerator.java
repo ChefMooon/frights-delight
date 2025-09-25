@@ -4,6 +4,7 @@ import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightEntityTypesImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
+import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
@@ -207,5 +208,14 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(WAILA_CONFIG + ".bush_growth_condition", "Bush Growth Condition");
         translationBuilder.add(WAILA_CONFIG + ".bush_transform_condition", "Bush Transform Condition");
         translationBuilder.add(WAILA_CONFIG + ".punchbowl_servings", "Punch Bowl Servings");
+
+        translationBuilder.add(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_FLESH, "Rotten Flesh Storage Blocks");
+        translationBuilder.add(CommonTags.C_STORAGE_BLOCKS_ITEM_BONE, "Bone Storage Blocks");
+        translationBuilder.add(CommonTags.C_STORAGE_BLOCKS_ITEM_PHANTOM_MEMBRANE, "Phantom Membrane Storage Blocks");
+        translationBuilder.add(CommonTags.C_STORAGE_BLOCKS_ITEM_COBWEB, "Cobweb Storage Blocks");
+        translationBuilder.add(CommonTags.C_STORAGE_BLOCKS_ITEM_SPIDER_EYE, "Spider Eye Storage Blocks");
+        translationBuilder.add(CommonTags.C_STORAGE_BLOCKS_ITEM_FERMENTED_SPIDER_EYE, "Fermented Spider Eye Storage Blocks");
+        translationBuilder.add(CommonTags.C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO, "Poisonous Potato Storage Blocks");
+        translationBuilder.add(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO, "Rotten Tomato Storage Blocks");
     }
 }
