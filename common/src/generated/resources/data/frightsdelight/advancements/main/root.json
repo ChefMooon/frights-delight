@@ -14,7 +14,7 @@
     }
   },
   "display": {
-    "announce_to_chat": true,
+    "announce_to_chat": false,
     "background": "minecraft:textures/block/soul_sand.png",
     "description": {
       "translate": "frightsdelight.advancement.root.desc"
@@ -33,6 +33,5 @@
     [
       "has_monster_drop"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

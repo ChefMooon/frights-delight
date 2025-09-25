@@ -6,24 +6,8 @@ This mod is compatible with Minecraft 1.19.2 and Farmer's Delight Forge and Fabr
 
 ***
 
-Release for Minecraft 1.19.2!
-
-### Added
-
-- Custom damage source and death messages for Soul and Wither Berry Bushes
-- Soul and Wither Berries can now be used as Create Potato Cannon ammo (Create 0.5.1 Compatible)
-
-### Changed
-
-- Punch and Punch Bowl break particles texture improved
-- Punch Block improved bubble particle consistency
-- Punch Bowl bubble particle spawning now scales with amount of servings
-
 ### Fixed
 
-- Punch tooltip
-
-### Known Bugs
-- Punch Bowls break speed is not faster with knife (Fabric only)
+- Added missing Slime Apple Soup to Master of Fright advancement
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)

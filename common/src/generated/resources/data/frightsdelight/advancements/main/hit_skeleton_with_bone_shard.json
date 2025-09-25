@@ -1,19 +1,14 @@
 {
   "parent": "frightsdelight:main/craft_bone_shard",
   "criteria": {
-    "hit_skeleton_with_bone_shard": {
+    "hit_skelton_with_bone_shard": {
       "conditions": {
         "damage": {
           "type": {
             "direct_entity": {
               "type": "frightsdelight:bone_shard"
             },
-            "tags": [
-              {
-                "expected": true,
-                "id": "minecraft:is_projectile"
-              }
-            ]
+            "is_projectile": true
           }
         },
         "entity": [
@@ -46,8 +41,7 @@
   },
   "requirements": [
     [
-      "hit_skeleton_with_bone_shard"
+      "hit_skelton_with_bone_shard"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

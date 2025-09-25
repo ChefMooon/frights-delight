@@ -1,0 +1,232 @@
+{
+  "parent": "frightsdelight:main/craft_cookie",
+  "criteria": {
+    "has_monster_mash": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:monster_mash"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pasta_with_slimeballs": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:pasta_with_slimeballs"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_cobweb": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punch_cobweb"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_ghasttear": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punch_ghasttear"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_rotten_flesh": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punch_rotten_flesh"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_slimeapple": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punch_slimeapple"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_soul_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punch_soul_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_spidereye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punch_spidereye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_punch_wither_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:punch_wither_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soup_cobweb": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_cobweb"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soup_ghast_tear": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_ghast_tear"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soup_rotten_flesh": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_rotten_flesh"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soup_slime": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_slime"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soup_soul_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_soul_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soup_spider_eye": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_spider_eye"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soup_wither_berry": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soup_wither_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "frightsdelight.advancement.craft_best.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "frightsdelight:pasta_with_slimeballs"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "frightsdelight.advancement.craft_best"
+    }
+  },
+  "requirements": [
+    [
+      "has_pasta_with_slimeballs",
+      "has_monster_mash",
+      "has_soup_rotten_flesh",
+      "has_soup_spider_eye",
+      "has_soup_slime",
+      "has_soup_cobweb",
+      "has_soup_ghast_tear",
+      "has_soup_soul_berry",
+      "has_soup_wither_berry",
+      "has_punch_rotten_flesh",
+      "has_punch_slimeapple",
+      "has_punch_spidereye",
+      "has_punch_ghasttear",
+      "has_punch_soul_berry",
+      "has_punch_wither_berry",
+      "has_punch_cobweb"
+    ]
+  ]
+}

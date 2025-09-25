@@ -1,12 +1,12 @@
 {
-  "parent": "frightsdelight:main/root",
+  "parent": "frightsdelight:main/get_soul_berry",
   "criteria": {
-    "has_bone_shard": {
+    "has_wither_berry": {
       "conditions": {
         "items": [
           {
             "items": [
-              "frightsdelight:bone_shard"
+              "frightsdelight:wither_berry"
             ]
           }
         ]
@@ -17,22 +17,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "frightsdelight.advancement.craft_bone_shard.desc"
+      "translate": "frightsdelight.advancement.get_wither_berry.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "minecraft:bone"
+      "item": "frightsdelight:wither_berry"
     },
     "show_toast": true,
     "title": {
-      "translate": "frightsdelight.advancement.craft_bone_shard"
+      "translate": "frightsdelight.advancement.get_wither_berry"
     }
   },
   "requirements": [
     [
-      "has_bone_shard"
+      "has_wither_berry"
     ]
-  ],
-  "sends_telemetry_event": true
+  ]
 }

@@ -12,5 +12,6 @@ public class DataGenerationFabric implements DataGeneratorEntrypoint {
         fabricDataGenerator.addProvider(ModelGenerator::new);
         fabricDataGenerator.addProvider(RecipeGenerator::new);
         fabricDataGenerator.addProvider(LootTableGenerator::new);
+        fabricDataGenerator.addProvider(AdvancementGenerator::new);
     }
 }
