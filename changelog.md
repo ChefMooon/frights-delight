@@ -6,8 +6,4 @@ This mod is compatible with Minecraft 1.19.2 and Farmer's Delight Forge and Fabr
 
 ***
 
-### Fixed
-
-- Added missing Slime Apple Soup to Master of Fright advancement
-
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
