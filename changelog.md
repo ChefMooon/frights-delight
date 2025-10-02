@@ -14,4 +14,8 @@ Minecraft 1.21.5 Fabric Release!
 - Added missing Slime Apple Soup to Master of Fright advancement
 - Adding missing translations for mod tags
 
+### Changed
+
+- [1.20.1+] Bone Shards now require a short charge up before they can be thrown.
+
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)

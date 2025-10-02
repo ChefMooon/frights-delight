@@ -18,8 +18,10 @@ import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.block.model.VariantMutator;
+import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
@@ -98,7 +100,22 @@ public class ModelGenerator extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerators) {
-        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.BONE_SHARD.get(), ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        Item boneShardItem = FrightsDelightItemsImpl.BONE_SHARD.get();
+        ItemModel.Unbaked boneShardUnbaked = ItemModelUtils.plainModel(itemModelGenerators.createFlatItemModel(boneShardItem, ModModels.FLAT_HANDHELD_ITEM_FLIPPED));
+
+        ItemModel.Unbaked boneShardUnbakedInHand = ItemModelUtils.plainModel(
+                ModModels.FLAT_HANDHELD_ITEM_FLIPPED.create(ModelLocationUtils.getModelLocation(boneShardItem, "_in_hand"),
+                new TextureMapping().put(TextureSlot.LAYER0, TextUtils.res("item/bone_shard")),
+                itemModelGenerators.modelOutput));
+
+        ItemModel.Unbaked boneShardUnbakedThrowing = ItemModelUtils.plainModel(
+                ModModels.FLAT_HANDHELD_ITEM_FLIPPED_THROWING.create(ModelLocationUtils.getModelLocation(boneShardItem, "_throwing"),
+                new TextureMapping().put(TextureSlot.LAYER0, TextUtils.res("item/bone_shard")),
+                itemModelGenerators.modelOutput));
+
+        ItemModel.Unbaked boneShardConditionalUnbaked = ItemModelUtils.conditional(ItemModelUtils.isUsingItem(), boneShardUnbakedThrowing, boneShardUnbakedInHand);
+
+        itemModelGenerators.itemModelOutput.accept(boneShardItem, ItemModelGenerators.createFlatModelDispatch(boneShardUnbaked, boneShardConditionalUnbaked));
 
         itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SOUL_BERRY.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.WITHER_BERRY.get(), ModelTemplates.FLAT_ITEM);

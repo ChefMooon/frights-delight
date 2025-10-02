@@ -1,0 +1,6 @@
+{
+  "parent": "frightsdelight:item/flat_handheld_item_flipped_throwing",
+  "textures": {
+    "layer0": "frightsdelight:item/bone_shard"
+  }
+}
