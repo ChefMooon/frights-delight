@@ -9,6 +9,8 @@ import com.chefmooon.frightsdelight.common.utility.ModModels;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import com.chefmooon.frightsdelight.common.utility.fabric.FrightsDelightModels;
 import com.chefmooon.frightsdelight.common.utility.fabric.FrightsDelightTextureSlots;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
@@ -23,6 +25,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import java.util.List;
+import java.util.Map;
 
 public class ModelGenerator extends FabricModelProvider {
     public ModelGenerator(FabricDataOutput output) {
@@ -96,7 +99,13 @@ public class ModelGenerator extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
-        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.BONE_SHARD, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+//        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.BONE_SHARD, ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        ModModels.FLAT_HANDHELD_ITEM_FLIPPED_THROWING.create(ModelLocationUtils.getModelLocation(FrightsDelightItemsImpl.BONE_SHARD).withSuffix("_throwing"),
+                new TextureMapping().put(TextureSlot.LAYER0, TextUtils.res("item/bone_shard")).put(TextureSlot.PARTICLE, TextUtils.res("item/bone_shard")),
+                itemModelGenerator.output);
+        ModModels.FLAT_HANDHELD_ITEM_FLIPPED.create(ModelLocationUtils.getModelLocation(FrightsDelightItemsImpl.BONE_SHARD),
+                new TextureMapping().put(TextureSlot.LAYER0, TextUtils.res("item/bone_shard")).put(TextureSlot.PARTICLE, TextUtils.res("item/bone_shard")),
+                itemModelGenerator.output, ModelGenerator::generateBoneShardItem);
 
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.SOUL_BERRY, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.WITHER_BERRY, ModelTemplates.FLAT_ITEM);
@@ -150,6 +159,21 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB, ModelTemplates.FLAT_ITEM);
 
+    }
+
+    private static JsonObject generateBoneShardItem(ResourceLocation modelLocation, Map<TextureSlot, ResourceLocation> modelGetter) {
+        JsonObject boneShardObject = ModModels.FLAT_HANDHELD_ITEM_FLIPPED.createBaseTemplate(modelLocation, modelGetter);
+        JsonArray jsonArray = new JsonArray();
+
+        JsonObject inHand = new JsonObject();
+        JsonObject predicateInHand = new JsonObject();
+        predicateInHand.addProperty(TextUtils.res("throwing").toString(), 1.0);
+        inHand.add("predicate", predicateInHand);
+        inHand.addProperty("model", modelLocation.withSuffix("_throwing").toString());
+        jsonArray.add(inHand);
+
+        boneShardObject.add("overrides", jsonArray);
+        return boneShardObject;
     }
 
     private static void registerCrateBlock(Block block, BlockModelGenerators blockStateModelGenerator) {

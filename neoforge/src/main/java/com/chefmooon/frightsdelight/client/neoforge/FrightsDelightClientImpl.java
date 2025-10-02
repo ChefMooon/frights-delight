@@ -3,6 +3,7 @@ package com.chefmooon.frightsdelight.client.neoforge;
 import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.client.FrightsDelightClient;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
+import com.chefmooon.frightsdelight.common.utility.neoforge.FrightsDelightItemPropertiesImpl;
 import net.minecraft.SharedConstants;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -27,6 +28,9 @@ import java.util.Optional;
 public class FrightsDelightClientImpl {
     public static void init(final FMLClientSetupEvent event) {
         FrightsDelightClient.init();
+        event.enqueueWork(() -> {
+            FrightsDelightItemPropertiesImpl.addCustomItemProperties();
+        });
     }
 
     public static void onBuiltinPackRegistration(AddPackFindersEvent event) {

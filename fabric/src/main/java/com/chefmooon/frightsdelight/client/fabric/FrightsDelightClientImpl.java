@@ -5,6 +5,7 @@ import com.chefmooon.frightsdelight.client.FrightsDelightClient;
 import com.chefmooon.frightsdelight.client.event.fabric.ClientSetupEventsImpl;
 import com.chefmooon.frightsdelight.client.gui.fabric.FrightsDelightGUIImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
+import com.chefmooon.frightsdelight.common.utility.fabric.FrightsDelightItemPropertiesImpl;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -23,6 +24,8 @@ public class FrightsDelightClientImpl implements ClientModInitializer {
         ClientSetupEventsImpl.registerBlockRenderLayerMap();
         ClientSetupEventsImpl.registerParticles();
         ClientSetupEventsImpl.onEntityRendererRegister();
+
+        FrightsDelightItemPropertiesImpl.addCustomItemProperties();
 
         FrightsDelightGUIImpl.register();
 

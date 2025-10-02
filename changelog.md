@@ -8,8 +8,8 @@ NeoForge, and Fabric
 
 ***
 
-### Fixed
+### Changed
 
-- [1.21.1 NeoForge Only] MidnightLib version reverted to 1.6.9
+- [1.20.1+] Bone Shards now require a short charge time before they can be thrown.
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)

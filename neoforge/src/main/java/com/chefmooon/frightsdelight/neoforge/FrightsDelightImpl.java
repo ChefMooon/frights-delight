@@ -11,8 +11,6 @@ import net.neoforged.fml.loading.FMLEnvironment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.List;
-
 @Mod(FrightsDelight.MOD_ID)
 public class FrightsDelightImpl {
     public static final Logger LOGGER = LogManager.getLogger();
