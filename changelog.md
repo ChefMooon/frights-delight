@@ -7,4 +7,8 @@ NeoForge, and Fabric
 
 ***
 
+### Changed
+
+- [1.20.1+] Bone Shards now require a short charge time before they can be thrown.
+
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)

@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-25T14:22:13.9594608	Fright's Delight/Model Definitions
+// 1.20.1	2025-10-02T15:07:24.9081612	Fright's Delight/Model Definitions
 c41a132762f79822023682e72b5d32def9c53235 assets\frightsdelight\models\block\soul_berry_bush_stage3.json
 c02d3649db1f37c30cd5c98d144b3c0c11fff600 assets\frightsdelight\models\item\soup_slime.json
 da62072b0f61a0ba0839516e5d0b67223916ef39 assets\frightsdelight\models\block\punchbowl_wither_berry_stage1.json
@@ -113,6 +113,7 @@ f28ec645c14b0a0518db5a0c067fc2107144341e assets\frightsdelight\models\item\punch
 f20da1e9fae0148213f9f35f6de7fed35d6e143f assets\frightsdelight\models\block\punch_rotten_flesh_servings4.json
 0e4fd8d73282669b5d6ada7089eb6c9b2f8c3a49 assets\frightsdelight\models\block\punchbowl_ghasttear_stage0.json
 ea9e15b7dddcb1edb5168f4d95db8a03167032d0 assets\frightsdelight\models\item\cookie_slime.json
+f1d4190a9275b3e2969f7cb684079c3546d0db9c assets\frightsdelight\models\item\bone_shard_throwing.json
 d0c914ccf3614169eae9ddf249cfe0c6109d4ea5 assets\frightsdelight\blockstates\punchbowl_soul_berry.json
 7e184e3077bc2d68ee49a6964af61378764056f9 assets\frightsdelight\models\block\fermented_spider_eye_crate.json
 aa5b2f5b67625a1e32863a23aa9c97f75dcf07d0 assets\frightsdelight\models\block\punch_slimeapple_servings3.json
@@ -155,7 +156,7 @@ d1a0b8317ea8e8d4c2742c706cfb8534afdd0ebd assets\frightsdelight\models\block\punc
 c04623ea2ef36675429305caae46f9b1c73f96a2 assets\frightsdelight\models\block\punchbowl_slimeapple_stage1.json
 04c61877467e25acb53c62cc9b6ffe8b9beda2da assets\frightsdelight\models\block\punch_rotten_flesh_servings3.json
 750a9a616b52257d8ae98b10517de8524453a211 assets\frightsdelight\models\block\punchbowl_ghasttear_stage1.json
-40daac0e5b7a921b4e55dc7c65e35fbe36fa17b0 assets\frightsdelight\models\item\bone_shard.json
+b3f9c4fc8a6e8ae61cf5576f935f3440141afa79 assets\frightsdelight\models\item\bone_shard.json
 6f080dd592cefd1363d4f25d13c7eb6081ccd2c0 assets\frightsdelight\blockstates\punch_slimeapple.json
 72dfe66446c220ffe52772e676c83f9ba404c2bc assets\frightsdelight\blockstates\punch_cobweb.json
 88bf82d3235cc2209098f967f70bfe6bdc3d3aba assets\frightsdelight\blockstates\flesh_crate.json

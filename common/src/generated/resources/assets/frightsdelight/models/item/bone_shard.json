@@ -1,5 +1,13 @@
 {
   "parent": "frightsdelight:item/flat_handheld_item_flipped",
+  "overrides": [
+    {
+      "model": "frightsdelight:item/bone_shard_throwing",
+      "predicate": {
+        "frightsdelight:throwing": 1.0
+      }
+    }
+  ],
   "textures": {
     "layer0": "frightsdelight:item/bone_shard"
   }

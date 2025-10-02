@@ -3,6 +3,7 @@ package com.chefmooon.frightsdelight.client.fabric;
 import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.client.FrightsDelightClient;
 import com.chefmooon.frightsdelight.client.event.fabric.ClientSetupEventsImpl;
+import com.chefmooon.frightsdelight.common.utility.fabric.FrightsDelightItemPropertiesImpl;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
@@ -19,6 +20,8 @@ public class FrightsDelightClientImpl implements ClientModInitializer {
         ClientSetupEventsImpl.registerBlockRenderLayerMap();
         ClientSetupEventsImpl.registerParticles();
         ClientSetupEventsImpl.onEntityRendererRegister();
+
+        FrightsDelightItemPropertiesImpl.addCustomItemProperties();
 
         onBuiltinPackRegistration();
     }
