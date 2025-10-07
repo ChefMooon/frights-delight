@@ -100,6 +100,22 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY, "Wither Berry Punch Bowl");
         translationBuilder.add(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB, "Cobweb Punch Bowl");
 
+        translationBuilder.add(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE, "Rotten Flesh Pie");
+        translationBuilder.add(FrightsDelightItemsImpl.SLIMEAPPLE_PIE, "Slime-Apple Pie");
+        translationBuilder.add(FrightsDelightItemsImpl.SPIDEREYE_PIE, "Spider Eye Pie");
+        translationBuilder.add(FrightsDelightItemsImpl.GHASTTEAR_PIE, "Ghast Tear Pie");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE, "Soul Berry Cheesecake");
+        translationBuilder.add(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE, "Wither Berry Cheesecake");
+        translationBuilder.add(FrightsDelightItemsImpl.COBWEB_PIE, "Cobweb Pie");
+
+        translationBuilder.add(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE, "Slice of Rotten Flesh Pie");
+        translationBuilder.add(FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE, "Slice of Slime-Apple Pie");
+        translationBuilder.add(FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE, "Slice of Spider Eye Pie");
+        translationBuilder.add(FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE, "Slice of Ghast Tear Pie");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE, "Slice of Soul Berry Cheesecake");
+        translationBuilder.add(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE, "Slice of Wither Berry Cheesecake");
+        translationBuilder.add(FrightsDelightItemsImpl.COBWEB_PIE_SLICE, "Slice of Cobweb Pie");
+
         translationBuilder.add(EFFECT + ".chills", "Chills");
         translationBuilder.add(EFFECT + ".cobwebbed", "Cobwebbed");
         translationBuilder.add(EFFECT + ".fortified_mind", "Fortified Mind");

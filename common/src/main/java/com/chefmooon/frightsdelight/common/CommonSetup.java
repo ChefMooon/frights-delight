@@ -24,5 +24,21 @@ public class CommonSetup {
         ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.COOKIE_SLIME), 0.85F);
         ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.COOKIE_COBWEB), 0.85F);
         ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.COOKIE_GHAST_TEAR), 0.85F);
+
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.ROTTEN_FLESH_PIE_SLICE), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.SLIMEAPPLE_PIE_SLICE), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.SPIDEREYE_PIE_SLICE), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.GHASTTEAR_PIE_SLICE), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.SOUL_BERRY_CHEESECAKE_SLICE), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.WITHER_BERRY_CHEESECAKE_SLICE), 0.85F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.COBWEB_PIE_SLICE), 0.85F);
+
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.ROTTEN_FLESH_PIE), 1.0F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.SLIMEAPPLE_PIE), 1.0F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.SPIDEREYE_PIE), 1.0F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.GHASTTEAR_PIE), 1.0F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.SOUL_BERRY_CHEESECAKE), 1.0F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.WITHER_BERRY_CHEESECAKE), 1.0F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.COBWEB_PIE), 1.0F);
     }
 }

@@ -1,6 +1,7 @@
 package com.chefmooon.frightsdelight.common.registry.fabric;
 
 import com.chefmooon.frightsdelight.common.FoodValues;
+import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableBlockItem;
 import com.chefmooon.frightsdelight.common.item.fabric.BoneShardItemImpl;
 import com.chefmooon.frightsdelight.common.item.fabric.FrightsDelightConsumableItemImpl;
@@ -146,6 +147,35 @@ public class FrightsDelightItemsImpl {
     public static final Item PUNCHBOWL_WITHER_BERRY = registerItemWithTab(FrightsDelightItems.PUNCHBOWL_WITHER_BERRY,
             new BlockItem(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY, noStack()));
 
+    public static final Item ROTTEN_FLESH_PIE = registerItemWithTab(FrightsDelightItems.ROTTEN_FLESH_PIE,
+            new BlockItem(FrightsDelightBlocksImpl.ROTTEN_FLESH_PIE, basicItem()));
+    public static final Item SLIMEAPPLE_PIE = registerItemWithTab(FrightsDelightItems.SLIMEAPPLE_PIE,
+            new BlockItem(FrightsDelightBlocksImpl.SLIMEAPPLE_PIE, basicItem()));
+    public static final Item SPIDEREYE_PIE = registerItemWithTab(FrightsDelightItems.SPIDEREYE_PIE,
+            new BlockItem(FrightsDelightBlocksImpl.SPIDEREYE_PIE, basicItem()));
+    public static final Item GHASTTEAR_PIE = registerItemWithTab(FrightsDelightItems.GHASTTEAR_PIE,
+            new BlockItem(FrightsDelightBlocksImpl.GHASTTEAR_PIE, basicItem()));
+    public static final Item SOUL_BERRY_CHEESECAKE = registerItemWithTab(FrightsDelightItems.SOUL_BERRY_CHEESECAKE,
+            new BlockItem(FrightsDelightBlocksImpl.SOUL_BERRY_CHEESECAKE, basicItem()));
+    public static final Item WITHER_BERRY_CHEESECAKE = registerItemWithTab(FrightsDelightItems.WITHER_BERRY_CHEESECAKE,
+            new BlockItem(FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE, basicItem()));
+    public static final Item COBWEB_PIE = registerItemWithTab(FrightsDelightItems.COBWEB_PIE,
+            new BlockItem(FrightsDelightBlocksImpl.COBWEB_PIE, basicItem()));
+
+    public static final Item ROTTEN_FLESH_PIE_SLICE = registerItemWithTab(FrightsDelightItems.ROTTEN_FLESH_PIE_SLICE,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.ROTTEN_FLESH_PIE_SLICE), true));
+    public static final Item SLIMEAPPLE_PIE_SLICE = registerItemWithTab(FrightsDelightItems.SLIMEAPPLE_PIE_SLICE,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.SLIMEAPPLE_PIE_SLICE), true));
+    public static final Item SPIDEREYE_PIE_SLICE = registerItemWithTab(FrightsDelightItems.SPIDEREYE_PIE_SLICE,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.SPIDEREYE_PIE_SLICE), true));
+    public static final Item GHASTTEAR_PIE_SLICE = registerItemWithTab(FrightsDelightItems.GHASTTEAR_PIE_SLICE,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.GHASTTEAR_PIE_SLICE), true));
+    public static final Item SOUL_BERRY_CHEESECAKE_SLICE = registerItemWithTab(FrightsDelightItems.SOUL_BERRY_CHEESECAKE_SLICE,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.SOUL_BERRY_CHEESECAKE_SLICE), true));
+    public static final Item WITHER_BERRY_CHEESECAKE_SLICE = registerItemWithTab(FrightsDelightItems.WITHER_BERRY_CHEESECAKE_SLICE,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.WITHER_BERRY_CHEESECAKE_SLICE), true));
+    public static final Item COBWEB_PIE_SLICE = registerItemWithTab(FrightsDelightItems.COBWEB_PIE_SLICE,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.COBWEB_PIE_SLICE), true));
 
     public static Item registerItemWithTab(final ResourceLocation location, final Item item) {
         Registry.register(BuiltInRegistries.ITEM, location, item);

@@ -23,6 +23,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import vectorwing.farmersdelight.common.block.PieBlock;
 
 public class LootTableGenerator extends FabricBlockLootTableProvider {
 
@@ -56,6 +57,15 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR, FrightsDelightItemsImpl.PUNCH_GHASTTEAR);
         //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY, FrightsDelightItemsImpl.PUNCH_SOUL_BERRY);
         //this.createPunchbowlDrops(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY, FrightsDelightItemsImpl.PUNCH_WITHER_BERRY);
+
+        // can be used to regen, must change c:tools/knives -> forge:tools/kives
+//        this.createPieDrops(FrightsDelightBlocksImpl.ROTTEN_FLESH_PIE, FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE);
+//        this.createPieDrops(FrightsDelightBlocksImpl.SLIMEAPPLE_PIE, FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE);
+//        this.createPieDrops(FrightsDelightBlocksImpl.SPIDEREYE_PIE, FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE);
+//        this.createPieDrops(FrightsDelightBlocksImpl.GHASTTEAR_PIE, FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE);
+//        this.createPieDrops(FrightsDelightBlocksImpl.SOUL_BERRY_CHEESECAKE, FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE);
+//        this.createPieDrops(FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE, FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE);
+//        this.createPieDrops(FrightsDelightBlocksImpl.COBWEB_PIE, FrightsDelightItemsImpl.COBWEB_PIE_SLICE);
 
         this.createBushDrops(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH);
         this.createBushDrops(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH);
@@ -113,5 +123,26 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(FrightsDelightBushBlock.AGE, 2))))
         ).setRandomSequence(ModelLocationUtils.getModelLocation(block)));
+    }
+
+    private void createPieDrops(Block block, Item item) {
+        this.add(block, this.applyExplosionDecay(block, LootTable.lootTable()
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 0))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 1))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 2))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 3))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
+        ));
     }
 }

@@ -71,6 +71,14 @@ public class FrightsDelightBlocks {
     public static final ResourceLocation PUNCHBOWL_WITHER_BERRY = block("punchbowl_wither_berry");
     public static final ResourceLocation PUNCHBOWL_COBWEB = block("punchbowl_cobweb");
 
+    public static final ResourceLocation ROTTEN_FLESH_PIE = block("rotten_flesh_pie");
+    public static final ResourceLocation SLIMEAPPLE_PIE = block("slimeapple_pie");
+    public static final ResourceLocation SPIDEREYE_PIE = block("spidereye_pie");
+    public static final ResourceLocation GHASTTEAR_PIE = block("ghasttear_pie");
+    public static final ResourceLocation SOUL_BERRY_CHEESECAKE = block("soul_berry_cheesecake");
+    public static final ResourceLocation WITHER_BERRY_CHEESECAKE = block("wither_berry_cheesecake");
+    public static final ResourceLocation COBWEB_PIE = block("cobweb_pie");
+
     private static ResourceLocation block(String string) {
         return TextUtils.res(string);
     }

@@ -9,6 +9,7 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.FrameType;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.*;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.entity.EntityType;
@@ -146,6 +147,13 @@ public class AdvancementGenerator extends FabricAdvancementProvider {
                 .addCriterion("has_punch_ghasttear", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_GHASTTEAR))
                 .addCriterion("has_punch_soul_berry", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY))
                 .addCriterion("has_punch_wither_berry", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.COBWEB_PIE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.COBWEB_PIE_SLICE))
                 .requirements(RequirementsStrategy.AND)
                 .save(consumer, getAdvancementName("frd_master"));
     }

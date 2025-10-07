@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.function.Supplier;
 
@@ -80,6 +81,22 @@ public class FrightsDelightBlocksImpl {
     public static final RegistryObject<Block> PUNCHBOWL_COBWEB = registerBlock(FrightsDelightBlocks.PUNCHBOWL_COBWEB,
             () -> new CobwebDrinkableFeastBlock(FrightsDelightItemsImpl.PUNCH_COBWEB,
                     Block.Properties.copy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS)));
+
+    public static final RegistryObject<Block> ROTTEN_FLESH_PIE = registerBlock(FrightsDelightBlocks.ROTTEN_FLESH_PIE,
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE));
+    public static final RegistryObject<Block> SLIMEAPPLE_PIE = registerBlock(FrightsDelightBlocks.SLIMEAPPLE_PIE,
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE));
+    public static final RegistryObject<Block> SPIDEREYE_PIE = registerBlock(FrightsDelightBlocks.SPIDEREYE_PIE,
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE));
+    public static final RegistryObject<Block> GHASTTEAR_PIE = registerBlock(FrightsDelightBlocks.GHASTTEAR_PIE,
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE));
+
+    public static final RegistryObject<Block> SOUL_BERRY_CHEESECAKE = registerBlock(FrightsDelightBlocks.SOUL_BERRY_CHEESECAKE,
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE));
+    public static final RegistryObject<Block> WITHER_BERRY_CHEESECAKE = registerBlock(FrightsDelightBlocks.WITHER_BERRY_CHEESECAKE,
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE));
+    public static final RegistryObject<Block> COBWEB_PIE = registerBlock(FrightsDelightBlocks.COBWEB_PIE,
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.COBWEB_PIE_SLICE));
 
     public static RegistryObject<Block> registerBlock(final ResourceLocation location, final Supplier<Block> block) {
         return BLOCKS.register(location.getPath(), block);

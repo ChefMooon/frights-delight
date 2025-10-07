@@ -97,6 +97,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_cobweb_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cobweb_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_cookie_cobweb": {
       "conditions": {
         "items": [
@@ -187,6 +199,18 @@
           {
             "items": [
               "frightsdelight:cookie_wither_berry"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ghasttear_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:ghasttear_pie_slice"
             ]
           }
         ]
@@ -301,6 +325,42 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_rotten_flesh_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:rotten_flesh_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_slimeapple_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:slimeapple_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soul_berry_cheesecake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soul_berry_cheesecake_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_soup_cobweb": {
       "conditions": {
         "items": [
@@ -397,6 +457,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_spidereye_pie_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:spidereye_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_undead_kebab": {
       "conditions": {
         "items": [
@@ -415,6 +487,18 @@
           {
             "items": [
               "frightsdelight:web_on_stick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_wither_berry_cheesecake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:wither_berry_cheesecake_slice"
             ]
           }
         ]
@@ -542,6 +626,27 @@
     ],
     [
       "has_punch_wither_berry"
+    ],
+    [
+      "has_rotten_flesh_pie_slice"
+    ],
+    [
+      "has_slimeapple_pie_slice"
+    ],
+    [
+      "has_spidereye_pie_slice"
+    ],
+    [
+      "has_ghasttear_pie_slice"
+    ],
+    [
+      "has_soul_berry_cheesecake_slice"
+    ],
+    [
+      "has_wither_berry_cheesecake_slice"
+    ],
+    [
+      "has_cobweb_pie_slice"
     ]
   ],
   "sends_telemetry_event": true

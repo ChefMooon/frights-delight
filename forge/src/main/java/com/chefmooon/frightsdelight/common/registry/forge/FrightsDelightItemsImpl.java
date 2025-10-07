@@ -155,6 +155,36 @@ public class FrightsDelightItemsImpl {
     public static final RegistryObject<Item> PUNCHBOWL_WITHER_BERRY = registerItemWithTab(FrightsDelightItems.PUNCHBOWL_WITHER_BERRY,
             () -> new BlockItem(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY.get(), noStack()));
 
+    public static final RegistryObject<Item> ROTTEN_FLESH_PIE = registerItemWithTab(FrightsDelightItems.ROTTEN_FLESH_PIE,
+            () -> new BlockItem(FrightsDelightBlocksImpl.ROTTEN_FLESH_PIE.get(), basicItem()));
+    public static final RegistryObject<Item> SLIMEAPPLE_PIE = registerItemWithTab(FrightsDelightItems.SLIMEAPPLE_PIE,
+            () -> new BlockItem(FrightsDelightBlocksImpl.SLIMEAPPLE_PIE.get(), basicItem()));
+    public static final RegistryObject<Item> SPIDEREYE_PIE = registerItemWithTab(FrightsDelightItems.SPIDEREYE_PIE,
+            () -> new BlockItem(FrightsDelightBlocksImpl.SPIDEREYE_PIE.get(), basicItem()));
+    public static final RegistryObject<Item> GHASTTEAR_PIE = registerItemWithTab(FrightsDelightItems.GHASTTEAR_PIE,
+            () -> new BlockItem(FrightsDelightBlocksImpl.GHASTTEAR_PIE.get(), basicItem()));
+    public static final RegistryObject<Item> SOUL_BERRY_CHEESECAKE = registerItemWithTab(FrightsDelightItems.SOUL_BERRY_CHEESECAKE,
+            () -> new BlockItem(FrightsDelightBlocksImpl.SOUL_BERRY_CHEESECAKE.get(), basicItem()));
+    public static final RegistryObject<Item> WITHER_BERRY_CHEESECAKE = registerItemWithTab(FrightsDelightItems.WITHER_BERRY_CHEESECAKE,
+            () -> new BlockItem(FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE.get(), basicItem()));
+    public static final RegistryObject<Item> COBWEB_PIE = registerItemWithTab(FrightsDelightItems.COBWEB_PIE,
+            () -> new BlockItem(FrightsDelightBlocksImpl.COBWEB_PIE.get(), basicItem()));
+
+    public static final RegistryObject<Item> ROTTEN_FLESH_PIE_SLICE = registerItemWithTab(FrightsDelightItems.ROTTEN_FLESH_PIE_SLICE,
+            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.ROTTEN_FLESH_PIE_SLICE), true));
+    public static final RegistryObject<Item> SLIMEAPPLE_PIE_SLICE = registerItemWithTab(FrightsDelightItems.SLIMEAPPLE_PIE_SLICE,
+            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.SLIMEAPPLE_PIE_SLICE), true));
+    public static final RegistryObject<Item> SPIDEREYE_PIE_SLICE = registerItemWithTab(FrightsDelightItems.SPIDEREYE_PIE_SLICE,
+            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.SPIDEREYE_PIE_SLICE), true));
+    public static final RegistryObject<Item> GHASTTEAR_PIE_SLICE = registerItemWithTab(FrightsDelightItems.GHASTTEAR_PIE_SLICE,
+            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.GHASTTEAR_PIE_SLICE), true));
+    public static final RegistryObject<Item> SOUL_BERRY_CHEESECAKE_SLICE = registerItemWithTab(FrightsDelightItems.SOUL_BERRY_CHEESECAKE_SLICE,
+            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.SOUL_BERRY_CHEESECAKE_SLICE), true));
+    public static final RegistryObject<Item> WITHER_BERRY_CHEESECAKE_SLICE = registerItemWithTab(FrightsDelightItems.WITHER_BERRY_CHEESECAKE_SLICE,
+            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.WITHER_BERRY_CHEESECAKE_SLICE), true));
+    public static final RegistryObject<Item> COBWEB_PIE_SLICE = registerItemWithTab(FrightsDelightItems.COBWEB_PIE_SLICE,
+            () -> new FrightsDelightConsumableItem(foodItem(FoodValues.COBWEB_PIE_SLICE), true));
+
     public static RegistryObject<Item> registerItemWithTab(final ResourceLocation location, final Supplier<Item> supplier) {
         RegistryObject<Item> item = ITEMS.register(location.getPath(), supplier);
         CREATIVE_TAB_ITEMS.add(item);
