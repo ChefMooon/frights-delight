@@ -24,8 +24,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.List;
+import java.util.Optional;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
 
@@ -60,6 +62,14 @@ public class ModelGenerator extends FabricModelProvider {
         registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY.get(), blockModelGenerators);
         registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY.get(), blockModelGenerators);
         registerDrinkFeast(FrightsDelightBlocksImpl.PUNCHBOWL_COBWEB.get(), blockModelGenerators);
+
+        registerPieBlock(FrightsDelightBlocksImpl.ROTTEN_FLESH_PIE.get(), blockModelGenerators);
+        registerPieBlock(FrightsDelightBlocksImpl.SLIMEAPPLE_PIE.get(), blockModelGenerators);
+        registerPieBlock(FrightsDelightBlocksImpl.SPIDEREYE_PIE.get(), blockModelGenerators);
+        registerPieBlock(FrightsDelightBlocksImpl.GHASTTEAR_PIE.get(), blockModelGenerators);
+        registerPieBlock(FrightsDelightBlocksImpl.SOUL_BERRY_CHEESECAKE.get(), blockModelGenerators);
+        registerPieBlock(FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE.get(), blockModelGenerators);
+        registerPieBlock(FrightsDelightBlocksImpl.COBWEB_PIE.get(), blockModelGenerators);
 
         ResourceLocation SOUL_BERRY_BUSH_STAGE0 = registerBushModel("_stage0", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
         ResourceLocation SOUL_BERRY_BUSH_STAGE1 = registerBushModel("_stage1", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
@@ -168,6 +178,22 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SLIMEAPPLE_PIE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SPIDEREYE_PIE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.GHASTTEAR_PIE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.COBWEB_PIE.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.COBWEB_PIE_SLICE.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void registerCrateBlock(Block block, BlockModelGenerators blockStateModelGenerator) {
@@ -252,6 +278,41 @@ public class ModelGenerator extends FabricModelProvider {
                 .select(Direction.SOUTH, VariantMutator.Y_ROT.withValue(Quadrant.R180))
                 .select(Direction.WEST, VariantMutator.Y_ROT.withValue(Quadrant.R270))
                 .select(Direction.NORTH, (variant) -> variant);
+    }
+
+    private static void registerPieBlock(Block block, BlockModelGenerators blockModelGenerators) {
+        ResourceLocation blockLocation = ModelLocationUtils.getModelLocation(block);
+        TextureSlot INNER = TextureSlot.create("inner");
+        ModelTemplate PIE_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie")), Optional.empty(),
+                TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
+        ModelTemplate PIE_SLICE_1_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_slice1")), Optional.empty(),
+                TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
+        ModelTemplate PIE_SLICE_2_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_slice2")), Optional.empty(),
+                TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
+        ModelTemplate PIE_SLICE_3_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_slice3")), Optional.empty(),
+                TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
+
+        ResourceLocation pie_bottom = ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_bottom");
+        ResourceLocation pide_side = ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_side");
+
+        TextureMapping textureMapping = TextureMapping.particle(blockLocation.withSuffix("_top"))
+                .put(TextureSlot.BOTTOM, pie_bottom)
+                .put(INNER, blockLocation.withSuffix("_inner"))
+                .put(TextureSlot.SIDE, pide_side)
+                .put(TextureSlot.TOP, blockLocation.withSuffix("_top"));
+
+        ResourceLocation PIE = PIE_MODEL.create(blockLocation, textureMapping, blockModelGenerators.modelOutput);
+        ResourceLocation PIE_SLICE_1 = PIE_SLICE_1_MODEL.create(blockLocation.withSuffix("_slice1"), textureMapping, blockModelGenerators.modelOutput);
+        ResourceLocation PIE_SLICE_2 = PIE_SLICE_2_MODEL.create(blockLocation.withSuffix("_slice2"), textureMapping, blockModelGenerators.modelOutput);
+        ResourceLocation PIE_SLICE_3 = PIE_SLICE_3_MODEL.create(blockLocation.withSuffix("_slice3"), textureMapping, blockModelGenerators.modelOutput);
+
+        blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block)
+                .with(PropertyDispatch.initial(PieBlock.BITES)
+                        .select(0, plainVariant(PIE))
+                        .select(1, plainVariant(PIE_SLICE_1))
+                        .select(2, plainVariant(PIE_SLICE_2))
+                        .select(3, plainVariant(PIE_SLICE_3))
+                ).with(createHorizontalFacingDispatch()));
     }
 
 }

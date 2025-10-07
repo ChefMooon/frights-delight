@@ -164,6 +164,14 @@ public class FoodValues {
 
     public static final FoodProperties PUNCH_WITHER_BERRY = foodProperty(4, 0.4f, true);
 
+    public static final FoodProperties ROTTEN_FLESH_PIE_SLICE = foodProperty(4, 0.3f);
+    public static final FoodProperties SLIMEAPPLE_PIE_SLICE = foodProperty(4, 0.3f);
+    public static final FoodProperties SPIDEREYE_PIE_SLICE = foodProperty(4, 0.3f);
+    public static final FoodProperties GHASTTEAR_PIE_SLICE = foodProperty(4, 0.3f);
+    public static final FoodProperties SOUL_BERRY_CHEESECAKE_SLICE = foodProperty(4, 0.3f, true);
+    public static final FoodProperties WITHER_BERRY_CHEESECAKE_SLICE = foodProperty(4, 0.3f, true);
+    public static final FoodProperties COBWEB_PIE_SLICE = foodProperty(4, 0.3f);
+
     public static FoodProperties foodProperty(int nutrition, float saturation) {
         return foodProperty(nutrition, saturation, false);
     }
@@ -343,6 +351,35 @@ public class FoodValues {
 
         public static final Consumable PUNCH_WITHER_BERRY = Consumables.defaultDrink()
                 .onConsume(undeadHunger(MEDIUM_DURATION))
+                .build();
+
+        public static final Consumable ROTTEN_FLESH_PIE_SLICE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(infected(SHORT_DURATION, 0.5f))
+                .build();
+        public static final Consumable SLIMEAPPLE_PIE_SLICE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(slimed(SHORT_DURATION, 0.5f))
+                .build();
+        public static final Consumable SPIDEREYE_PIE_SLICE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(hysteria(SHORT_DURATION, 0.5f))
+                .build();
+        public static final Consumable GHASTTEAR_PIE_SLICE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(chills(SHORT_DURATION, 0.5f))
+                .build();
+        public static final Consumable SOUL_BERRY_CHEESECAKE_SLICE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(fortifiedMind(SHORT_DURATION))
+                .build();
+        public static final Consumable WITHER_BERRY_CHEESECAKE_SLICE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(undeadHunger(SHORT_DURATION))
+                .build();
+        public static final Consumable COBWEB_PIE_SLICE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(cobwebbed(SHORT_DURATION, 0.5f))
                 .build();
     }
 

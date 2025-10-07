@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.storage.loot.LootTable;
 import vectorwing.farmersdelight.FarmersDelight;
+import vectorwing.farmersdelight.common.block.PieBlock;
 import vectorwing.farmersdelight.refabricated.RegUtils;
 
 import java.util.function.Function;
@@ -82,6 +83,28 @@ public class FrightsDelightBlocksImpl {
     public static final Supplier<Block> PUNCHBOWL_COBWEB = registerBlock(FrightsDelightBlocks.PUNCHBOWL_COBWEB,
             (properties) -> new CobwebDrinkableFeastBlock(() -> FrightsDelightItemsImpl.PUNCH_COBWEB.get(), properties),
                     BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS));
+
+    public static final Supplier<Block> ROTTEN_FLESH_PIE = registerBlock(FrightsDelightBlocks.ROTTEN_FLESH_PIE,
+            (properties) -> new PieBlock(properties, () -> FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE.get()),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
+    public static final Supplier<Block> SLIMEAPPLE_PIE = registerBlock(FrightsDelightBlocks.SLIMEAPPLE_PIE,
+            (properties) -> new PieBlock(properties, () -> FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE.get()),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
+    public static final Supplier<Block> SPIDEREYE_PIE = registerBlock(FrightsDelightBlocks.SPIDEREYE_PIE,
+            (properties) -> new PieBlock(properties, () -> FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE.get()),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
+    public static final Supplier<Block> GHASTTEAR_PIE = registerBlock(FrightsDelightBlocks.GHASTTEAR_PIE,
+            (properties) -> new PieBlock(properties, () -> FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE.get()),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
+    public static final Supplier<Block> SOUL_BERRY_CHEESECAKE = registerBlock(FrightsDelightBlocks.SOUL_BERRY_CHEESECAKE,
+            (properties) -> new PieBlock(properties, () -> FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE.get()),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
+    public static final Supplier<Block> WITHER_BERRY_CHEESECAKE = registerBlock(FrightsDelightBlocks.WITHER_BERRY_CHEESECAKE,
+            (properties) -> new PieBlock(properties, () -> FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE.get()),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
+    public static final Supplier<Block> COBWEB_PIE = registerBlock(FrightsDelightBlocks.COBWEB_PIE,
+            (properties) -> new PieBlock(properties, () -> FrightsDelightItemsImpl.COBWEB_PIE_SLICE.get()),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
 
     public static Supplier<Block> registerBlock(final ResourceLocation location, final Function<BlockBehaviour.Properties, Block> function, final BlockBehaviour.Properties properties) {
         properties.setId(ResourceKey.create(Registries.BLOCK, location));

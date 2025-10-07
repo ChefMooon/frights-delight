@@ -1,5 +1,5 @@
 // 1.21.5	-999999999-01-01T00:00:00	Fright's Delight/Tags for minecraft:item
-30d5340f71d4c4aa365f7bfe9949e2044eb10e53 data/c/tags/item/foods.json
+35deb8d2bb2538586facef00ca3bfe6b9324b140 data/c/tags/item/foods.json
 ea1a0df32ca387e02411d7d7d5228156155421ee data/c/tags/item/foods/berry.json
 bc224074ff620e5ce7822a10ec8a96c7b5dfe2c3 data/c/tags/item/foods/cookie.json
 77d84d3005874057b9fea305f20b948a664ab44c data/c/tags/item/foods/soup.json
@@ -12,10 +12,10 @@ a16960af0001a9462c1ee21b876d2f6771f25dbe data/c/tags/item/storage_blocks/cobweb.
 275508fca0253cb2318ec1aac1040bbe8403d5cf data/c/tags/item/storage_blocks/rotten_flesh.json
 c58d4b599a44b9b815cad72b0c827b1eacf6c603 data/c/tags/item/storage_blocks/rotten_tomato.json
 49c2ccb9eb0b07ca69fa525a4d1f4d21b959b8f8 data/c/tags/item/storage_blocks/spider_eye.json
-ac065de8011a8d26b9a876f7065a61231386dc7a data/create/tags/item/upright_on_belt.json
+188bbc66f3a93cecbd1d4c749213ce301dbeec6c data/create/tags/item/upright_on_belt.json
 ea1a0df32ca387e02411d7d7d5228156155421ee data/createaddition/tags/item/plant_foods.json
 373fdc92421c7db7e80ebed6f40df37e6bc4f11a data/dehydration/tags/item/hydrating_drinks.json
 1b0f5be3ff14e29d836354e4aa153c78ef637f65 data/dehydration/tags/item/hydrating_stew.json
-51e7d46ab8604fdcba14ee1437f7929f2e2310bd data/origins/tags/item/ignore_diet.json
-50b79c8d01ec5a9c0144e704f54d64ce1f4ccfcf data/origins/tags/item/meat.json
+bd1885d9112ced9ce50f56b4404cd4d76bb2958e data/origins/tags/item/ignore_diet.json
+e678b804fcf2b1a8a250cef1c2252652d1f6941f data/origins/tags/item/meat.json
 bc224074ff620e5ce7822a10ec8a96c7b5dfe2c3 data/supplementaries/tags/item/cookies.json

@@ -1,14 +1,18 @@
 package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
+import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import com.chefmooon.frightsdelight.data.fabric.recipe.CookingRecipes;
+import com.chefmooon.frightsdelight.data.fabric.recipe.CuttingRecipes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -28,6 +32,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 HolderGetter<Item> holderGetter = provider.lookupOrThrow(Registries.ITEM);
 
                 CookingRecipes.register(holderGetter, provider, exporter);
+                CuttingRecipes.register(holderGetter, provider, exporter);
 
                 crateToIngredient(holderGetter, FrightsDelightItemsImpl.FLESH_CRATE.get(), Items.ROTTEN_FLESH, exporter);
                 crateToIngredient(holderGetter, FrightsDelightItemsImpl.BONE_CRATE.get(), Items.BONE, exporter);
@@ -54,6 +59,14 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 punchbowlFromPunch(holderGetter, FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY.get(), FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get(), exporter);
                 punchbowlFromPunch(holderGetter, FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY.get(), FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get(), exporter);
                 punchbowlFromPunch(holderGetter, FrightsDelightItemsImpl.PUNCHBOWL_COBWEB.get(), FrightsDelightItemsImpl.PUNCH_COBWEB.get(), exporter);
+
+                pieRecipe(holderGetter, FrightsDelightItemsImpl.ROTTEN_FLESH_PIE.get(), FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE.get(), Items.ROTTEN_FLESH, exporter);
+                pieRecipe(holderGetter, FrightsDelightItemsImpl.SLIMEAPPLE_PIE.get(), FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE.get(), FrightsDelightItemsImpl.SLIMEAPPLE_PIE.get(), exporter);
+                pieRecipe(holderGetter, FrightsDelightItemsImpl.SPIDEREYE_PIE.get(), FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE.get(), Items.SPIDER_EYE, exporter);
+                pieRecipe(holderGetter, FrightsDelightItemsImpl.GHASTTEAR_PIE.get(), FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE.get(), Items.GHAST_TEAR, exporter);
+                pieRecipe(holderGetter, FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE.get(), FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE.get(), FrightsDelightItemsImpl.SOUL_BERRY.get(), exporter);
+                pieRecipe(holderGetter, FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE.get(), FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE.get(), FrightsDelightItemsImpl.WITHER_BERRY.get(), exporter);
+                pieRecipe(holderGetter, FrightsDelightItemsImpl.COBWEB_PIE.get(), FrightsDelightItemsImpl.COBWEB_PIE_SLICE.get(), Items.COBWEB, exporter);
             }
         };
     }
@@ -83,6 +96,29 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(punch), InventoryChangeTrigger.TriggerInstance.hasItems(punch))
                 .showNotification(false)
                 .save(exporter, RecipeProvider.getSimpleRecipeName(punchbowl));
+    }
+
+    private static void pieRecipe(HolderGetter<Item> holderGetter, Item pie, Item pieSlice, Item mainIngredient, RecipeOutput exporter) {
+        Item crust = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "pie_crust")).get().value();
+        ShapedRecipeBuilder.shaped(holderGetter, RecipeCategory.MISC, pie)
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("BCB")
+                .define('A', mainIngredient)
+                .define('B', CommonTags.C_FOODS_MILK)
+                .define('C', crust)
+                .unlockedBy("has_pie_crust", InventoryChangeTrigger.TriggerInstance.hasItems(crust))
+                .group("frd_" + pie.getDescriptionId().replace("block.frightsdelight.", ""))
+                .save(exporter, RecipeProvider.getSimpleRecipeName(pie));
+
+        ShapedRecipeBuilder.shaped(holderGetter, RecipeCategory.FOOD, pie)
+                .pattern("AA")
+                .pattern("AA")
+                .define('A', pieSlice)
+                .unlockedBy(RecipeProvider.getHasName(pieSlice), InventoryChangeTrigger.TriggerInstance.hasItems(pieSlice))
+                .group("frd_" + pie.getDescriptionId().replace("block.frightsdelight.", ""))
+                .save(exporter, RecipeProvider.getSimpleRecipeName(pie) + "_from_slices");
+
     }
 
     @Override

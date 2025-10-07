@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:wither_berry_cheesecake_from_slices"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wither_berry_cheesecake_slice": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:wither_berry_cheesecake_slice"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wither_berry_cheesecake_slice"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:wither_berry_cheesecake_from_slices"
+    ]
+  }
+}

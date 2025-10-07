@@ -27,6 +27,7 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePrope
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -65,6 +66,14 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
 
         createBushDrops(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get());
         createBushDrops(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get());
+
+        createPieDrops(itemGetter, FrightsDelightBlocksImpl.ROTTEN_FLESH_PIE.get(), FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE.get());
+        createPieDrops(itemGetter, FrightsDelightBlocksImpl.SLIMEAPPLE_PIE.get(), FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE.get());
+        createPieDrops(itemGetter, FrightsDelightBlocksImpl.SPIDEREYE_PIE.get(), FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE.get());
+        createPieDrops(itemGetter, FrightsDelightBlocksImpl.GHASTTEAR_PIE.get(), FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE.get());
+        createPieDrops(itemGetter, FrightsDelightBlocksImpl.SOUL_BERRY_CHEESECAKE.get(), FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE.get());
+        createPieDrops(itemGetter, FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE.get(), FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE.get());
+        createPieDrops(itemGetter, FrightsDelightBlocksImpl.COBWEB_PIE.get(), FrightsDelightItemsImpl.COBWEB_PIE_SLICE.get());
 
     }
 
@@ -120,5 +129,26 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(FrightsDelightBushBlock.AGE, 2))))
         ).setRandomSequence(ModelLocationUtils.getModelLocation(block)));
+    }
+
+    private void createPieDrops(HolderGetter<Item> itemGetter, Block block, Item item) {
+        this.add(block, this.applyExplosionDecay(block, LootTable.lootTable()
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 0))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemGetter, CommonTags.C_TOOLS_KNIFE)))))
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(3.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 1))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemGetter, CommonTags.C_TOOLS_KNIFE)))))
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(2.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 2))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemGetter, CommonTags.C_TOOLS_KNIFE)))))
+                .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0f))))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 4))
+                                .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemGetter, CommonTags.C_TOOLS_KNIFE)))))
+        ));
     }
 }
