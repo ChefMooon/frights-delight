@@ -83,7 +83,14 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.BONE_KEBAB_SOUL_BERRY)
                 .add(FrightsDelightItemsImpl.BONE_KEBAB_WITHER_BERRY)
                 .add(FrightsDelightItemsImpl.MONSTER_MASH)
-                .add(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS);
+                .add(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS)
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE)
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_PIE)
+                .add(FrightsDelightItemsImpl.SPIDEREYE_PIE)
+                .add(FrightsDelightItemsImpl.GHASTTEAR_PIE)
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE)
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE)
+                .add(FrightsDelightItemsImpl.COBWEB_PIE);
     }
 
     private void registerCompatibilityItemTags() {
@@ -110,7 +117,14 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.SOUP_COBWEB)
                 .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR)
                 .add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY)
-                .add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY);
+                .add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY)
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE)
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_PIE)
+                .add(FrightsDelightItemsImpl.SPIDEREYE_PIE)
+                .add(FrightsDelightItemsImpl.GHASTTEAR_PIE)
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE)
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE)
+                .add(FrightsDelightItemsImpl.COBWEB_PIE);
 
         // Create: Craft's and Additions
         getOrCreateTagBuilder(CompatibilityTags.CREATE_ADDITION_PLANT_FOODS)
@@ -167,6 +181,9 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH)
                 .add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE)
                 .add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE)
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE)
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE)
+                .add(FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE)
         ;
 
         getOrCreateTagBuilder(CompatibilityTags.ORIGINS_IGNORE_DIET)
@@ -178,6 +195,8 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.SOUP_COBWEB)
                 .add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR)
                 .add(FrightsDelightItemsImpl.PUNCH_COBWEB)
+                .add(FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE)
+                .add(FrightsDelightItemsImpl.COBWEB_PIE_SLICE)
         ;
     }
 }

@@ -44,7 +44,14 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR)
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY)
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY)
-                .add(FrightsDelightBlocksImpl.PUNCHBOWL_COBWEB);
+                .add(FrightsDelightBlocksImpl.PUNCHBOWL_COBWEB)
+                .add(FrightsDelightBlocksImpl.ROTTEN_FLESH_PIE)
+                .add(FrightsDelightBlocksImpl.SLIMEAPPLE_PIE)
+                .add(FrightsDelightBlocksImpl.SPIDEREYE_PIE)
+                .add(FrightsDelightBlocksImpl.GHASTTEAR_PIE)
+                .add(FrightsDelightBlocksImpl.SOUL_BERRY_CHEESECAKE)
+                .add(FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE)
+                .add(FrightsDelightBlocksImpl.COBWEB_PIE);
 
         getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS)
                 .addTag(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH)

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "frightsdelight:item/slimeapple_pie_slice"
+  }
+}

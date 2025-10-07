@@ -1,11 +1,15 @@
 package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
+import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import com.chefmooon.frightsdelight.data.fabric.recipe.CookingRecipes;
+import com.chefmooon.frightsdelight.data.fabric.recipe.CuttingRecipes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import vectorwing.farmersdelight.common.registry.ModItems;
@@ -20,6 +24,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
     @Override
     public void buildRecipes(RecipeOutput exporter) {
         CookingRecipes.register(exporter);
+        CuttingRecipes.register(exporter);
 
         crateToIngredient(FrightsDelightItemsImpl.FLESH_CRATE, Items.ROTTEN_FLESH, exporter);
         crateToIngredient(FrightsDelightItemsImpl.BONE_CRATE, Items.BONE, exporter);
@@ -46,6 +51,14 @@ public class RecipeGenerator extends FabricRecipeProvider {
         punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY, FrightsDelightItemsImpl.PUNCH_SOUL_BERRY, exporter);
         punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY, FrightsDelightItemsImpl.PUNCH_WITHER_BERRY, exporter);
         punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB, FrightsDelightItemsImpl.PUNCH_COBWEB, exporter);
+
+        pieRecipe(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE, FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE, Items.ROTTEN_FLESH, exporter);
+        pieRecipe(FrightsDelightItemsImpl.SLIMEAPPLE_PIE, FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE, FrightsDelightItemsImpl.SLIMEAPPLE_PIE, exporter);
+        pieRecipe(FrightsDelightItemsImpl.SPIDEREYE_PIE, FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE, Items.SPIDER_EYE, exporter);
+        pieRecipe(FrightsDelightItemsImpl.GHASTTEAR_PIE, FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE, Items.GHAST_TEAR, exporter);
+        pieRecipe(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE, FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE, FrightsDelightItemsImpl.SOUL_BERRY, exporter);
+        pieRecipe(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE, FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE, FrightsDelightItemsImpl.WITHER_BERRY, exporter);
+        pieRecipe(FrightsDelightItemsImpl.COBWEB_PIE, FrightsDelightItemsImpl.COBWEB_PIE_SLICE, Items.COBWEB, exporter);
     }
 
     private static void crateToIngredient(Item crate, Item ingredient, RecipeOutput exporter) {
@@ -73,5 +86,28 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .unlockedBy(RecipeProvider.getHasName(punch), RecipeProvider.has(punch))
                 .showNotification(false)
                 .save(exporter, RecipeProvider.getSimpleRecipeName(punchbowl));
+    }
+
+    private static void pieRecipe(Item pie, Item pieSlice, Item mainIngredient, RecipeOutput exporter) {
+        Item crust = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "pie_crust"));
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pie)
+                .pattern("AAA")
+                .pattern("AAA")
+                .pattern("BCB")
+                .define('A', mainIngredient)
+                .define('B', CommonTags.C_FOODS_MILK)
+                .define('C', crust)
+                .unlockedBy("has_pie_crust", RecipeProvider.has(crust))
+                .group("frd_" + pie.getDescriptionId().replace("block.frightsdelight.", ""))
+                .save(exporter, RecipeProvider.getSimpleRecipeName(pie));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, pie)
+                .pattern("AA")
+                .pattern("AA")
+                .define('A', pieSlice)
+                .unlockedBy(RecipeProvider.getHasName(pieSlice), RecipeProvider.has(pieSlice))
+                .group("frd_" + pie.getDescriptionId().replace("block.frightsdelight.", ""))
+                .save(exporter, RecipeProvider.getSimpleRecipeName(pie) + "_from_slices");
+
     }
 }

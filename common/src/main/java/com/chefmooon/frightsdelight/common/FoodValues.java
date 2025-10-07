@@ -140,6 +140,24 @@ public class FoodValues {
     public static final FoodProperties PUNCH_WITHER_BERRY = foodProperty(4, 0.4f, false, true,
             List.of(new MobEffectInfo(UNDEAD_HUNGER, MEDIUM_DURATION, 1.0f)));
 
+    // *** CHEESECAKE *** //
+
+    // TODO: finalize duration and probabilities
+    public static final FoodProperties ROTTEN_FLESH_PIE_SLICE = foodProperty(4, 0.3f, true, false,
+            List.of(new MobEffectInfo(INFECTED, SHORT_DURATION, .5f)));
+    public static final FoodProperties SLIMEAPPLE_PIE_SLICE = foodProperty(4, 0.3f, true, false,
+            List.of(new MobEffectInfo(SLIMED, SHORT_DURATION, .5f)));
+    public static final FoodProperties SPIDEREYE_PIE_SLICE = foodProperty(4, 0.3f, true, false,
+            List.of(new MobEffectInfo(HYSTERIA, SHORT_DURATION, .5f)));
+    public static final FoodProperties GHASTTEAR_PIE_SLICE = foodProperty(4, 0.3f, true, false,
+            List.of(new MobEffectInfo(CHILLS, SHORT_DURATION, .5f)));
+    public static final FoodProperties SOUL_BERRY_CHEESECAKE_SLICE = foodProperty(4, 0.3f, true, true,
+            List.of(new MobEffectInfo(FORTIFIED_MIND, SHORT_DURATION, 1.0f)));
+    public static final FoodProperties WITHER_BERRY_CHEESECAKE_SLICE = foodProperty(4, 0.3f, true, true,
+            List.of(new MobEffectInfo(UNDEAD_HUNGER, SHORT_DURATION, 1.0f)));
+    public static final FoodProperties COBWEB_PIE_SLICE = foodProperty(4, 0.3f, true, false,
+            List.of(new MobEffectInfo(COBWEBBED, SHORT_DURATION, .5f)));
+
     public static FoodProperties foodProperty(int nutrition, float saturation, List<MobEffectInfo> effects) {
         return foodProperty(nutrition, saturation, false, false, effects);
     }

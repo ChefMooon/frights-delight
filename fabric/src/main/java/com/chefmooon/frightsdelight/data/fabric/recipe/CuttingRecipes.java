@@ -1,0 +1,38 @@
+package com.chefmooon.frightsdelight.data.fabric.recipe;
+
+import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
+import com.chefmooon.frightsdelight.common.tag.CommonTags;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
+import com.chefmooon.frightsdelight.data.fabric.builder.CuttingBoardRecipeBuilder;
+import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Ingredient;
+
+public class CuttingRecipes {
+
+    public static void register(RecipeOutput exporter) {
+        pieCuttingRecipeBuilder(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE, FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE, exporter);
+        pieCuttingRecipeBuilder(FrightsDelightItemsImpl.SLIMEAPPLE_PIE, FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE, exporter);
+        pieCuttingRecipeBuilder(FrightsDelightItemsImpl.SPIDEREYE_PIE, FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE, exporter);
+        pieCuttingRecipeBuilder(FrightsDelightItemsImpl.GHASTTEAR_PIE, FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE, exporter);
+        pieCuttingRecipeBuilder(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE, FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE,  exporter);
+        pieCuttingRecipeBuilder(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE, FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE,  exporter);
+        pieCuttingRecipeBuilder(FrightsDelightItemsImpl.COBWEB_PIE, FrightsDelightItemsImpl.COBWEB_PIE_SLICE,  exporter);
+    }
+
+    private static void pieCuttingRecipeBuilder(Item input, Item output, RecipeOutput exporter) {
+        CuttingBoardRecipeBuilder.create(input, Ingredient.of(CommonTags.C_TOOLS_KNIFE), output, 4, 1.0F)
+                .save(exporter, suffix(RecipeProvider.getConversionRecipeName(output, input)));
+    }
+
+    private static void basicCuttingRecipeBuilder(Item input, Item output, int outputCount, float chance, RecipeOutput exporter) {
+        CuttingBoardRecipeBuilder.create(input, Ingredient.of(CommonTags.C_TOOLS_KNIFE), output, outputCount, chance)
+                .save(exporter, suffix(RecipeProvider.getConversionRecipeName(output, input)));
+    }
+
+    private static ResourceLocation suffix(String string) {
+        return TextUtils.res(string);
+    }
+}

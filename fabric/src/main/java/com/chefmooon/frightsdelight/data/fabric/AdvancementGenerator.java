@@ -150,6 +150,13 @@ public class AdvancementGenerator extends FabricAdvancementProvider {
                 .addCriterion("has_punch_ghasttear", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_GHASTTEAR))
                 .addCriterion("has_punch_soul_berry", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY))
                 .addCriterion("has_punch_wither_berry", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY))
+                .addCriterion(RecipeGenerator.getHasName(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE))
+                .addCriterion(RecipeGenerator.getHasName(FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE))
+                .addCriterion(RecipeGenerator.getHasName(FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE))
+                .addCriterion(RecipeGenerator.getHasName(FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE))
+                .addCriterion(RecipeGenerator.getHasName(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE))
+                .addCriterion(RecipeGenerator.getHasName(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE))
+                .addCriterion(RecipeGenerator.getHasName(FrightsDelightItemsImpl.COBWEB_PIE_SLICE), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.COBWEB_PIE_SLICE))
                 .requirements(AdvancementRequirements.Strategy.AND)
                 .save(consumer, getAdvancementName("frd_master"));
     }
