@@ -3,11 +3,19 @@ package com.chefmooon.frightsdelight.neoforge;
 import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.client.neoforge.FrightsDelightClientImpl;
 import com.chefmooon.frightsdelight.common.neoforge.CommonSetupImpl;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
 import com.chefmooon.frightsdelight.common.registry.neoforge.*;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.RegisterEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -29,6 +37,7 @@ public class FrightsDelightImpl {
         FrightsDelightEffectsImpl.register(modEventBus);
         FrightsDelightParticleTypesImpl.register(modEventBus);
         FrightsDelightItemsImpl.register(modEventBus);
+        FrightsDelightBlockEntityImpl.register(modEventBus);
         FrightsDelightEntityTypesImpl.register(modEventBus);
         FrightsDelightBiomeFeaturesImpl.register(modEventBus);
         FrightsDelightCreativeTabs.register(modEventBus);
@@ -58,5 +67,19 @@ public class FrightsDelightImpl {
 //            }
 //        }
         return versionString;
+    }
+
+    @EventBusSubscriber(modid = FrightsDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+    public static class RegistryEvents {
+        @SubscribeEvent
+        public static void registerContent(RegisterEvent event) {
+            register(event, Registries.FLUID, FrightsDelightFluids::init);
+            register(event, NeoForgeRegistries.Keys.FLUID_TYPES, FrightsDelightFluidTypesImpl::registerAll);
+        }
+    }
+
+    public static <T> void register(RegisterEvent event, ResourceKey<Registry<T>> registry, Runnable registerMethod) {
+        if (event.getRegistryKey() == registry)
+            registerMethod.run();
     }
 }

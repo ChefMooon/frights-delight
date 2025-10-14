@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-06T16:01:31.3830417	Fright's Delight/Tags for minecraft:item
+// 1.21.1	2025-10-14T10:30:54.1891993	Fright's Delight/Tags for minecraft:item
 275508fca0253cb2318ec1aac1040bbe8403d5cf data\c\tags\item\storage_blocks\rotten_flesh.json
 ea1a0df32ca387e02411d7d7d5228156155421ee data\c\tags\item\foods\berry.json
 49c2ccb9eb0b07ca69fa525a4d1f4d21b959b8f8 data\c\tags\item\storage_blocks\spider_eye.json
@@ -9,13 +9,13 @@ b8c472f7bfd6c29e0df7dfb866e989443d7cda7e data\c\tags\item\storage_blocks.json
 49dd4b6f0c6b9250b3d55d1eda96052f5c05fa33 data\c\tags\item\storage_blocks\poisonous_potato.json
 8f411df297e1403c1743d486bf1fa95585330d0c data\c\tags\item\storage_blocks\bone.json
 ea1a0df32ca387e02411d7d7d5228156155421ee data\createaddition\tags\item\plant_foods.json
-e678b804fcf2b1a8a250cef1c2252652d1f6941f data\origins\tags\item\meat.json
+573ceeff0c2a38ebb9d1b8d10233d00e42a8a04b data\origins\tags\item\meat.json
 bc224074ff620e5ce7822a10ec8a96c7b5dfe2c3 data\c\tags\item\foods\cookie.json
 373fdc92421c7db7e80ebed6f40df37e6bc4f11a data\dehydration\tags\item\hydrating_drinks.json
-bd1885d9112ced9ce50f56b4404cd4d76bb2958e data\origins\tags\item\ignore_diet.json
+daa093ee5848da50940b11b298a188f73c485b7b data\origins\tags\item\ignore_diet.json
 1b0f5be3ff14e29d836354e4aa153c78ef637f65 data\dehydration\tags\item\hydrating_stew.json
 c58d4b599a44b9b815cad72b0c827b1eacf6c603 data\c\tags\item\storage_blocks\rotten_tomato.json
 a16960af0001a9462c1ee21b876d2f6771f25dbe data\c\tags\item\storage_blocks\cobweb.json
 bc224074ff620e5ce7822a10ec8a96c7b5dfe2c3 data\supplementaries\tags\item\cookies.json
-35deb8d2bb2538586facef00ca3bfe6b9324b140 data\c\tags\item\foods.json
+b95139918447ec0f85fc07b39b3e1fbd7d1f1638 data\c\tags\item\foods.json
 5abca48190ccf4debc6b85560695e83085ad9d5d data\c\tags\item\storage_blocks\phantom_membrane.json

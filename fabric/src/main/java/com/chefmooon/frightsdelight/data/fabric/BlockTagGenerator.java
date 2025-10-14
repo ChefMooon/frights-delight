@@ -74,6 +74,10 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
     }
 
     private void registerMinecraftBlockTags() {
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(FrightsDelightBlocksImpl.LOLLIPOP_MOLD)
+                .add(FrightsDelightBlocksImpl.RING_CANDY_MOLD);
+
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH)
                 .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH)

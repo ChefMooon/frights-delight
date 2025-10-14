@@ -80,6 +80,60 @@
       }
     ]
   },
+  "block.candy_mold.add": {
+    "subtitle": "frightsdelight.subtitles.block.candy_mold.add",
+    "sounds": [
+      {
+        "name": "block.bone_block.hit",
+        "type": "event"
+      }
+    ]
+  },
+  "block.candy_mold.fill": {
+    "subtitle": "frightsdelight.subtitles.block.candy_mold.fill",
+    "sounds": [
+      {
+        "name": "item.bottle.empty",
+        "type": "event"
+      }
+    ]
+  },
+  "block.candy_mold.drain": {
+    "subtitle": "frightsdelight.subtitles.block.candy_mold.drain",
+    "sounds": [
+      {
+        "name": "item.bottle.fill",
+        "type": "event"
+      }
+    ]
+  },
+  "block.candy_mold.remove": {
+    "subtitle": "frightsdelight.subtitles.block.candy_mold.remove",
+    "sounds": [
+      {
+        "name": "block.bone_block.hit",
+        "type": "event"
+      }
+    ]
+  },
+  "block.candy_mold.collect": {
+    "subtitle": "frightsdelight.subtitles.block.candy_mold.collect",
+    "sounds": [
+      {
+        "name": "entity.item.pickup",
+        "type": "event"
+      }
+    ]
+  },
+  "block.candy_mold.harden": {
+    "subtitle": "frightsdelight.subtitles.block.candy_mold.harden",
+    "sounds": [
+      {
+        "name": "block.amethyst_block.fall",
+        "type": "event"
+      }
+    ]
+  },
   "effect_hysteria_close": {
     "subtitle": "frightsdelight.subtitles.effect_hysteria.close",
     "sounds": [

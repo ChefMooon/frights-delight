@@ -1,0 +1,10 @@
+{
+  "parent": "frightsdelight:block/template_ring_candy_mold_syrup",
+  "textures": {
+    "bottom": "frightsdelight:block/candy_mold_bottom",
+    "particle": "frightsdelight:block/ring_candy_mold_top",
+    "side": "frightsdelight:block/candy_mold_side",
+    "syrup": "frightsdelight:block/wither_berry_syrup_still",
+    "top": "frightsdelight:block/ring_candy_mold_top"
+  }
+}

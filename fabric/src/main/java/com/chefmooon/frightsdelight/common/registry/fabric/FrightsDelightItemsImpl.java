@@ -4,6 +4,7 @@ import com.chefmooon.frightsdelight.common.FoodValues;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItemNameBlockItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableBlockItem;
+import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableItem;
 import com.chefmooon.frightsdelight.common.item.fabric.BoneShardItemImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -22,6 +23,15 @@ public class FrightsDelightItemsImpl {
     public static Item.Properties boneFoodItem(FoodProperties food) {
         return new Item.Properties().food(food).craftRemainder(FrightsDelightItemsImpl.BONE_SHARD).stacksTo(16);
     }
+
+    public static final Item UNFIRED_LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.UNFIRED_LOLLIPOP_MOLD,
+            new Item(basicItem()));
+    public static final Item LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.LOLLIPOP_MOLD,
+            new BlockItem(FrightsDelightBlocksImpl.LOLLIPOP_MOLD, basicItem()));
+    public static final Item UNFIRED_RING_CANDY_MOLD = registerItemWithTab(FrightsDelightItems.UNFIRED_RING_CANDY_MOLD,
+            new Item(basicItem()));
+    public static final Item RING_CANDY_MOLD = registerItemWithTab(FrightsDelightItems.RING_CANDY_MOLD,
+            new BlockItem(FrightsDelightBlocksImpl.RING_CANDY_MOLD, basicItem()));
 
     public static final Item FLESH_CRATE = registerItemWithTab(FrightsDelightItems.FLESH_CRATE,
             new BlockItem(FrightsDelightBlocksImpl.FLESH_CRATE, basicItem()));
@@ -47,6 +57,36 @@ public class FrightsDelightItemsImpl {
             new FrightsDelightConsumableItemNameBlockItem(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH, foodItem(FoodValues.SOUL_BERRY), true));
     public static final Item WITHER_BERRY = registerItemWithTab(FrightsDelightItems.WITHER_BERRY,
             new FrightsDelightConsumableItemNameBlockItem(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH, foodItem(FoodValues.WITHER_BERRY), true));
+
+    public static final Item ROTTEN_FLESH_LOLLIPOP = registerItemWithTab(FrightsDelightItems.ROTTEN_FLESH_LOLLIPOP,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.ROTTEN_FLESH_LOLLIPOP), true));
+    public static final Item SPIDEREYE_LOLLIPOP = registerItemWithTab(FrightsDelightItems.SPIDEREYE_LOLLIPOP,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.SPIDEREYE_LOLLIPOP), true));
+    public static final Item SLIMEAPPLE_LOLLIPOP = registerItemWithTab(FrightsDelightItems.SLIMEAPPLE_LOLLIPOP,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.SLIMEAPPLE_LOLLIPOP), true));
+    public static final Item COBWEB_LOLLIPOP = registerItemWithTab(FrightsDelightItems.COBWEB_LOLLIPOP,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.COBWEB_LOLLIPOP), true));
+    public static final Item GHASTTEAR_LOLLIPOP = registerItemWithTab(FrightsDelightItems.GHASTTEAR_LOLLIPOP,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.GHASTTEAR_LOLLIPOP), true));
+    public static final Item SOUL_BERRY_LOLLIPOP = registerItemWithTab(FrightsDelightItems.SOUL_BERRY_LOLLIPOP,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.SOUL_BERRY_LOLLIPOP), true));
+    public static final Item WITHER_BERRY_LOLLIPOP = registerItemWithTab(FrightsDelightItems.WITHER_BERRY_LOLLIPOP,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.WITHER_BERRY_LOLLIPOP), true));
+
+    public static final Item ROTTEN_FLESH_RING_CANDY = registerItemWithTab(FrightsDelightItems.ROTTEN_FLESH_RING_CANDY,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.ROTTEN_FLESH_RING_CANDY), true));
+    public static final Item SPIDEREYE_RING_CANDY = registerItemWithTab(FrightsDelightItems.SPIDEREYE_RING_CANDY,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.SPIDEREYE_RING_CANDY), true));
+    public static final Item SLIMEAPPLE_RING_CANDY = registerItemWithTab(FrightsDelightItems.SLIMEAPPLE_RING_CANDY,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.SLIMEAPPLE_RING_CANDY), true));
+    public static final Item COBWEB_RING_CANDY = registerItemWithTab(FrightsDelightItems.COBWEB_RING_CANDY,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.COBWEB_RING_CANDY), true));
+    public static final Item GHASTTEAR_RING_CANDY = registerItemWithTab(FrightsDelightItems.GHASTTEAR_RING_CANDY,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.GHASTTEAR_RING_CANDY), true));
+    public static final Item SOUL_BERRY_RING_CANDY = registerItemWithTab(FrightsDelightItems.SOUL_BERRY_RING_CANDY,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.SOUL_BERRY_RING_CANDY), true));
+    public static final Item WITHER_BERRY_RING_CANDY = registerItemWithTab(FrightsDelightItems.WITHER_BERRY_RING_CANDY,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.WITHER_BERRY_RING_CANDY), true));
 
     public static final Item APPLE_SLIME = registerItemWithTab(FrightsDelightItems.APPLE_SLIME,
             new FrightsDelightConsumableItem(foodItem(FoodValues.APPLE_SLIME), true));
@@ -146,35 +186,55 @@ public class FrightsDelightItemsImpl {
     public static final Item PUNCHBOWL_WITHER_BERRY = registerItemWithTab(FrightsDelightItems.PUNCHBOWL_WITHER_BERRY,
             new BlockItem(FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY, noStack()));
 
+    public static final Item ROTTEN_FLESH_SYRUP_BOTTLE = registerItemWithTab(FrightsDelightItems.ROTTEN_FLESH_SYRUP_BOTTLE,
+            new FrightsDelightDrinkableItem(syrupItem(FoodValues.ROTTEN_FLESH_SYRUP_BOTTLE),
+                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.ZOMBIE_AMBIENT.getLocation()), true));
+    public static final Item SPIDEREYE_SYRUP_BOTTLE = registerItemWithTab(FrightsDelightItems.SPIDEREYE_SYRUP_BOTTLE,
+            new FrightsDelightDrinkableItem(syrupItem(FoodValues.SPIDEREYE_SYRUP_BOTTLE),
+                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SPIDER_AMBIENT.getLocation()), true));
+    public static final Item SLIMEAPPLE_SYRUP_BOTTLE = registerItemWithTab(FrightsDelightItems.SLIMEAPPLE_SYRUP_BOTTLE,
+            new FrightsDelightDrinkableItem(syrupItem(FoodValues.SLIMEAPPLE_SYRUP_BOTTLE),
+                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SLIME_SQUISH.getLocation()), true));
+    public static final Item COBWEB_SYRUP_BOTTLE = registerItemWithTab(FrightsDelightItems.COBWEB_SYRUP_BOTTLE,
+            new FrightsDelightDrinkableItem(syrupItem(FoodValues.COBWEB_SYRUP_BOTTLE),
+                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.SPIDER_AMBIENT.getLocation()), true));
+    public static final Item GHASTTEAR_SYRUP_BOTTLE = registerItemWithTab(FrightsDelightItems.GHASTTEAR_SYRUP_BOTTLE,
+            new FrightsDelightDrinkableItem(syrupItem(FoodValues.GHASTTEAR_SYRUP_BOTTLE),
+                    BuiltInRegistries.SOUND_EVENT.get(SoundEvents.GHAST_AMBIENT.getLocation()), true));
+    public static final Item SOUL_BERRY_SYRUP_BOTTLE = registerItemWithTab(FrightsDelightItems.SOUL_BERRY_SYRUP_BOTTLE,
+            new FrightsDelightDrinkableItem(syrupItem(FoodValues.SOUL_BERRY_SYRUP_BOTTLE), true));
+    public static final Item WITHER_BERRY_SYRUP_BOTTLE = registerItemWithTab(FrightsDelightItems.WITHER_BERRY_SYRUP_BOTTLE,
+            new FrightsDelightDrinkableItem(syrupItem(FoodValues.WITHER_BERRY_SYRUP_BOTTLE), true));
+
     public static final Item ROTTEN_FLESH_PIE = registerItemWithTab(FrightsDelightItems.ROTTEN_FLESH_PIE,
             new BlockItem(FrightsDelightBlocksImpl.ROTTEN_FLESH_PIE, basicItem()));
-    public static final Item SLIMEAPPLE_PIE = registerItemWithTab(FrightsDelightItems.SLIMEAPPLE_PIE,
-            new BlockItem(FrightsDelightBlocksImpl.SLIMEAPPLE_PIE, basicItem()));
     public static final Item SPIDEREYE_PIE = registerItemWithTab(FrightsDelightItems.SPIDEREYE_PIE,
             new BlockItem(FrightsDelightBlocksImpl.SPIDEREYE_PIE, basicItem()));
+    public static final Item SLIMEAPPLE_PIE = registerItemWithTab(FrightsDelightItems.SLIMEAPPLE_PIE,
+            new BlockItem(FrightsDelightBlocksImpl.SLIMEAPPLE_PIE, basicItem()));
+    public static final Item COBWEB_PIE = registerItemWithTab(FrightsDelightItems.COBWEB_PIE,
+            new BlockItem(FrightsDelightBlocksImpl.COBWEB_PIE, basicItem()));
     public static final Item GHASTTEAR_PIE = registerItemWithTab(FrightsDelightItems.GHASTTEAR_PIE,
             new BlockItem(FrightsDelightBlocksImpl.GHASTTEAR_PIE, basicItem()));
     public static final Item SOUL_BERRY_CHEESECAKE = registerItemWithTab(FrightsDelightItems.SOUL_BERRY_CHEESECAKE,
             new BlockItem(FrightsDelightBlocksImpl.SOUL_BERRY_CHEESECAKE, basicItem()));
     public static final Item WITHER_BERRY_CHEESECAKE = registerItemWithTab(FrightsDelightItems.WITHER_BERRY_CHEESECAKE,
             new BlockItem(FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE, basicItem()));
-    public static final Item COBWEB_PIE = registerItemWithTab(FrightsDelightItems.COBWEB_PIE,
-            new BlockItem(FrightsDelightBlocksImpl.COBWEB_PIE, basicItem()));
 
     public static final Item ROTTEN_FLESH_PIE_SLICE = registerItemWithTab(FrightsDelightItems.ROTTEN_FLESH_PIE_SLICE,
             new FrightsDelightConsumableItem(foodItem(FoodValues.ROTTEN_FLESH_PIE_SLICE), true));
-    public static final Item SLIMEAPPLE_PIE_SLICE = registerItemWithTab(FrightsDelightItems.SLIMEAPPLE_PIE_SLICE,
-            new FrightsDelightConsumableItem(foodItem(FoodValues.SLIMEAPPLE_PIE_SLICE), true));
     public static final Item SPIDEREYE_PIE_SLICE = registerItemWithTab(FrightsDelightItems.SPIDEREYE_PIE_SLICE,
             new FrightsDelightConsumableItem(foodItem(FoodValues.SPIDEREYE_PIE_SLICE), true));
+    public static final Item SLIMEAPPLE_PIE_SLICE = registerItemWithTab(FrightsDelightItems.SLIMEAPPLE_PIE_SLICE,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.SLIMEAPPLE_PIE_SLICE), true));
+    public static final Item COBWEB_PIE_SLICE = registerItemWithTab(FrightsDelightItems.COBWEB_PIE_SLICE,
+            new FrightsDelightConsumableItem(foodItem(FoodValues.COBWEB_PIE_SLICE), true));
     public static final Item GHASTTEAR_PIE_SLICE = registerItemWithTab(FrightsDelightItems.GHASTTEAR_PIE_SLICE,
             new FrightsDelightConsumableItem(foodItem(FoodValues.GHASTTEAR_PIE_SLICE), true));
     public static final Item SOUL_BERRY_CHEESECAKE_SLICE = registerItemWithTab(FrightsDelightItems.SOUL_BERRY_CHEESECAKE_SLICE,
             new FrightsDelightConsumableItem(foodItem(FoodValues.SOUL_BERRY_CHEESECAKE_SLICE), true));
     public static final Item WITHER_BERRY_CHEESECAKE_SLICE = registerItemWithTab(FrightsDelightItems.WITHER_BERRY_CHEESECAKE_SLICE,
             new FrightsDelightConsumableItem(foodItem(FoodValues.WITHER_BERRY_CHEESECAKE_SLICE), true));
-    public static final Item COBWEB_PIE_SLICE = registerItemWithTab(FrightsDelightItems.COBWEB_PIE_SLICE,
-            new FrightsDelightConsumableItem(foodItem(FoodValues.COBWEB_PIE_SLICE), true));
 
     public static Item registerItemWithTab(final ResourceLocation location, final Item item) {
         Registry.register(BuiltInRegistries.ITEM, location, item);

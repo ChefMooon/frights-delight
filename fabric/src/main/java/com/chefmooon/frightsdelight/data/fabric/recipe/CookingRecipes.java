@@ -126,6 +126,14 @@ public class CookingRecipes {
         soupRecipe(FrightsDelightItemsImpl.SOUP_SOUL_BERRY, FrightsDelightItemsImpl.SOUL_BERRY, recipeOutput);
         soupRecipe(FrightsDelightItemsImpl.SOUP_WITHER_BERRY, FrightsDelightItemsImpl.WITHER_BERRY, recipeOutput);
 
+        syrupRecipe(FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE, Items.ROTTEN_FLESH, recipeOutput);
+        syrupRecipe(FrightsDelightItemsImpl.SLIMEAPPLE_SYRUP_BOTTLE, FrightsDelightItemsImpl.APPLE_SLIME, recipeOutput);
+        syrupRecipe(FrightsDelightItemsImpl.SPIDEREYE_SYRUP_BOTTLE, Items.SPIDER_EYE, recipeOutput);
+        syrupRecipe(FrightsDelightItemsImpl.GHASTTEAR_SYRUP_BOTTLE, Items.GHAST_TEAR, recipeOutput);
+        syrupRecipe(FrightsDelightItemsImpl.SOUL_BERRY_SYRUP_BOTTLE, FrightsDelightItemsImpl.SOUL_BERRY, recipeOutput);
+        syrupRecipe(FrightsDelightItemsImpl.WITHER_BERRY_SYRUP_BOTTLE, FrightsDelightItemsImpl.WITHER_BERRY, recipeOutput);
+        syrupRecipe(FrightsDelightItemsImpl.COBWEB_SYRUP_BOTTLE, Items.COBWEB, recipeOutput);
+
     }
 
     private static void punchRecipe(Item output, Item mainIngredient, RecipeOutput recipeOutput) {
@@ -146,6 +154,16 @@ public class CookingRecipes {
                         Ingredient.of(mainIngredient)))
                 .unlockedByAny(mainIngredient)
                 .setRecipeBookTab(CookingPotRecipeBookTab.MEALS)
+                .save(recipeOutput, RecipeProvider.getSimpleRecipeName(output));
+    }
+
+    private static void syrupRecipe(Item output, Item mainIngredient, RecipeOutput recipeOutput) {
+        CookingPotRecipeJsonBuilder.create(output, 1, 400, 1.0F, nonNullList())
+                .input(mainIngredient, 3)
+                .input(Items.SUGAR, 2)
+                .input(Items.WATER_BUCKET, 1)
+                .unlockedByAny(mainIngredient, Items.SUGAR, Items.WATER_BUCKET)
+                .setRecipeBookTab(CookingPotRecipeBookTab.DRINKS)
                 .save(recipeOutput, RecipeProvider.getSimpleRecipeName(output));
     }
 

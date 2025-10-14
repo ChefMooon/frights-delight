@@ -10,6 +10,7 @@ public class DataGenerationFabric implements DataGeneratorEntrypoint {
 
         pack.addProvider(BlockTagGenerator::new);
         pack.addProvider(ItemTagGenerator::new);
+        pack.addProvider(FluidTagGenerator::new);
         pack.addProvider(TranslationGenerator::new);
         pack.addProvider(ModelGenerator::new);
         pack.addProvider(RecipeGenerator::new);

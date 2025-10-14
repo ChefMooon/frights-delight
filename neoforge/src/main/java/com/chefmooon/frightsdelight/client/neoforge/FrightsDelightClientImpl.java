@@ -2,20 +2,22 @@ package com.chefmooon.frightsdelight.client.neoforge;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.client.FrightsDelightClient;
+import com.chefmooon.frightsdelight.common.registry.neoforge.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import com.chefmooon.frightsdelight.common.utility.neoforge.FrightsDelightItemPropertiesImpl;
 import net.minecraft.SharedConstants;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.packs.PackLocationInfo;
 import net.minecraft.server.packs.PackSelectionConfig;
 import net.minecraft.server.packs.PackType;
-import net.minecraft.server.packs.PathPackResources;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.KnownPack;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
-import net.minecraft.world.flag.FeatureFlagSet;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
@@ -30,7 +32,23 @@ public class FrightsDelightClientImpl {
         FrightsDelightClient.init();
         event.enqueueWork(() -> {
             FrightsDelightItemPropertiesImpl.addCustomItemProperties();
+            registerFluidRenderLayers();
         });
+    }
+
+    public static void registerFluidRenderLayers() {
+        setFluidRenderLayer(FrightsDelightBlocksImpl.ROTTEN_FLESH_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.SLIMEAPPLE_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.SPIDEREYE_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.GHASTTEAR_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.SOUL_BERRY_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.WITHER_BERRY_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.COBWEB_SYRUP.get());
+    }
+
+    public static void setFluidRenderLayer(LiquidBlock liquidBlock) {
+        ItemBlockRenderTypes.setRenderLayer(liquidBlock.fluid.getFlowing(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(liquidBlock.fluid.getSource(), RenderType.translucent());
     }
 
     public static void onBuiltinPackRegistration(AddPackFindersEvent event) {

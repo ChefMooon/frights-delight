@@ -1,0 +1,6 @@
+{
+  "parent": "frightsdelight:block/template_syrup",
+  "textures": {
+    "particle": "frightsdelight:block/wither_berry_syrup_still"
+  }
+}

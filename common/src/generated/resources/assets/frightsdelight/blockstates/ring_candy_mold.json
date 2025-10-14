@@ -1,0 +1,244 @@
+{
+  "variants": {
+    "facing=east,hardened=false,syrup_type=cobweb": {
+      "model": "frightsdelight:block/ring_candy_mold_cobweb_syrup",
+      "y": 90
+    },
+    "facing=east,hardened=false,syrup_type=empty": {
+      "model": "frightsdelight:block/ring_candy_mold",
+      "y": 90
+    },
+    "facing=east,hardened=false,syrup_type=ghasttear": {
+      "model": "frightsdelight:block/ring_candy_mold_ghasttear_syrup",
+      "y": 90
+    },
+    "facing=east,hardened=false,syrup_type=rotten_flesh": {
+      "model": "frightsdelight:block/ring_candy_mold_rotten_flesh_syrup",
+      "y": 90
+    },
+    "facing=east,hardened=false,syrup_type=slimeapple": {
+      "model": "frightsdelight:block/ring_candy_mold_slimeapple_syrup",
+      "y": 90
+    },
+    "facing=east,hardened=false,syrup_type=soul_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_soul_berry_syrup",
+      "y": 90
+    },
+    "facing=east,hardened=false,syrup_type=spidereye": {
+      "model": "frightsdelight:block/ring_candy_mold_spidereye_syrup",
+      "y": 90
+    },
+    "facing=east,hardened=false,syrup_type=wither_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_wither_berry_syrup",
+      "y": 90
+    },
+    "facing=east,hardened=true,syrup_type=cobweb": {
+      "model": "frightsdelight:block/ring_candy_mold_cobweb_syrup_solid",
+      "y": 90
+    },
+    "facing=east,hardened=true,syrup_type=empty": {
+      "model": "frightsdelight:block/ring_candy_mold",
+      "y": 90
+    },
+    "facing=east,hardened=true,syrup_type=ghasttear": {
+      "model": "frightsdelight:block/ring_candy_mold_ghasttear_syrup_solid",
+      "y": 90
+    },
+    "facing=east,hardened=true,syrup_type=rotten_flesh": {
+      "model": "frightsdelight:block/ring_candy_mold_rotten_flesh_syrup_solid",
+      "y": 90
+    },
+    "facing=east,hardened=true,syrup_type=slimeapple": {
+      "model": "frightsdelight:block/ring_candy_mold_slimeapple_syrup_solid",
+      "y": 90
+    },
+    "facing=east,hardened=true,syrup_type=soul_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_soul_berry_syrup_solid",
+      "y": 90
+    },
+    "facing=east,hardened=true,syrup_type=spidereye": {
+      "model": "frightsdelight:block/ring_candy_mold_spidereye_syrup_solid",
+      "y": 90
+    },
+    "facing=east,hardened=true,syrup_type=wither_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_wither_berry_syrup_solid",
+      "y": 90
+    },
+    "facing=north,hardened=false,syrup_type=cobweb": {
+      "model": "frightsdelight:block/ring_candy_mold_cobweb_syrup"
+    },
+    "facing=north,hardened=false,syrup_type=empty": {
+      "model": "frightsdelight:block/ring_candy_mold"
+    },
+    "facing=north,hardened=false,syrup_type=ghasttear": {
+      "model": "frightsdelight:block/ring_candy_mold_ghasttear_syrup"
+    },
+    "facing=north,hardened=false,syrup_type=rotten_flesh": {
+      "model": "frightsdelight:block/ring_candy_mold_rotten_flesh_syrup"
+    },
+    "facing=north,hardened=false,syrup_type=slimeapple": {
+      "model": "frightsdelight:block/ring_candy_mold_slimeapple_syrup"
+    },
+    "facing=north,hardened=false,syrup_type=soul_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_soul_berry_syrup"
+    },
+    "facing=north,hardened=false,syrup_type=spidereye": {
+      "model": "frightsdelight:block/ring_candy_mold_spidereye_syrup"
+    },
+    "facing=north,hardened=false,syrup_type=wither_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_wither_berry_syrup"
+    },
+    "facing=north,hardened=true,syrup_type=cobweb": {
+      "model": "frightsdelight:block/ring_candy_mold_cobweb_syrup_solid"
+    },
+    "facing=north,hardened=true,syrup_type=empty": {
+      "model": "frightsdelight:block/ring_candy_mold"
+    },
+    "facing=north,hardened=true,syrup_type=ghasttear": {
+      "model": "frightsdelight:block/ring_candy_mold_ghasttear_syrup_solid"
+    },
+    "facing=north,hardened=true,syrup_type=rotten_flesh": {
+      "model": "frightsdelight:block/ring_candy_mold_rotten_flesh_syrup_solid"
+    },
+    "facing=north,hardened=true,syrup_type=slimeapple": {
+      "model": "frightsdelight:block/ring_candy_mold_slimeapple_syrup_solid"
+    },
+    "facing=north,hardened=true,syrup_type=soul_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_soul_berry_syrup_solid"
+    },
+    "facing=north,hardened=true,syrup_type=spidereye": {
+      "model": "frightsdelight:block/ring_candy_mold_spidereye_syrup_solid"
+    },
+    "facing=north,hardened=true,syrup_type=wither_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_wither_berry_syrup_solid"
+    },
+    "facing=south,hardened=false,syrup_type=cobweb": {
+      "model": "frightsdelight:block/ring_candy_mold_cobweb_syrup",
+      "y": 180
+    },
+    "facing=south,hardened=false,syrup_type=empty": {
+      "model": "frightsdelight:block/ring_candy_mold",
+      "y": 180
+    },
+    "facing=south,hardened=false,syrup_type=ghasttear": {
+      "model": "frightsdelight:block/ring_candy_mold_ghasttear_syrup",
+      "y": 180
+    },
+    "facing=south,hardened=false,syrup_type=rotten_flesh": {
+      "model": "frightsdelight:block/ring_candy_mold_rotten_flesh_syrup",
+      "y": 180
+    },
+    "facing=south,hardened=false,syrup_type=slimeapple": {
+      "model": "frightsdelight:block/ring_candy_mold_slimeapple_syrup",
+      "y": 180
+    },
+    "facing=south,hardened=false,syrup_type=soul_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_soul_berry_syrup",
+      "y": 180
+    },
+    "facing=south,hardened=false,syrup_type=spidereye": {
+      "model": "frightsdelight:block/ring_candy_mold_spidereye_syrup",
+      "y": 180
+    },
+    "facing=south,hardened=false,syrup_type=wither_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_wither_berry_syrup",
+      "y": 180
+    },
+    "facing=south,hardened=true,syrup_type=cobweb": {
+      "model": "frightsdelight:block/ring_candy_mold_cobweb_syrup_solid",
+      "y": 180
+    },
+    "facing=south,hardened=true,syrup_type=empty": {
+      "model": "frightsdelight:block/ring_candy_mold",
+      "y": 180
+    },
+    "facing=south,hardened=true,syrup_type=ghasttear": {
+      "model": "frightsdelight:block/ring_candy_mold_ghasttear_syrup_solid",
+      "y": 180
+    },
+    "facing=south,hardened=true,syrup_type=rotten_flesh": {
+      "model": "frightsdelight:block/ring_candy_mold_rotten_flesh_syrup_solid",
+      "y": 180
+    },
+    "facing=south,hardened=true,syrup_type=slimeapple": {
+      "model": "frightsdelight:block/ring_candy_mold_slimeapple_syrup_solid",
+      "y": 180
+    },
+    "facing=south,hardened=true,syrup_type=soul_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_soul_berry_syrup_solid",
+      "y": 180
+    },
+    "facing=south,hardened=true,syrup_type=spidereye": {
+      "model": "frightsdelight:block/ring_candy_mold_spidereye_syrup_solid",
+      "y": 180
+    },
+    "facing=south,hardened=true,syrup_type=wither_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_wither_berry_syrup_solid",
+      "y": 180
+    },
+    "facing=west,hardened=false,syrup_type=cobweb": {
+      "model": "frightsdelight:block/ring_candy_mold_cobweb_syrup",
+      "y": 270
+    },
+    "facing=west,hardened=false,syrup_type=empty": {
+      "model": "frightsdelight:block/ring_candy_mold",
+      "y": 270
+    },
+    "facing=west,hardened=false,syrup_type=ghasttear": {
+      "model": "frightsdelight:block/ring_candy_mold_ghasttear_syrup",
+      "y": 270
+    },
+    "facing=west,hardened=false,syrup_type=rotten_flesh": {
+      "model": "frightsdelight:block/ring_candy_mold_rotten_flesh_syrup",
+      "y": 270
+    },
+    "facing=west,hardened=false,syrup_type=slimeapple": {
+      "model": "frightsdelight:block/ring_candy_mold_slimeapple_syrup",
+      "y": 270
+    },
+    "facing=west,hardened=false,syrup_type=soul_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_soul_berry_syrup",
+      "y": 270
+    },
+    "facing=west,hardened=false,syrup_type=spidereye": {
+      "model": "frightsdelight:block/ring_candy_mold_spidereye_syrup",
+      "y": 270
+    },
+    "facing=west,hardened=false,syrup_type=wither_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_wither_berry_syrup",
+      "y": 270
+    },
+    "facing=west,hardened=true,syrup_type=cobweb": {
+      "model": "frightsdelight:block/ring_candy_mold_cobweb_syrup_solid",
+      "y": 270
+    },
+    "facing=west,hardened=true,syrup_type=empty": {
+      "model": "frightsdelight:block/ring_candy_mold",
+      "y": 270
+    },
+    "facing=west,hardened=true,syrup_type=ghasttear": {
+      "model": "frightsdelight:block/ring_candy_mold_ghasttear_syrup_solid",
+      "y": 270
+    },
+    "facing=west,hardened=true,syrup_type=rotten_flesh": {
+      "model": "frightsdelight:block/ring_candy_mold_rotten_flesh_syrup_solid",
+      "y": 270
+    },
+    "facing=west,hardened=true,syrup_type=slimeapple": {
+      "model": "frightsdelight:block/ring_candy_mold_slimeapple_syrup_solid",
+      "y": 270
+    },
+    "facing=west,hardened=true,syrup_type=soul_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_soul_berry_syrup_solid",
+      "y": 270
+    },
+    "facing=west,hardened=true,syrup_type=spidereye": {
+      "model": "frightsdelight:block/ring_candy_mold_spidereye_syrup_solid",
+      "y": 270
+    },
+    "facing=west,hardened=true,syrup_type=wither_berry": {
+      "model": "frightsdelight:block/ring_candy_mold_wither_berry_syrup_solid",
+      "y": 270
+    }
+  }
+}

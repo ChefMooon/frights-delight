@@ -1,7 +1,9 @@
 package com.chefmooon.frightsdelight.common.registry;
 
+import com.chefmooon.frightsdelight.common.block.AbstractMoldBlock;
 import com.chefmooon.frightsdelight.common.block.DrinkableFeastBlock;
 import com.chefmooon.frightsdelight.common.block.GlassCupBlock;
+import com.chefmooon.frightsdelight.common.data.types.Syrups;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
@@ -43,8 +45,20 @@ public class FrightsDelightBlocks {
         };
     }
 
+    public static ToIntFunction<BlockState> slimeAppleAbstractMoldLight() {
+        return (state) -> {
+            if (state.hasProperty(AbstractMoldBlock.SYRUP_TYPE)) {
+                if (state.getValue(AbstractMoldBlock.SYRUP_TYPE) == Syrups.SLIMEAPPLE) return 8;
+            }
+            return 0;
+        };
+    }
+
     public static final ResourceLocation SOUL_BERRY_BUSH = block("soul_berry_bush");
     public static final ResourceLocation WITHER_BERRY_BUSH = block("wither_berry_bush");
+
+    public static final ResourceLocation LOLLIPOP_MOLD = block("lollipop_mold");
+    public static final ResourceLocation RING_CANDY_MOLD = block("ring_candy_mold");
 
     public static final ResourceLocation FLESH_CRATE = block("flesh_crate");
     public static final ResourceLocation BONE_CRATE = block("bone_crate");
@@ -78,6 +92,14 @@ public class FrightsDelightBlocks {
     public static final ResourceLocation SOUL_BERRY_CHEESECAKE = block("soul_berry_cheesecake");
     public static final ResourceLocation WITHER_BERRY_CHEESECAKE = block("wither_berry_cheesecake");
     public static final ResourceLocation COBWEB_PIE = block("cobweb_pie");
+
+    public static final ResourceLocation ROTTEN_FLESH_SYRUP = block("rotten_flesh_syrup");
+    public static final ResourceLocation SLIMEAPPLE_SYRUP = block("slimeapple_syrup");
+    public static final ResourceLocation SPIDEREYE_SYRUP = block("spidereye_syrup");
+    public static final ResourceLocation GHASTTEAR_SYRUP = block("ghasttear_syrup");
+    public static final ResourceLocation SOUL_BERRY_SYRUP = block("soul_berry_syrup");
+    public static final ResourceLocation WITHER_BERRY_SYRUP = block("wither_berry_syrup");
+    public static final ResourceLocation COBWEB_SYRUP = block("cobweb_syrup");
 
     private static ResourceLocation block(String string) {
         return TextUtils.res(string);

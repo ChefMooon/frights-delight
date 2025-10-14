@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "level=0": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=1": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=10": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=11": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=12": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=13": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=14": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=15": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=2": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=3": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=4": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=5": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=6": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=7": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=8": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    },
+    "level=9": {
+      "model": "frightsdelight:block/rotten_flesh_syrup"
+    }
+  }
+}

@@ -140,9 +140,8 @@ public class FoodValues {
     public static final FoodProperties PUNCH_WITHER_BERRY = foodProperty(4, 0.4f, false, true,
             List.of(new MobEffectInfo(UNDEAD_HUNGER, MEDIUM_DURATION, 1.0f)));
 
-    // *** CHEESECAKE *** //
+    // *** CHEESECAKE/PIE *** //
 
-    // TODO: finalize duration and probabilities
     public static final FoodProperties ROTTEN_FLESH_PIE_SLICE = foodProperty(4, 0.3f, true, false,
             List.of(new MobEffectInfo(INFECTED, SHORT_DURATION, .5f)));
     public static final FoodProperties SLIMEAPPLE_PIE_SLICE = foodProperty(4, 0.3f, true, false,
@@ -157,6 +156,57 @@ public class FoodValues {
             List.of(new MobEffectInfo(UNDEAD_HUNGER, SHORT_DURATION, 1.0f)));
     public static final FoodProperties COBWEB_PIE_SLICE = foodProperty(4, 0.3f, true, false,
             List.of(new MobEffectInfo(COBWEBBED, SHORT_DURATION, .5f)));
+
+    // *** SYRUPS *** //
+
+    public static final FoodProperties ROTTEN_FLESH_SYRUP_BOTTLE = foodProperty(6, 0.4f, true, false,
+            List.of(new MobEffectInfo(INFECTED, BRIEF_DURATION, .25f)));
+    public static final FoodProperties SLIMEAPPLE_SYRUP_BOTTLE = foodProperty(6, 0.4f, true, false,
+            List.of(new MobEffectInfo(SLIMED, BRIEF_DURATION, .25f)));
+    public static final FoodProperties SPIDEREYE_SYRUP_BOTTLE = foodProperty(6, 0.4f, true, false,
+            List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .25f)));
+    public static final FoodProperties GHASTTEAR_SYRUP_BOTTLE = foodProperty(6, 0.4f, true, false,
+            List.of(new MobEffectInfo(CHILLS, BRIEF_DURATION, .25f)));
+    public static final FoodProperties SOUL_BERRY_SYRUP_BOTTLE = foodProperty(6, 0.4f, true, true,
+            List.of(new MobEffectInfo(FORTIFIED_MIND, MEDIUM_DURATION, 1.0f)));
+    public static final FoodProperties WITHER_BERRY_SYRUP_BOTTLE = foodProperty(6, 0.4f, true, true,
+            List.of(new MobEffectInfo(UNDEAD_HUNGER, MEDIUM_DURATION, 1.0f)));
+    public static final FoodProperties COBWEB_SYRUP_BOTTLE = foodProperty(6, 0.4f, true, false,
+            List.of(new MobEffectInfo(COBWEBBED, BRIEF_DURATION, .25f)));
+
+    // *** LOLLIPOPS *** //
+
+    public static final FoodProperties ROTTEN_FLESH_LOLLIPOP = foodProperty(2, 0.1f, true, false,
+            List.of(new MobEffectInfo(INFECTED, BRIEF_DURATION, .25f)));
+    public static final FoodProperties SLIMEAPPLE_LOLLIPOP = foodProperty(2, 0.1f, true, false,
+            List.of(new MobEffectInfo(SLIMED, BRIEF_DURATION, .25f)));
+    public static final FoodProperties SPIDEREYE_LOLLIPOP = foodProperty(2, 0.1f, true, false,
+            List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .25f)));
+    public static final FoodProperties GHASTTEAR_LOLLIPOP = foodProperty(2, 0.1f, true, false,
+            List.of(new MobEffectInfo(CHILLS, BRIEF_DURATION, .25f)));
+    public static final FoodProperties SOUL_BERRY_LOLLIPOP = foodProperty(2, 0.1f, true, true,
+            List.of(new MobEffectInfo(FORTIFIED_MIND, MEDIUM_DURATION, 1.0f)));
+    public static final FoodProperties WITHER_BERRY_LOLLIPOP = foodProperty(2, 0.1f, true, true,
+            List.of(new MobEffectInfo(UNDEAD_HUNGER, MEDIUM_DURATION, 1.0f)));
+    public static final FoodProperties COBWEB_LOLLIPOP = foodProperty(2, 0.1f, true, false,
+            List.of(new MobEffectInfo(COBWEBBED, BRIEF_DURATION, .25f)));
+
+    // *** RING CANDY *** //
+
+    public static final FoodProperties ROTTEN_FLESH_RING_CANDY = foodProperty(2, 0.1f, true, false,
+            List.of(new MobEffectInfo(INFECTED, BRIEF_DURATION, .25f)));
+    public static final FoodProperties SLIMEAPPLE_RING_CANDY = foodProperty(2, 0.1f, true, false,
+            List.of(new MobEffectInfo(SLIMED, BRIEF_DURATION, .25f)));
+    public static final FoodProperties SPIDEREYE_RING_CANDY = foodProperty(2, 0.1f, true, false,
+            List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .25f)));
+    public static final FoodProperties GHASTTEAR_RING_CANDY = foodProperty(2, 0.1f, true, false,
+            List.of(new MobEffectInfo(CHILLS, BRIEF_DURATION, .25f)));
+    public static final FoodProperties SOUL_BERRY_RING_CANDY = foodProperty(2, 0.1f, true, true,
+            List.of(new MobEffectInfo(FORTIFIED_MIND, MEDIUM_DURATION, 1.0f)));
+    public static final FoodProperties WITHER_BERRY_RING_CANDY = foodProperty(2, 0.1f, true, true,
+            List.of(new MobEffectInfo(UNDEAD_HUNGER, MEDIUM_DURATION, 1.0f)));
+    public static final FoodProperties COBWEB_RING_CANDY = foodProperty(2, 0.1f, true, false,
+            List.of(new MobEffectInfo(COBWEBBED, BRIEF_DURATION, .25f)));
 
     public static FoodProperties foodProperty(int nutrition, float saturation, List<MobEffectInfo> effects) {
         return foodProperty(nutrition, saturation, false, false, effects);

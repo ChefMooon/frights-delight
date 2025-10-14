@@ -120,6 +120,37 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE, "Slice of Wither Berry Cheesecake");
         translationBuilder.add(FrightsDelightItemsImpl.COBWEB_PIE_SLICE, "Slice of Cobweb Pie");
 
+        translationBuilder.add(FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE, "Bottle of Rotten Flesh Syrup");
+        translationBuilder.add(FrightsDelightItemsImpl.SLIMEAPPLE_SYRUP_BOTTLE, "Bottle of Slime-Apple Syrup");
+        translationBuilder.add(FrightsDelightItemsImpl.SPIDEREYE_SYRUP_BOTTLE, "Bottle of Spider Eye Syrup");
+        translationBuilder.add(FrightsDelightItemsImpl.GHASTTEAR_SYRUP_BOTTLE, "Bottle of Ghast Tear Syrup");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUL_BERRY_SYRUP_BOTTLE, "Bottle of Soul Berry Syrup");
+        translationBuilder.add(FrightsDelightItemsImpl.WITHER_BERRY_SYRUP_BOTTLE, "Bottle of Wither Berry Syrup");
+        translationBuilder.add(FrightsDelightItemsImpl.COBWEB_SYRUP_BOTTLE, "Bottle of Cobweb Syrup");
+
+        translationBuilder.add(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD, "Unfired Lollipop Mold");
+        translationBuilder.add(FrightsDelightItemsImpl.LOLLIPOP_MOLD, "Lollipop Mold");
+        translationBuilder.add(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD, "Unfired Ring Candy Mold");
+        translationBuilder.add(FrightsDelightItemsImpl.RING_CANDY_MOLD, "Ring Candy Mold");
+
+        translationBuilder.add(FrightsDelightItemsImpl.ROTTEN_FLESH_LOLLIPOP, "Rotten Flesh Lollipop");
+        translationBuilder.add(FrightsDelightItemsImpl.SPIDEREYE_LOLLIPOP, "Spider Eye Lollipop");
+        translationBuilder.add(FrightsDelightItemsImpl.SLIMEAPPLE_LOLLIPOP, "Slime-Apple Lollipop");
+        translationBuilder.add(FrightsDelightItemsImpl.GHASTTEAR_LOLLIPOP, "Ghast Tear Lollipop");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUL_BERRY_LOLLIPOP, "Soul Berry Lollipop");
+        translationBuilder.add(FrightsDelightItemsImpl.WITHER_BERRY_LOLLIPOP, "Wither Berry Lollipop");
+        translationBuilder.add(FrightsDelightItemsImpl.COBWEB_LOLLIPOP, "Cobweb Lollipop");
+
+        translationBuilder.add(FrightsDelightItemsImpl.ROTTEN_FLESH_RING_CANDY, "Rotten Flesh Ring Candy");
+        translationBuilder.add(FrightsDelightItemsImpl.SPIDEREYE_RING_CANDY, "Spider Eye Ring Candy");
+        translationBuilder.add(FrightsDelightItemsImpl.SLIMEAPPLE_RING_CANDY, "Slime-Apple Ring Candy");
+        translationBuilder.add(FrightsDelightItemsImpl.GHASTTEAR_RING_CANDY, "Ghast Tear Ring Candy");
+        translationBuilder.add(FrightsDelightItemsImpl.SOUL_BERRY_RING_CANDY, "Soul Berry Ring Candy");
+        translationBuilder.add(FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY, "Wither Berry Ring Candy");
+        translationBuilder.add(FrightsDelightItemsImpl.COBWEB_RING_CANDY, "Cobweb Ring Candy");
+
+        translationBuilder.add(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.getDescriptionId() + ".bone_shard_requirement", "Requires 4 Bone Shards");
+
         translationBuilder.add(EFFECT + ".chills", "Chills");
         translationBuilder.add(EFFECT + ".cobwebbed", "Cobwebbed");
         translationBuilder.add(EFFECT + ".fortified_mind", "Fortified Mind");
@@ -160,6 +191,13 @@ public class TranslationGenerator extends FabricLanguageProvider {
 
         translationBuilder.add(SUBTITLE + ".entity.bone_shard.throw", "Bone Shard flies");
         translationBuilder.add(SUBTITLE + ".entity.bone_shard.hit", "Bone Shard shatters");
+
+        translationBuilder.add(SUBTITLE + ".block.candy_mold.add", "Bone Shard Added");
+        translationBuilder.add(SUBTITLE + ".block.candy_mold.fill", "Mold Filled");
+        translationBuilder.add(SUBTITLE + ".block.candy_mold.drain", "Mold Drained");
+        translationBuilder.add(SUBTITLE + ".block.candy_mold.remove", "Bone Shard(s) Removed");
+        translationBuilder.add(SUBTITLE + ".block.candy_mold.collect", "Candy Taken");
+        translationBuilder.add(SUBTITLE + ".block.candy_mold.harden", "Candy Hardened");
 
         translationBuilder.add(DEATH + ".soul_berry_bush", "%1$s was pricked to death by a Soul Berry Bush");
         translationBuilder.add(DEATH + ".soul_berry_bush.player", "%1$s was sent to a prickly grave by %2$s");
@@ -210,6 +248,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(CONFIG + "foodEffectTooltip", "Should meal and drink tooltips display which effects they provide?");
         translationBuilder.add(CONFIG + "foodEffectChanceTooltip", "Should meal and drink tooltips display the chance the effect will be applied?");
         translationBuilder.add(CONFIG + "drinkableFeastParticles", "Should Punch Bowl blocks emit bubble particles?");
+        translationBuilder.add(CONFIG + "candyMoldParticles", "Should Candy Mold blocks emit particles when hardening candy?");
         translationBuilder.add(CONFIG + "punchConsumeSound", "Should Punch have a chance to play a sound when consumed?");
         translationBuilder.add(CONFIG + "punchConsumeChance", "The chance a sound will be played while consuming a drink? (4 = 25%)");
 

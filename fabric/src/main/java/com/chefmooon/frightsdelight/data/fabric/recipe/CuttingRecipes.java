@@ -8,11 +8,17 @@ import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 
 public class CuttingRecipes {
 
     public static void register(RecipeOutput exporter) {
+        CuttingBoardRecipeBuilder.create(Items.CLAY, Ingredient.of(CommonTags.C_TOOLS_KNIFE), FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD)
+                        .save(exporter, suffix(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD)));
+        CuttingBoardRecipeBuilder.create(Items.CLAY, Ingredient.of(Items.GLASS_BOTTLE), FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD)
+                .save(exporter, suffix(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD)));
+
         pieCuttingRecipeBuilder(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE, FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE, exporter);
         pieCuttingRecipeBuilder(FrightsDelightItemsImpl.SLIMEAPPLE_PIE, FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE, exporter);
         pieCuttingRecipeBuilder(FrightsDelightItemsImpl.SPIDEREYE_PIE, FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE, exporter);
