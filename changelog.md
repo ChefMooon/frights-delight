@@ -23,6 +23,9 @@ NeoForge, and Fabric
     - Syrup for each candy type (7 variants)
 - New Blocks
   - Lollipop Mold & Ring Candy Mold
+  - Candy Basket
+    - Can hold up to 9 edible items
+    - Items can be added/removed/shuffled in item or block form
 
 ### Changed
 

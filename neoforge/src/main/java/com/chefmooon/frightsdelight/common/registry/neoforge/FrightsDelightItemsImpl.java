@@ -2,13 +2,12 @@ package com.chefmooon.frightsdelight.common.registry.neoforge;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.FoodValues;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItem;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItemNameBlockItem;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableBlockItem;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableItem;
+import com.chefmooon.frightsdelight.common.data.types.CandyBasketType;
+import com.chefmooon.frightsdelight.common.item.*;
 import com.chefmooon.frightsdelight.common.item.neoforge.BoneShardItemImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.google.common.collect.Sets;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -16,6 +15,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -32,6 +32,20 @@ public class FrightsDelightItemsImpl {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, FrightsDelight.MOD_ID);
     public static LinkedHashSet<Supplier<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
+
+    public static final Supplier<Item> PUMPKIN_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.PUMPKIN_CANDY_BASKET,
+            () -> new CandyBasketItem(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(), noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY), CandyBasketType.PUMPKIN));
+    public static final Supplier<Item> MELON_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.MELON_CANDY_BASKET,
+            () -> new CandyBasketItem(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get(), noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY), CandyBasketType.MELON));
+
+//    public static final Supplier<Item> CREEPER_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.CREEPER_CANDY_BASKET,
+//            () -> new CandyBasketItem(FrightsDelightBlocksImpl.CREEPER_CANDY_BASKET.get(), noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY), CandyBasketType.CREEPER));
+//    public static final Supplier<Item> SKELETON_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.SKELETON_CANDY_BASKET,
+//            () -> new CandyBasketItem(FrightsDelightBlocksImpl.SKELETON_CANDY_BASKET.get(), noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY), CandyBasketType.SKELETON));
+//    public static final Supplier<Item> WITHER_SKELETON_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.WITHER_SKELETON_CANDY_BASKET,
+//            () -> new CandyBasketItem(FrightsDelightBlocksImpl.WITHER_SKELETON_CANDY_BASKET.get(), noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY), CandyBasketType.SKELETON));
+//    public static final Supplier<Item> ZOMBIE_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.ZOMBIE_CANDY_BASKET,
+//            () -> new CandyBasketItem(FrightsDelightBlocksImpl.ZOMBIE_CANDY_BASKET.get(), noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY), CandyBasketType.ZOMBIE));
 
     public static final Supplier<Item> UNFIRED_LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.UNFIRED_LOLLIPOP_MOLD,
             () -> new BlockItem(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get(), basicItem()));

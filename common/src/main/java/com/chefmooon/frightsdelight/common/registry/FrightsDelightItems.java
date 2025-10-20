@@ -150,6 +150,13 @@ public class FrightsDelightItems {
     public static final ResourceLocation WITHER_BERRY_CHEESECAKE_SLICE = item("wither_berry_cheesecake_slice");
     public static final ResourceLocation COBWEB_PIE_SLICE = item("cobweb_pie_slice");
 
+    public static final ResourceLocation PUMPKIN_CANDY_BASKET = item("pumpkin_candy_basket");
+    public static final ResourceLocation MELON_CANDY_BASKET = item("melon_candy_basket");
+    public static final ResourceLocation CREEPER_CANDY_BASKET = item("creeper_candy_basket");
+    public static final ResourceLocation SKELETON_CANDY_BASKET = item("skeleton_candy_basket");
+    public static final ResourceLocation WITHER_SKELETON_CANDY_BASKET = item("wither_skeleton_candy_basket");
+    public static final ResourceLocation ZOMBIE_CANDY_BASKET = item("zombie_candy_basket");
+
     private static ResourceLocation item(String string) {
         return TextUtils.res(string);
     }

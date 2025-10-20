@@ -31,6 +31,32 @@ public class FrightsDelightSounds {
     public static final Supplier<SoundEvent> BLOCK_CANDY_MOLD_COLLECT = registerSound("block.candy_mold.collect");
     public static final Supplier<SoundEvent> BLOCK_CANDY_MOLD_HARDEN = registerSound("block.candy_mold.harden");
 
+    public static final Supplier<SoundEvent> BLOCK_CANDY_BASKET_EMPTY = registerSound("block.candy_basket.empty");
+
+    public static final Supplier<SoundEvent> BLOCK_PUMPKIN_CANDY_BASKET_ADD = registerSound("block.pumpkin_candy_basket.add");
+    public static final Supplier<SoundEvent> BLOCK_PUMPKIN_CANDY_BASKET_REMOVE = registerSound("block.pumpkin_candy_basket.remove");
+    public static final Supplier<SoundEvent> BLOCK_PUMPKIN_CANDY_BASKET_SHUFFLE = registerSound("block.pumpkin_candy_basket.shuffle");
+
+    public static final Supplier<SoundEvent> BLOCK_MELON_CANDY_BASKET_ADD = registerSound("block.melon_candy_basket.add");
+    public static final Supplier<SoundEvent> BLOCK_MELON_CANDY_BASKET_REMOVE = registerSound("block.melon_candy_basket.remove");
+    public static final Supplier<SoundEvent> BLOCK_MELON_CANDY_BASKET_SHUFFLE = registerSound("block.melon_candy_basket.shuffle");
+
+    public static final Supplier<SoundEvent> BLOCK_CREEPER_CANDY_BASKET_ADD = registerSound("block.creeper_candy_basket.add");
+    public static final Supplier<SoundEvent> BLOCK_CREEPER_CANDY_BASKET_REMOVE = registerSound("block.creeper_candy_basket.remove");
+    public static final Supplier<SoundEvent> BLOCK_CREEPER_CANDY_BASKET_SHUFFLE = registerSound("block.creeper_candy_basket.shuffle");
+
+    public static final Supplier<SoundEvent> BLOCK_SKELETON_CANDY_BASKET_ADD = registerSound("block.skeleton_candy_basket.add");
+    public static final Supplier<SoundEvent> BLOCK_SKELETON_CANDY_BASKET_REMOVE = registerSound("block.skeleton_candy_basket.remove");
+    public static final Supplier<SoundEvent> BLOCK_SKELETON_CANDY_BASKET_SHUFFLE = registerSound("block.skeleton_candy_basket.shuffle");
+
+    public static final Supplier<SoundEvent> BLOCK_ZOMBIE_CANDY_BASKET_ADD = registerSound("block.zombie_candy_basket.add");
+    public static final Supplier<SoundEvent> BLOCK_ZOMBIE_CANDY_BASKET_REMOVE = registerSound("block.zombie_candy_basket.remove");
+    public static final Supplier<SoundEvent> BLOCK_ZOMBIE_CANDY_BASKET_SHUFFLE = registerSound("block.zombie_candy_basket.shuffle");
+
+    public static final Supplier<SoundEvent> BLOCK_SPIDER_CANDY_BASKET_ADD = registerSound("block.spider_candy_basket.add");
+    public static final Supplier<SoundEvent> BLOCK_SPIDER_CANDY_BASKET_REMOVE = registerSound("block.spider_candy_basket.remove");
+    public static final Supplier<SoundEvent> BLOCK_SPIDER_CANDY_BASKET_SHUFFLE = registerSound("block.spider_candy_basket.shuffle");
+
     public static final Supplier<SoundEvent> ENTITY_BONE_SHARD_THROW = registerSound("entity.bone_shard.throw");
     public static final Supplier<SoundEvent> ENTITY_BONE_SHARD_HIT = registerSound("entity.bone_shard.hit");
 

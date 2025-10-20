@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pumpkin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:pumpkin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rope": {
+      "conditions": {
+        "items": [
+          {
+            "items": "farmersdelight:rope"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:pumpkin_candy_basket"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pumpkin",
+      "has_rope"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:pumpkin_candy_basket"
+    ]
+  }
+}

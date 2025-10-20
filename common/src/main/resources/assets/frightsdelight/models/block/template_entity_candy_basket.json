@@ -1,0 +1,99 @@
+{
+	"credit": "Made with Blockbench",
+    "render_type": "minecraft:cutout",
+    "texture_size": [32, 16],
+    "elements": [
+      {
+        "name": "basket",
+        "from": [4, 0, 4],
+        "to": [12, 8, 12],
+        "rotation": {"angle": 0, "axis": "y", "origin": [4, 0, 4]},
+        "faces": {
+          "north": {"uv": [12, 8, 16, 16], "texture": "#basket"},
+          "east": {"uv": [8, 8, 12, 16], "texture": "#basket"},
+          "south": {"uv": [4, 8, 8, 16], "texture": "#basket"},
+          "west": {"uv": [0, 8, 4, 16], "texture": "#basket"},
+          "up": {"uv": [4, 0, 8, 8], "texture": "#basket"},
+          "down": {"uv": [8, 8, 12, 0], "texture": "#basket", "cullface": "down"}
+        }
+      },
+      {
+        "from": [11, 8, 7.5],
+        "to": [12, 12, 8.5],
+        "rotation": {"angle": 0, "axis": "y", "origin": [11, 8, 7.5]},
+        "faces": {
+          "north": {"uv": [0, 12, 0.5, 16], "texture": "#handle"},
+          "east": {"uv": [0, 7, 0.5, 11], "texture": "#handle"},
+          "south": {"uv": [4, 12, 4.5, 16], "texture": "#handle"},
+          "west": {"uv": [3.5, 7, 4, 11], "texture": "#handle"},
+          "up": {"uv": [0, 7, 0.5, 8], "texture": "#handle"}
+        }
+      },
+      {
+        "from": [5, 11, 7.5],
+        "to": [11, 12, 8.5],
+        "rotation": {"angle": 0, "axis": "y", "origin": [11, 11, 7.5]},
+        "faces": {
+          "north": {"uv": [0.5, 12, 3.5, 13], "texture": "#handle"},
+          "south": {"uv": [4.5, 12, 7.5, 13], "texture": "#handle"},
+          "up": {"uv": [0.5, 6, 3.5, 7], "texture": "#handle"},
+          "down": {"uv": [0.5, 8, 3.5, 9], "texture": "#handle"}
+        }
+      },
+      {
+        "from": [4, 8, 7.5],
+        "to": [5, 12, 8.5],
+        "rotation": {"angle": 0, "axis": "y", "origin": [4, 8, 7.5]},
+        "faces": {
+          "north": {"uv": [3.5, 12, 4, 16], "texture": "#handle"},
+          "east": {"uv": [4, 7, 4.5, 11], "texture": "#handle"},
+          "south": {"uv": [7.5, 12, 8, 16], "texture": "#handle"},
+          "west": {"uv": [7.5, 7, 8, 11], "texture": "#handle"},
+          "up": {"uv": [7.5, 7, 8, 8], "texture": "#handle"}
+        }
+      }
+    ],
+    "gui_light": "front",
+    "display": {
+      "thirdperson_righthand": {
+        "rotation": [67, 0, 0],
+        "translation": [0, -2.75, -1.75],
+        "scale": [0.75, 0.75, 0.75]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [67, 0, 0],
+        "translation": [0, -2.75, -1.75],
+        "scale": [0.75, 0.75, 0.75]
+      },
+      "firstperson_righthand": {
+        "rotation": [20, 0, 0],
+        "translation": [0, -1.75, 0]
+      },
+      "firstperson_lefthand": {
+        "rotation": [20, 0, 0],
+        "translation": [0, -1.75, 0]
+      },
+      "ground": {
+        "translation": [0, 4.75, 0]
+      },
+      "gui": {
+        "rotation": [30, 45, 0],
+        "scale": [0.625, 0.625, 0.625]
+      },
+      "head": {
+        "translation": [0, 14.25, 0]
+      },
+      "fixed": {
+        "translation": [0, 2, 0]
+      }
+    },
+    "groups": [
+      0,
+      {
+        "name": "handle_3d",
+        "origin": [11, 0, 0],
+        "color": 0,
+        "children": [1, 2, 3]
+      }
+    ]
+}

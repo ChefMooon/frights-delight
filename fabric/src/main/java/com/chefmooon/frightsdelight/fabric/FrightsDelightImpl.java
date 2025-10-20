@@ -1,16 +1,14 @@
 package com.chefmooon.frightsdelight.fabric;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
+import com.chefmooon.frightsdelight.common.block.fabric.AbstractCandyBasketBlockImpl;
 import com.chefmooon.frightsdelight.common.event.fabric.FrightsDelightLootTableEvents;
 import com.chefmooon.frightsdelight.common.event.fabric.VillagerEventsImpl;
 import com.chefmooon.frightsdelight.common.fabric.CommonSetupImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
 import com.chefmooon.frightsdelight.common.registry.fabric.*;
-import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.level.material.Fluid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -36,6 +34,8 @@ public class FrightsDelightImpl implements ModInitializer {
         VillagerEventsImpl.init();
 
         CommonSetupImpl.init();
+
+        AbstractCandyBasketBlockImpl.init();
 
         FrightsDelightBiomeModifiersImpl.init();
     }

@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-14T10:30:54.1891993	Fright's Delight/Tags for minecraft:item
+// 1.21.1	2025-10-20T16:02:32.6465042	Fright's Delight/Tags for minecraft:item
 275508fca0253cb2318ec1aac1040bbe8403d5cf data\c\tags\item\storage_blocks\rotten_flesh.json
 ea1a0df32ca387e02411d7d7d5228156155421ee data\c\tags\item\foods\berry.json
 49c2ccb9eb0b07ca69fa525a4d1f4d21b959b8f8 data\c\tags\item\storage_blocks\spider_eye.json
@@ -17,5 +17,5 @@ daa093ee5848da50940b11b298a188f73c485b7b data\origins\tags\item\ignore_diet.json
 c58d4b599a44b9b815cad72b0c827b1eacf6c603 data\c\tags\item\storage_blocks\rotten_tomato.json
 a16960af0001a9462c1ee21b876d2f6771f25dbe data\c\tags\item\storage_blocks\cobweb.json
 bc224074ff620e5ce7822a10ec8a96c7b5dfe2c3 data\supplementaries\tags\item\cookies.json
-b95139918447ec0f85fc07b39b3e1fbd7d1f1638 data\c\tags\item\foods.json
+4428b880e602175ed410cdfc51fe359659451d82 data\c\tags\item\foods.json
 5abca48190ccf4debc6b85560695e83085ad9d5d data\c\tags\item\storage_blocks\phantom_membrane.json

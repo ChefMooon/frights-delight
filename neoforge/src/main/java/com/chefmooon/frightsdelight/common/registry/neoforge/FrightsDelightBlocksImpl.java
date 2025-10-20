@@ -7,6 +7,8 @@ import com.chefmooon.frightsdelight.common.block.SoulBerryBushBlock;
 import com.chefmooon.frightsdelight.common.block.WitherBerryBushBlock;
 import com.chefmooon.frightsdelight.common.block.drinkableFeastBlocks.*;
 import com.chefmooon.frightsdelight.common.block.glassCupBlocks.*;
+import com.chefmooon.frightsdelight.common.block.neoforge.AbstractCandyBasketBlockImpl;
+import com.chefmooon.frightsdelight.common.data.types.CandyBasketType;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
 import net.minecraft.core.registries.Registries;
@@ -30,6 +32,20 @@ public class FrightsDelightBlocksImpl {
 
     public static final Supplier<Block> SOUL_BERRY_BUSH = registerBlock(FrightsDelightBlocks.SOUL_BERRY_BUSH, SoulBerryBushBlock::new);
     public static final Supplier<Block> WITHER_BERRY_BUSH = registerBlock(FrightsDelightBlocks.WITHER_BERRY_BUSH, WitherBerryBushBlock::new);
+
+    public static final Supplier<Block> PUMPKIN_CANDY_BASKET = registerBlock(FrightsDelightBlocks.PUMPKIN_CANDY_BASKET,
+            () -> new AbstractCandyBasketBlockImpl(BlockBehaviour.Properties.ofFullCopy(Blocks.PUMPKIN), CandyBasketType.PUMPKIN));
+    public static final Supplier<Block> MELON_CANDY_BASKET = registerBlock(FrightsDelightBlocks.MELON_CANDY_BASKET,
+            () -> new AbstractCandyBasketBlockImpl(BlockBehaviour.Properties.ofFullCopy(Blocks.MELON), CandyBasketType.MELON));
+
+//    public static final Supplier<Block> CREEPER_CANDY_BASKET = registerBlock(FrightsDelightBlocks.CREEPER_CANDY_BASKET,
+//            () -> new AbstractCandyBasketBlockImpl(BlockBehaviour.Properties.ofFullCopy(Blocks.CREEPER_HEAD), CandyBasketType.CREEPER));
+//    public static final Supplier<Block> SKELETON_CANDY_BASKET = registerBlock(FrightsDelightBlocks.SKELETON_CANDY_BASKET,
+//            () -> new AbstractCandyBasketBlockImpl(BlockBehaviour.Properties.ofFullCopy(Blocks.SKELETON_SKULL), CandyBasketType.SKELETON));
+//    public static final Supplier<Block> WITHER_SKELETON_CANDY_BASKET = registerBlock(FrightsDelightBlocks.WITHER_SKELETON_CANDY_BASKET,
+//            () -> new AbstractCandyBasketBlockImpl(BlockBehaviour.Properties.ofFullCopy(Blocks.WITHER_SKELETON_SKULL), CandyBasketType.SKELETON));
+//    public static final Supplier<Block> ZOMBIE_CANDY_BASKET = registerBlock(FrightsDelightBlocks.ZOMBIE_CANDY_BASKET,
+//            () -> new AbstractCandyBasketBlockImpl(BlockBehaviour.Properties.ofFullCopy(Blocks.ZOMBIE_HEAD), CandyBasketType.ZOMBIE));
 
     public static final Supplier<Block> LOLLIPOP_MOLD = registerBlock(FrightsDelightBlocks.LOLLIPOP_MOLD,
             () -> new LollipopMoldBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA)));
