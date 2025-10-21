@@ -1,6 +1,8 @@
 package com.chefmooon.frightsdelight.common.block;
 
 import com.chefmooon.frightsdelight.common.Configuration;
+import com.chefmooon.frightsdelight.common.block.entity.CandyBasketBlockEntity;
+import com.chefmooon.frightsdelight.common.block.entity.base.BaseCandyMoldBlockEntity;
 import com.chefmooon.frightsdelight.common.block.state.properties.FrightsDelightBlockStateProperties;
 import com.chefmooon.frightsdelight.common.block.state.properties.SyrupTypeProperty;
 import com.chefmooon.frightsdelight.common.data.types.Syrups;
@@ -11,6 +13,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.Containers;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -113,6 +116,17 @@ public class AbstractMoldBlock extends BaseEntityBlock implements SimpleWaterlog
     @Override
     public boolean hasAnalogOutputSignal(BlockState state) {
         return true;
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            super.onRemove(state, level, pos, newState, movedByPiston);
+            if (blockEntity instanceof BaseCandyMoldBlockEntity) {
+                level.updateNeighbourForOutputSignal(pos, state.getBlock());
+            }
+        }
     }
 
     @Override

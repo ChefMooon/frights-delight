@@ -5,8 +5,10 @@ import com.chefmooon.frightsdelight.common.data.types.Syrups;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlockEntities;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -98,5 +100,20 @@ public class RingCandyMoldBlock extends AbstractMoldBlock{
         if (state.getValue(SYRUP_TYPE) != Syrups.EMPTY) signal += 6;
         if (state.getValue(HARDENED)) signal += 4;
         return signal;
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        BlockEntity blockEntity = level.getBlockEntity(pos);
+        super.onRemove(state, level, pos, newState, movedByPiston);
+        if (blockEntity instanceof RingCandyMoldBlockEntity) {
+            if (state.getValue(HARDENED)) {
+                NonNullList<ItemStack> contents = NonNullList.create();
+                Syrups syrup = state.getValue(SYRUP_TYPE);
+                if (syrup != Syrups.EMPTY)
+                    contents.add(new ItemStack(BuiltInRegistries.ITEM.get(syrup.getRingCandyItem()), 4));
+                Containers.dropContents(level, pos, contents);
+            }
+        }
     }
 }

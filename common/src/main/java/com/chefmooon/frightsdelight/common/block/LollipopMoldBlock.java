@@ -1,15 +1,18 @@
 package com.chefmooon.frightsdelight.common.block;
 
 import com.chefmooon.frightsdelight.common.block.entity.LollipopMoldBlockEntity;
+import com.chefmooon.frightsdelight.common.block.entity.base.BaseCandyMoldBlockEntity;
 import com.chefmooon.frightsdelight.common.data.types.Syrups;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlockEntities;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -148,5 +151,25 @@ public class LollipopMoldBlock extends AbstractMoldBlock {
         if (state.getValue(SYRUP_TYPE) != Syrups.EMPTY) signal += 2;
         if (state.getValue(HARDENED)) signal += 4;
         return signal;
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            super.onRemove(state, level, pos, newState, movedByPiston);
+            if (blockEntity instanceof LollipopMoldBlockEntity) {
+                NonNullList<ItemStack> contents = NonNullList.create();
+                if (!state.getValue(HARDENED)) {
+                    int shards = state.getValue(SHARDS);
+                    if (shards > 0) contents.add(new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.BONE_SHARD), shards));
+                } else {
+                    Syrups syrup = state.getValue(SYRUP_TYPE);
+                    if (syrup != Syrups.EMPTY)
+                        contents.add(new ItemStack(BuiltInRegistries.ITEM.get(syrup.getLollipopItem()), 4));
+                }
+                Containers.dropContents(level, pos, contents);
+            }
+        }
     }
 }
