@@ -1,7 +1,6 @@
 package com.chefmooon.frightsdelight.client.event.neoforge;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
-import com.chefmooon.frightsdelight.client.FrightsDelightClient;
 import com.chefmooon.frightsdelight.client.gui.neoforge.FrightsDelightGUIImpl;
 import com.chefmooon.frightsdelight.client.particle.FrightsDelightBubbleParticle;
 import com.chefmooon.frightsdelight.client.renderer.neoforge.LollipopMoldBlockEntityRendererImpl;
@@ -55,25 +54,89 @@ public class ClientSetupEventsImpl {
 
     @SubscribeEvent
     public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
-        event.registerFluidType(createSyrupExtension(FrightsDelightClient.FluidColors.ROTTEN_FLESH_SYRUP), FrightsDelightFluidTypesImpl.ROTTEN_FLESH_SYRUP);
-        event.registerFluidType(createSyrupExtension(FrightsDelightClient.FluidColors.SLIMEAPPLE_SYRUP), FrightsDelightFluidTypesImpl.SLIMEAPPLE_SYRUP);
-        event.registerFluidType(createSyrupExtension(FrightsDelightClient.FluidColors.SPIDEREYE_SYRUP), FrightsDelightFluidTypesImpl.SPIDEREYE_SYRUP);
-        event.registerFluidType(createSyrupExtension(FrightsDelightClient.FluidColors.GHASTTEAR_SYRUP), FrightsDelightFluidTypesImpl.GHASTTEAR_SYRUP);
-//        event.registerFluidType(createSyrupExtension(FrightsDelightClient.FluidColors.SOUL_BERRY_SYRUP), FrightsDelightFluidTypesImpl.SOUL_BERRY_SYRUP);
-        event.registerFluidType(createSyrupExtension(FrightsDelightClient.FluidColors.WITHER_BERRY_SYRUP), FrightsDelightFluidTypesImpl.WITHER_BERRY_SYRUP);
-        event.registerFluidType(createSyrupExtension(FrightsDelightClient.FluidColors.COBWEB_SYRUP), FrightsDelightFluidTypesImpl.COBWEB_SYRUP);
-
         event.registerFluidType(new IClientFluidTypeExtensions() {
             @Override
             public @NotNull ResourceLocation getStillTexture() {
-                return FrDFluidConstants.SOUL_BERRY_STILL_TEXTURE;
+                return FrDFluidConstants.Textures.ROTTEN_FLESH_SYRUP_STILL_TEXTURE;
             }
 
             @Override
             public @NotNull ResourceLocation getFlowingTexture() {
-                return FrDFluidConstants.SOUL_BERRY_FLOWING_TEXTURE;
+                return FrDFluidConstants.Textures.ROTTEN_FLESH_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.ROTTEN_FLESH_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.SLIMEAPPLE_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.SLIMEAPPLE_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.SLIMEAPPLE_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.SPIDEREYE_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.SPIDEREYE_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.SPIDEREYE_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.GHASTTEAR_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.GHASTTEAR_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.GHASTTEAR_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.SOUL_BERRY_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.SOUL_BERRY_SYRUP_FLOWING_TEXTURE;
             }
         }, FrightsDelightFluidTypesImpl.SOUL_BERRY_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.WITHER_BERRY_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.WITHER_BERRY_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.WITHER_BERRY_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.COBWEB_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.COBWEB_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.COBWEB_SYRUP);
     }
 
     private static IClientFluidTypeExtensions createSyrupExtension(int color) {

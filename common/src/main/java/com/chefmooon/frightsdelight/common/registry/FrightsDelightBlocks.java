@@ -7,6 +7,7 @@ import com.chefmooon.frightsdelight.common.data.types.Syrups;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
+import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.function.ToIntFunction;
 
@@ -38,6 +39,22 @@ public class FrightsDelightBlocks {
                     case 2 -> 6;
                     case 3 -> 9;
                     case 4 -> 12;
+                    default -> 0;
+                };
+            }
+            return 0;
+        };
+    }
+
+    public static ToIntFunction<BlockState> slimeApplePieLight() {
+        return (state) -> {
+            if (state.hasProperty(PieBlock.BITES)) {
+                int bites = state.getValue(PieBlock.BITES);
+                return switch (bites) {
+                    case 0 -> 8;
+                    case 1 -> 6;
+                    case 2 -> 4;
+                    case 3 -> 2;
                     default -> 0;
                 };
             }

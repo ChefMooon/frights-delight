@@ -4,6 +4,7 @@ import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.client.FrightsDelightClient;
 import com.chefmooon.frightsdelight.client.event.fabric.ClientSetupEventsImpl;
 import com.chefmooon.frightsdelight.client.gui.fabric.FrightsDelightGUIImpl;
+import com.chefmooon.frightsdelight.common.fluid.FrDFluidConstants;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
 import com.chefmooon.frightsdelight.common.utility.fabric.FrightsDelightItemPropertiesImpl;
 import net.fabricmc.api.ClientModInitializer;
@@ -35,19 +36,40 @@ public class FrightsDelightClientImpl implements ClientModInitializer {
     }
 
     public static void registerFluidRenderers() {
-        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.ROTTEN_FLESH_SYRUP, FrightsDelightFluids.FLOWING_ROTTEN_FLESH_SYRUP, SimpleFluidRenderHandler.coloredWater(FrightsDelightClient.FluidColors.ROTTEN_FLESH_SYRUP));
-        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.SLIMEAPPLE_SYRUP, FrightsDelightFluids.FLOWING_SLIMEAPPLE_SYRUP, SimpleFluidRenderHandler.coloredWater(FrightsDelightClient.FluidColors.SLIMEAPPLE_SYRUP));
-        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.SPIDEREYE_SYRUP, FrightsDelightFluids.FLOWING_SPIDEREYE_SYRUP, SimpleFluidRenderHandler.coloredWater(FrightsDelightClient.FluidColors.SPIDEREYE_SYRUP));
-        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.GHASTTEAR_SYRUP, FrightsDelightFluids.FLOWING_GHASTTEAR_SYRUP, SimpleFluidRenderHandler.coloredWater(FrightsDelightClient.FluidColors.GHASTTEAR_SYRUP));
-        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.SOUL_BERRY_SYRUP, FrightsDelightFluids.FLOWING_SOUL_BERRY_SYRUP, SimpleFluidRenderHandler.coloredWater(FrightsDelightClient.FluidColors.SOUL_BERRY_SYRUP));
-        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.WITHER_BERRY_SYRUP, FrightsDelightFluids.FLOWING_WITHER_BERRY_SYRUP, SimpleFluidRenderHandler.coloredWater(FrightsDelightClient.FluidColors.WITHER_BERRY_SYRUP));
-        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.COBWEB_SYRUP, FrightsDelightFluids.FLOWING_COBWEB_SYRUP, SimpleFluidRenderHandler.coloredWater(FrightsDelightClient.FluidColors.COBWEB_SYRUP));
+        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.ROTTEN_FLESH_SYRUP, FrightsDelightFluids.FLOWING_ROTTEN_FLESH_SYRUP,
+                new SimpleFluidRenderHandler(
+                        FrDFluidConstants.Textures.ROTTEN_FLESH_SYRUP_STILL_TEXTURE,
+                        FrDFluidConstants.Textures.ROTTEN_FLESH_SYRUP_FLOWING_TEXTURE));
 
-        // TODO improve syrup textures, solve custom texture
-//        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.SOUL_BERRY_SYRUP, FrightsDelightFluids.FLOWING_SOUL_BERRY_SYRUP,
-//                new SimpleFluidRenderHandler(
-//                        FrDFluidConstants.SOUL_BERRY_STILL_TEXTURE,
-//                        FrDFluidConstants.SOUL_BERRY_FLOWING_TEXTURE));
+        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.SLIMEAPPLE_SYRUP, FrightsDelightFluids.FLOWING_SLIMEAPPLE_SYRUP,
+                new SimpleFluidRenderHandler(
+                        FrDFluidConstants.Textures.SLIMEAPPLE_SYRUP_STILL_TEXTURE,
+                        FrDFluidConstants.Textures.SLIMEAPPLE_SYRUP_FLOWING_TEXTURE));
+
+        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.SPIDEREYE_SYRUP, FrightsDelightFluids.FLOWING_SPIDEREYE_SYRUP,
+                new SimpleFluidRenderHandler(
+                        FrDFluidConstants.Textures.SPIDEREYE_SYRUP_STILL_TEXTURE,
+                        FrDFluidConstants.Textures.SPIDEREYE_SYRUP_FLOWING_TEXTURE));
+
+        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.GHASTTEAR_SYRUP, FrightsDelightFluids.FLOWING_GHASTTEAR_SYRUP,
+                new SimpleFluidRenderHandler(
+                        FrDFluidConstants.Textures.GHASTTEAR_SYRUP_STILL_TEXTURE,
+                        FrDFluidConstants.Textures.GHASTTEAR_SYRUP_FLOWING_TEXTURE));
+
+        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.SOUL_BERRY_SYRUP, FrightsDelightFluids.FLOWING_SOUL_BERRY_SYRUP,
+                new SimpleFluidRenderHandler(
+                        FrDFluidConstants.Textures.SOUL_BERRY_SYRUP_STILL_TEXTURE,
+                        FrDFluidConstants.Textures.SOUL_BERRY_SYRUP_FLOWING_TEXTURE));
+
+        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.WITHER_BERRY_SYRUP, FrightsDelightFluids.FLOWING_WITHER_BERRY_SYRUP,
+                new SimpleFluidRenderHandler(
+                        FrDFluidConstants.Textures.WITHER_BERRY_SYRUP_STILL_TEXTURE,
+                        FrDFluidConstants.Textures.WITHER_BERRY_SYRUP_FLOWING_TEXTURE));
+
+        FluidRenderHandlerRegistry.INSTANCE.register(FrightsDelightFluids.COBWEB_SYRUP, FrightsDelightFluids.FLOWING_COBWEB_SYRUP,
+                new SimpleFluidRenderHandler(
+                        FrDFluidConstants.Textures.COBWEB_SYRUP_STILL_TEXTURE,
+                        FrDFluidConstants.Textures.COBWEB_SYRUP_FLOWING_TEXTURE));
     }
 
     public static void onBuiltinPackRegistration() {
