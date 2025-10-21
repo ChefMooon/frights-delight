@@ -76,8 +76,8 @@ public class LollipopMoldBlock extends AbstractMoldBlock {
                                 player.drop(dropStack, false);
                             }
                         }
-                    } else {
-                        if (player.level().isClientSide) {
+                    } else if (syrup == Syrups.EMPTY) {
+                        if (level.isClientSide) {
                             player.displayClientMessage(Component.translatable(this.getDescriptionId() + ".bone_shard_requirement"), true);
                         }
                     }
@@ -95,7 +95,7 @@ public class LollipopMoldBlock extends AbstractMoldBlock {
                         level.playLocalSound(pos, FrightsDelightSounds.BLOCK_CANDY_MOLD_DRAIN.get(), SoundSource.BLOCKS, 0.8f, 1.0f, false);
                         return ItemInteractionResult.SUCCESS;
                     }
-                } else if (mainHandItem.isEmpty()) {
+                } else if (mainHandItem.isEmpty() && syrup == Syrups.EMPTY) {
                     int currentShards = state.getValue(SHARDS);
                     if (currentShards > 0) {
                         ItemStack dropStack = new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.BONE_SHARD), currentShards);
