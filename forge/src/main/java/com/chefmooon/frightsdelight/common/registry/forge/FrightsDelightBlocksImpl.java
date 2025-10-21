@@ -100,7 +100,8 @@ public class FrightsDelightBlocksImpl {
     public static final RegistryObject<Block> ROTTEN_FLESH_PIE = registerBlock(FrightsDelightBlocks.ROTTEN_FLESH_PIE,
             () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE));
     public static final RegistryObject<Block> SLIMEAPPLE_PIE = registerBlock(FrightsDelightBlocks.SLIMEAPPLE_PIE,
-            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE));
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE).lightLevel(FrightsDelightBlocks.slimeApplePieLight()),
+                    FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE));
     public static final RegistryObject<Block> SPIDEREYE_PIE = registerBlock(FrightsDelightBlocks.SPIDEREYE_PIE,
             () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE));
     public static final RegistryObject<Block> GHASTTEAR_PIE = registerBlock(FrightsDelightBlocks.GHASTTEAR_PIE,

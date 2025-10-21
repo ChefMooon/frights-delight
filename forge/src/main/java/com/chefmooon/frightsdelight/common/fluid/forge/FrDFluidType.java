@@ -9,16 +9,17 @@ import net.minecraftforge.fluids.FluidType;
 import java.util.function.Consumer;
 
 public class FrDFluidType extends FluidType {
-    public static final ResourceLocation FLUID_STILL_TEXTURE = new ResourceLocation("block/water_still");
-    public static final ResourceLocation FLUID_FLOWING_TEXTURE = new ResourceLocation("block/water_flow");
-    private final int tintColor;
-    public FrDFluidType(int tintColor) {
+    private final ResourceLocation FLUID_STILL_TEXTURE;
+    private final ResourceLocation FLUID_FLOWING_TEXTURE;
+
+    public FrDFluidType(ResourceLocation stillTexture, ResourceLocation flowingTexture) {
         super(FluidType.Properties.create()
                 .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
                 .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)
                 .sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH)
         );
-        this.tintColor = tintColor;
+        this.FLUID_STILL_TEXTURE = stillTexture;
+        this.FLUID_FLOWING_TEXTURE = flowingTexture;
     }
 
     @Override
@@ -35,11 +36,6 @@ public class FrDFluidType extends FluidType {
             public ResourceLocation getFlowingTexture()
             {
                 return FLUID_FLOWING_TEXTURE;
-            }
-
-            @Override
-            public int getTintColor() {
-                return tintColor;
             }
         });
     }
