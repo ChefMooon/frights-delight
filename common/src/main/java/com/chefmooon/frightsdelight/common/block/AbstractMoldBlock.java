@@ -1,6 +1,7 @@
 package com.chefmooon.frightsdelight.common.block;
 
 import com.chefmooon.frightsdelight.common.Configuration;
+import com.chefmooon.frightsdelight.common.block.entity.base.BaseCandyMoldBlockEntity;
 import com.chefmooon.frightsdelight.common.block.state.properties.FrightsDelightBlockStateProperties;
 import com.chefmooon.frightsdelight.common.block.state.properties.SyrupTypeProperty;
 import com.chefmooon.frightsdelight.common.data.types.Syrups;
@@ -113,6 +114,18 @@ public class AbstractMoldBlock extends BaseEntityBlock implements SimpleWaterlog
     @Override
     public boolean hasAnalogOutputSignal(BlockState state) {
         return true;
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            if (blockEntity instanceof BaseCandyMoldBlockEntity) {
+                level.updateNeighbourForOutputSignal(pos, state.getBlock());
+            }
+        }
+
+        super.onRemove(state, level, pos, newState, movedByPiston);
     }
 
     @Override
