@@ -25,8 +25,10 @@ import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -187,6 +189,16 @@ public class AbstractCandyBasketBlock extends BaseEntityBlock implements SimpleW
             }
         }
         return 0;
+    }
+
+    @Override
+    public @NotNull ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
+        ItemStack itemStack = super.getCloneItemStack(level, pos, state);
+        BlockEntityType<?> blockEntityType = BuiltInRegistries.BLOCK_ENTITY_TYPE.get(FrightsDelightBlockEntities.CANDY_BASKET);
+        if (blockEntityType != null && level.getBlockEntity(pos) instanceof CandyBasketBlockEntity) {
+            level.getBlockEntity(pos, blockEntityType).ifPresent((blockEntity) -> blockEntity.saveToItem(itemStack, level.registryAccess()));
+        }
+        return itemStack;
     }
 
     @Override
