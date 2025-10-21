@@ -1,6 +1,6 @@
 package com.chefmooon.frightsdelight.common.registry.neoforge;
 
-import com.chefmooon.frightsdelight.common.fluid.fabric.FrDFluidType;
+import com.chefmooon.frightsdelight.common.fluid.neoforge.FrDFluidType;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
 import net.minecraft.core.Registry;
 import net.neoforged.neoforge.fluids.FluidType;

@@ -48,9 +48,9 @@ public class FrightsDelightItemsImpl {
 //            () -> new CandyBasketItem(FrightsDelightBlocksImpl.ZOMBIE_CANDY_BASKET.get(), noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY), CandyBasketType.ZOMBIE));
 
     public static final Supplier<Item> UNFIRED_LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.UNFIRED_LOLLIPOP_MOLD,
-            () -> new BlockItem(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get(), basicItem()));
-    public static final Supplier<Item> LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.LOLLIPOP_MOLD,
             () -> new Item(basicItem()));
+    public static final Supplier<Item> LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.LOLLIPOP_MOLD,
+            () -> new BlockItem(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get(), basicItem()));
     public static final Supplier<Item> UNFIRED_RING_CANDY_MOLD = registerItemWithTab(FrightsDelightItems.UNFIRED_RING_CANDY_MOLD,
             () -> new Item(basicItem()));
     public static final Supplier<Item> RING_CANDY_MOLD = registerItemWithTab(FrightsDelightItems.RING_CANDY_MOLD,

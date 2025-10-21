@@ -223,4 +223,15 @@ public class AbstractCandyBasketBlock extends BaseEntityBlock implements SimpleW
         }
         super.setPlacedBy(level, pos, state, placer, stack);
     }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
+        if (!state.is(newState.getBlock())) {
+            BlockEntity blockEntity = level.getBlockEntity(pos);
+            super.onRemove(state, level, pos, newState, movedByPiston);
+            if (blockEntity instanceof CandyBasketBlockEntity) {
+                level.updateNeighbourForOutputSignal(pos, state.getBlock());
+            }
+        }
+    }
 }

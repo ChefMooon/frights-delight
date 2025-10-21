@@ -7,7 +7,7 @@ import com.chefmooon.frightsdelight.client.particle.FrightsDelightBubbleParticle
 import com.chefmooon.frightsdelight.client.renderer.neoforge.LollipopMoldBlockEntityRendererImpl;
 import com.chefmooon.frightsdelight.common.fluid.FrDFluidConstants;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightParticleTypes;
-import com.chefmooon.frightsdelight.common.registry.neoforge.FrightsDelightBlockEntityImpl;
+import com.chefmooon.frightsdelight.common.registry.neoforge.FrightsDelightBlockEntitiesImpl;
 import com.chefmooon.frightsdelight.common.registry.neoforge.FrightsDelightEntityTypesImpl;
 import com.chefmooon.frightsdelight.common.registry.neoforge.FrightsDelightFluidTypesImpl;
 import net.minecraft.client.Minecraft;
@@ -50,7 +50,7 @@ public class ClientSetupEventsImpl {
 
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(FrightsDelightBlockEntityImpl.LOLLIPOP_MOLD.get(), LollipopMoldBlockEntityRendererImpl::new);
+        event.registerBlockEntityRenderer(FrightsDelightBlockEntitiesImpl.LOLLIPOP_MOLD.get(), LollipopMoldBlockEntityRendererImpl::new);
     }
 
     @SubscribeEvent

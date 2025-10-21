@@ -1,4 +1,4 @@
-package com.chefmooon.frightsdelight.common.fluid.fabric;
+package com.chefmooon.frightsdelight.common.fluid.neoforge;
 
 import net.minecraft.sounds.SoundEvents;
 import net.neoforged.neoforge.common.SoundActions;

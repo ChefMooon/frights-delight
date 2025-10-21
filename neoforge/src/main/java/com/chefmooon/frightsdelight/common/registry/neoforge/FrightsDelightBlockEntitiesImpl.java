@@ -12,7 +12,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-public class FrightsDelightBlockEntityImpl {
+public class FrightsDelightBlockEntitiesImpl {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, FrightsDelight.MOD_ID);
 
     public static final Supplier<BlockEntityType<LollipopMoldBlockEntity>> LOLLIPOP_MOLD = BLOCK_ENTITIES.register(FrightsDelightBlockEntities.LOLLIPOP_MOLD.getPath(),

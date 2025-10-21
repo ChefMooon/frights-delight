@@ -81,7 +81,7 @@ public class CandyBasketItem extends BlockItem {
             }
             if (!itemStackList.isEmpty() && offHandStack.isEmpty()) {
                 ItemStack toRemove = itemStackList.removeLast();
-                player.setItemInHand(offHand, toRemove);
+                if (!player.getAbilities().instabuild) player.setItemInHand(offHand, toRemove);
                 basketStack.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(itemStackList));
                 Supplier<SoundEvent> removeSound = candyBasketType.getRemoveSound();
                 if (removeSound != null) level.playLocalSound(player, removeSound.get(), SoundSource.PLAYERS, 0.4f, 1.0f);
@@ -102,7 +102,7 @@ public class CandyBasketItem extends BlockItem {
                 itemStackList.add(itemStack);
             }
             if (itemStackList.size() < 9 && !offHandStack.isEmpty()) {
-                ItemStack toAdd = offHandStack.split(1);
+                ItemStack toAdd = player.getAbilities().instabuild ? offHandStack.copyWithCount(1) : offHandStack.split(1);
                 itemStackList.add(toAdd);
                 basketStack.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(itemStackList));
                 Supplier<SoundEvent> addSound = candyBasketType.getAddSound();
