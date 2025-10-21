@@ -43,6 +43,9 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         this.dropSelf(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE);
         this.dropSelf(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE);
 
+        this.dropSelf(FrightsDelightBlocksImpl.LOLLIPOP_MOLD);
+        this.dropSelf(FrightsDelightBlocksImpl.RING_CANDY_MOLD);
+
         createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_ROTTEN_FLESH, FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH);
         createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SLIMEAPPLE, FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE);
         createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SPIDEREYE, FrightsDelightItemsImpl.PUNCH_SPIDEREYE);

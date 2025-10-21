@@ -34,6 +34,8 @@ public class FrightsDelightImpl {
 
         FrightsDelightSoundsImpl.register(modEventBus);
         FrightsDelightBlocksImpl.register(modEventBus);
+        FrightsDelightFluidsImpl.register(modEventBus);
+        FrightsDelightBlockEntitiesImpl.register(modEventBus);
         FrightsDelightEffectsImpl.register(modEventBus);
         FrightsDelightParticleTypesImpl.register(modEventBus);
         FrightsDelightItemsImpl.register(modEventBus);

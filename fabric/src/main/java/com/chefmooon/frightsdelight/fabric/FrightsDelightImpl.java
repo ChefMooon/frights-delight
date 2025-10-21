@@ -4,6 +4,7 @@ import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.event.fabric.FrightsDelightLootTableEvents;
 import com.chefmooon.frightsdelight.common.event.fabric.VillagerEventsImpl;
 import com.chefmooon.frightsdelight.common.fabric.CommonSetupImpl;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
 import com.chefmooon.frightsdelight.common.registry.fabric.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
@@ -17,7 +18,9 @@ public class FrightsDelightImpl implements ModInitializer {
         FrightsDelight.init();
 
         FrightsDelightSoundsImpl.register();
+        FrightsDelightFluids.init();
         FrightsDelightBlocksImpl.register();
+        FrightsDelightBlockEntitiesImpl.register();
         FrightsDelightEffectsImpl.register();
         FrightsDelightParticleTypesImpl.register();
         FrightsDelightItemsImpl.register();

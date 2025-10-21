@@ -97,12 +97,48 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_cobweb_lollipop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cobweb_lollipop"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_cobweb_pie_slice": {
       "conditions": {
         "items": [
           {
             "items": [
               "frightsdelight:cobweb_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cobweb_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cobweb_ring_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_cobweb_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:cobweb_syrup_bottle"
             ]
           }
         ]
@@ -205,12 +241,48 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_ghasttear_lollipop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:ghasttear_lollipop"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_ghasttear_pie_slice": {
       "conditions": {
         "items": [
           {
             "items": [
               "frightsdelight:ghasttear_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ghasttear_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:ghasttear_ring_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ghasttear_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:ghasttear_syrup_bottle"
             ]
           }
         ]
@@ -325,12 +397,60 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_rotten_flesh_lollipop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:rotten_flesh_lollipop"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_rotten_flesh_pie_slice": {
       "conditions": {
         "items": [
           {
             "items": [
               "frightsdelight:rotten_flesh_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rotten_flesh_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:rotten_flesh_ring_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rotten_flesh_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:rotten_flesh_syrup_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_slimeapple_lollipop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:slimeapple_lollipop"
             ]
           }
         ]
@@ -349,12 +469,72 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_slimeapple_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:slimeapple_ring_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_slimeapple_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:slimeapple_syrup_bottle"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_soul_berry_cheesecake_slice": {
       "conditions": {
         "items": [
           {
             "items": [
               "frightsdelight:soul_berry_cheesecake_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soul_berry_lollipop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soul_berry_lollipop"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soul_berry_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soul_berry_ring_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soul_berry_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:soul_berry_syrup_bottle"
             ]
           }
         ]
@@ -457,12 +637,48 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_spidereye_lollipop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:spidereye_lollipop"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_spidereye_pie_slice": {
       "conditions": {
         "items": [
           {
             "items": [
               "frightsdelight:spidereye_pie_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spidereye_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:spidereye_ring_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spidereye_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:spidereye_syrup_bottle"
             ]
           }
         ]
@@ -499,6 +715,42 @@
           {
             "items": [
               "frightsdelight:wither_berry_cheesecake_slice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_wither_berry_lollipop": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:wither_berry_lollipop"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_wither_berry_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:wither_berry_ring_candy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_wither_berry_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:wither_berry_syrup_bottle"
             ]
           }
         ]
@@ -647,6 +899,69 @@
     ],
     [
       "has_cobweb_pie_slice"
+    ],
+    [
+      "has_rotten_flesh_syrup_bottle"
+    ],
+    [
+      "has_spidereye_syrup_bottle"
+    ],
+    [
+      "has_slimeapple_syrup_bottle"
+    ],
+    [
+      "has_ghasttear_syrup_bottle"
+    ],
+    [
+      "has_soul_berry_syrup_bottle"
+    ],
+    [
+      "has_wither_berry_syrup_bottle"
+    ],
+    [
+      "has_cobweb_syrup_bottle"
+    ],
+    [
+      "has_rotten_flesh_lollipop"
+    ],
+    [
+      "has_spidereye_lollipop"
+    ],
+    [
+      "has_slimeapple_lollipop"
+    ],
+    [
+      "has_ghasttear_lollipop"
+    ],
+    [
+      "has_soul_berry_lollipop"
+    ],
+    [
+      "has_wither_berry_lollipop"
+    ],
+    [
+      "has_cobweb_lollipop"
+    ],
+    [
+      "has_rotten_flesh_ring_candy"
+    ],
+    [
+      "has_spidereye_ring_candy"
+    ],
+    [
+      "has_slimeapple_ring_candy"
+    ],
+    [
+      "has_ghasttear_ring_candy"
+    ],
+    [
+      "has_soul_berry_ring_candy"
+    ],
+    [
+      "has_wither_berry_ring_candy"
+    ],
+    [
+      "has_cobweb_ring_candy"
     ]
   ],
   "sends_telemetry_event": true

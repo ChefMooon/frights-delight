@@ -1,15 +1,19 @@
 package com.chefmooon.frightsdelight.common.registry.forge;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
+import com.chefmooon.frightsdelight.common.block.LollipopMoldBlock;
+import com.chefmooon.frightsdelight.common.block.RingCandyMoldBlock;
 import com.chefmooon.frightsdelight.common.block.SoulBerryBushBlock;
 import com.chefmooon.frightsdelight.common.block.WitherBerryBushBlock;
 import com.chefmooon.frightsdelight.common.block.drinkableFeastBlocks.*;
 import com.chefmooon.frightsdelight.common.block.glassCupBlocks.*;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -27,6 +31,11 @@ public class FrightsDelightBlocksImpl {
 
     public static final RegistryObject<Block> SOUL_BERRY_BUSH = registerBlock(FrightsDelightBlocks.SOUL_BERRY_BUSH, SoulBerryBushBlock::new);
     public static final RegistryObject<Block> WITHER_BERRY_BUSH = registerBlock(FrightsDelightBlocks.WITHER_BERRY_BUSH, WitherBerryBushBlock::new);
+
+    public static final Supplier<Block> LOLLIPOP_MOLD = registerBlock(FrightsDelightBlocks.LOLLIPOP_MOLD,
+            () -> new LollipopMoldBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA)));
+    public static final Supplier<Block> RING_CANDY_MOLD = registerBlock(FrightsDelightBlocks.RING_CANDY_MOLD,
+            () -> new RingCandyMoldBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA)));
 
     public static final RegistryObject<Block> FLESH_CRATE = registerBlock(FrightsDelightBlocks.FLESH_CRATE,
             () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
@@ -97,6 +106,21 @@ public class FrightsDelightBlocksImpl {
             () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE));
     public static final RegistryObject<Block> COBWEB_PIE = registerBlock(FrightsDelightBlocks.COBWEB_PIE,
             () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), FrightsDelightItemsImpl.COBWEB_PIE_SLICE));
+
+    public static final Supplier<LiquidBlock> ROTTEN_FLESH_SYRUP = BLOCKS.register(FrightsDelightBlocks.ROTTEN_FLESH_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluidsImpl.ROTTEN_FLESH_SYRUP, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> SLIMEAPPLE_SYRUP = BLOCKS.register(FrightsDelightBlocks.SLIMEAPPLE_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluidsImpl.SLIMEAPPLE_SYRUP, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> SPIDEREYE_SYRUP = BLOCKS.register(FrightsDelightBlocks.SPIDEREYE_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluidsImpl.SPIDEREYE_SYRUP, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> GHASTTEAR_SYRUP = BLOCKS.register(FrightsDelightBlocks.GHASTTEAR_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluidsImpl.GHASTTEAR_SYRUP, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> SOUL_BERRY_SYRUP = BLOCKS.register(FrightsDelightBlocks.SOUL_BERRY_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluidsImpl.SOUL_BERRY_SYRUP, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> WITHER_BERRY_SYRUP = BLOCKS.register(FrightsDelightBlocks.WITHER_BERRY_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluidsImpl.WITHER_BERRY_SYRUP, BlockBehaviour.Properties.copy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> COBWEB_SYRUP = BLOCKS.register(FrightsDelightBlocks.COBWEB_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluidsImpl.COBWEB_SYRUP, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
     public static RegistryObject<Block> registerBlock(final ResourceLocation location, final Supplier<Block> block) {
         return BLOCKS.register(location.getPath(), block);

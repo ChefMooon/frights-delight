@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:lollipop_mold"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_unfired_lollipop_mold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:unfired_lollipop_mold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_unfired_lollipop_mold",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:lollipop_mold"
+    ]
+  },
+  "sends_telemetry_event": false
+}

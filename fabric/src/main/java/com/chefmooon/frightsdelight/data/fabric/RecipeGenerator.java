@@ -2,6 +2,8 @@ package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.tag.CommonTags;
+import com.chefmooon.frightsdelight.data.fabric.recipe.CookingRecipes;
+import com.chefmooon.frightsdelight.data.fabric.recipe.CuttingRecipes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -9,6 +11,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.function.Consumer;
@@ -20,6 +23,8 @@ public class RecipeGenerator extends FabricRecipeProvider {
 
     @Override
     public void buildRecipes(Consumer<FinishedRecipe> exporter) {
+        CookingRecipes.register(exporter);
+        CuttingRecipes.register(exporter);
 
         crateToIngredient(FrightsDelightItemsImpl.FLESH_CRATE, Items.ROTTEN_FLESH, exporter);
         crateToIngredient(FrightsDelightItemsImpl.BONE_CRATE, Items.BONE, exporter);
@@ -54,6 +59,13 @@ public class RecipeGenerator extends FabricRecipeProvider {
         pieRecipe(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE, FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE, FrightsDelightItemsImpl.SOUL_BERRY, exporter);
         pieRecipe(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE, FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE, FrightsDelightItemsImpl.WITHER_BERRY, exporter);
         pieRecipe(FrightsDelightItemsImpl.COBWEB_PIE, FrightsDelightItemsImpl.COBWEB_PIE_SLICE, Items.COBWEB, exporter);
+
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD), RecipeCategory.MISC, FrightsDelightItemsImpl.LOLLIPOP_MOLD, 2.0f, 200)
+                .unlockedBy(RecipeProvider.getHasName(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD), RecipeProvider.has(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD))
+                .save(exporter, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.LOLLIPOP_MOLD));
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD), RecipeCategory.MISC, FrightsDelightItemsImpl.RING_CANDY_MOLD, 2.0f, 200)
+                .unlockedBy(RecipeProvider.getHasName(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD), RecipeProvider.has(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD))
+                .save(exporter, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.RING_CANDY_MOLD));
     }
 
     private static void crateToIngredient(Item crate, Item ingredient, Consumer<FinishedRecipe> exporter) {

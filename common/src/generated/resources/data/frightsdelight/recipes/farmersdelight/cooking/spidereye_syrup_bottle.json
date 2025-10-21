@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 400,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "minecraft:spider_eye"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "frightsdelight:spidereye_syrup_bottle"
+  }
+}

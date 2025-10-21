@@ -23,6 +23,7 @@ public class FrightsDelight {
         FrightsDelightEffects.init();
         FrightsDelightParticleTypes.init();
         FrightsDelightItems.init();
+        FrightsDelightBlockEntities.init();
         FrightsDelightEntityTypes.init();
         FrightsDelightBiomeFeatures.init();
         FrightsDelightPlacementModifiers.init();

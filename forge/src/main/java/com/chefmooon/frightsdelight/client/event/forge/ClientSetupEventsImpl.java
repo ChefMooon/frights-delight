@@ -2,7 +2,9 @@ package com.chefmooon.frightsdelight.client.event.forge;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.client.particle.FrightsDelightBubbleParticle;
+import com.chefmooon.frightsdelight.client.renderer.forge.LollipopMoldBlockEntityRendererImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightParticleTypes;
+import com.chefmooon.frightsdelight.common.registry.forge.FrightsDelightBlockEntitiesImpl;
 import com.chefmooon.frightsdelight.common.registry.forge.FrightsDelightEntityTypesImpl;
 import eu.midnightdust.lib.config.MidnightConfig;
 import eu.midnightdust.lib.util.MidnightColorUtil;
@@ -52,5 +54,10 @@ public class ClientSetupEventsImpl {
     @SubscribeEvent
     public static void onEntityRendererRegister(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(FrightsDelightEntityTypesImpl.BONE_SHARD.get(), ThrownItemRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(FrightsDelightBlockEntitiesImpl.LOLLIPOP_MOLD.get(), LollipopMoldBlockEntityRendererImpl::new);
     }
 }
