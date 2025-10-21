@@ -6,9 +6,10 @@ import com.chefmooon.frightsdelight.common.block.RingCandyMoldBlock;
 import com.chefmooon.frightsdelight.common.block.SoulBerryBushBlock;
 import com.chefmooon.frightsdelight.common.block.WitherBerryBushBlock;
 import com.chefmooon.frightsdelight.common.block.drinkableFeastBlocks.*;
+import com.chefmooon.frightsdelight.common.block.forge.AbstractCandyBasketBlockImpl;
 import com.chefmooon.frightsdelight.common.block.glassCupBlocks.*;
+import com.chefmooon.frightsdelight.common.data.types.CandyBasketType;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;
-import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -31,6 +32,11 @@ public class FrightsDelightBlocksImpl {
 
     public static final RegistryObject<Block> SOUL_BERRY_BUSH = registerBlock(FrightsDelightBlocks.SOUL_BERRY_BUSH, SoulBerryBushBlock::new);
     public static final RegistryObject<Block> WITHER_BERRY_BUSH = registerBlock(FrightsDelightBlocks.WITHER_BERRY_BUSH, WitherBerryBushBlock::new);
+
+    public static final Supplier<Block> PUMPKIN_CANDY_BASKET = registerBlock(FrightsDelightBlocks.PUMPKIN_CANDY_BASKET,
+            () -> new AbstractCandyBasketBlockImpl(BlockBehaviour.Properties.copy(Blocks.PUMPKIN), CandyBasketType.PUMPKIN));
+    public static final Supplier<Block> MELON_CANDY_BASKET = registerBlock(FrightsDelightBlocks.MELON_CANDY_BASKET,
+            () -> new AbstractCandyBasketBlockImpl(BlockBehaviour.Properties.copy(Blocks.MELON), CandyBasketType.MELON));
 
     public static final Supplier<Block> LOLLIPOP_MOLD = registerBlock(FrightsDelightBlocks.LOLLIPOP_MOLD,
             () -> new LollipopMoldBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA)));

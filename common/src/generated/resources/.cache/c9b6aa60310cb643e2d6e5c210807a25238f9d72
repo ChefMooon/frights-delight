@@ -1,6 +1,6 @@
-// 1.20.1	2025-10-20T21:04:57.2246501	Fright's Delight/Tags for minecraft:block
-779c00435076434973824f88a838b4fa0018c1bb data\c\tags\blocks\mineable\knife.json
-6801420e8697e9631633925cd6ffd49c2ccc1e61 data\minecraft\tags\blocks\mineable\axe.json
+// 1.20.1	2025-10-20T22:00:46.4618576	Fright's Delight/Tags for minecraft:block
+9d7ec8a8f38f530f14de3ff9edf3bfd344605c20 data\c\tags\blocks\mineable\knife.json
+4d34e47b668d633be76f3755a5137d905f239fdd data\minecraft\tags\blocks\mineable\axe.json
 ddd5084f24af8b194a9767a2b82f84e7b3d3c715 data\minecraft\tags\blocks\sword_efficient.json
 749cd7cd314fa9c57984cd4dc76d06975ae75412 data\frightsdelight\tags\blocks\soul_berry_bush_grow_condition.json
 a387231fe028d6e0045e9fc426aa495aa3555868 data\minecraft\tags\blocks\mineable\pickaxe.json

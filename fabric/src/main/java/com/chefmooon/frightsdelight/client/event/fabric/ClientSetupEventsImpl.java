@@ -32,6 +32,11 @@ public class ClientSetupEventsImpl {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
                 FrightsDelightBlocksImpl.LOLLIPOP_MOLD,
                 FrightsDelightBlocksImpl.RING_CANDY_MOLD);
+
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
+                FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET,
+                FrightsDelightBlocksImpl.MELON_CANDY_BASKET
+        );
     }
 
     public static void registerParticles() {

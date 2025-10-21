@@ -3,6 +3,7 @@ package com.chefmooon.frightsdelight.data.fabric;
 import com.chefmooon.frightsdelight.common.block.DrinkableFeastBlock;
 import com.chefmooon.frightsdelight.common.block.FrightsDelightBushBlock;
 import com.chefmooon.frightsdelight.common.block.GlassCupBlock;
+import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlockEntitiesImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.tag.CommonTags;
@@ -18,6 +19,8 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.CopyNameFunction;
+import net.minecraft.world.level.storage.loot.functions.SetContainerContents;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
@@ -33,6 +36,9 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
+
+        this.createCandyBasketDrops(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET);
+        this.createCandyBasketDrops(FrightsDelightBlocksImpl.MELON_CANDY_BASKET);
 
         this.dropSelf(FrightsDelightBlocksImpl.FLESH_CRATE);
         this.dropSelf(FrightsDelightBlocksImpl.BONE_CRATE);
@@ -147,5 +153,13 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 3))
                                 .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(CommonTags.C_TOOLS_KNIVES)))))
         ));
+    }
+
+    private void createCandyBasketDrops(Block block) {
+        this.add(block, this.applyExplosionDecay(block, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(block)
+                                .apply(CopyNameFunction.copyName(CopyNameFunction.NameSource.BLOCK_ENTITY)).apply(SetContainerContents.setContents(FrightsDelightBlockEntitiesImpl.CANDY_BASKET)))))
+        );
     }
 }

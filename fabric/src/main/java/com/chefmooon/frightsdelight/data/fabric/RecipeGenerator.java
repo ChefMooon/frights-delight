@@ -1,7 +1,6 @@
 package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
-import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import com.chefmooon.frightsdelight.data.fabric.recipe.CookingRecipes;
 import com.chefmooon.frightsdelight.data.fabric.recipe.CuttingRecipes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -66,6 +65,9 @@ public class RecipeGenerator extends FabricRecipeProvider {
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD), RecipeCategory.MISC, FrightsDelightItemsImpl.RING_CANDY_MOLD, 2.0f, 200)
                 .unlockedBy(RecipeProvider.getHasName(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD), RecipeProvider.has(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD))
                 .save(exporter, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.RING_CANDY_MOLD));
+
+        candyBasketRecipe(FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET, Items.PUMPKIN, exporter);
+        candyBasketRecipe(FrightsDelightItemsImpl.MELON_CANDY_BASKET, Items.MELON, exporter);
     }
 
     private static void crateToIngredient(Item crate, Item ingredient, Consumer<FinishedRecipe> exporter) {
@@ -117,5 +119,16 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .group("frd_" + pie.getDescriptionId().replace("block.frightsdelight.", ""))
                 .save(exporter, RecipeProvider.getSimpleRecipeName(pie) + "_from_slices");
 
+    }
+
+    private static void candyBasketRecipe(Item candyBasket, Item mainIngredient, Consumer<FinishedRecipe> exporter) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, candyBasket)
+                .pattern("A")
+                .pattern("B")
+                .define('A', BuiltInRegistries.ITEM.get(new ResourceLocation("farmersdelight", "rope")))
+                .define('B', mainIngredient)
+                .unlockedBy(RecipeProvider.getHasName(mainIngredient), RecipeProvider.has(mainIngredient))
+                .unlockedBy("has_rope", RecipeProvider.has(BuiltInRegistries.ITEM.get(new ResourceLocation("farmersdelight", "rope"))))
+                .save(exporter, RecipeProvider.getSimpleRecipeName(candyBasket));
     }
 }

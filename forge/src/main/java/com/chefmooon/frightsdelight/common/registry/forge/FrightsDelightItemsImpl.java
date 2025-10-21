@@ -2,10 +2,8 @@ package com.chefmooon.frightsdelight.common.registry.forge;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
 import com.chefmooon.frightsdelight.common.FoodValues;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItem;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItemNameBlockItem;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableBlockItem;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableItem;
+import com.chefmooon.frightsdelight.common.data.types.CandyBasketType;
+import com.chefmooon.frightsdelight.common.item.*;
 import com.chefmooon.frightsdelight.common.item.forge.BoneShardItemImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.google.common.collect.Sets;
@@ -33,6 +31,11 @@ public class FrightsDelightItemsImpl {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, FrightsDelight.MOD_ID);
     public static LinkedHashSet<Supplier<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
+
+    public static final Supplier<Item> PUMPKIN_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.PUMPKIN_CANDY_BASKET,
+            () -> new CandyBasketItem(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(), noStack(), CandyBasketType.PUMPKIN));
+    public static final Supplier<Item> MELON_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.MELON_CANDY_BASKET,
+            () -> new CandyBasketItem(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get(), noStack(), CandyBasketType.MELON));
 
     public static final Supplier<Item> UNFIRED_LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.UNFIRED_LOLLIPOP_MOLD,
             () -> new Item(basicItem()));

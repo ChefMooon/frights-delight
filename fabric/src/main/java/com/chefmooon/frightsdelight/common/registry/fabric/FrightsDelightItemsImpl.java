@@ -1,6 +1,8 @@
 package com.chefmooon.frightsdelight.common.registry.fabric;
 
 import com.chefmooon.frightsdelight.common.FoodValues;
+import com.chefmooon.frightsdelight.common.data.types.CandyBasketType;
+import com.chefmooon.frightsdelight.common.item.CandyBasketItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableBlockItem;
 import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableItem;
@@ -18,13 +20,17 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 
 import static com.chefmooon.frightsdelight.common.registry.FrightsDelightItems.*;
-import static com.chefmooon.frightsdelight.common.registry.FrightsDelightItems.syrupItem;
 
 public class FrightsDelightItemsImpl {
 
     public static Item.Properties boneFoodItem(FoodProperties food) {
         return new Item.Properties().food(food).craftRemainder(FrightsDelightItemsImpl.BONE_SHARD).stacksTo(16);
     }
+
+    public static final Item PUMPKIN_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.PUMPKIN_CANDY_BASKET,
+            new CandyBasketItem(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET, noStack(), CandyBasketType.PUMPKIN));
+    public static final Item MELON_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.MELON_CANDY_BASKET,
+            new CandyBasketItem(FrightsDelightBlocksImpl.MELON_CANDY_BASKET, noStack(), CandyBasketType.MELON));
 
     public static final Item UNFIRED_LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.UNFIRED_LOLLIPOP_MOLD,
             new Item(basicItem()));

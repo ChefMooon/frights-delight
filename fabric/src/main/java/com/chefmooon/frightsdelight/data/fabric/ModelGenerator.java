@@ -71,6 +71,9 @@ public class ModelGenerator extends FabricModelProvider {
         registerPieBlock(FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE, blockStateModelGenerator);
         registerPieBlock(FrightsDelightBlocksImpl.COBWEB_PIE, blockStateModelGenerator);
 
+        registerCandyBasketBlock(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET, blockStateModelGenerator);
+        registerCandyBasketBlock(FrightsDelightBlocksImpl.MELON_CANDY_BASKET, blockStateModelGenerator);
+
         registerSyrupBlock(FrightsDelightBlocksImpl.ROTTEN_FLESH_SYRUP, blockStateModelGenerator);
         registerSyrupBlock(FrightsDelightBlocksImpl.SLIMEAPPLE_SYRUP, blockStateModelGenerator);
         registerSyrupBlock(FrightsDelightBlocksImpl.SPIDEREYE_SYRUP, blockStateModelGenerator);
@@ -481,6 +484,17 @@ public class ModelGenerator extends FabricModelProvider {
                         .select(14, Variant.variant().with(VariantProperties.MODEL, SOUL_BERRY_SYRUP_LOCATION))
                         .select(15, Variant.variant().with(VariantProperties.MODEL, SOUL_BERRY_SYRUP_LOCATION))
                 ));
+    }
+
+    private static void registerCandyBasketBlock(Block block, BlockModelGenerators blockModelGenerators) {
+        ResourceLocation LOCATION = ModelLocationUtils.getModelLocation(block);
+        TextureMapping textureMapping = new TextureMapping()
+                .put(FrightsDelightTextureSlots.HANDLE, TextUtils.res("block/rope_handle_3d"))
+                .put(FrightsDelightTextureSlots.BASKET, LOCATION)
+                .put(TextureSlot.PARTICLE, LOCATION);
+        FrightsDelightModels.TEMPLATE_BLOCK_CANDY_BASKET.create(LOCATION, textureMapping, blockModelGenerators.modelOutput);
+        blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.multiVariant(block, Variant.variant().with(VariantProperties.MODEL, LOCATION))
+                .with(BlockModelGenerators.createHorizontalFacingDispatch()));
     }
 
 }
