@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-22T10:37:13.0454927	Fright's Delight/Recipes
+// 1.21.1	2025-10-22T14:43:45.5900442	Fright's Delight/Recipes
 b6539c1dc1a72b863d79effd0e6e393f26804e3a data\frightsdelight\advancement\recipes\food\punchbowl_ghasttear.json
 4a562a75d6b98e06547f5cc724e61ae3ac4c5eec data\frightsdelight\advancement\recipes\misc\ghasttear_pie.json
 0f3d12f4172509413ef25fe7a1cba63dee39a7da data\frightsdelight\advancement\recipes\misc\fermented_spider_eye_from_fermented_spider_eye_crate.json
@@ -60,6 +60,7 @@ badebcb45b617694a79b2b936f798795bf370a78 data\frightsdelight\recipe\farmersdelig
 6b3b5b774122b170fc1ef5fff32afa1170e6ebbc data\frightsdelight\recipe\farmersdelight\cooking\undead_kebab.json
 6f71e5c5a581ac1dfa20873d145cfb665e67672f data\frightsdelight\advancement\farmersdelight\recipes\cooking\soup_cobweb.json
 f682eb72f44ae3b2fdb82b703ac3ee21398a6d89 data\frightsdelight\advancement\farmersdelight\recipes\cooking\soup_wither_berry.json
+04ac9031778f051d5ef8689c7a48dc54b00e8435 data\frightsdelight\recipe\farmersdelight\cutting\bone_shard.json
 163ee6ef4b7b89e555a080050b31dad3a4afcb99 data\frightsdelight\advancement\farmersdelight\recipes\cooking\punch_spidereye.json
 97c67a8ff2507efa620198e0002fbd36f4d2f5e1 data\frightsdelight\advancement\farmersdelight\recipes\cooking\bone_kebab_slime.json
 cc7cbc999cde4194a7d5bbcda2546bbf953730be data\frightsdelight\recipe\punchbowl_spidereye.json

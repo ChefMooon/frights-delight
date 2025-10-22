@@ -15,6 +15,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 public class CuttingRecipes {
 
     public static void register(RecipeOutput exporter) {
+        CuttingBoardRecipeBuilder.create(Items.BONE, Ingredient.of(CommonTags.C_TOOLS_KNIFE), FrightsDelightItemsImpl.BONE_SHARD, 2)
+                .output(FrightsDelightItemsImpl.BONE_SHARD, 0.5F)
+                .save(exporter, suffix(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_SHARD)));
+
         CuttingBoardRecipeBuilder.create(Items.CLAY, Ingredient.of(CommonTags.C_TOOLS_KNIFE), FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD)
                         .save(exporter, suffix(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD)));
         CuttingBoardRecipeBuilder.create(Items.CLAY, Ingredient.of(Items.GLASS_BOTTLE), FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD)
