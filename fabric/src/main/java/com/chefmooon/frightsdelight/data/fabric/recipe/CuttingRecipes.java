@@ -4,6 +4,7 @@ import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsIm
 import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import com.chefmooon.frightsdelight.data.fabric.builder.CuttingBoardRecipeBuilder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -18,6 +19,13 @@ public class CuttingRecipes {
                         .save(exporter, suffix(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD)));
         CuttingBoardRecipeBuilder.create(Items.CLAY, Ingredient.of(Items.GLASS_BOTTLE), FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD)
                 .save(exporter, suffix(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD)));
+
+        CuttingBoardRecipeBuilder.create(FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET, Ingredient.of(CommonTags.C_TOOLS_KNIFE), Items.PUMPKIN)
+                .output(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "rope")))
+                .save(exporter, suffix(RecipeProvider.getConversionRecipeName(Items.PUMPKIN, FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET)));
+        CuttingBoardRecipeBuilder.create(FrightsDelightItemsImpl.MELON_CANDY_BASKET, Ingredient.of(CommonTags.C_TOOLS_KNIFE), Items.MELON)
+                .output(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "rope")))
+                .save(exporter, suffix(RecipeProvider.getConversionRecipeName(Items.MELON, FrightsDelightItemsImpl.MELON_CANDY_BASKET)));
 
         pieCuttingRecipeBuilder(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE, FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE, exporter);
         pieCuttingRecipeBuilder(FrightsDelightItemsImpl.SLIMEAPPLE_PIE, FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE, exporter);
