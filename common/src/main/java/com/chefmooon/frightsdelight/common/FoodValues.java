@@ -416,19 +416,19 @@ public class FoodValues {
 
         public static final Consumable ROTTEN_FLESH_SYRUP_BOTTLE = Consumables.defaultFood()
                 .consumeSeconds(0.8F)
-                .onConsume(infected(SHORT_DURATION, 0.25f))
+                .onConsume(infected(SHORT_DURATION, 0.5f))
                 .build();
         public static final Consumable SLIMEAPPLE_SYRUP_BOTTLE = Consumables.defaultFood()
                 .consumeSeconds(0.8F)
-                .onConsume(slimed(SHORT_DURATION, 0.25f))
+                .onConsume(slimed(SHORT_DURATION, 0.5f))
                 .build();
         public static final Consumable SPIDEREYE_SYRUP_BOTTLE = Consumables.defaultFood()
                 .consumeSeconds(0.8F)
-                .onConsume(hysteria(SHORT_DURATION, 0.25f))
+                .onConsume(hysteria(SHORT_DURATION, 0.5f))
                 .build();
         public static final Consumable GHASTTEAR_SYRUP_BOTTLE = Consumables.defaultFood()
                 .consumeSeconds(0.8F)
-                .onConsume(chills(SHORT_DURATION, 0.25f))
+                .onConsume(chills(SHORT_DURATION, 0.5f))
                 .build();
         public static final Consumable SOUL_BERRY_SYRUP_BOTTLE = Consumables.defaultFood()
                 .consumeSeconds(0.8F)
@@ -440,7 +440,7 @@ public class FoodValues {
                 .build();
         public static final Consumable COBWEB_SYRUP_BOTTLE = Consumables.defaultFood()
                 .consumeSeconds(0.8F)
-                .onConsume(cobwebbed(SHORT_DURATION, 0.25f))
+                .onConsume(cobwebbed(SHORT_DURATION, 0.5f))
                 .build();
 
         // *** LOLLIPOPS *** //
