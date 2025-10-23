@@ -5,13 +5,20 @@ import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 
 public class CuttingRecipes {
 
     public static void register(HolderGetter<Item> holderGetter, HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.CLAY), Ingredient.of(holderGetter.getOrThrow(CommonTags.C_TOOLS_KNIFE)), FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD.get())
+                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD.get()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.CLAY), Ingredient.of(Items.GLASS_BOTTLE), FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD.get())
+                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD.get()));
+
         pieCuttingRecipeBuilder(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE.get(), FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE.get(), holderGetter, recipeOutput);
         pieCuttingRecipeBuilder(FrightsDelightItemsImpl.SLIMEAPPLE_PIE.get(), FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE.get(), holderGetter, recipeOutput);
         pieCuttingRecipeBuilder(FrightsDelightItemsImpl.SPIDEREYE_PIE.get(), FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE.get(), holderGetter, recipeOutput);

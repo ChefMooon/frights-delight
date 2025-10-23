@@ -111,6 +111,14 @@ public class CookingRecipes {
         soupRecipe(holderGetter, FrightsDelightItemsImpl.SOUP_SOUL_BERRY.get(), FrightsDelightItemsImpl.SOUL_BERRY.get(), recipeOutput);
         soupRecipe(holderGetter, FrightsDelightItemsImpl.SOUP_WITHER_BERRY.get(), FrightsDelightItemsImpl.WITHER_BERRY.get(), recipeOutput);
 
+        syrupRecipe(holderGetter, FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE.get(), Items.ROTTEN_FLESH, recipeOutput);
+        syrupRecipe(holderGetter, FrightsDelightItemsImpl.SLIMEAPPLE_SYRUP_BOTTLE.get(), FrightsDelightItemsImpl.APPLE_SLIME.get(), recipeOutput);
+        syrupRecipe(holderGetter, FrightsDelightItemsImpl.SPIDEREYE_SYRUP_BOTTLE.get(), Items.SPIDER_EYE, recipeOutput);
+        syrupRecipe(holderGetter, FrightsDelightItemsImpl.GHASTTEAR_SYRUP_BOTTLE.get(), Items.GHAST_TEAR, recipeOutput);
+        syrupRecipe(holderGetter, FrightsDelightItemsImpl.SOUL_BERRY_SYRUP_BOTTLE.get(), FrightsDelightItemsImpl.SOUL_BERRY.get(), recipeOutput);
+        syrupRecipe(holderGetter, FrightsDelightItemsImpl.WITHER_BERRY_SYRUP_BOTTLE.get(), FrightsDelightItemsImpl.WITHER_BERRY.get(), recipeOutput);
+        syrupRecipe(holderGetter, FrightsDelightItemsImpl.COBWEB_SYRUP_BOTTLE.get(), Items.COBWEB, recipeOutput);
+
     }
 
     private static void punchRecipe(HolderGetter<Item> holderGetter, Item output, Item mainIngredient, RecipeOutput recipeOutput) {
@@ -130,5 +138,15 @@ public class CookingRecipes {
                 .unlockedByAnyIngredient(mainIngredient)
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
                 .save(recipeOutput, RecipeProvider.getSimpleRecipeName(output));
+    }
+
+    private static void syrupRecipe(HolderGetter<Item> holderGetter, Item output, Item mainIngredient, RecipeOutput recipeOutput) {
+        CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, output, 1, 400, 1.0F, Items.GLASS_BOTTLE)
+                .addIngredient(mainIngredient, 3)
+                .addIngredient(Items.SUGAR, 2)
+                .addIngredient(Items.WATER_BUCKET, 1)
+                .unlockedByAnyIngredient(mainIngredient, Items.SUGAR, Items.WATER_BUCKET)
+                .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
+                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(output));
     }
 }

@@ -1,18 +1,23 @@
 package com.chefmooon.frightsdelight.client.event.fabric;
 
 import com.chefmooon.frightsdelight.client.particle.FrightsDelightBubbleParticle;
+import com.chefmooon.frightsdelight.client.renderer.fabric.LollipopMoldBlockEntityRendererImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightParticleTypes;
+import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlockEntitiesImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightEntityTypesImpl;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
 public class ClientSetupEventsImpl {
 
     public static void registerBlockRenderLayerMap() {
+        BlockEntityRenderers.register(FrightsDelightBlockEntitiesImpl.LOLLIPOP_MOLD, LollipopMoldBlockEntityRendererImpl::new);
+
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
                 FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(),
                 FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(),
@@ -22,7 +27,11 @@ public class ClientSetupEventsImpl {
                 FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR.get(),
                 FrightsDelightBlocksImpl.PUNCHBOWL_COBWEB.get(),
                 FrightsDelightBlocksImpl.PUNCHBOWL_SOUL_BERRY.get(),
-                FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY.get());
+                FrightsDelightBlocksImpl.PUNCHBOWL_WITHER_BERRY.get(),
+
+                FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get(),
+                FrightsDelightBlocksImpl.RING_CANDY_MOLD.get()
+                );
     }
 
     public static void registerParticles() {

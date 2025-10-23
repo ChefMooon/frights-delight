@@ -24,9 +24,13 @@ public class FrightsDelightItems {
     public static Item.Properties foodItem(FoodProperties food) {
         return foodItem(food, null);
     }
-public static Item.Properties foodItem(FoodProperties food, @Nullable Consumable consumable) {
+    public static Item.Properties foodItem(FoodProperties food, @Nullable Consumable consumable) {
         return new Item.Properties().food(food)
                 .component(DataComponents.CONSUMABLE, consumable != null ? consumable : Consumables.DEFAULT_FOOD);
+    }
+
+    public static Item.Properties syrupItem(FoodProperties food, @Nullable Consumable consumable) {
+        return foodItem(food, consumable).craftRemainder(Items.GLASS_BOTTLE);
     }
 
     public static Item.Properties bowlFoodItem(FoodProperties food) {
@@ -55,6 +59,11 @@ public static Item.Properties foodItem(FoodProperties food, @Nullable Consumable
                 .craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
     }
 
+    public static final ResourceLocation UNFIRED_LOLLIPOP_MOLD = item("unfired_lollipop_mold");
+    public static final ResourceLocation LOLLIPOP_MOLD = item("lollipop_mold");
+    public static final ResourceLocation UNFIRED_RING_CANDY_MOLD = item("unfired_ring_candy_mold");
+    public static final ResourceLocation RING_CANDY_MOLD = item("ring_candy_mold");
+
     public static final ResourceLocation FLESH_CRATE = item("flesh_crate");
     public static final ResourceLocation BONE_CRATE = item("bone_crate");
     public static final ResourceLocation PHANTOM_CRATE = item("phantom_crate");
@@ -68,6 +77,22 @@ public static Item.Properties foodItem(FoodProperties food, @Nullable Consumable
 
     public static final ResourceLocation SOUL_BERRY = item("soul_berry");
     public static final ResourceLocation WITHER_BERRY = item("wither_berry");
+
+    public static final ResourceLocation ROTTEN_FLESH_LOLLIPOP = item("rotten_flesh_lollipop");
+    public static final ResourceLocation SLIMEAPPLE_LOLLIPOP = item("slimeapple_lollipop");
+    public static final ResourceLocation SPIDEREYE_LOLLIPOP = item("spidereye_lollipop");
+    public static final ResourceLocation GHASTTEAR_LOLLIPOP = item("ghasttear_lollipop");
+    public static final ResourceLocation SOUL_BERRY_LOLLIPOP = item("soul_berry_lollipop");
+    public static final ResourceLocation WITHER_BERRY_LOLLIPOP = item("wither_berry_lollipop");
+    public static final ResourceLocation COBWEB_LOLLIPOP = item("cobweb_lollipop");
+
+    public static final ResourceLocation ROTTEN_FLESH_RING_CANDY = item("rotten_flesh_ring_candy");
+    public static final ResourceLocation SLIMEAPPLE_RING_CANDY = item("slimeapple_ring_candy");
+    public static final ResourceLocation SPIDEREYE_RING_CANDY = item("spidereye_ring_candy");
+    public static final ResourceLocation GHASTTEAR_RING_CANDY = item("ghasttear_ring_candy");
+    public static final ResourceLocation SOUL_BERRY_RING_CANDY = item("soul_berry_ring_candy");
+    public static final ResourceLocation WITHER_BERRY_RING_CANDY = item("wither_berry_ring_candy");
+    public static final ResourceLocation COBWEB_RING_CANDY = item("cobweb_ring_candy");
 
     public static final ResourceLocation APPLE_SLIME = item("apple_slime");
     public static final ResourceLocation UNDEAD_KEBAB = item("undead_kebab");
@@ -125,6 +150,14 @@ public static Item.Properties foodItem(FoodProperties food, @Nullable Consumable
     public static final ResourceLocation SOUL_BERRY_CHEESECAKE = item("soul_berry_cheesecake");
     public static final ResourceLocation WITHER_BERRY_CHEESECAKE = item("wither_berry_cheesecake");
     public static final ResourceLocation COBWEB_PIE = item("cobweb_pie");
+
+    public static final ResourceLocation ROTTEN_FLESH_SYRUP_BOTTLE = item("rotten_flesh_syrup_bottle");
+    public static final ResourceLocation SLIMEAPPLE_SYRUP_BOTTLE = item("slimeapple_syrup_bottle");
+    public static final ResourceLocation SPIDEREYE_SYRUP_BOTTLE = item("spidereye_syrup_bottle");
+    public static final ResourceLocation GHASTTEAR_SYRUP_BOTTLE = item("ghasttear_syrup_bottle");
+    public static final ResourceLocation SOUL_BERRY_SYRUP_BOTTLE = item("soul_berry_syrup_bottle");
+    public static final ResourceLocation WITHER_BERRY_SYRUP_BOTTLE = item("wither_berry_syrup_bottle");
+    public static final ResourceLocation COBWEB_SYRUP_BOTTLE = item("cobweb_syrup_bottle");
 
     public static final ResourceLocation ROTTEN_FLESH_PIE_SLICE = item("rotten_flesh_pie_slice");
     public static final ResourceLocation SLIMEAPPLE_PIE_SLICE = item("slimeapple_pie_slice");

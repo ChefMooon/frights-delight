@@ -172,6 +172,36 @@ public class FoodValues {
     public static final FoodProperties WITHER_BERRY_CHEESECAKE_SLICE = foodProperty(4, 0.3f, true);
     public static final FoodProperties COBWEB_PIE_SLICE = foodProperty(4, 0.3f);
 
+    // *** SYRUPS *** //
+
+    public static final FoodProperties ROTTEN_FLESH_SYRUP_BOTTLE = foodProperty(6, 0.4f, false);
+    public static final FoodProperties SLIMEAPPLE_SYRUP_BOTTLE = foodProperty(6, 0.4f, false);
+    public static final FoodProperties SPIDEREYE_SYRUP_BOTTLE = foodProperty(6, 0.4f, false);
+    public static final FoodProperties GHASTTEAR_SYRUP_BOTTLE = foodProperty(6, 0.4f, false);
+    public static final FoodProperties SOUL_BERRY_SYRUP_BOTTLE = foodProperty(6, 0.4f, true);
+    public static final FoodProperties WITHER_BERRY_SYRUP_BOTTLE = foodProperty(6, 0.4f, true);
+    public static final FoodProperties COBWEB_SYRUP_BOTTLE = foodProperty(6, 0.4f, false);
+
+    // *** LOLLIPOPS *** //
+
+    public static final FoodProperties ROTTEN_FLESH_LOLLIPOP = foodProperty(2, 0.1f, false);
+    public static final FoodProperties SLIMEAPPLE_LOLLIPOP = foodProperty(2, 0.1f, false);
+    public static final FoodProperties SPIDEREYE_LOLLIPOP = foodProperty(2, 0.1f, false);
+    public static final FoodProperties GHASTTEAR_LOLLIPOP = foodProperty(2, 0.1f, false);
+    public static final FoodProperties SOUL_BERRY_LOLLIPOP = foodProperty(2, 0.1f, true);
+    public static final FoodProperties WITHER_BERRY_LOLLIPOP = foodProperty(2, 0.1f, true);
+    public static final FoodProperties COBWEB_LOLLIPOP = foodProperty(2, 0.1f, false);
+
+    // *** RING CANDY *** //
+
+    public static final FoodProperties ROTTEN_FLESH_RING_CANDY = foodProperty(2, 0.1f, false);
+    public static final FoodProperties SLIMEAPPLE_RING_CANDY = foodProperty(2, 0.1f, false);
+    public static final FoodProperties SPIDEREYE_RING_CANDY = foodProperty(2, 0.1f, false);
+    public static final FoodProperties GHASTTEAR_RING_CANDY = foodProperty(2, 0.1f, false);
+    public static final FoodProperties SOUL_BERRY_RING_CANDY = foodProperty(2, 0.1f, true);
+    public static final FoodProperties WITHER_BERRY_RING_CANDY = foodProperty(2, 0.1f, true);
+    public static final FoodProperties COBWEB_RING_CANDY = foodProperty(2, 0.1f, false);
+
     public static FoodProperties foodProperty(int nutrition, float saturation) {
         return foodProperty(nutrition, saturation, false);
     }
@@ -380,6 +410,99 @@ public class FoodValues {
         public static final Consumable COBWEB_PIE_SLICE = Consumables.defaultFood()
                 .consumeSeconds(0.8F)
                 .onConsume(cobwebbed(SHORT_DURATION, 0.5f))
+                .build();
+
+        // *** SYRUPS *** //
+
+        public static final Consumable ROTTEN_FLESH_SYRUP_BOTTLE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(infected(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable SLIMEAPPLE_SYRUP_BOTTLE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(slimed(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable SPIDEREYE_SYRUP_BOTTLE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(hysteria(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable GHASTTEAR_SYRUP_BOTTLE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(chills(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable SOUL_BERRY_SYRUP_BOTTLE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(fortifiedMind(SHORT_DURATION))
+                .build();
+        public static final Consumable WITHER_BERRY_SYRUP_BOTTLE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(undeadHunger(SHORT_DURATION))
+                .build();
+        public static final Consumable COBWEB_SYRUP_BOTTLE = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(cobwebbed(SHORT_DURATION, 0.25f))
+                .build();
+
+        // *** LOLLIPOPS *** //
+
+        public static final Consumable ROTTEN_FLESH_LOLLIPOP = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(infected(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable SLIMEAPPLE_LOLLIPOP = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(slimed(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable SPIDEREYE_LOLLIPOP = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(hysteria(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable GHASTTEAR_LOLLIPOP = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(chills(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable SOUL_BERRY_LOLLIPOP = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(fortifiedMind(SHORT_DURATION))
+                .build();
+        public static final Consumable WITHER_BERRY_LOLLIPOP = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(undeadHunger(SHORT_DURATION))
+                .build();
+        public static final Consumable COBWEB_LOLLIPOP = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(cobwebbed(SHORT_DURATION, 0.25f))
+                .build();
+
+        // *** RING CANDY *** //
+
+        public static final Consumable ROTTEN_FLESH_RING_CANDY = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(infected(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable SLIMEAPPLE_RING_CANDY = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(slimed(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable SPIDEREYE_RING_CANDY = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(hysteria(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable GHASTTEAR_RING_CANDY = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(chills(SHORT_DURATION, 0.25f))
+                .build();
+        public static final Consumable SOUL_BERRY_RING_CANDY = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(fortifiedMind(SHORT_DURATION))
+                .build();
+        public static final Consumable WITHER_BERRY_RING_CANDY = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(undeadHunger(SHORT_DURATION))
+                .build();
+        public static final Consumable COBWEB_RING_CANDY = Consumables.defaultFood()
+                .consumeSeconds(0.8F)
+                .onConsume(cobwebbed(SHORT_DURATION, 0.25f))
                 .build();
     }
 

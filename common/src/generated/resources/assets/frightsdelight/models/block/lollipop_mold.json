@@ -1,0 +1,9 @@
+{
+  "parent": "frightsdelight:block/template_lollipop_mold",
+  "textures": {
+    "bottom": "frightsdelight:block/candy_mold_bottom",
+    "particle": "frightsdelight:block/lollipop_mold_top",
+    "side": "frightsdelight:block/candy_mold_side",
+    "top": "frightsdelight:block/lollipop_mold_top"
+  }
+}

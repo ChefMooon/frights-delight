@@ -23,6 +23,12 @@ public class FrightsDelightModels {
     public static final ModelTemplate TEMPLATE_GLASS_CUP_3 = block("template_glass_cup_3", FrightsDelightTextureSlots.INSIDE, FrightsDelightTextureSlots.CUP);
     public static final ModelTemplate TEMPLATE_GLASS_CUP_4 = block("template_glass_cup_4", FrightsDelightTextureSlots.INSIDE, FrightsDelightTextureSlots.CUP);
 
+    public static final ModelTemplate TEMPLATE_SYRUP = block("template_syrup", TextureSlot.PARTICLE);
+    public static final ModelTemplate TEMPLATE_LOLLIPOP_MOLD = block("template_lollipop_mold", TextureSlot.TOP, TextureSlot.BOTTOM, TextureSlot.SIDE, TextureSlot.PARTICLE);
+    public static final ModelTemplate TEMPLATE_LOLLIPOP_MOLD_SYRUP = block("template_lollipop_mold_syrup", FrightsDelightTextureSlots.SYRUP, TextureSlot.TOP, TextureSlot.BOTTOM, TextureSlot.SIDE, TextureSlot.PARTICLE);
+    public static final ModelTemplate TEMPLATE_RING_CANDY_MOLD = block("template_ring_candy_mold", TextureSlot.TOP, TextureSlot.BOTTOM, TextureSlot.SIDE, TextureSlot.PARTICLE);
+    public static final ModelTemplate TEMPLATE_RING_CANDY_MOLD_SYRUP = block("template_ring_candy_mold_syrup", FrightsDelightTextureSlots.SYRUP, TextureSlot.TOP, TextureSlot.BOTTOM, TextureSlot.SIDE, TextureSlot.PARTICLE);
+
     public static final ModelTemplate TEMPLATE_CROP_CROSS = block("template_crop_cross", TextureSlot.CROSS);
 
     private static ModelTemplate block(String parent, TextureSlot... textureSlots) {

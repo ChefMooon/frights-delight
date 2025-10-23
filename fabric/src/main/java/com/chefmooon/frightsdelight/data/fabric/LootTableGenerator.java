@@ -3,6 +3,7 @@ package com.chefmooon.frightsdelight.data.fabric;
 import com.chefmooon.frightsdelight.common.block.DrinkableFeastBlock;
 import com.chefmooon.frightsdelight.common.block.FrightsDelightBushBlock;
 import com.chefmooon.frightsdelight.common.block.GlassCupBlock;
+import com.chefmooon.frightsdelight.common.block.LollipopMoldBlock;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.tag.CommonTags;
@@ -49,6 +50,9 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         this.dropSelf(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE.get());
         this.dropSelf(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE.get());
         this.dropSelf(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get());
+
+        this.dropSelf(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get());
+        this.dropSelf(FrightsDelightBlocksImpl.RING_CANDY_MOLD.get());
 
         createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_ROTTEN_FLESH.get(), FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get());
         createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_SLIMEAPPLE.get(), FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get());

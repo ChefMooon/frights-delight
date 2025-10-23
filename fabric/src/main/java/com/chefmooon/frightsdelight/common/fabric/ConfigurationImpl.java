@@ -26,6 +26,7 @@ public class ConfigurationImpl extends MidnightConfig {
     @Entry(category = "client") public static boolean foodEffectChanceTooltip = true;
 
     @Entry(category = "client") public static boolean drinkableFeastParticles = true;
+    @Entry(category = "client") public static boolean candyMoldParticles = true;
     @Entry(category = "client") public static boolean punchConsumeSound = true;
     @Entry(category = "client", isSlider = true,min=0,max=10) public static int punchConsumeChance = 4;
 
@@ -90,6 +91,10 @@ public class ConfigurationImpl extends MidnightConfig {
 
     public static boolean drinkableFeastParticles() {
         return drinkableFeastParticles;
+    }
+
+    public static boolean candyMoldParticles() {
+        return candyMoldParticles;
     }
 
     public static boolean punchConsumeSound() {

@@ -27,6 +27,25 @@ import java.util.Optional;
 public class FrightsDelightClientImpl {
     public static void init(final FMLClientSetupEvent event) {
         FrightsDelightClient.init();
+        event.enqueueWork(() -> {
+//            FrightsDelightItemPropertiesImpl.addCustomItemProperties();
+            registerFluidRenderLayers();
+        });
+    }
+
+    public static void registerFluidRenderLayers() {
+        setFluidRenderLayer(FrightsDelightBlocksImpl.ROTTEN_FLESH_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.SLIMEAPPLE_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.SPIDEREYE_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.GHASTTEAR_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.SOUL_BERRY_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.WITHER_BERRY_SYRUP.get());
+        setFluidRenderLayer(FrightsDelightBlocksImpl.COBWEB_SYRUP.get());
+    }
+
+    public static void setFluidRenderLayer(LiquidBlock liquidBlock) {
+        ItemBlockRenderTypes.setRenderLayer(liquidBlock.fluid.getFlowing(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(liquidBlock.fluid.getSource(), RenderType.translucent());
     }
 
     public static void onBuiltinPackRegistration(AddPackFindersEvent event) {

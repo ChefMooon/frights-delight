@@ -1,0 +1,6 @@
+{
+  "parent": "frightsdelight:block/template_syrup",
+  "textures": {
+    "particle": "frightsdelight:block/spidereye_syrup_still"
+  }
+}

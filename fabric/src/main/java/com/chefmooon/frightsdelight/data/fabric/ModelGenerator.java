@@ -1,8 +1,7 @@
 package com.chefmooon.frightsdelight.data.fabric;
 
-import com.chefmooon.frightsdelight.common.block.DrinkableFeastBlock;
-import com.chefmooon.frightsdelight.common.block.FrightsDelightBushBlock;
-import com.chefmooon.frightsdelight.common.block.GlassCupBlock;
+import com.chefmooon.frightsdelight.common.block.*;
+import com.chefmooon.frightsdelight.common.data.types.Syrups;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.utility.ModModels;
@@ -23,6 +22,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
@@ -71,6 +71,14 @@ public class ModelGenerator extends FabricModelProvider {
         registerPieBlock(FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE.get(), blockModelGenerators);
         registerPieBlock(FrightsDelightBlocksImpl.COBWEB_PIE.get(), blockModelGenerators);
 
+        registerSyrupBlock(FrightsDelightBlocksImpl.ROTTEN_FLESH_SYRUP.get(), blockModelGenerators);
+        registerSyrupBlock(FrightsDelightBlocksImpl.SLIMEAPPLE_SYRUP.get(), blockModelGenerators);
+        registerSyrupBlock(FrightsDelightBlocksImpl.SPIDEREYE_SYRUP.get(), blockModelGenerators);
+        registerSyrupBlock(FrightsDelightBlocksImpl.GHASTTEAR_SYRUP.get(), blockModelGenerators);
+        registerSyrupBlock(FrightsDelightBlocksImpl.SOUL_BERRY_SYRUP.get(), blockModelGenerators);
+        registerSyrupBlock(FrightsDelightBlocksImpl.WITHER_BERRY_SYRUP.get(), blockModelGenerators);
+        registerSyrupBlock(FrightsDelightBlocksImpl.COBWEB_SYRUP.get(), blockModelGenerators);
+
         ResourceLocation SOUL_BERRY_BUSH_STAGE0 = registerBushModel("_stage0", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
         ResourceLocation SOUL_BERRY_BUSH_STAGE1 = registerBushModel("_stage1", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
         ResourceLocation SOUL_BERRY_BUSH_STAGE2 = registerBushModel("_stage2", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
@@ -106,6 +114,122 @@ public class ModelGenerator extends FabricModelProvider {
                         .select(3,false, BlockModelGenerators.plainVariant(WITHER_BERRY_BUSH_STAGE3))
                         .select(3,true, BlockModelGenerators.plainVariant(WITHER_BERRY_BUSH_STAGE3_GROW))
                 ));
+
+        ResourceLocation LOLLIPOP_MOLD_LOCATION = ModelLocationUtils.getModelLocation(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get());
+        FrightsDelightModels.TEMPLATE_LOLLIPOP_MOLD.create(LOLLIPOP_MOLD_LOCATION,
+                new TextureMapping()
+                        .put(TextureSlot.TOP, LOLLIPOP_MOLD_LOCATION.withSuffix("_top"))
+                        .put(TextureSlot.BOTTOM, TextUtils.res("block/candy_mold_bottom"))
+                        .put(TextureSlot.SIDE, TextUtils.res("block/candy_mold_side"))
+                        .put(TextureSlot.PARTICLE, LOLLIPOP_MOLD_LOCATION.withSuffix("_top")),
+                blockModelGenerators.modelOutput);
+        for (Syrups syrup : Syrups.values()) {
+            FrightsDelightModels.TEMPLATE_LOLLIPOP_MOLD_SYRUP.create(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + syrup.getSerializedName() + "_syrup"),
+                    new TextureMapping()
+                            .put(FrightsDelightTextureSlots.SYRUP, TextUtils.res("block/" + syrup.getSerializedName() + "_syrup_still"))
+                            .put(TextureSlot.TOP, LOLLIPOP_MOLD_LOCATION.withSuffix("_top"))
+                            .put(TextureSlot.BOTTOM, TextUtils.res("block/candy_mold_bottom"))
+                            .put(TextureSlot.SIDE, TextUtils.res("block/candy_mold_side"))
+                            .put(TextureSlot.PARTICLE, LOLLIPOP_MOLD_LOCATION.withSuffix("_top")),
+                    blockModelGenerators.modelOutput);
+            FrightsDelightModels.TEMPLATE_LOLLIPOP_MOLD_SYRUP.create(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + syrup.getSerializedName() + "_syrup_solid"),
+                    new TextureMapping()
+                            .put(FrightsDelightTextureSlots.SYRUP, TextUtils.res("block/" + syrup.getSerializedName() + "_syrup_solid"))
+                            .put(TextureSlot.TOP, LOLLIPOP_MOLD_LOCATION.withSuffix("_top"))
+                            .put(TextureSlot.BOTTOM, TextUtils.res("block/candy_mold_bottom"))
+                            .put(TextureSlot.SIDE, TextUtils.res("block/candy_mold_side"))
+                            .put(TextureSlot.PARTICLE, LOLLIPOP_MOLD_LOCATION.withSuffix("_top")),
+                    blockModelGenerators.modelOutput);
+        }
+        blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get())
+                .with(PropertyDispatch.initial(LollipopMoldBlock.SYRUP_TYPE, LollipopMoldBlock.HARDENED)
+                        .select(Syrups.EMPTY, Boolean.FALSE, plainVariant(LOLLIPOP_MOLD_LOCATION))
+                        .select(Syrups.EMPTY, Boolean.TRUE, plainVariant(LOLLIPOP_MOLD_LOCATION))
+
+                        .select(Syrups.ROTTEN_FLESH, Boolean.FALSE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix( "_" + Syrups.ROTTEN_FLESH.getSerializedName() + "_syrup")))
+                        .select(Syrups.ROTTEN_FLESH, Boolean.TRUE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix( "_" + Syrups.ROTTEN_FLESH.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.SLIMEAPPLE, Boolean.FALSE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.SLIMEAPPLE.getSerializedName() + "_syrup")))
+                        .select(Syrups.SLIMEAPPLE, Boolean.TRUE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.SLIMEAPPLE.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.SPIDEREYE, Boolean.FALSE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.SPIDEREYE.getSerializedName() + "_syrup")))
+                        .select(Syrups.SPIDEREYE, Boolean.TRUE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.SPIDEREYE.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.GHASTTEAR, Boolean.FALSE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.GHASTTEAR.getSerializedName() + "_syrup")))
+                        .select(Syrups.GHASTTEAR, Boolean.TRUE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.GHASTTEAR.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.SOUL_BERRY, Boolean.FALSE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.SOUL_BERRY.getSerializedName() + "_syrup")))
+                        .select(Syrups.SOUL_BERRY, Boolean.TRUE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.SOUL_BERRY.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.WITHER_BERRY, Boolean.FALSE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.WITHER_BERRY.getSerializedName() + "_syrup")))
+                        .select(Syrups.WITHER_BERRY, Boolean.TRUE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.WITHER_BERRY.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.COBWEB, Boolean.FALSE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.COBWEB.getSerializedName() + "_syrup")))
+                        .select(Syrups.COBWEB, Boolean.TRUE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.COBWEB.getSerializedName() + "_syrup_solid"))))
+                .with(PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
+                        .select(Direction.EAST, BlockModelGenerators.Y_ROT_90)
+                        .select(Direction.SOUTH, BlockModelGenerators.Y_ROT_180)
+                        .select(Direction.WEST, BlockModelGenerators.Y_ROT_270)
+                        .select(Direction.NORTH, BlockModelGenerators.NOP))
+        );
+
+        ResourceLocation RING_CANDY_MOLD_LOCATION = ModelLocationUtils.getModelLocation(FrightsDelightBlocksImpl.RING_CANDY_MOLD.get());
+        FrightsDelightModels.TEMPLATE_RING_CANDY_MOLD.create(RING_CANDY_MOLD_LOCATION,
+                new TextureMapping()
+                        .put(TextureSlot.TOP, RING_CANDY_MOLD_LOCATION.withSuffix("_top"))
+                        .put(TextureSlot.BOTTOM, TextUtils.res("block/candy_mold_bottom"))
+                        .put(TextureSlot.SIDE, TextUtils.res("block/candy_mold_side"))
+                        .put(TextureSlot.PARTICLE, RING_CANDY_MOLD_LOCATION.withSuffix("_top")),
+                blockModelGenerators.modelOutput);
+        for (Syrups syrup : Syrups.values()) {
+            FrightsDelightModels.TEMPLATE_RING_CANDY_MOLD_SYRUP.create(RING_CANDY_MOLD_LOCATION.withSuffix("_" + syrup.getSerializedName() + "_syrup"),
+                    new TextureMapping()
+                            .put(FrightsDelightTextureSlots.SYRUP, TextUtils.res("block/" + syrup.getSerializedName() + "_syrup_still"))
+                            .put(TextureSlot.TOP, RING_CANDY_MOLD_LOCATION.withSuffix("_top"))
+                            .put(TextureSlot.BOTTOM, TextUtils.res("block/candy_mold_bottom"))
+                            .put(TextureSlot.SIDE, TextUtils.res("block/candy_mold_side"))
+                            .put(TextureSlot.PARTICLE, RING_CANDY_MOLD_LOCATION.withSuffix("_top")),
+                    blockModelGenerators.modelOutput);
+            FrightsDelightModels.TEMPLATE_RING_CANDY_MOLD_SYRUP.create(RING_CANDY_MOLD_LOCATION.withSuffix("_" + syrup.getSerializedName() + "_syrup_solid"),
+                    new TextureMapping()
+                            .put(FrightsDelightTextureSlots.SYRUP, TextUtils.res("block/" + syrup.getSerializedName() + "_syrup_solid"))
+                            .put(TextureSlot.TOP, RING_CANDY_MOLD_LOCATION.withSuffix("_top"))
+                            .put(TextureSlot.BOTTOM, TextUtils.res("block/candy_mold_bottom"))
+                            .put(TextureSlot.SIDE, TextUtils.res("block/candy_mold_side"))
+                            .put(TextureSlot.PARTICLE, RING_CANDY_MOLD_LOCATION.withSuffix("_top")),
+                    blockModelGenerators.modelOutput);
+        }
+        blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(FrightsDelightBlocksImpl.RING_CANDY_MOLD.get())
+                .with(PropertyDispatch.initial(RingCandyMoldBlock.SYRUP_TYPE, RingCandyMoldBlock.HARDENED)
+                        .select(Syrups.EMPTY, Boolean.FALSE, plainVariant(RING_CANDY_MOLD_LOCATION))
+                        .select(Syrups.EMPTY, Boolean.TRUE, plainVariant(RING_CANDY_MOLD_LOCATION))
+
+                        .select(Syrups.ROTTEN_FLESH, Boolean.FALSE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix( "_" + Syrups.ROTTEN_FLESH.getSerializedName() + "_syrup")))
+                        .select(Syrups.ROTTEN_FLESH, Boolean.TRUE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix( "_" + Syrups.ROTTEN_FLESH.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.SLIMEAPPLE, Boolean.FALSE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.SLIMEAPPLE.getSerializedName() + "_syrup")))
+                        .select(Syrups.SLIMEAPPLE, Boolean.TRUE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.SLIMEAPPLE.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.SPIDEREYE, Boolean.FALSE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.SPIDEREYE.getSerializedName() + "_syrup")))
+                        .select(Syrups.SPIDEREYE, Boolean.TRUE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.SPIDEREYE.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.GHASTTEAR, Boolean.FALSE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.GHASTTEAR.getSerializedName() + "_syrup")))
+                        .select(Syrups.GHASTTEAR, Boolean.TRUE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.GHASTTEAR.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.SOUL_BERRY, Boolean.FALSE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.SOUL_BERRY.getSerializedName() + "_syrup")))
+                        .select(Syrups.SOUL_BERRY, Boolean.TRUE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.SOUL_BERRY.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.WITHER_BERRY, Boolean.FALSE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.WITHER_BERRY.getSerializedName() + "_syrup")))
+                        .select(Syrups.WITHER_BERRY, Boolean.TRUE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.WITHER_BERRY.getSerializedName() + "_syrup_solid")))
+
+                        .select(Syrups.COBWEB, Boolean.FALSE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.COBWEB.getSerializedName() + "_syrup")))
+                        .select(Syrups.COBWEB, Boolean.TRUE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.COBWEB.getSerializedName() + "_syrup_solid"))))
+                .with(PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
+                        .select(Direction.EAST, BlockModelGenerators.Y_ROT_90)
+                        .select(Direction.SOUTH, BlockModelGenerators.Y_ROT_180)
+                        .select(Direction.WEST, BlockModelGenerators.Y_ROT_270)
+                        .select(Direction.NORTH, BlockModelGenerators.NOP))
+        );
     }
 
     @Override
@@ -194,6 +318,35 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE.get(), ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.COBWEB_PIE_SLICE.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.LOLLIPOP_MOLD.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.RING_CANDY_MOLD.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SLIMEAPPLE_SYRUP_BOTTLE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SPIDEREYE_SYRUP_BOTTLE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.GHASTTEAR_SYRUP_BOTTLE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SOUL_BERRY_SYRUP_BOTTLE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.WITHER_BERRY_SYRUP_BOTTLE.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.COBWEB_SYRUP_BOTTLE.get(), ModelTemplates.FLAT_ITEM);
+
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.ROTTEN_FLESH_LOLLIPOP.get(), ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SLIMEAPPLE_LOLLIPOP.get(), ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SPIDEREYE_LOLLIPOP.get(), ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.GHASTTEAR_LOLLIPOP.get(), ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SOUL_BERRY_LOLLIPOP.get(), ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.WITHER_BERRY_LOLLIPOP.get(), ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.COBWEB_LOLLIPOP.get(), ModModels.FLAT_HANDHELD_ITEM_FLIPPED);
+
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.ROTTEN_FLESH_RING_CANDY.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SLIMEAPPLE_RING_CANDY.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SPIDEREYE_RING_CANDY.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.GHASTTEAR_RING_CANDY.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.SOUL_BERRY_RING_CANDY.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY.get(), ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(FrightsDelightItemsImpl.COBWEB_RING_CANDY.get(), ModelTemplates.FLAT_ITEM);
     }
 
     private static void registerCrateBlock(Block block, BlockModelGenerators blockStateModelGenerator) {
@@ -313,6 +466,32 @@ public class ModelGenerator extends FabricModelProvider {
                         .select(2, plainVariant(PIE_SLICE_2))
                         .select(3, plainVariant(PIE_SLICE_3))
                 ).with(createHorizontalFacingDispatch()));
+    }
+
+    private static void registerSyrupBlock(Block block, BlockModelGenerators blockModelGenerators) {
+        ResourceLocation SOUL_BERRY_SYRUP_LOCATION = ModelLocationUtils.getModelLocation(block);
+        FrightsDelightModels.TEMPLATE_SYRUP.create(SOUL_BERRY_SYRUP_LOCATION,
+                new TextureMapping().put(TextureSlot.PARTICLE, SOUL_BERRY_SYRUP_LOCATION.withSuffix("_still")),
+                blockModelGenerators.modelOutput);
+        blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block)
+                .with(PropertyDispatch.initial(LiquidBlock.LEVEL)
+                        .select(0, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(1, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(2, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(3, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(4, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(5, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(6, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(7, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(8, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(9, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(10, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(11, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(12, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(13, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(14, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                        .select(15, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
+                ));
     }
 
 }

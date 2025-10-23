@@ -42,4 +42,96 @@ public class ClientSetupEventsImpl {
     public static void registerGuiLayers(RegisterGuiLayersEvent event) {
         FrightsDelightGUIImpl.register(event);
     }
+
+    @SubscribeEvent
+    public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(FrightsDelightBlockEntitiesImpl.LOLLIPOP_MOLD.get(), LollipopMoldBlockEntityRendererImpl::new);
+    }
+
+    @SubscribeEvent
+    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.ROTTEN_FLESH_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.ROTTEN_FLESH_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.ROTTEN_FLESH_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.SLIMEAPPLE_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.SLIMEAPPLE_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.SLIMEAPPLE_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.SPIDEREYE_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.SPIDEREYE_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.SPIDEREYE_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.GHASTTEAR_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.GHASTTEAR_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.GHASTTEAR_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.SOUL_BERRY_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.SOUL_BERRY_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.SOUL_BERRY_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.WITHER_BERRY_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.WITHER_BERRY_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.WITHER_BERRY_SYRUP);
+
+        event.registerFluidType(new IClientFluidTypeExtensions() {
+            @Override
+            public @NotNull ResourceLocation getStillTexture() {
+                return FrDFluidConstants.Textures.COBWEB_SYRUP_STILL_TEXTURE;
+            }
+
+            @Override
+            public @NotNull ResourceLocation getFlowingTexture() {
+                return FrDFluidConstants.Textures.COBWEB_SYRUP_FLOWING_TEXTURE;
+            }
+        }, FrightsDelightFluidTypesImpl.COBWEB_SYRUP);
+    }
 }

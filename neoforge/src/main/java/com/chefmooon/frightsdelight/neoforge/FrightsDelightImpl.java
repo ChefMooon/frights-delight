@@ -31,6 +31,7 @@ public class FrightsDelightImpl {
         FrightsDelightEffectsImpl.register(modEventBus);
         FrightsDelightParticleTypesImpl.register(modEventBus);
         FrightsDelightItemsImpl.register(modEventBus);
+        FrightsDelightBlockEntitiesImpl.register(modEventBus);
         FrightsDelightEntityTypesImpl.register(modEventBus);
         FrightsDelightBiomeFeaturesImpl.register(modEventBus);
         FrightsDelightCreativeTabs.register(modEventBus);
@@ -60,5 +61,19 @@ public class FrightsDelightImpl {
 //            }
 //        }
         return versionString;
+    }
+
+    @EventBusSubscriber(modid = FrightsDelight.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+    public static class RegistryEvents {
+        @SubscribeEvent
+        public static void registerContent(RegisterEvent event) {
+            register(event, Registries.FLUID, FrightsDelightFluids::init);
+            register(event, NeoForgeRegistries.Keys.FLUID_TYPES, FrightsDelightFluidTypesImpl::registerAll);
+        }
+    }
+
+    public static <T> void register(RegisterEvent event, ResourceKey<Registry<T>> registry, Runnable registerMethod) {
+        if (event.getRegistryKey() == registry)
+            registerMethod.run();
     }
 }

@@ -90,7 +90,29 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.GHASTTEAR_PIE.get())
                 .add(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE.get())
                 .add(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE.get())
-                .add(FrightsDelightItemsImpl.COBWEB_PIE.get());
+                .add(FrightsDelightItemsImpl.COBWEB_PIE.get())
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.COBWEB_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.COBWEB_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.COBWEB_SYRUP_BOTTLE.get())
+        ;
     }
 
     private void registerCompatibilityItemTags() {
@@ -184,6 +206,12 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE.get())
                 .add(FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE.get())
                 .add(FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE.get())
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_RING_CANDY.get())
         ;
 
         getOrCreateTagBuilder(CompatibilityTags.ORIGINS_IGNORE_DIET)
@@ -197,6 +225,10 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.PUNCH_COBWEB.get())
                 .add(FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE.get())
                 .add(FrightsDelightItemsImpl.COBWEB_PIE_SLICE.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.COBWEB_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.COBWEB_RING_CANDY.get())
         ;
     }
 }

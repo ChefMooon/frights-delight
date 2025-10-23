@@ -15,6 +15,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -67,6 +68,13 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 pieRecipe(holderGetter, FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE.get(), FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE.get(), FrightsDelightItemsImpl.SOUL_BERRY.get(), exporter);
                 pieRecipe(holderGetter, FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE.get(), FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE.get(), FrightsDelightItemsImpl.WITHER_BERRY.get(), exporter);
                 pieRecipe(holderGetter, FrightsDelightItemsImpl.COBWEB_PIE.get(), FrightsDelightItemsImpl.COBWEB_PIE_SLICE.get(), Items.COBWEB, exporter);
+
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD.get()), RecipeCategory.MISC, FrightsDelightItemsImpl.LOLLIPOP_MOLD.get(), 2.0f, 200)
+                        .unlockedBy(RecipeProvider.getHasName(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD.get()))
+                        .save(exporter, RecipeProvider.getSmeltingRecipeName(FrightsDelightItemsImpl.LOLLIPOP_MOLD.get()));
+                SimpleCookingRecipeBuilder.smelting(Ingredient.of(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD.get()), RecipeCategory.MISC, FrightsDelightItemsImpl.RING_CANDY_MOLD.get(), 2.0f, 200)
+                        .unlockedBy(RecipeProvider.getHasName(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD.get()))
+                        .save(exporter, RecipeProvider.getSmeltingRecipeName(FrightsDelightItemsImpl.RING_CANDY_MOLD.get()));
             }
         };
     }

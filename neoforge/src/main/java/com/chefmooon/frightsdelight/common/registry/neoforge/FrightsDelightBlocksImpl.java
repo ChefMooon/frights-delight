@@ -27,6 +27,11 @@ public class FrightsDelightBlocksImpl {
     public static final Supplier<Block> SOUL_BERRY_BUSH = registerBlock(FrightsDelightBlocks.SOUL_BERRY_BUSH, SoulBerryBushBlock::new);
     public static final Supplier<Block> WITHER_BERRY_BUSH = registerBlock(FrightsDelightBlocks.WITHER_BERRY_BUSH, WitherBerryBushBlock::new);
 
+    public static final Supplier<Block> LOLLIPOP_MOLD = registerBlock(FrightsDelightBlocks.LOLLIPOP_MOLD,
+            () -> new LollipopMoldBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA)));
+    public static final Supplier<Block> RING_CANDY_MOLD = registerBlock(FrightsDelightBlocks.RING_CANDY_MOLD,
+            () -> new RingCandyMoldBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA)));
+
     public static final Supplier<Block> FLESH_CRATE = registerBlock(FrightsDelightBlocks.FLESH_CRATE,
             () -> new Block(Block.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     public static final Supplier<Block> BONE_CRATE = registerBlock(FrightsDelightBlocks.BONE_CRATE,
@@ -80,6 +85,37 @@ public class FrightsDelightBlocksImpl {
     public static final Supplier<Block> PUNCHBOWL_COBWEB = registerBlock(FrightsDelightBlocks.PUNCHBOWL_COBWEB,
             () -> new CobwebDrinkableFeastBlock(FrightsDelightItemsImpl.PUNCH_COBWEB,
                     Block.Properties.ofFullCopy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS)));
+
+    public static final Supplier<Block> ROTTEN_FLESH_PIE = registerBlock(FrightsDelightBlocks.ROTTEN_FLESH_PIE,
+            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE));
+    public static final Supplier<Block> SLIMEAPPLE_PIE = registerBlock(FrightsDelightBlocks.SLIMEAPPLE_PIE,
+            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).lightLevel(FrightsDelightBlocks.slimeApplePieLight()),
+                    FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE));
+    public static final Supplier<Block> SPIDEREYE_PIE = registerBlock(FrightsDelightBlocks.SPIDEREYE_PIE,
+            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE));
+    public static final Supplier<Block> GHASTTEAR_PIE = registerBlock(FrightsDelightBlocks.GHASTTEAR_PIE,
+            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE));
+    public static final Supplier<Block> SOUL_BERRY_CHEESECAKE = registerBlock(FrightsDelightBlocks.SOUL_BERRY_CHEESECAKE,
+            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE));
+    public static final Supplier<Block> WITHER_BERRY_CHEESECAKE = registerBlock(FrightsDelightBlocks.WITHER_BERRY_CHEESECAKE,
+            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE));
+    public static final Supplier<Block> COBWEB_PIE = registerBlock(FrightsDelightBlocks.COBWEB_PIE,
+            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), FrightsDelightItemsImpl.COBWEB_PIE_SLICE));
+
+    public static final Supplier<LiquidBlock> ROTTEN_FLESH_SYRUP = BLOCKS.register(FrightsDelightBlocks.ROTTEN_FLESH_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluids.ROTTEN_FLESH_SYRUP, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> SLIMEAPPLE_SYRUP = BLOCKS.register(FrightsDelightBlocks.SLIMEAPPLE_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluids.SLIMEAPPLE_SYRUP, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> SPIDEREYE_SYRUP = BLOCKS.register(FrightsDelightBlocks.SPIDEREYE_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluids.SPIDEREYE_SYRUP, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> GHASTTEAR_SYRUP = BLOCKS.register(FrightsDelightBlocks.GHASTTEAR_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluids.GHASTTEAR_SYRUP, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> SOUL_BERRY_SYRUP = BLOCKS.register(FrightsDelightBlocks.SOUL_BERRY_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluids.SOUL_BERRY_SYRUP, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> WITHER_BERRY_SYRUP = BLOCKS.register(FrightsDelightBlocks.WITHER_BERRY_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluids.WITHER_BERRY_SYRUP, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
+    public static final Supplier<LiquidBlock> COBWEB_SYRUP = BLOCKS.register(FrightsDelightBlocks.COBWEB_SYRUP.getPath(),
+            () -> new LiquidBlock(FrightsDelightFluids.COBWEB_SYRUP, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)));
 
     public static Supplier<Block> registerBlock(final ResourceLocation location, final Supplier<Block> block) {
         return BLOCKS.register(location.getPath(), block);
