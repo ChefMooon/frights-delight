@@ -82,7 +82,7 @@ public class AbstractCandyBasketBlock extends BaseEntityBlock implements SimpleW
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (!(state.getBlock() instanceof AbstractCandyBasketBlock)) return InteractionResult.PASS; // added in place of block entity check, is this enough?
+        if (!(blockEntity instanceof CandyBasketBlockEntity)) return InteractionResult.PASS;
         ItemStack mainHandItem = player.getItemInHand(hand);
         if (!player.isSecondaryUseActive()) {
             if (!mainHandItem.isEmpty() || (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty() && !player.getItemInHand(InteractionHand.OFF_HAND).isEmpty())) {
@@ -254,5 +254,15 @@ public class AbstractCandyBasketBlock extends BaseEntityBlock implements SimpleW
 
             super.onRemove(state, level, pos, newState, movedByPiston);
         }
+    }
+
+    @Override
+    public BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
+    }
+
+    @Override
+    public BlockState mirror(BlockState state, Mirror mirror) {
+        return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 }
