@@ -1,0 +1,19 @@
+{
+  "items": "frightsdelight:ghasttear_pie",
+  "on_entity_hit": {
+    "type": "create:potion_effect",
+    "effect": "frightsdelight:chills",
+    "level": 1,
+    "recoverable": false,
+    "ticks": 400
+  },
+  "damage": 7,
+  "reload_ticks": 15,
+  "knockback": 0.05,
+  "velocity_multiplier": 1.1,
+  "sticky": true,
+  "sound_pitch": 1.1,
+  "render_mode": {
+    "type": "create:tumble"
+  }
+}
