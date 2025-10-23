@@ -265,6 +265,10 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(REI + "info.soul_berry", "Found spawning naturally in the Nether or in Bastion chests. Growth requirement: Soul Essence source");
         translationBuilder.add(REI + "info.wither_berry", "Can be transformed from a Soul Berry Bush. Chance to transform on growth when: Soul Berry Bush at Max Growth, Wither Essence source very close, low light level.");
 
+        translationBuilder.add(REI + "info.lollipop_mold", "Add four bone shards and any syrup to a lollipop mold, wait for the syrup to harden, then right-click the mold to collect the lollipops.");
+        translationBuilder.add(REI + "info.ring_candy_mold", "Add any syrup to a ring candy mold, wait for it to harden, then right-click the mold to collect the candies.");
+        translationBuilder.add(REI + "info.candy_basket", "This can store up to nine edible items. Right-click either the item in-hand or the placed block to add/remove items; shift-right-click to shuffle them.");
+
         translationBuilder.add(WAILA + ".bush_growth_condition", "Growth Condition");
         translationBuilder.add(WAILA + ".bush_transform", "Can Transform");
         translationBuilder.add(WAILA + ".punchbowl_servings", "Servings");
