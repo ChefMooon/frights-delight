@@ -16,6 +16,10 @@ import vectorwing.farmersdelight.data.builder.CuttingBoardRecipeBuilder;
 public class CuttingRecipes {
 
     public static void register(HolderGetter<Item> holderGetter, HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.BONE), Ingredient.of(holderGetter.getOrThrow(CommonTags.C_TOOLS_KNIFE)), FrightsDelightItemsImpl.BONE_SHARD.get(), 2)
+                .addResultWithChance(FrightsDelightItemsImpl.BONE_SHARD.get(), 0.5F)
+                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_SHARD.get()));
+
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.CLAY), Ingredient.of(holderGetter.getOrThrow(CommonTags.C_TOOLS_KNIFE)), FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD.get())
                 .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.UNFIRED_LOLLIPOP_MOLD.get()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(Items.CLAY), Ingredient.of(Items.GLASS_BOTTLE), FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD.get())
