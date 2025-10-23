@@ -13,6 +13,14 @@ public class CommonSetup {
         ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.SOUL_BERRY), 0.3F);
         ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.WITHER_BERRY), 0.3F);
 
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.ROTTEN_FLESH_RING_CANDY), 0.5F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.SLIMEAPPLE_RING_CANDY), 0.5F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.SPIDEREYE_RING_CANDY), 0.5F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.GHASTTEAR_RING_CANDY), 0.5F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.SOUL_BERRY_RING_CANDY), 0.5F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.WITHER_BERRY_RING_CANDY), 0.5F);
+        ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.COBWEB_RING_CANDY), 0.5F);
+
         ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.APPLE_SLIME), 0.65F);
 
         ComposterBlock.COMPOSTABLES.put(BuiltInRegistries.ITEM.get(FrightsDelightItems.COOKIE_SOUL_BERRY), 0.85F);
