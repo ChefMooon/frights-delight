@@ -27,7 +27,6 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 import static com.chefmooon.frightsdelight.common.registry.FrightsDelightItems.*;
-import static com.chefmooon.frightsdelight.common.registry.FrightsDelightItems.syrupItem;
 
 public class FrightsDelightItemsImpl {
 
@@ -43,10 +42,12 @@ public class FrightsDelightItemsImpl {
     }
 
     public static final Supplier<Item> PUMPKIN_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.PUMPKIN_CANDY_BASKET,
-            (properties) -> new CandyBasketItem(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(), properties, CandyBasketType.PUMPKIN),
+            (properties) -> new CandyBasketItem(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(),
+                    properties.overrideDescription(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get().getDescriptionId()), CandyBasketType.PUMPKIN),
             noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY));
     public static final Supplier<Item> MELON_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.MELON_CANDY_BASKET,
-            (properties) -> new CandyBasketItem(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get(), properties, CandyBasketType.MELON),
+            (properties) -> new CandyBasketItem(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get(),
+                    properties.overrideDescription(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get().getDescriptionId()), CandyBasketType.MELON),
             noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY));
 
     public static final Supplier<Item> UNFIRED_LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.UNFIRED_LOLLIPOP_MOLD,
@@ -341,6 +342,10 @@ public class FrightsDelightItemsImpl {
         T object = supplier.get();
         Registry.register(BuiltInRegistries.ITEM, location, object);
         return () -> object;
+    }
+
+    private static ResourceKey<Item> key(ResourceLocation resourceLocation) {
+        return ResourceKey.create(Registries.ITEM, resourceLocation);
     }
 
     public static void register() {
