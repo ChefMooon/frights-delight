@@ -3,15 +3,15 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:lollipop_mold"
+        "recipe": "minecraft:ring_candy_mold_from_smelting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "has_unfired_lollipop_mold": {
+    "has_unfired_ring_candy_mold": {
       "conditions": {
         "items": [
           {
-            "items": "frightsdelight:unfired_lollipop_mold"
+            "items": "frightsdelight:unfired_ring_candy_mold"
           }
         ]
       },
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_unfired_lollipop_mold"
+      "has_unfired_ring_candy_mold"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:lollipop_mold"
+      "minecraft:ring_candy_mold_from_smelting"
     ]
   }
 }

@@ -343,8 +343,6 @@ public class ModelGenerator extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.COBWEB_RING_CANDY, ModelTemplates.FLAT_ITEM);
 
-//        itemModelGenerator.generateFlatItem(FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET, ModelTemplates.FLAT_ITEM);
-
     }
 
     private static JsonObject generateBoneShardItem(ResourceLocation modelLocation, Map<TextureSlot, ResourceLocation> modelGetter) {
