@@ -105,7 +105,7 @@ public class FrightsDelightBlocksImpl {
             BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
     public static final Supplier<Block> SLIMEAPPLE_PIE = registerBlock(FrightsDelightBlocks.SLIMEAPPLE_PIE,
             (properties) -> new PieBlock(properties, () -> FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE.get()),
-            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE).lightLevel(FrightsDelightBlocks.slimeApplePieLight()));
     public static final Supplier<Block> SPIDEREYE_PIE = registerBlock(FrightsDelightBlocks.SPIDEREYE_PIE,
             (properties) -> new PieBlock(properties, () -> FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE.get()),
             BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE));
