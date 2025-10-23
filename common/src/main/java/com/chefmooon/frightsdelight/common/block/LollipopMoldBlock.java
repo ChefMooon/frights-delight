@@ -8,12 +8,10 @@ import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
-import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -138,15 +136,12 @@ public class LollipopMoldBlock extends AbstractMoldBlock {
     @SuppressWarnings("unchecked")
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntity) {
-        BlockEntityType<LollipopMoldBlockEntity> blockEntityType = (BlockEntityType<LollipopMoldBlockEntity>) BuiltInRegistries.BLOCK_ENTITY_TYPE
-                .get(FrightsDelightBlockEntities.LOLLIPOP_MOLD).map(Holder::value).orElse(null);
-        return createTickerHelper(blockEntity, blockEntityType, LollipopMoldBlockEntity::hardenTick);
+        return createTickerHelper(blockEntity, FrightsDelightBlockEntities.getLollipopMoldBlockEntity(), LollipopMoldBlockEntity::hardenTick);
     }
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return BuiltInRegistries.BLOCK_ENTITY_TYPE.get(FrightsDelightBlockEntities.LOLLIPOP_MOLD)
-                .map(Holder::value).map(type -> type.create(pos, state)).orElse(null);
+        return FrightsDelightBlockEntities.getLollipopMoldBlockEntity().create(pos, state);
     }
 
     @Override
@@ -161,44 +156,6 @@ public class LollipopMoldBlock extends AbstractMoldBlock {
 
     @Override
     protected void affectNeighborsAfterRemoval(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
-        // Move to player will destroy? or LOOT TABLE
-        BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (blockEntity instanceof LollipopMoldBlockEntity) {
-            NonNullList<ItemStack> contents = NonNullList.create();
-            if (!state.getValue(HARDENED)) {
-                int shards = state.getValue(SHARDS);
-                ItemStack boneShardStack = BuiltInRegistries.ITEM.get(FrightsDelightItems.BONE_SHARD)
-                        .map(Holder::value).map(item -> new ItemStack(item, shards)).orElse(ItemStack.EMPTY);
-                if (shards > 0) contents.add(boneShardStack);
-            } else {
-                Syrups syrup = state.getValue(SYRUP_TYPE);
-                if (syrup != Syrups.EMPTY) {
-                    BuiltInRegistries.ITEM.get(syrup.getLollipopItem()).ifPresent(item -> contents.add(new ItemStack(item, 4)));
-                }
-
-            }
-            Containers.dropContents(level, pos, contents);
-        }
         super.affectNeighborsAfterRemoval(state, level, pos, movedByPiston);
     }
-
-//    @Override
-//    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-//        if (!state.is(newState.getBlock())) {
-//            BlockEntity blockEntity = level.getBlockEntity(pos);
-//            super.onRemove(state, level, pos, newState, movedByPiston);
-//            if (blockEntity instanceof LollipopMoldBlockEntity) {
-//                NonNullList<ItemStack> contents = NonNullList.create();
-//                if (!state.getValue(HARDENED)) {
-//                    int shards = state.getValue(SHARDS);
-//                    if (shards > 0) contents.add(new ItemStack(BuiltInRegistries.ITEM.get(FrightsDelightItems.BONE_SHARD).get(), shards));
-//                } else {
-//                    Syrups syrup = state.getValue(SYRUP_TYPE);
-//                    if (syrup != Syrups.EMPTY)
-//                        contents.add(new ItemStack(BuiltInRegistries.ITEM.get(syrup.getLollipopItem()).get(), 4));
-//                }
-//                Containers.dropContents(level, pos, contents);
-//            }
-//        }
-//    }
 }

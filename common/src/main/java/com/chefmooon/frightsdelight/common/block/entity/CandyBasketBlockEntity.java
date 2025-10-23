@@ -8,7 +8,6 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.component.DataComponentGetter;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.chat.Component;
@@ -30,7 +29,7 @@ public class CandyBasketBlockEntity extends BaseBlockEntity implements Container
     private Component name;
     public CandyBasketBlockEntity(BlockPos pos, BlockState blockState) {
         // TODO: .isPresent check?
-        super(BuiltInRegistries.BLOCK_ENTITY_TYPE.get(FrightsDelightBlockEntities.CANDY_BASKET).get().value(), pos, blockState);
+        super(FrightsDelightBlockEntities.getCandyBasketBlockEntity(), pos, blockState);
         this.itemStacks = NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY);
     }
 

@@ -17,10 +17,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
-import net.minecraft.world.level.block.BaseEntityBlock;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RenderShape;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -122,17 +119,6 @@ public class AbstractMoldBlock extends BaseEntityBlock implements SimpleWaterlog
         Containers.updateNeighboursAfterDestroy(state, level, pos);
     }
 
-//    @Override
-//    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-//        if (!state.is(newState.getBlock())) {
-//            BlockEntity blockEntity = level.getBlockEntity(pos);
-//            super.onRemove(state, level, pos, newState, movedByPiston);
-//            if (blockEntity instanceof BaseCandyMoldBlockEntity) {
-//                level.updateNeighbourForOutputSignal(pos, state.getBlock());
-//            }
-//        }
-//    }
-
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (Configuration.candyMoldParticles()) {
@@ -151,5 +137,15 @@ public class AbstractMoldBlock extends BaseEntityBlock implements SimpleWaterlog
                 }
             }
         }
+    }
+
+    @Override
+    protected BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
+    }
+
+    @Override
+    protected BlockState mirror(BlockState state, Mirror mirror) {
+        return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 }

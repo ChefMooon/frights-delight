@@ -7,9 +7,7 @@ import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
@@ -28,7 +26,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -70,8 +67,7 @@ public class AbstractCandyBasketBlock extends BaseEntityBlock implements SimpleW
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return BuiltInRegistries.BLOCK_ENTITY_TYPE.get(FrightsDelightBlockEntities.CANDY_BASKET)
-                .map(Holder::value).map(type -> type.create(pos, state)).orElse(null);
+        return FrightsDelightBlockEntities.getCandyBasketBlockEntity().create(pos, state);
     }
 
     @Override
@@ -83,11 +79,11 @@ public class AbstractCandyBasketBlock extends BaseEntityBlock implements SimpleW
     @Override
     public InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (!(state.getBlock() instanceof AbstractCandyBasketBlock)) return InteractionResult.PASS; // added in place of block entity check, is this enough?
+        if (!(blockEntity instanceof CandyBasketBlockEntity)) return InteractionResult.PASS;
         ItemStack mainHandItem = player.getItemInHand(hand);
         if (!player.isSecondaryUseActive()) {
             if (!mainHandItem.isEmpty() || (player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty() && !player.getItemInHand(InteractionHand.OFF_HAND).isEmpty())) {
-                if (!mainHandItem.has(DataComponents.FOOD)) return InteractionResult.FAIL; // 1.20.1 mainHandItem.isEdible()
+                if (!mainHandItem.has(DataComponents.FOOD)) return InteractionResult.FAIL;
                 boolean addItem = addItem(mainHandItem, level, pos);
                 if (addItem) {
                     if (!player.getAbilities().instabuild) mainHandItem.split(1);
@@ -194,12 +190,9 @@ public class AbstractCandyBasketBlock extends BaseEntityBlock implements SimpleW
     @Override
     public @NotNull ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
         ItemStack itemStack = super.getCloneItemStack(level, pos, state, includeData);
-        Optional<Holder.Reference<BlockEntityType<?>>> blockEntityType = BuiltInRegistries.BLOCK_ENTITY_TYPE.get(FrightsDelightBlockEntities.CANDY_BASKET);
-        if (blockEntityType.isPresent()) {
-            Optional<?> candyBasket = level.getBlockEntity(pos, blockEntityType.get().value());
-            if (candyBasket.isPresent() && candyBasket.get() instanceof CandyBasketBlockEntity candyBasketBlockEntity) {
-                itemStack.applyComponents(candyBasketBlockEntity.collectComponents());
-            }
+        Optional<?> candyBasket = level.getBlockEntity(pos, FrightsDelightBlockEntities.getCandyBasketBlockEntity());
+        if (candyBasket.isPresent() && candyBasket.get() instanceof CandyBasketBlockEntity candyBasketBlockEntity) {
+            itemStack.applyComponents(candyBasketBlockEntity.collectComponents());
         }
         return itemStack;
     }
@@ -233,5 +226,15 @@ public class AbstractCandyBasketBlock extends BaseEntityBlock implements SimpleW
     @Override
     protected void affectNeighborsAfterRemoval(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
         Containers.updateNeighboursAfterDestroy(state, level, pos);
+    }
+
+    @Override
+    protected BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
+    }
+
+    @Override
+    protected BlockState mirror(BlockState state, Mirror mirror) {
+        return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 }

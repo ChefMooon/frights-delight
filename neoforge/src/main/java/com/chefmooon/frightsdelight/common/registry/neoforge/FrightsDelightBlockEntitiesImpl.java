@@ -31,6 +31,19 @@ public class FrightsDelightBlockEntitiesImpl {
                     FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get()
             ).build(null));
 
+
+    public static BlockEntityType<LollipopMoldBlockEntity> getLollipopMoldBlockEntity() {
+        return LOLLIPOP_MOLD.get();
+    }
+
+    public static BlockEntityType<RingCandyMoldBlockEntity> getRingCandyMoldBlockEntity() {
+        return RING_CANDY_MOLD.get();
+    }
+
+    public static BlockEntityType<CandyBasketBlockEntity> getCandyBasketBlockEntity() {
+        return CANDY_BASKET.get();
+    }
+
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
     }

@@ -28,6 +28,18 @@ public class FrightsDelightBlockEntitiesImpl {
         return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, location, FabricBlockEntityTypeBuilder.create(blockEntitySupplier, blocks).build(null));
     }
 
+    public static BlockEntityType<LollipopMoldBlockEntity> getLollipopMoldBlockEntity() {
+        return LOLLIPOP_MOLD;
+    }
+
+    public static BlockEntityType<RingCandyMoldBlockEntity> getRingCandyMoldBlockEntity() {
+        return RING_CANDY_MOLD;
+    }
+
+    public static BlockEntityType<CandyBasketBlockEntity> getCandyBasketBlockEntity() {
+        return CANDY_BASKET;
+    }
+
     public static void register() {
     }
 }

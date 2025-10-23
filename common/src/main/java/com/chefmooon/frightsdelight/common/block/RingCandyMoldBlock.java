@@ -6,11 +6,9 @@ import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlockEntities;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -87,15 +85,12 @@ public class RingCandyMoldBlock extends AbstractMoldBlock{
     @SuppressWarnings("unchecked")
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntity) {
-        BlockEntityType<RingCandyMoldBlockEntity> blockEntityType = (BlockEntityType<RingCandyMoldBlockEntity>) BuiltInRegistries.BLOCK_ENTITY_TYPE
-                .get(FrightsDelightBlockEntities.RING_CANDY_MOLD).map(Holder::value).orElse(null);
-        return createTickerHelper(blockEntity, blockEntityType, RingCandyMoldBlockEntity::hardenTick);
+        return createTickerHelper(blockEntity, FrightsDelightBlockEntities.getRingCandyMoldBlockEntity(), RingCandyMoldBlockEntity::hardenTick);
     }
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return BuiltInRegistries.BLOCK_ENTITY_TYPE.get(FrightsDelightBlockEntities.RING_CANDY_MOLD)
-                .map(Holder::value).map(type -> type.create(pos, state)).orElse(null);
+        return FrightsDelightBlockEntities.getRingCandyMoldBlockEntity().create(pos, state);
     }
 
     @Override
@@ -108,32 +103,6 @@ public class RingCandyMoldBlock extends AbstractMoldBlock{
 
     @Override
     protected void affectNeighborsAfterRemoval(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
-        // Move to player will destroy?
-        BlockEntity blockEntity = level.getBlockEntity(pos);
-        if (blockEntity instanceof RingCandyMoldBlockEntity) {
-            if (state.getValue(HARDENED)) {
-                NonNullList<ItemStack> contents = NonNullList.create();
-                Syrups syrup = state.getValue(SYRUP_TYPE);
-                if (syrup != Syrups.EMPTY)
-                    BuiltInRegistries.ITEM.get(syrup.getRingCandyItem()).ifPresent(item -> contents.add(new ItemStack(item, 4)));
-                Containers.dropContents(level, pos, contents);
-            }
-        }
         super.affectNeighborsAfterRemoval(state, level, pos, movedByPiston);
     }
-
-//    @Override
-//    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-//        BlockEntity blockEntity = level.getBlockEntity(pos);
-//        super.onRemove(state, level, pos, newState, movedByPiston);
-//        if (blockEntity instanceof RingCandyMoldBlockEntity) {
-//            if (state.getValue(HARDENED)) {
-//                NonNullList<ItemStack> contents = NonNullList.create();
-//                Syrups syrup = state.getValue(SYRUP_TYPE);
-//                if (syrup != Syrups.EMPTY)
-//                    contents.add(new ItemStack(BuiltInRegistries.ITEM.get(syrup.getRingCandyItem()).get(), 4));
-//                Containers.dropContents(level, pos, contents);
-//            }
-//        }
-//    }
 }
