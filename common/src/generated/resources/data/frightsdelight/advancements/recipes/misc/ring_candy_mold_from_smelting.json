@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ring_candy_mold"
+        "recipe": "minecraft:ring_candy_mold_from_smelting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ring_candy_mold"
+      "minecraft:ring_candy_mold_from_smelting"
     ]
   },
   "sends_telemetry_event": false
