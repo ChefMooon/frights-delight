@@ -71,6 +71,9 @@ public class ModelGenerator extends FabricModelProvider {
         registerPieBlock(FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE.get(), blockModelGenerators);
         registerPieBlock(FrightsDelightBlocksImpl.COBWEB_PIE.get(), blockModelGenerators);
 
+        registerCandyBasketBlock(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(), blockModelGenerators);
+        registerCandyBasketBlock(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get(), blockModelGenerators);
+
         registerSyrupBlock(FrightsDelightBlocksImpl.ROTTEN_FLESH_SYRUP.get(), blockModelGenerators);
         registerSyrupBlock(FrightsDelightBlocksImpl.SLIMEAPPLE_SYRUP.get(), blockModelGenerators);
         registerSyrupBlock(FrightsDelightBlocksImpl.SPIDEREYE_SYRUP.get(), blockModelGenerators);
@@ -166,11 +169,7 @@ public class ModelGenerator extends FabricModelProvider {
 
                         .select(Syrups.COBWEB, Boolean.FALSE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.COBWEB.getSerializedName() + "_syrup")))
                         .select(Syrups.COBWEB, Boolean.TRUE, plainVariant(LOLLIPOP_MOLD_LOCATION.withSuffix("_" + Syrups.COBWEB.getSerializedName() + "_syrup_solid"))))
-                .with(PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
-                        .select(Direction.EAST, BlockModelGenerators.Y_ROT_90)
-                        .select(Direction.SOUTH, BlockModelGenerators.Y_ROT_180)
-                        .select(Direction.WEST, BlockModelGenerators.Y_ROT_270)
-                        .select(Direction.NORTH, BlockModelGenerators.NOP))
+                .with(createHorizontalFacingDispatch())
         );
 
         ResourceLocation RING_CANDY_MOLD_LOCATION = ModelLocationUtils.getModelLocation(FrightsDelightBlocksImpl.RING_CANDY_MOLD.get());
@@ -224,11 +223,7 @@ public class ModelGenerator extends FabricModelProvider {
 
                         .select(Syrups.COBWEB, Boolean.FALSE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.COBWEB.getSerializedName() + "_syrup")))
                         .select(Syrups.COBWEB, Boolean.TRUE, plainVariant(RING_CANDY_MOLD_LOCATION.withSuffix("_" + Syrups.COBWEB.getSerializedName() + "_syrup_solid"))))
-                .with(PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
-                        .select(Direction.EAST, BlockModelGenerators.Y_ROT_90)
-                        .select(Direction.SOUTH, BlockModelGenerators.Y_ROT_180)
-                        .select(Direction.WEST, BlockModelGenerators.Y_ROT_270)
-                        .select(Direction.NORTH, BlockModelGenerators.NOP))
+                .with(createHorizontalFacingDispatch())
         );
     }
 
@@ -492,6 +487,17 @@ public class ModelGenerator extends FabricModelProvider {
                         .select(14, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
                         .select(15, plainVariant(SOUL_BERRY_SYRUP_LOCATION))
                 ));
+    }
+
+    private static void registerCandyBasketBlock(Block block, BlockModelGenerators blockModelGenerators) {
+        ResourceLocation LOCATION = ModelLocationUtils.getModelLocation(block);
+        TextureMapping textureMapping = new TextureMapping()
+                .put(FrightsDelightTextureSlots.HANDLE, TextUtils.res("block/rope_handle_3d"))
+                .put(FrightsDelightTextureSlots.BASKET, LOCATION)
+                .put(TextureSlot.PARTICLE, LOCATION);
+        FrightsDelightModels.TEMPLATE_BLOCK_CANDY_BASKET.create(LOCATION, textureMapping, blockModelGenerators.modelOutput);
+        blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, plainVariant(LOCATION))
+                .with(createHorizontalFacingDispatch()));
     }
 
 }

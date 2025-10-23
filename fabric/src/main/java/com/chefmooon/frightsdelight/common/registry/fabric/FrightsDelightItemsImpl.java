@@ -1,10 +1,8 @@
 package com.chefmooon.frightsdelight.common.registry.fabric;
 
 import com.chefmooon.frightsdelight.common.FoodValues;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItem;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightConsumableItemNameBlockItem;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableBlockItem;
-import com.chefmooon.frightsdelight.common.item.FrightsDelightDrinkableItem;
+import com.chefmooon.frightsdelight.common.data.types.CandyBasketType;
+import com.chefmooon.frightsdelight.common.item.*;
 import com.chefmooon.frightsdelight.common.item.fabric.BoneShardItemImpl;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -20,6 +18,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.Nullable;
 
@@ -42,6 +41,13 @@ public class FrightsDelightItemsImpl {
                 .craftRemainder(FrightsDelightItemsImpl.BONE_SHARD.get())
                 .stacksTo(16);
     }
+
+    public static final Supplier<Item> PUMPKIN_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.PUMPKIN_CANDY_BASKET,
+            (properties) -> new CandyBasketItem(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(), properties, CandyBasketType.PUMPKIN),
+            noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY));
+    public static final Supplier<Item> MELON_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.MELON_CANDY_BASKET,
+            (properties) -> new CandyBasketItem(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get(), properties, CandyBasketType.MELON),
+            noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY));
 
     public static final Supplier<Item> UNFIRED_LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.UNFIRED_LOLLIPOP_MOLD,
             Item::new, basicItem());

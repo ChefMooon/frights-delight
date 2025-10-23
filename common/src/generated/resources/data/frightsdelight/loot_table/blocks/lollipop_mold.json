@@ -1,127 +1,17 @@
 {
   "type": "minecraft:block",
-  "functions": [
-    {
-      "function": "minecraft:explosion_decay"
-    }
-  ],
   "pools": [
     {
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "block": "frightsdelight:lollipop_mold",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "shards": "3"
-          }
+          "condition": "minecraft:survives_explosion"
         }
       ],
       "entries": [
         {
           "type": "minecraft:item",
           "name": "frightsdelight:lollipop_mold"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 4.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "frightsdelight:bone_shard"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "frightsdelight:lollipop_mold",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "shards": "2"
-          }
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "frightsdelight:lollipop_mold"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 3.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "frightsdelight:bone_shard"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "frightsdelight:lollipop_mold",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "shards": "1"
-          }
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "frightsdelight:lollipop_mold"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 2.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "frightsdelight:bone_shard"
-        }
-      ],
-      "rolls": 1.0
-    },
-    {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "frightsdelight:lollipop_mold",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "shards": "0"
-          }
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "frightsdelight:lollipop_mold"
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 1.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "frightsdelight:bone_shard"
         }
       ],
       "rolls": 1.0

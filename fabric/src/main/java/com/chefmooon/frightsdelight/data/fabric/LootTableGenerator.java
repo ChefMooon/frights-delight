@@ -14,6 +14,7 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
@@ -41,6 +43,9 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         HolderGetter<Item> itemGetter = this.registries.lookupOrThrow(Registries.ITEM);
+
+        this.createCandyBasketDrops(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get());
+        this.createCandyBasketDrops(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get());
 
         this.dropSelf(FrightsDelightBlocksImpl.FLESH_CRATE.get());
         this.dropSelf(FrightsDelightBlocksImpl.BONE_CRATE.get());
@@ -154,5 +159,13 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 4))
                                 .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemGetter, CommonTags.C_TOOLS_KNIFE)))))
         ));
+    }
+
+    private void createCandyBasketDrops(Block block) {
+        this.add(block, this.applyExplosionDecay(block, LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(block)
+                                .apply(CopyComponentsFunction.copyComponents(CopyComponentsFunction.Source.BLOCK_ENTITY).include(DataComponents.CONTAINER).include(DataComponents.CUSTOM_NAME)))))
+        );
     }
 }

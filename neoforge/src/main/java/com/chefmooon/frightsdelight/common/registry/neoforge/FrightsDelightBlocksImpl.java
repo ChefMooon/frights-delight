@@ -27,6 +27,13 @@ public class FrightsDelightBlocksImpl {
     public static final Supplier<Block> SOUL_BERRY_BUSH = registerBlock(FrightsDelightBlocks.SOUL_BERRY_BUSH, SoulBerryBushBlock::new);
     public static final Supplier<Block> WITHER_BERRY_BUSH = registerBlock(FrightsDelightBlocks.WITHER_BERRY_BUSH, WitherBerryBushBlock::new);
 
+    public static final Supplier<Block> PUMPKIN_CANDY_BASKET = registerBlock(FrightsDelightBlocks.PUMPKIN_CANDY_BASKET,
+            (properties) -> new AbstractCandyBasketBlockImpl(properties, CandyBasketType.PUMPKIN),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.PUMPKIN));
+    public static final Supplier<Block> MELON_CANDY_BASKET = registerBlock(FrightsDelightBlocks.MELON_CANDY_BASKET,
+            (properties) -> new AbstractCandyBasketBlockImpl(properties, CandyBasketType.MELON),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.MELON));
+
     public static final Supplier<Block> LOLLIPOP_MOLD = registerBlock(FrightsDelightBlocks.LOLLIPOP_MOLD,
             () -> new LollipopMoldBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA)));
     public static final Supplier<Block> RING_CANDY_MOLD = registerBlock(FrightsDelightBlocks.RING_CANDY_MOLD,

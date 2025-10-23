@@ -41,10 +41,6 @@ public class FrightsDelightSounds {
     public static final Supplier<SoundEvent> BLOCK_MELON_CANDY_BASKET_REMOVE = registerSound("block.melon_candy_basket.remove");
     public static final Supplier<SoundEvent> BLOCK_MELON_CANDY_BASKET_SHUFFLE = registerSound("block.melon_candy_basket.shuffle");
 
-    public static final Supplier<SoundEvent> BLOCK_CREEPER_CANDY_BASKET_ADD = registerSound("block.creeper_candy_basket.add");
-    public static final Supplier<SoundEvent> BLOCK_CREEPER_CANDY_BASKET_REMOVE = registerSound("block.creeper_candy_basket.remove");
-    public static final Supplier<SoundEvent> BLOCK_CREEPER_CANDY_BASKET_SHUFFLE = registerSound("block.creeper_candy_basket.shuffle");
-
     public static final Supplier<SoundEvent> ENTITY_BONE_SHARD_THROW = registerSound("entity.bone_shard.throw");
     public static final Supplier<SoundEvent> ENTITY_BONE_SHARD_HIT = registerSound("entity.bone_shard.hit");
 

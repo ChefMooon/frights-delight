@@ -101,6 +101,9 @@ public class FrightsDelightBlocks {
     public static final ResourceLocation WITHER_BERRY_SYRUP = block("wither_berry_syrup");
     public static final ResourceLocation COBWEB_SYRUP = block("cobweb_syrup");
 
+    public static final ResourceLocation PUMPKIN_CANDY_BASKET = block("pumpkin_candy_basket");
+    public static final ResourceLocation MELON_CANDY_BASKET = block("melon_candy_basket");
+
     private static ResourceLocation block(String string) {
         return TextUtils.res(string);
     }

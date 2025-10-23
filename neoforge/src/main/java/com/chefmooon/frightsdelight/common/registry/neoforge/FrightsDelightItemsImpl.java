@@ -32,6 +32,13 @@ public class FrightsDelightItemsImpl {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, FrightsDelight.MOD_ID);
     public static LinkedHashSet<Supplier<Item>> CREATIVE_TAB_ITEMS = Sets.newLinkedHashSet();
 
+    public static final Supplier<Item> PUMPKIN_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.PUMPKIN_CANDY_BASKET,
+            (properties) -> new CandyBasketItem(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(), properties, CandyBasketType.PUMPKIN),
+            noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY));
+    public static final Supplier<Item> MELON_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.MELON_CANDY_BASKET,
+            (properties) -> new CandyBasketItem(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get(), properties, CandyBasketType.MELON),
+            noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY));
+
     public static final Supplier<Item> UNFIRED_LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.UNFIRED_LOLLIPOP_MOLD,
             () -> new Item(basicItem()));
     public static final Supplier<Item> LOLLIPOP_MOLD = registerItemWithTab(FrightsDelightItems.LOLLIPOP_MOLD,

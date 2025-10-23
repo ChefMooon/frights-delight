@@ -2,7 +2,9 @@ package com.chefmooon.frightsdelight.common.registry.fabric;
 
 import com.chefmooon.frightsdelight.common.block.*;
 import com.chefmooon.frightsdelight.common.block.drinkableFeastBlocks.*;
+import com.chefmooon.frightsdelight.common.block.fabric.AbstractCandyBasketBlockImpl;
 import com.chefmooon.frightsdelight.common.block.glassCupBlocks.*;
+import com.chefmooon.frightsdelight.common.data.types.CandyBasketType;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlocks;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
 import net.minecraft.core.Registry;
@@ -31,6 +33,13 @@ public class FrightsDelightBlocksImpl {
             Block.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH));
     public static final Supplier<Block> WITHER_BERRY_BUSH = registerBlock(FrightsDelightBlocks.WITHER_BERRY_BUSH, WitherBerryBushBlock::new,
             Block.Properties.ofFullCopy(Blocks.SWEET_BERRY_BUSH));
+
+    public static final Supplier<Block> PUMPKIN_CANDY_BASKET = registerBlock(FrightsDelightBlocks.PUMPKIN_CANDY_BASKET,
+            (properties) -> new AbstractCandyBasketBlockImpl(properties, CandyBasketType.PUMPKIN),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.PUMPKIN));
+    public static final Supplier<Block> MELON_CANDY_BASKET = registerBlock(FrightsDelightBlocks.MELON_CANDY_BASKET,
+            (properties) -> new AbstractCandyBasketBlockImpl(properties, CandyBasketType.MELON),
+            BlockBehaviour.Properties.ofFullCopy(Blocks.MELON));
 
     public static final Supplier<Block> LOLLIPOP_MOLD = registerBlock(FrightsDelightBlocks.LOLLIPOP_MOLD, LollipopMoldBlock::new,
             BlockBehaviour.Properties.ofFullCopy(Blocks.TERRACOTTA).lightLevel(FrightsDelightBlocks.slimeAppleAbstractMoldLight()));

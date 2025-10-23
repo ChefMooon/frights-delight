@@ -75,6 +75,9 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 SimpleCookingRecipeBuilder.smelting(Ingredient.of(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD.get()), RecipeCategory.MISC, FrightsDelightItemsImpl.RING_CANDY_MOLD.get(), 2.0f, 200)
                         .unlockedBy(RecipeProvider.getHasName(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.UNFIRED_RING_CANDY_MOLD.get()))
                         .save(exporter, RecipeProvider.getSmeltingRecipeName(FrightsDelightItemsImpl.RING_CANDY_MOLD.get()));
+
+                candyBasketRecipe(holderGetter, FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get(), Items.PUMPKIN, exporter);
+                candyBasketRecipe(holderGetter, FrightsDelightItemsImpl.MELON_CANDY_BASKET.get(), Items.MELON, exporter);
             }
         };
     }
@@ -127,6 +130,18 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .group("frd_" + pie.getDescriptionId().replace("block.frightsdelight.", ""))
                 .save(exporter, RecipeProvider.getSimpleRecipeName(pie) + "_from_slices");
 
+    }
+
+    private static void candyBasketRecipe(HolderGetter<Item> holderGetter, Item candyBasket, Item mainIngredient, RecipeOutput exporter) {
+        Item rope = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "rope")).get().value();
+        ShapedRecipeBuilder.shaped(holderGetter, RecipeCategory.MISC, candyBasket)
+                .pattern("A")
+                .pattern("B")
+                .define('A', rope)
+                .define('B', mainIngredient)
+                .unlockedBy(RecipeProvider.getHasName(mainIngredient), InventoryChangeTrigger.TriggerInstance.hasItems(mainIngredient))
+                .unlockedBy("has_rope", InventoryChangeTrigger.TriggerInstance.hasItems(rope))
+                .save(exporter, RecipeProvider.getSimpleRecipeName(candyBasket));
     }
 
     @Override

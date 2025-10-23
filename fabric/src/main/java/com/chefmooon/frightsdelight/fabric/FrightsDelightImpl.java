@@ -1,6 +1,7 @@
 package com.chefmooon.frightsdelight.fabric;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
+import com.chefmooon.frightsdelight.common.block.fabric.AbstractCandyBasketBlockImpl;
 import com.chefmooon.frightsdelight.common.event.fabric.FrightsDelightLootTableEvents;
 import com.chefmooon.frightsdelight.common.event.fabric.VillagerEventsImpl;
 import com.chefmooon.frightsdelight.common.fabric.CommonSetupImpl;
@@ -33,6 +34,8 @@ public class FrightsDelightImpl implements ModInitializer {
         VillagerEventsImpl.init();
 
         CommonSetupImpl.init();
+
+        AbstractCandyBasketBlockImpl.init();
 
         FrightsDelightBiomeModifiersImpl.init();
     }

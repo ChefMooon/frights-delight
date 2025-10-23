@@ -149,7 +149,12 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY.get(), "Wither Berry Ring Candy");
         translationBuilder.add(FrightsDelightItemsImpl.COBWEB_RING_CANDY.get(), "Cobweb Ring Candy");
 
+        translationBuilder.add(FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get(), "Pumpkin Candy Basket");
+        translationBuilder.add(FrightsDelightItemsImpl.MELON_CANDY_BASKET.get(), "Melon Candy Basket");
+
         translationBuilder.add(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get().getDescriptionId() + ".bone_shard_requirement", "Requires 4 Bone Shards");
+
+        translationBuilder.add("container.candy_basket", "Candy Basket");
 
         translationBuilder.add(EFFECT + ".chills", "Chills");
         translationBuilder.add(EFFECT + ".cobwebbed", "Cobwebbed");
@@ -198,6 +203,11 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(SUBTITLE + ".block.candy_mold.remove", "Bone Shard(s) Removed");
         translationBuilder.add(SUBTITLE + ".block.candy_mold.collect", "Candy Taken");
         translationBuilder.add(SUBTITLE + ".block.candy_mold.harden", "Candy Hardened");
+
+        translationBuilder.add(SUBTITLE + ".block.candy_basket.add", "Candy Added");
+        translationBuilder.add(SUBTITLE + ".block.candy_basket.remove", "Candy Removed");
+        translationBuilder.add(SUBTITLE + ".block.candy_basket.shuffle", "Candy Shuffled");
+        translationBuilder.add(SUBTITLE + ".block.candy_basket.empty", "Candy Basket Empty");
 
         translationBuilder.add(DEATH + ".soul_berry_bush", "%1$s was pricked to death by a Soul Berry Bush");
         translationBuilder.add(DEATH + ".soul_berry_bush.player", "%1$s was sent to a prickly grave by %2$s");

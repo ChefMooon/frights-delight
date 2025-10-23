@@ -38,6 +38,8 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
 
     private void registerCommonBlockTags() {
         getOrCreateTagBuilder(CommonTags.C_MINEABLE_KNIFE)
+                .add(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get())
+                .add(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get())
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_ROTTEN_FLESH.get())
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE.get())
                 .add(FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE.get())
@@ -79,6 +81,8 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .add(FrightsDelightBlocksImpl.RING_CANDY_MOLD.get());
 
         getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
+                .add(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get())
+                .add(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get())
                 .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get())
                 .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get())
                 .add(FrightsDelightBlocksImpl.FLESH_CRATE.get())

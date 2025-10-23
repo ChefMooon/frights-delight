@@ -1,6 +1,6 @@
 package com.chefmooon.frightsdelight.common.registry.fabric;
 
-//import com.chefmooon.frightsdelight.common.block.entity.CandyBasketBlockEntity;
+import com.chefmooon.frightsdelight.common.block.entity.CandyBasketBlockEntity;
 import com.chefmooon.frightsdelight.common.block.entity.LollipopMoldBlockEntity;
 import com.chefmooon.frightsdelight.common.block.entity.RingCandyMoldBlockEntity;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlockEntities;
@@ -20,9 +20,9 @@ public class FrightsDelightBlockEntitiesImpl {
     public static final BlockEntityType<RingCandyMoldBlockEntity> RING_CANDY_MOLD = registerBlockEntityType(FrightsDelightBlockEntities.RING_CANDY_MOLD, RingCandyMoldBlockEntity::new,
             FrightsDelightBlocksImpl.RING_CANDY_MOLD.get());
 
-//    public static final BlockEntityType<CandyBasketBlockEntity> CANDY_BASKET = registerBlockEntityType(FrightsDelightBlockEntities.CANDY_BASKET, CandyBasketBlockEntity::new,
-//            FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET,
-//            FrightsDelightBlocksImpl.MELON_CANDY_BASKET);
+    public static final BlockEntityType<CandyBasketBlockEntity> CANDY_BASKET = registerBlockEntityType(FrightsDelightBlockEntities.CANDY_BASKET, CandyBasketBlockEntity::new,
+            FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(),
+            FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get());
 
     public static <T extends BlockEntity> BlockEntityType<T> registerBlockEntityType(ResourceLocation location, FabricBlockEntityTypeBuilder.Factory<T> blockEntitySupplier, Block... blocks) {
         return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, location, FabricBlockEntityTypeBuilder.create(blockEntitySupplier, blocks).build(null));
