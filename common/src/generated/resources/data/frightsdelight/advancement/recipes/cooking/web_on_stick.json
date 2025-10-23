@@ -5,7 +5,10 @@
       "conditions": {
         "items": [
           {
-            "items": "frightsdelight:wither_berry"
+            "items": [
+              "minecraft:cobweb",
+              "frightsdelight:bone_shard"
+            ]
           }
         ]
       },
@@ -13,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:soup_wither_berry"
+        "recipe": "minecraft:cooking/web_on_stick"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:soup_wither_berry"
+      "minecraft:cooking/web_on_stick"
     ]
   }
 }

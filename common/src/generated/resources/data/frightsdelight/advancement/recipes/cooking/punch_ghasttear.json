@@ -6,9 +6,9 @@
         "items": [
           {
             "items": [
-              "minecraft:spider_eye",
-              "minecraft:spider_eye",
-              "minecraft:rotten_flesh"
+              "minecraft:ghast_tear",
+              "minecraft:sugar",
+              "minecraft:water_bucket"
             ]
           }
         ]
@@ -17,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:monster_mash"
+        "recipe": "minecraft:cooking/punch_ghasttear"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:monster_mash"
+      "minecraft:cooking/punch_ghasttear"
     ]
   }
 }

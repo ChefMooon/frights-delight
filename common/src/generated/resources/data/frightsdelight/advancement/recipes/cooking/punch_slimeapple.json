@@ -5,7 +5,11 @@
       "conditions": {
         "items": [
           {
-            "items": "frightsdelight:soul_berry"
+            "items": [
+              "frightsdelight:apple_slime",
+              "minecraft:sugar",
+              "minecraft:water_bucket"
+            ]
           }
         ]
       },
@@ -13,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pasta_with_slimeballs"
+        "recipe": "minecraft:cooking/punch_slimeapple"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pasta_with_slimeballs"
+      "minecraft:cooking/punch_slimeapple"
     ]
   }
 }

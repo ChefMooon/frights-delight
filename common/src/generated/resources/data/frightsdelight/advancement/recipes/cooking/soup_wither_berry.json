@@ -5,10 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:slime_ball",
-              "frightsdelight:bone_shard"
-            ]
+            "items": "frightsdelight:wither_berry"
           }
         ]
       },
@@ -16,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:bone_kebab_slime"
+        "recipe": "minecraft:cooking/soup_wither_berry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:bone_kebab_slime"
+      "minecraft:cooking/soup_wither_berry"
     ]
   }
 }

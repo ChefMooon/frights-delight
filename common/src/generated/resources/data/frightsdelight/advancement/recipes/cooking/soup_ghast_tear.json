@@ -5,10 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:cobweb",
-              "frightsdelight:bone_shard"
-            ]
+            "items": "minecraft:ghast_tear"
           }
         ]
       },
@@ -16,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:web_on_stick"
+        "recipe": "minecraft:cooking/soup_ghast_tear"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:web_on_stick"
+      "minecraft:cooking/soup_ghast_tear"
     ]
   }
 }

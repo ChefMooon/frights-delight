@@ -6,9 +6,8 @@
         "items": [
           {
             "items": [
-              "frightsdelight:wither_berry",
-              "minecraft:sugar",
-              "minecraft:water_bucket"
+              "minecraft:rotten_flesh",
+              "frightsdelight:bone_shard"
             ]
           }
         ]
@@ -17,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:punch_wither_berry"
+        "recipe": "minecraft:cooking/bone_kebab_rotten_flesh"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:punch_wither_berry"
+      "minecraft:cooking/bone_kebab_rotten_flesh"
     ]
   }
 }

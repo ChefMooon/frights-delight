@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:soup_soul_berry"
+        "recipe": "minecraft:cooking/pasta_with_slimeballs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:soup_soul_berry"
+      "minecraft:cooking/pasta_with_slimeballs"
     ]
   }
 }

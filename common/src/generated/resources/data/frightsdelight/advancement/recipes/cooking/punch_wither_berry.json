@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:spider_eye",
+              "frightsdelight:wither_berry",
               "minecraft:sugar",
               "minecraft:water_bucket"
             ]
@@ -17,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:punch_spidereye"
+        "recipe": "minecraft:cooking/punch_wither_berry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:punch_spidereye"
+      "minecraft:cooking/punch_wither_berry"
     ]
   }
 }

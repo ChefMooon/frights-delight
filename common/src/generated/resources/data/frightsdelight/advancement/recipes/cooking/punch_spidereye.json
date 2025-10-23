@@ -6,8 +6,9 @@
         "items": [
           {
             "items": [
-              "minecraft:ghast_tear",
-              "frightsdelight:bone_shard"
+              "minecraft:spider_eye",
+              "minecraft:sugar",
+              "minecraft:water_bucket"
             ]
           }
         ]
@@ -16,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:bone_kebab_ghast_tear"
+        "recipe": "minecraft:cooking/punch_spidereye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:bone_kebab_ghast_tear"
+      "minecraft:cooking/punch_spidereye"
     ]
   }
 }

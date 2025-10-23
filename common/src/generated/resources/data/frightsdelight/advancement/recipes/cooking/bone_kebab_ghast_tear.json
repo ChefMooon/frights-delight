@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "frightsdelight:soul_berry",
+              "minecraft:ghast_tear",
               "frightsdelight:bone_shard"
             ]
           }
@@ -16,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:bone_kebab_soul_berry"
+        "recipe": "minecraft:cooking/bone_kebab_ghast_tear"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:bone_kebab_soul_berry"
+      "minecraft:cooking/bone_kebab_ghast_tear"
     ]
   }
 }

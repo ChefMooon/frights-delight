@@ -5,10 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "frightsdelight:apple_slime",
-              "frightsdelight:bone_shard"
-            ]
+            "items": "minecraft:cobweb"
           }
         ]
       },
@@ -16,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:bone_kebab_slimeapple"
+        "recipe": "minecraft:cooking/soup_cobweb"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:bone_kebab_slimeapple"
+      "minecraft:cooking/soup_cobweb"
     ]
   }
 }

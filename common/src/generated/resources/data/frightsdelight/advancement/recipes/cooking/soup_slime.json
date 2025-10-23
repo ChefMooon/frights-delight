@@ -5,10 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:slime_ball",
-              "minecraft:apple"
-            ]
+            "items": "minecraft:slime_ball"
           }
         ]
       },
@@ -16,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:apple_slime"
+        "recipe": "minecraft:cooking/soup_slime"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:apple_slime"
+      "minecraft:cooking/soup_slime"
     ]
   }
 }

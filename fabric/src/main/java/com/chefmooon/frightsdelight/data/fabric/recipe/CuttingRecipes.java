@@ -24,10 +24,10 @@ public class CuttingRecipes {
         Item rope = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "rope")).get().value();
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get()), Ingredient.of(holderGetter.getOrThrow(CommonTags.C_TOOLS_KNIFE)), Items.PUMPKIN)
                 .addResult(rope)
-                .save(recipeOutput, RecipeProvider.getConversionRecipeName(Items.PUMPKIN, FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get()));
+                .build(recipeOutput, RecipeProvider.getConversionRecipeName(Items.PUMPKIN, FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(FrightsDelightItemsImpl.MELON_CANDY_BASKET.get()), Ingredient.of(holderGetter.getOrThrow(CommonTags.C_TOOLS_KNIFE)), Items.MELON)
                 .addResult(rope)
-                .save(recipeOutput, RecipeProvider.getConversionRecipeName(Items.MELON, FrightsDelightItemsImpl.MELON_CANDY_BASKET.get()));
+                .build(recipeOutput, RecipeProvider.getConversionRecipeName(Items.MELON, FrightsDelightItemsImpl.MELON_CANDY_BASKET.get()));
 
         pieCuttingRecipeBuilder(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE.get(), FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE.get(), holderGetter, recipeOutput);
         pieCuttingRecipeBuilder(FrightsDelightItemsImpl.SLIMEAPPLE_PIE.get(), FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE.get(), holderGetter, recipeOutput);
@@ -40,6 +40,6 @@ public class CuttingRecipes {
 
     private static void pieCuttingRecipeBuilder(Item input, Item output, HolderGetter<Item> holderGetter, RecipeOutput exporter) {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(input), Ingredient.of(holderGetter.getOrThrow(CommonTags.C_TOOLS_KNIFE)), output, 4)
-                .build(exporter);
+                .build(exporter, RecipeProvider.getConversionRecipeName(output, input));
     }
 }

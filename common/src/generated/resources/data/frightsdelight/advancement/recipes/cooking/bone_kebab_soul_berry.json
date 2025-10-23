@@ -6,9 +6,8 @@
         "items": [
           {
             "items": [
-              "minecraft:cobweb",
-              "minecraft:sugar",
-              "minecraft:water_bucket"
+              "frightsdelight:soul_berry",
+              "frightsdelight:bone_shard"
             ]
           }
         ]
@@ -17,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:punch_cobweb"
+        "recipe": "minecraft:cooking/bone_kebab_soul_berry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:punch_cobweb"
+      "minecraft:cooking/bone_kebab_soul_berry"
     ]
   }
 }

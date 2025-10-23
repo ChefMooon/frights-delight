@@ -5,7 +5,10 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:spider_eye"
+            "items": [
+              "frightsdelight:wither_berry",
+              "frightsdelight:bone_shard"
+            ]
           }
         ]
       },
@@ -13,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:soup_spider_eye"
+        "recipe": "minecraft:cooking/bone_kebab_wither_berry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:soup_spider_eye"
+      "minecraft:cooking/bone_kebab_wither_berry"
     ]
   }
 }

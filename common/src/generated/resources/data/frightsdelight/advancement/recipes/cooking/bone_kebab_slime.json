@@ -5,7 +5,10 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:ghast_tear"
+            "items": [
+              "minecraft:slime_ball",
+              "frightsdelight:bone_shard"
+            ]
           }
         ]
       },
@@ -13,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:soup_ghast_tear"
+        "recipe": "minecraft:cooking/bone_kebab_slime"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:soup_ghast_tear"
+      "minecraft:cooking/bone_kebab_slime"
     ]
   }
 }

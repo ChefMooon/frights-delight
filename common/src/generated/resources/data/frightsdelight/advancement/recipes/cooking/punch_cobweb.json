@@ -5,7 +5,11 @@
       "conditions": {
         "items": [
           {
-            "items": "frightsdelight:apple_slime"
+            "items": [
+              "minecraft:cobweb",
+              "minecraft:sugar",
+              "minecraft:water_bucket"
+            ]
           }
         ]
       },
@@ -13,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:soup_slimeapple"
+        "recipe": "minecraft:cooking/punch_cobweb"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:soup_slimeapple"
+      "minecraft:cooking/punch_cobweb"
     ]
   }
 }

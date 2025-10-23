@@ -5,7 +5,11 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:cobweb"
+            "items": [
+              "minecraft:rotten_flesh",
+              "minecraft:sugar",
+              "minecraft:water_bucket"
+            ]
           }
         ]
       },
@@ -13,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:soup_cobweb"
+        "recipe": "minecraft:cooking/punch_rotten_flesh"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:soup_cobweb"
+      "minecraft:cooking/punch_rotten_flesh"
     ]
   }
 }
