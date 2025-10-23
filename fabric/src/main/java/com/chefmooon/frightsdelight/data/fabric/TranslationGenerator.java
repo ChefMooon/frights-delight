@@ -149,8 +149,8 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY, "Wither Berry Ring Candy");
         translationBuilder.add(FrightsDelightItemsImpl.COBWEB_RING_CANDY, "Cobweb Ring Candy");
 
-        translationBuilder.add(FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET, "Pumpkin Candy Basket");
-        translationBuilder.add(FrightsDelightItemsImpl.MELON_CANDY_BASKET, "Melon Candy Basket");
+        translationBuilder.add(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET, "Pumpkin Candy Basket");
+        translationBuilder.add(FrightsDelightBlocksImpl.MELON_CANDY_BASKET, "Melon Candy Basket");
 
 //        translationBuilder.add(FrightsDelightItemsImpl.CREEPER_CANDY_BASKET, "Creeper Candy Basket");
 //        translationBuilder.add(FrightsDelightItemsImpl.SKELETON_CANDY_BASKET, "Skeleton Candy Basket");
