@@ -162,19 +162,19 @@ public class FoodValues {
     // *** SYRUPS *** //
 
     public static final FoodProperties ROTTEN_FLESH_SYRUP_BOTTLE = foodProperty(6, 0.4f, true, true, false,
-            List.of(new MobEffectInfo(INFECTED, BRIEF_DURATION, .25f)));
+            List.of(new MobEffectInfo(INFECTED, BRIEF_DURATION, .5f)));
     public static final FoodProperties SLIMEAPPLE_SYRUP_BOTTLE = foodProperty(6, 0.4f, true, true, false,
-            List.of(new MobEffectInfo(SLIMED, BRIEF_DURATION, .25f)));
+            List.of(new MobEffectInfo(SLIMED, BRIEF_DURATION, .5f)));
     public static final FoodProperties SPIDEREYE_SYRUP_BOTTLE = foodProperty(6, 0.4f, true, true, false,
-            List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .25f)));
+            List.of(new MobEffectInfo(HYSTERIA, BRIEF_DURATION, .5f)));
     public static final FoodProperties GHASTTEAR_SYRUP_BOTTLE = foodProperty(6, 0.4f, false, true, false,
-            List.of(new MobEffectInfo(CHILLS, BRIEF_DURATION, .25f)));
+            List.of(new MobEffectInfo(CHILLS, BRIEF_DURATION, .5f)));
     public static final FoodProperties SOUL_BERRY_SYRUP_BOTTLE = foodProperty(6, 0.4f, false, true, true,
             List.of(new MobEffectInfo(FORTIFIED_MIND, MEDIUM_DURATION, 1.0f)));
     public static final FoodProperties WITHER_BERRY_SYRUP_BOTTLE = foodProperty(6, 0.4f, false, true, true,
             List.of(new MobEffectInfo(UNDEAD_HUNGER, MEDIUM_DURATION, 1.0f)));
     public static final FoodProperties COBWEB_SYRUP_BOTTLE = foodProperty(6, 0.4f, false, true, false,
-            List.of(new MobEffectInfo(COBWEBBED, BRIEF_DURATION, .25f)));
+            List.of(new MobEffectInfo(COBWEBBED, BRIEF_DURATION, .5f)));
 
     // *** LOLLIPOPS *** //
 
