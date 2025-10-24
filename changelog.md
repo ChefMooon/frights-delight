@@ -25,6 +25,9 @@ NeoForge, and Fabric
     - Candy Basket
         - Can hold up to 9 edible items
         - Items can be added/removed/shuffled in item or block form
+- New Config Options
+    - Enable/Disable Glass Cup particles (default:true)
+    - Enable/Disable Candy Mold particles (default:true)
 
 ### Changed
 

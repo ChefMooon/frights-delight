@@ -254,6 +254,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(CONFIG + "foodEffectTooltip", "Should meal and drink tooltips display which effects they provide?");
         translationBuilder.add(CONFIG + "foodEffectChanceTooltip", "Should meal and drink tooltips display the chance the effect will be applied?");
         translationBuilder.add(CONFIG + "drinkableFeastParticles", "Should Punch Bowl blocks emit bubble particles?");
+        translationBuilder.add(CONFIG + "glassCupParticles", "Should Glass Cup blocks emit bubble particles?");
         translationBuilder.add(CONFIG + "candyMoldParticles", "Should Candy Mold blocks emit particles when hardening candy?");
         translationBuilder.add(CONFIG + "punchConsumeSound", "Should Punch have a chance to play a sound when consumed?");
         translationBuilder.add(CONFIG + "punchConsumeChance", "The chance a sound will be played while consuming a drink? (4 = 25%)");
