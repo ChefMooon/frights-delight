@@ -128,10 +128,7 @@
   "block.candy_mold.harden": {
     "subtitle": "frightsdelight.subtitles.block.candy_mold.harden",
     "sounds": [
-      {
-        "name": "block.amethyst_block.fall",
-        "type": "event"
-      }
+      "frightsdelight:candy_mold_harden_0"
     ]
   },
   "block.candy_basket.empty": {
