@@ -183,7 +183,7 @@ public class GlassCupBlock extends Block {
     }
 
     public void animate(BlockState state, Level level, BlockPos pos, SoundEvent soundEvent, RandomSource random) {
-        if (Configuration.drinkableFeastParticles() && particleData != null) {
+        if (Configuration.glassCupParticles() && particleData != null) {
             int servings = state.getValue(getServingsProperty()) + 1;
 
             Direction facing = state.getValue(FACING);
