@@ -80,6 +80,11 @@ public class Configuration {
     }
 
     @ExpectPlatform
+    public static boolean glassCupParticles() {
+        return false;
+    }
+
+    @ExpectPlatform
     public static boolean candyMoldParticles() {
         return false;
     }

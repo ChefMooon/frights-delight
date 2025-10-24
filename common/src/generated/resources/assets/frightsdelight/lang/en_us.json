@@ -90,6 +90,7 @@
   "frightsdelight.midnightconfig.fortifiedMindOverlay": "Enable/Disable Fortified Mind Effect Overlay",
   "frightsdelight.midnightconfig.generateSoulBerryLoot": "Should Soul Berries spawn in Bastion chests?",
   "frightsdelight.midnightconfig.generateWildSoulBerry": "Should Soul Berry Bushes naturally spawn in the Nether?",
+  "frightsdelight.midnightconfig.glassCupParticles": "Should Glass Cup blocks emit bubble particles?",
   "frightsdelight.midnightconfig.hysteriaOverlay": "Enable/Disable Hysteria Effect Overlay",
   "frightsdelight.midnightconfig.infectedOverlay": "Enable/Disable Infected Effect Overlay",
   "frightsdelight.midnightconfig.punchConsumeChance": "The chance a sound will be played while consuming a drink? (4 = 25%)",
