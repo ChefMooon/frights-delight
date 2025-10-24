@@ -29,6 +29,9 @@ NeoForge, and Fabric
 - New Config Options
   - Enable/Disable Glass Cup particles (default:true)
   - Enable/Disable Candy Mold particles (default:true)
+- Items Added to Meat and Wolf Food Tags
+  - Rotten Flesh Lollipop, Rotten Flesh Ring Candy, Rotten Flesh Bone Kebab,
+    Rotten Flesh Cookie, Rotten Flesh Pie Slice
 
 ### Changed
 
