@@ -6,6 +6,7 @@ import com.chefmooon.frightsdelight.common.tag.CompatibilityTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -25,6 +26,22 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
         // Save for Fox harvesting implementation
         //getOrCreateTagBuilder(ItemTags.FOX_FOOD)
         //        .add(FrightsDelightItemsImpl.SOUL_BERRY);
+
+        getOrCreateTagBuilder(ItemTags.MEAT)
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE.get())
+        ;
+
+        getOrCreateTagBuilder(ItemTags.WOLF_FOOD)
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE.get())
+        ;
     }
 
     private void registerCommonTags() {

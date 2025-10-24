@@ -16,6 +16,8 @@ c58d4b599a44b9b815cad72b0c827b1eacf6c603 data/c/tags/item/storage_blocks/rotten_
 ea1a0df32ca387e02411d7d7d5228156155421ee data/createaddition/tags/item/plant_foods.json
 373fdc92421c7db7e80ebed6f40df37e6bc4f11a data/dehydration/tags/item/hydrating_drinks.json
 1b0f5be3ff14e29d836354e4aa153c78ef637f65 data/dehydration/tags/item/hydrating_stew.json
+b444edd7b0a3e60a1fde06e5077e04cd5453a5c1 data/minecraft/tags/item/meat.json
+b444edd7b0a3e60a1fde06e5077e04cd5453a5c1 data/minecraft/tags/item/wolf_food.json
 daa093ee5848da50940b11b298a188f73c485b7b data/origins/tags/item/ignore_diet.json
 573ceeff0c2a38ebb9d1b8d10233d00e42a8a04b data/origins/tags/item/meat.json
 bc224074ff620e5ce7822a10ec8a96c7b5dfe2c3 data/supplementaries/tags/item/cookies.json
