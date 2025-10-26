@@ -158,7 +158,7 @@ public class CookingRecipes {
     }
 
     private static void syrupRecipe(Item output, Item mainIngredient, RecipeOutput recipeOutput) {
-        CookingPotRecipeJsonBuilder.create(output, 1, 400, 1.0F, nonNullList())
+        CookingPotRecipeJsonBuilder.create(output, 4, 300, 1.0F, nonNullList())
                 .input(mainIngredient, 3)
                 .input(Items.SUGAR, 2)
                 .input(Items.WATER_BUCKET, 1)
