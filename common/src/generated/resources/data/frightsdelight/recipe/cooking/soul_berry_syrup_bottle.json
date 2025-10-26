@@ -5,7 +5,7 @@
     "count": 1,
     "id": "minecraft:glass_bottle"
   },
-  "cookingtime": 400,
+  "cookingtime": 300,
   "experience": 1.0,
   "ingredients": [
     "frightsdelight:soul_berry",
@@ -16,7 +16,7 @@
     "minecraft:water_bucket"
   ],
   "result": {
-    "count": 1,
+    "count": 4,
     "id": "frightsdelight:soul_berry_syrup_bottle"
   }
 }

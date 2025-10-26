@@ -141,7 +141,7 @@ public class CookingRecipes {
     }
 
     private static void syrupRecipe(HolderGetter<Item> holderGetter, Item output, Item mainIngredient, RecipeOutput recipeOutput) {
-        CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, output, 1, 400, 1.0F, Items.GLASS_BOTTLE)
+        CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, output, 4, 300, 1.0F, Items.GLASS_BOTTLE)
                 .addIngredient(mainIngredient, 3)
                 .addIngredient(Items.SUGAR, 2)
                 .addIngredient(Items.WATER_BUCKET, 1)
