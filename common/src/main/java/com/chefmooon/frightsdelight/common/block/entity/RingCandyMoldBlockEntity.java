@@ -14,7 +14,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class RingCandyMoldBlockEntity extends BaseCandyMoldBlockEntity {
     public RingCandyMoldBlockEntity(BlockPos pos, BlockState blockState) {
-        // TODO: .isPresent check?
         super(FrightsDelightBlockEntities.getRingCandyMoldBlockEntity(), pos, blockState);
     }
 

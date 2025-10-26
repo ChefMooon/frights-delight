@@ -28,7 +28,6 @@ public class CandyBasketBlockEntity extends BaseBlockEntity implements Container
     @Nullable
     private Component name;
     public CandyBasketBlockEntity(BlockPos pos, BlockState blockState) {
-        // TODO: .isPresent check?
         super(FrightsDelightBlockEntities.getCandyBasketBlockEntity(), pos, blockState);
         this.itemStacks = NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY);
     }

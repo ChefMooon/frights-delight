@@ -16,7 +16,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class LollipopMoldBlockEntity extends BaseCandyMoldBlockEntity {
     public LollipopMoldBlockEntity(BlockPos pos, BlockState blockState) {
-        // TODO: .isPresent check?
         super(FrightsDelightBlockEntities.getLollipopMoldBlockEntity(), pos, blockState);
     }
 

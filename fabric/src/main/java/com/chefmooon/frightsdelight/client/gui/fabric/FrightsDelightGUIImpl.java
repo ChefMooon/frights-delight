@@ -15,7 +15,6 @@ public class FrightsDelightGUIImpl {
     }
 
     public static void register() {
-        // TODO: review order of overlays
         registerOverlay(FrightsDelightGUI.ChillsOverlay.ID, FrightsDelightGUI.ChillsOverlay.INSTANCE, null);
         registerOverlay(FrightsDelightGUI.CobwebbedOverlay.ID, FrightsDelightGUI.CobwebbedOverlay.INSTANCE, FrightsDelightGUI.ChillsOverlay.ID);
         registerOverlay(FrightsDelightGUI.HysteriaOverlay.ID, FrightsDelightGUI.HysteriaOverlay.INSTANCE, FrightsDelightGUI.CobwebbedOverlay.ID);

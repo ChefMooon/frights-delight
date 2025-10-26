@@ -130,7 +130,7 @@ public class FrightsDelightDrinkableBlockItem extends FrightsDelightConsumableIt
 
     @Override
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay tooltip, Consumer<Component> tooltipAdder, TooltipFlag flag) {
-        if (Configuration.foodEffectTooltip()) { // todo - add new config BlockItem tooltips?
+        if (Configuration.foodEffectTooltip()) {
             if (hasCustomTooltip) {
                 tooltipAdder.accept(TextUtils.getTranslatable("tooltip.glass_cup").withStyle(ChatFormatting.DARK_GRAY));
             }

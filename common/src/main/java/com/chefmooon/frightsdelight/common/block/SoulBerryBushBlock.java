@@ -118,7 +118,7 @@ public class SoulBerryBushBlock extends FrightsDelightBushBlock {
     @Override
     public BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess scheduledTickAccess, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
         if (!level.isClientSide()) {
-            if (level instanceof LevelAccessor levelAccessor) { // TODO: test this?
+            if (level instanceof LevelAccessor levelAccessor) {
                 updateConditions(state, levelAccessor, pos);
             }
         }
