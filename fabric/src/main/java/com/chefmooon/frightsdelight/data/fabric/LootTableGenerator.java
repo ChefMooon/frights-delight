@@ -45,6 +45,7 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         HolderGetter<Item> itemGetter = this.registries.lookupOrThrow(Registries.ITEM);
 
         this.createCandyBasketDrops(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get());
+        this.createCandyBasketDrops(FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET.get());
         this.createCandyBasketDrops(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get());
 
         this.dropSelf(FrightsDelightBlocksImpl.FLESH_CRATE.get());

@@ -22,6 +22,7 @@ public class FrightsDelightBlockEntitiesImpl {
 
     public static final BlockEntityType<CandyBasketBlockEntity> CANDY_BASKET = registerBlockEntityType(FrightsDelightBlockEntities.CANDY_BASKET, CandyBasketBlockEntity::new,
             FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(),
+            FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET.get(),
             FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get());
 
     public static <T extends BlockEntity> BlockEntityType<T> registerBlockEntityType(ResourceLocation location, FabricBlockEntityTypeBuilder.Factory<T> blockEntitySupplier, Block... blocks) {

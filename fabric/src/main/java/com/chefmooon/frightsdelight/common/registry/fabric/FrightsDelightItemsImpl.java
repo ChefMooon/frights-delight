@@ -45,6 +45,10 @@ public class FrightsDelightItemsImpl {
             (properties) -> new CandyBasketItem(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(),
                     properties.overrideDescription(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get().getDescriptionId()), CandyBasketType.PUMPKIN),
             noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY));
+    public static final Supplier<Item> JACK_O_LANTERN_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.JACK_O_LANTERN_CANDY_BASKET,
+            (properties) -> new CandyBasketItem(FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET.get(),
+                    properties.overrideDescription(FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET.get().getDescriptionId()), CandyBasketType.PUMPKIN),
+            noStack().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY));
     public static final Supplier<Item> MELON_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.MELON_CANDY_BASKET,
             (properties) -> new CandyBasketItem(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get(),
                     properties.overrideDescription(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get().getDescriptionId()), CandyBasketType.MELON),

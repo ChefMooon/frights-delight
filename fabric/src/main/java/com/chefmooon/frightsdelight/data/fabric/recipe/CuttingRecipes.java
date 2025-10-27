@@ -29,6 +29,9 @@ public class CuttingRecipes {
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get()), Ingredient.of(holderGetter.getOrThrow(CommonTags.C_TOOLS_KNIFE)), Items.PUMPKIN)
                 .addResult(rope)
                 .build(recipeOutput, RecipeProvider.getConversionRecipeName(Items.PUMPKIN, FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get()));
+        CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(FrightsDelightItemsImpl.JACK_O_LANTERN_CANDY_BASKET.get()), Ingredient.of(holderGetter.getOrThrow(CommonTags.C_TOOLS_KNIFE)), Items.JACK_O_LANTERN)
+                .addResult(rope)
+                .build(recipeOutput, RecipeProvider.getConversionRecipeName(Items.JACK_O_LANTERN, FrightsDelightItemsImpl.JACK_O_LANTERN_CANDY_BASKET.get()));
         CuttingBoardRecipeBuilder.cuttingRecipe(Ingredient.of(FrightsDelightItemsImpl.MELON_CANDY_BASKET.get()), Ingredient.of(holderGetter.getOrThrow(CommonTags.C_TOOLS_KNIFE)), Items.MELON)
                 .addResult(rope)
                 .build(recipeOutput, RecipeProvider.getConversionRecipeName(Items.MELON, FrightsDelightItemsImpl.MELON_CANDY_BASKET.get()));

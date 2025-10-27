@@ -153,7 +153,7 @@ public class AbstractCandyBasketBlock extends BaseEntityBlock implements SimpleW
             candyBasketBlockEntity.setItems(items);
         }
         FluidState fluid = context.getLevel().getFluidState(context.getClickedPos());
-        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection())
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())
                 .setValue(WATERLOGGED, fluid.getType() == Fluids.WATER);
     }
 

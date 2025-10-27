@@ -44,6 +44,7 @@ public class ClientREIPlugin implements REIClientPlugin {
 
         List<ItemLike> candyBasketStack = List.of(
                 FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get(),
+                FrightsDelightItemsImpl.JACK_O_LANTERN_CANDY_BASKET.get(),
                 FrightsDelightItemsImpl.MELON_CANDY_BASKET.get()
         );
         registry.add(DefaultInformationDisplay.createFromEntries(EntryIngredients.ofItems(candyBasketStack), Component.translatable("block.frightsdelight.pumpkin_candy_basket")).lines(TextUtils.getTranslatable("rei.info.candy_basket")));

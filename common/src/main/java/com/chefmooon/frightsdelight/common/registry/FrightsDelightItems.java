@@ -173,6 +173,7 @@ public class FrightsDelightItems {
     public static final ResourceLocation COBWEB_SYRUP_BOTTLE = item("cobweb_syrup_bottle");
 
     public static final ResourceLocation PUMPKIN_CANDY_BASKET = item("pumpkin_candy_basket");
+    public static final ResourceLocation JACK_O_LANTERN_CANDY_BASKET = item("jack_o_lantern_candy_basket");
     public static final ResourceLocation MELON_CANDY_BASKET = item("melon_candy_basket");
 
     private static ResourceLocation item(String string) {

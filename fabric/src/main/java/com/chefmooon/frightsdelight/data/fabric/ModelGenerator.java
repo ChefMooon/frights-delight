@@ -72,6 +72,7 @@ public class ModelGenerator extends FabricModelProvider {
         registerPieBlock(FrightsDelightBlocksImpl.COBWEB_PIE.get(), blockModelGenerators);
 
         registerCandyBasketBlock(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(), blockModelGenerators);
+        registerUniqueCandyBasketBlock(FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET.get(), blockModelGenerators);
         registerCandyBasketBlock(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get(), blockModelGenerators);
 
         registerSyrupBlock(FrightsDelightBlocksImpl.ROTTEN_FLESH_SYRUP.get(), blockModelGenerators);
@@ -496,6 +497,17 @@ public class ModelGenerator extends FabricModelProvider {
                 .put(FrightsDelightTextureSlots.BASKET, LOCATION)
                 .put(TextureSlot.PARTICLE, LOCATION);
         FrightsDelightModels.TEMPLATE_BLOCK_CANDY_BASKET.create(LOCATION, textureMapping, blockModelGenerators.modelOutput);
+        blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, plainVariant(LOCATION))
+                .with(createHorizontalFacingDispatch()));
+    }
+
+    private static void registerUniqueCandyBasketBlock(Block block, BlockModelGenerators blockModelGenerators) {
+        ResourceLocation LOCATION = ModelLocationUtils.getModelLocation(block);
+        TextureMapping textureMapping = new TextureMapping()
+                .put(FrightsDelightTextureSlots.HANDLE, TextUtils.res("block/rope_handle_3d"))
+                .put(FrightsDelightTextureSlots.BASKET, LOCATION)
+                .put(TextureSlot.PARTICLE, LOCATION);
+        FrightsDelightModels.TEMPLATE_BLOCK_UNIQUE_CANDY_BASKET.create(LOCATION, textureMapping, blockModelGenerators.modelOutput);
         blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block, plainVariant(LOCATION))
                 .with(createHorizontalFacingDispatch()));
     }

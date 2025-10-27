@@ -1,5 +1,5 @@
 // 1.21.5	-999999999-01-01T00:00:00	Fright's Delight/Tags for minecraft:block
-18a7785e4b5adbcd013974e7c586e963e76f7e0b data/c/tags/block/mineable/knife.json
+0eb81694fe8a31260defbb891ae6a8ba4248e5dd data/c/tags/block/mineable/knife.json
 b8c472f7bfd6c29e0df7dfb866e989443d7cda7e data/c/tags/block/storage_blocks.json
 8f411df297e1403c1743d486bf1fa95585330d0c data/c/tags/block/storage_blocks/bone.json
 a16960af0001a9462c1ee21b876d2f6771f25dbe data/c/tags/block/storage_blocks/cobweb.json
@@ -12,6 +12,6 @@ c58d4b599a44b9b815cad72b0c827b1eacf6c603 data/c/tags/block/storage_blocks/rotten
 def6d2a5d0a2019c986611578e69d036fac9d678 data/frightsdelight/tags/block/soul_berry_bush_grow_condition.json
 fcb9b4bb6cbffa9147bb86128099ce691ef2dc47 data/frightsdelight/tags/block/wither_berry_bush_grow_condition.json
 40b8242d4e90f5e6064c911aa554b6fdf10ba664 data/minecraft/tags/block/fall_damage_resetting.json
-e361f63165d86f3a846cf2f9c0ca698d41374c7f data/minecraft/tags/block/mineable/axe.json
+bced8729234ac25c4bb219e0b6a0b403c7789ec4 data/minecraft/tags/block/mineable/axe.json
 79d94d9aa2c62f433dc6d727d02e0acf0d19f0ae data/minecraft/tags/block/mineable/pickaxe.json
 40b8242d4e90f5e6064c911aa554b6fdf10ba664 data/minecraft/tags/block/sword_efficient.json

@@ -33,6 +33,7 @@ public class ClientSetupEventsImpl {
                 FrightsDelightBlocksImpl.RING_CANDY_MOLD.get(),
 
                 FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(),
+                FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET.get(),
                 FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get()
                 );
     }
