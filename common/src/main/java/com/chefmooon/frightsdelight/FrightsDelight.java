@@ -19,6 +19,7 @@ public class FrightsDelight {
         FrightsDelightEntityTypes.init();
         FrightsDelightBiomeFeatures.init();
         FrightsDelightPlacementModifiers.init();
+        FrightsDelightAdvancements.init();
     }
     @ExpectPlatform
     public static void loggerInfo(String s) {

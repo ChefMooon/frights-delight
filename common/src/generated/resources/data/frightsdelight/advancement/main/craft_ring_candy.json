@@ -1,0 +1,99 @@
+{
+  "parent": "frightsdelight:main/craft_ring_candy_mold",
+  "criteria": {
+    "has_cobweb_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:cobweb_ring_candy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ghasttear_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:ghasttear_ring_candy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rotten_flesh_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:rotten_flesh_ring_candy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_slimeapple_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:slimeapple_ring_candy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soul_berry_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:soul_berry_ring_candy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spidereye_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:spidereye_ring_candy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_wither_berry_ring_candy": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:wither_berry_ring_candy"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "frightsdelight.advancement.craft_ring_candy.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "frightsdelight:wither_berry_ring_candy"
+    },
+    "title": {
+      "translate": "frightsdelight.advancement.craft_ring_candy"
+    }
+  },
+  "requirements": [
+    [
+      "has_rotten_flesh_ring_candy",
+      "has_spidereye_ring_candy",
+      "has_slimeapple_ring_candy",
+      "has_ghasttear_ring_candy",
+      "has_soul_berry_ring_candy",
+      "has_wither_berry_ring_candy",
+      "has_cobweb_ring_candy"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

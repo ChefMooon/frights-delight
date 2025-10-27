@@ -1,9 +1,9 @@
-// 1.21.1	2025-10-27T14:48:56.3744436	Fright's Delight/Tags for minecraft:item
+// 1.21.1	2025-10-27T16:35:43.2501558	Fright's Delight/Tags for minecraft:item
 b444edd7b0a3e60a1fde06e5077e04cd5453a5c1 data\minecraft\tags\item\wolf_food.json
 275508fca0253cb2318ec1aac1040bbe8403d5cf data\c\tags\item\storage_blocks\rotten_flesh.json
-ea1a0df32ca387e02411d7d7d5228156155421ee data\c\tags\item\foods\berry.json
 49c2ccb9eb0b07ca69fa525a4d1f4d21b959b8f8 data\c\tags\item\storage_blocks\spider_eye.json
 53a74d72a4a9939e34ad5b7938a9ebbaba12df39 data\c\tags\item\storage_blocks\fermented_spider_eye.json
+ea1a0df32ca387e02411d7d7d5228156155421ee data\c\tags\item\foods\berry.json
 b8c472f7bfd6c29e0df7dfb866e989443d7cda7e data\c\tags\item\storage_blocks.json
 77d84d3005874057b9fea305f20b948a664ab44c data\c\tags\item\foods\soup.json
 188bbc66f3a93cecbd1d4c749213ce301dbeec6c data\create\tags\item\upright_on_belt.json
