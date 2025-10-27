@@ -1,6 +1,7 @@
 package com.chefmooon.frightsdelight.data.fabric;
 
 import com.chefmooon.frightsdelight.FrightsDelight;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightEntityTypesImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
@@ -25,6 +26,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         String WAILA_CONFIG = "config.waila.plugin_" + MOD_ID;
         String FORMATTED_MOD_ID = "Fright's Delight";
         String DEATH = "death.attack." + MOD_ID;
+        String FLUID = "fluid_type." + MOD_ID + ".";
 
         translationBuilder.add("itemGroup." + MOD_ID, FORMATTED_MOD_ID);
 
@@ -151,6 +153,14 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.getDescriptionId() + ".bone_shard_requirement", "Requires 4 Bone Shards");
 
         translationBuilder.add("container.candy_basket", "Candy Basket");
+
+        translationBuilder.add(FLUID + FrightsDelightFluids.ROTTEN_FLESH_SYRUP_LOCATION.getPath(), "Rotten Flesh Syrup");
+        translationBuilder.add(FLUID + FrightsDelightFluids.SPIDEREYE_SYRUP_LOCATION.getPath(), "Spider Eye Syrup");
+        translationBuilder.add(FLUID + FrightsDelightFluids.SLIMEAPPLE_SYRUP_LOCATION.getPath(), "Slime-Apple Syrup");
+        translationBuilder.add(FLUID + FrightsDelightFluids.GHASTTEAR_SYRUP_LOCATION.getPath(), "Ghast Tear Syrup");
+        translationBuilder.add(FLUID + FrightsDelightFluids.SOUL_BERRY_SYRUP_LOCATION.getPath(), "Soul Berry Syrup");
+        translationBuilder.add(FLUID + FrightsDelightFluids.WITHER_BERRY_SYRUP_LOCATION.getPath(), "Wither Berry Syrup");
+        translationBuilder.add(FLUID + FrightsDelightFluids.COBWEB_SYRUP_LOCATION.getPath(), "Cobweb Syrup");
 
         translationBuilder.add(EFFECT + ".chills", "Chills");
         translationBuilder.add(EFFECT + ".cobwebbed", "Cobwebbed");
