@@ -1,0 +1,55 @@
+{
+  "parent": "frightsdelight:main/root",
+  "criteria": {
+    "has_jack_o_lantern_candy_basket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:jack_o_lantern_candy_basket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_melon_candy_basket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:melon_candy_basket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pumpkin_candy_basket": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:pumpkin_candy_basket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "frightsdelight.advancement.trick_or_treat.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "frightsdelight:pumpkin_candy_basket"
+    },
+    "title": {
+      "translate": "frightsdelight.advancement.trick_or_treat"
+    }
+  },
+  "requirements": [
+    [
+      "has_pumpkin_candy_basket",
+      "has_jack_o_lantern_candy_basket",
+      "has_melon_candy_basket"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

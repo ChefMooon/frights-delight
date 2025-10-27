@@ -244,6 +244,20 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(ADVANCEMENT + ".craft_bone_shard.desc", "Cut a Bone with a Knife on a Cutting Board. Can be used to protect, attack, or to make a light snack.");
         translationBuilder.add(ADVANCEMENT + ".hit_skeleton_with_bone_shard", "Bone Shattering");
         translationBuilder.add(ADVANCEMENT + ".hit_skeleton_with_bone_shard.desc", "Throw a Bone Shard at a skeleton!");
+        translationBuilder.add(ADVANCEMENT + ".craft_candy_syrup", "Candy Syrup");
+        translationBuilder.add(ADVANCEMENT + ".craft_candy_syrup.desc", "Cook a concentrated syrup in the cooking pot");
+        translationBuilder.add(ADVANCEMENT + ".craft_lollipop_mold", "Lollipop Mold");
+        translationBuilder.add(ADVANCEMENT + ".craft_lollipop_mold.desc", "Use a Knife to cut a clay block into a mold on the cutting board, then cook it");
+        translationBuilder.add(ADVANCEMENT + ".craft_lollipop_lollipop", "Lollipop Lollipop");
+        translationBuilder.add(ADVANCEMENT + ".craft_lollipop_lollipop.desc", "Add 4 bone shards and any syrup to a Lollipop Mold and wait for it to harden");
+        translationBuilder.add(ADVANCEMENT + ".craft_ring_candy_mold", "Ring Candy Mold");
+        translationBuilder.add(ADVANCEMENT + ".craft_ring_candy_mold.desc", "Use a Glass Bottle to turn a clay block into a mold on the cutting board, then cook it");
+        translationBuilder.add(ADVANCEMENT + ".craft_ring_candy", "Life Saver");
+        translationBuilder.add(ADVANCEMENT + ".craft_ring_candy.desc", "Add any syrup to a Ring Candy Mold and wait for it to harden");
+        translationBuilder.add(ADVANCEMENT + ".trick_or_treat", "Trick or Treat");
+        translationBuilder.add(ADVANCEMENT + ".trick_or_treat.desc", "Craft a Candy Basket to hold your most valuable treats!");
+        translationBuilder.add(ADVANCEMENT + ".mystery_candy", "Mystery Candy");
+        translationBuilder.add(ADVANCEMENT + ".mystery_candy.desc", "When there is more than one item in the basket they can be shuffled for a surprise");
         translationBuilder.add(ADVANCEMENT + ".frd_master", "Master of Fright");
         translationBuilder.add(ADVANCEMENT + ".frd_master.desc", "Conquer all food and drink items in " + FORMATTED_MOD_ID);
 

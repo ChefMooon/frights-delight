@@ -1,0 +1,33 @@
+{
+  "parent": "frightsdelight:main/craft_candy_syrup",
+  "criteria": {
+    "has_lollipop_mold": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:lollipop_mold"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "frightsdelight.advancement.craft_lollipop_mold.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "frightsdelight:lollipop_mold"
+    },
+    "title": {
+      "translate": "frightsdelight.advancement.craft_lollipop_mold"
+    }
+  },
+  "requirements": [
+    [
+      "has_lollipop_mold"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

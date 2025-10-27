@@ -1,0 +1,99 @@
+{
+  "parent": "frightsdelight:main/root",
+  "criteria": {
+    "has_cobweb_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:cobweb_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ghasttear_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:ghasttear_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rotten_flesh_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:rotten_flesh_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_slimeapple_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:slimeapple_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_soul_berry_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:soul_berry_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_spidereye_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:spidereye_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_wither_berry_syrup_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "frightsdelight:wither_berry_syrup_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "frightsdelight.advancement.craft_candy_syrup.desc"
+    },
+    "icon": {
+      "count": 1,
+      "id": "frightsdelight:rotten_flesh_syrup_bottle"
+    },
+    "title": {
+      "translate": "frightsdelight.advancement.craft_candy_syrup"
+    }
+  },
+  "requirements": [
+    [
+      "has_rotten_flesh_syrup_bottle",
+      "has_spidereye_syrup_bottle",
+      "has_slimeapple_syrup_bottle",
+      "has_ghasttear_syrup_bottle",
+      "has_soul_berry_syrup_bottle",
+      "has_wither_berry_syrup_bottle",
+      "has_cobweb_syrup_bottle"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

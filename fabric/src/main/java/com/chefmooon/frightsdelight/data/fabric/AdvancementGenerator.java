@@ -1,5 +1,7 @@
 package com.chefmooon.frightsdelight.data.fabric;
 
+import com.chefmooon.frightsdelight.common.advancement.CandyBasketShuffleTrigger;
+import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightEntityTypesImpl;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
@@ -114,6 +116,58 @@ public class AdvancementGenerator extends FabricAdvancementProvider {
                 .addCriterion("has_punchbowl_wither_berry", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY.get()))
                 .requirements(AdvancementRequirements.Strategy.OR)
                 .save(consumer, getAdvancementName("craft_punchbowl"));
+
+        AdvancementHolder candySyrup = getAdvancement(root, FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE.get(), "craft_candy_syrup", AdvancementType.TASK, true, true, false)
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SPIDEREYE_SYRUP_BOTTLE.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SPIDEREYE_SYRUP_BOTTLE.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SLIMEAPPLE_SYRUP_BOTTLE.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SLIMEAPPLE_SYRUP_BOTTLE.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.GHASTTEAR_SYRUP_BOTTLE.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.GHASTTEAR_SYRUP_BOTTLE.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SOUL_BERRY_SYRUP_BOTTLE.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUL_BERRY_SYRUP_BOTTLE.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.WITHER_BERRY_SYRUP_BOTTLE.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.WITHER_BERRY_SYRUP_BOTTLE.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.COBWEB_SYRUP_BOTTLE.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.COBWEB_SYRUP_BOTTLE.get()))
+                .requirements(AdvancementRequirements.Strategy.OR)
+                .save(consumer, getAdvancementName("craft_candy_syrup"));
+
+        AdvancementHolder lollipopMold = getAdvancement(candySyrup, FrightsDelightItemsImpl.LOLLIPOP_MOLD.get(), "craft_lollipop_mold", AdvancementType.TASK, true, true, false)
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.LOLLIPOP_MOLD.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get()))
+                .save(consumer, getAdvancementName("craft_lollipop_mold"));
+
+        AdvancementHolder lollipopLollipop = getAdvancement( lollipopMold, FrightsDelightItemsImpl.SOUL_BERRY_LOLLIPOP.get(), "craft_lollipop_lollipop", AdvancementType.TASK, true, true, false)
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.ROTTEN_FLESH_LOLLIPOP.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.ROTTEN_FLESH_LOLLIPOP.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SPIDEREYE_LOLLIPOP.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SPIDEREYE_LOLLIPOP.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SLIMEAPPLE_LOLLIPOP.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SLIMEAPPLE_LOLLIPOP.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.GHASTTEAR_LOLLIPOP.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.GHASTTEAR_LOLLIPOP.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SOUL_BERRY_LOLLIPOP.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUL_BERRY_LOLLIPOP.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.WITHER_BERRY_LOLLIPOP.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.WITHER_BERRY_LOLLIPOP.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.COBWEB_LOLLIPOP.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.COBWEB_LOLLIPOP.get()))
+                .requirements(AdvancementRequirements.Strategy.OR)
+                .save(consumer, getAdvancementName("craft_lollipop_lollipop"));
+
+        AdvancementHolder ringCandyMold = getAdvancement(candySyrup, FrightsDelightItemsImpl.RING_CANDY_MOLD.get(), "craft_ring_candy_mold", AdvancementType.TASK, true, true, false)
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.RING_CANDY_MOLD.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightBlocksImpl.RING_CANDY_MOLD.get()))
+                .save(consumer, getAdvancementName("craft_ring_candy_mold"));
+
+        AdvancementHolder ringCandy = getAdvancement(ringCandyMold, FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY.get(), "craft_ring_candy", AdvancementType.TASK, true, true, false)
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.ROTTEN_FLESH_RING_CANDY.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.ROTTEN_FLESH_RING_CANDY.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SPIDEREYE_RING_CANDY.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SPIDEREYE_RING_CANDY.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SLIMEAPPLE_RING_CANDY.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SLIMEAPPLE_RING_CANDY.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.GHASTTEAR_RING_CANDY.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.GHASTTEAR_RING_CANDY.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.SOUL_BERRY_RING_CANDY.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.SOUL_BERRY_RING_CANDY.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.COBWEB_RING_CANDY.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.COBWEB_RING_CANDY.get()))
+                .requirements(AdvancementRequirements.Strategy.OR)
+                .save(consumer, getAdvancementName("craft_ring_candy"));
+
+        AdvancementHolder trickOrTreat = getAdvancement(root, FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get(), "trick_or_treat", AdvancementType.TASK, true, true, false)
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.JACK_O_LANTERN_CANDY_BASKET.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.JACK_O_LANTERN_CANDY_BASKET.get()))
+                .addCriterion(RecipeProvider.getHasName(FrightsDelightItemsImpl.MELON_CANDY_BASKET.get()), InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.MELON_CANDY_BASKET.get()))
+                .requirements(AdvancementRequirements.Strategy.OR)
+                .save(consumer, getAdvancementName("trick_or_treat"));
+
+        AdvancementHolder mysteryCandy = getAdvancement(trickOrTreat, FrightsDelightItemsImpl.JACK_O_LANTERN_CANDY_BASKET.get(), "mystery_candy", AdvancementType.TASK, true, true, false)
+                .addCriterion("shuffle_candy_basket", CandyBasketShuffleTrigger.TriggerInstance.simple())
+                .save(consumer, getAdvancementName("mystery_candy"));
 
         AdvancementHolder frdMaster = getAdvancement(craftPunchBowl, FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS.get(), "frd_master", AdvancementType.CHALLENGE, true, true, false)
                 .addCriterion("has_apple_slime", InventoryChangeTrigger.TriggerInstance.hasItems(FrightsDelightItemsImpl.APPLE_SLIME.get()))

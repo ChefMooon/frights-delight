@@ -43,6 +43,7 @@ public class AbstractCandyBasketBlockImpl extends AbstractCandyBasketBlock {
                         Supplier<SoundEvent> shuffleSound = level.getBlockState(pos).getBlock() instanceof AbstractCandyBasketBlockImpl candyBasketBlock ? candyBasketBlock.getCandyBasketType().getShuffleSound() : null;
                         if (shuffleSound != null)
                             level.playLocalSound(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, shuffleSound.get(), SoundSource.PLAYERS, Math.min(0.3f + 0.04f * candyBasketBlockEntity.getFilledSlotsCount(), 1.0f), 1.0f, false);
+                        if (player instanceof ServerPlayer serverPlayer) FrightsDelightAdvancements.CANDY_BASKET_SHUFFLE_TRIGGER.get().trigger(serverPlayer);
                         return InteractionResult.SUCCESS;
                     }
                 } else {

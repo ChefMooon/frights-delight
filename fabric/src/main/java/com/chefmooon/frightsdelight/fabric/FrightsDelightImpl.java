@@ -30,6 +30,7 @@ public class FrightsDelightImpl implements ModInitializer {
         FrightsDelightCreativeTabs.register();
         FrightsDelightPlacementModifiersImpl.register();
         FrightsDelightLootTableEvents.registerLootTable();
+        FrightsDelightAdvancementsImpl.register();
 
         VillagerEventsImpl.init();
 

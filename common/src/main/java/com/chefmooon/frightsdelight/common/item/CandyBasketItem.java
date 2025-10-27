@@ -1,7 +1,9 @@
 package com.chefmooon.frightsdelight.common.item;
 
 import com.chefmooon.frightsdelight.common.data.types.CandyBasketType;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightAdvancements;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -61,9 +63,9 @@ public class CandyBasketItem extends BlockItem {
                 }
                 basketStack.set(DataComponents.CONTAINER, ItemContainerContents.fromItems(itemStackList));
                 Supplier<SoundEvent> shuffleSound = candyBasketType.getShuffleSound();
-                if (shuffleSound != null) {
+                if (shuffleSound != null)
                     level.playLocalSound(player, shuffleSound.get(), SoundSource.PLAYERS, Math.min(0.3f + 0.04f * itemStackList.size(), 1.0f), 1.0f);
-                }
+                if (player instanceof ServerPlayer serverPlayer) FrightsDelightAdvancements.CANDY_BASKET_SHUFFLE_TRIGGER.get().trigger(serverPlayer);
                 return InteractionResult.SUCCESS;
             }
         }

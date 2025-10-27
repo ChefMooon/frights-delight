@@ -38,6 +38,7 @@ public class FrightsDelightImpl {
         FrightsDelightPlacementModifiersImpl.register(modEventBus);
         FrightsDelightLootModifiersImpl.register(modEventBus);
         FrightsDelightConditionCodecsImpl.register(modEventBus);
+        FrightsDelightAdvancementsImpl.register(modEventBus);
 
         //FrightsDelightBiomeModifiersImpl.init();
 
