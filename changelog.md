@@ -9,6 +9,9 @@ NeoForge, and Fabric
 
 ### Added
 
+- Advancements
+  - 7 New Advancements related to the new food items and blocks
+  - Added 28 items to Master of Fright Advancement
 - New Food
     - Pie:
         - Rotten Flesh Pie (+Slice)

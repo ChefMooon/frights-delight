@@ -1,10 +1,12 @@
 package com.chefmooon.frightsdelight.common.item;
 
 import com.chefmooon.frightsdelight.common.data.types.CandyBasketType;
+import com.chefmooon.frightsdelight.common.registry.FrightsDelightAdvancements;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlockEntities;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.ContainerHelper;
@@ -79,7 +81,9 @@ public class CandyBasketItem extends BlockItem {
                         basketStack.addTagElement("Items", compoundTag);
 
                         Supplier<SoundEvent> shuffleSound = candyBasketType.getShuffleSound();
-                        if (shuffleSound != null) level.playLocalSound(player.getX(), player.getY(), player.getZ(), shuffleSound.get(), SoundSource.PLAYERS, Math.min(0.3f + 0.04f * itemStackList.size(), 1.0f), 1.0f, false);
+                        if (shuffleSound != null)
+                            level.playLocalSound(player.getX(), player.getY(), player.getZ(), shuffleSound.get(), SoundSource.PLAYERS, Math.min(0.3f + 0.04f * itemStackList.size(), 1.0f), 1.0f, false);
+                        if (player instanceof ServerPlayer serverPlayer) FrightsDelightAdvancements.CANDY_BASKET_SHUFFLE_TRIGGER.trigger(serverPlayer);
                         return InteractionResultHolder.success(basketStack);
                     }
                 }

@@ -1,0 +1,38 @@
+{
+  "parent": "frightsdelight:main/craft_candy_syrup",
+  "criteria": {
+    "has_ring_candy_mold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "frightsdelight:ring_candy_mold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "frightsdelight.advancement.craft_ring_candy_mold.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "frightsdelight:ring_candy_mold"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "frightsdelight.advancement.craft_ring_candy_mold"
+    }
+  },
+  "requirements": [
+    [
+      "has_ring_candy_mold"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

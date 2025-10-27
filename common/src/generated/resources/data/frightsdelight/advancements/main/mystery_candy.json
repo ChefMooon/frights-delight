@@ -1,0 +1,30 @@
+{
+  "parent": "frightsdelight:main/trick_or_treat",
+  "criteria": {
+    "shuffle_candy_basket": {
+      "conditions": {},
+      "trigger": "frightsdelight:use_baking_mat"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "frightsdelight.advancement.mystery_candy.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "frightsdelight:jack_o_lantern_candy_basket"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "frightsdelight.advancement.mystery_candy"
+    }
+  },
+  "requirements": [
+    [
+      "shuffle_candy_basket"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

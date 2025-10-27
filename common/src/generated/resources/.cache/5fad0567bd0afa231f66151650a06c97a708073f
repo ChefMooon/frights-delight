@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-27T14:17:28.8341137	Fright's Delight/Recipes
+// 1.20.1	2025-10-27T15:54:04.800624	Fright's Delight/Recipes
 f4f2d3f7794656a26c6f52beb34bf369da927d2a data\frightsdelight\advancements\recipes\food\farmersdelight\cooking\spidereye_syrup_bottle.json
 70da435a6eb2fe15f1da0b56039126aafc219577 data\frightsdelight\recipes\rotten_flesh_pie_from_slices.json
 98ed4d4650530285f5f1eb60b55bcf1229f22c23 data\frightsdelight\advancements\recipes\food\soul_berry_cheesecake_from_slices.json
@@ -31,7 +31,6 @@ c28dbaf7d20e9fbb7c96b4685ce175417e8d3624 data\frightsdelight\advancements\recipe
 11c18010faaafeba2292ca1c405e02bae207d7e8 data\frightsdelight\advancements\recipes\misc\rotten_tomato_from_rotten_tomato_crate.json
 5850c4f4072ec49e16b75d8c6e4c2a164fdbf25f data\frightsdelight\recipes\farmersdelight\cooking\wither_berry_syrup_bottle.json
 1650db0a02f5593f4737a89c993bbe822d9cd856 data\frightsdelight\advancements\recipes\misc\phantom_membrane_from_phantom_crate.json
-41e02841f5020891baa405ebf22d46815dd35051 data\frightsdelight\recipes\farmersdelight\cutting\pumpkin_from_jack_o_lantern_candy_basket.json
 25e0601dd380e5b38efd190fd3bf338c846fa540 data\frightsdelight\advancements\recipes\food\cookie_slime.json
 3f23df162843ef75b8a64875571949c3861b1e22 data\frightsdelight\advancements\recipes\food\slimeapple_pie_from_slices.json
 f5bdbf8a7fabd9720339f6df0cb93aac807785f8 data\frightsdelight\recipes\cookie_wither_berry.json
