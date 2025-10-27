@@ -127,19 +127,24 @@ public class FrightsDelightItems {
     public static final ResourceLocation PUNCHBOWL_COBWEB = item("punchbowl_cobweb");
 
     public static final ResourceLocation ROTTEN_FLESH_PIE = item("rotten_flesh_pie");
-    public static final ResourceLocation SLIMEAPPLE_PIE = item("slimeapple_pie");
-    public static final ResourceLocation SPIDEREYE_PIE = item("spidereye_pie");
-    public static final ResourceLocation GHASTTEAR_PIE = item("ghasttear_pie");
-    public static final ResourceLocation SOUL_BERRY_CHEESECAKE = item("soul_berry_cheesecake");
-    public static final ResourceLocation WITHER_BERRY_CHEESECAKE = item("wither_berry_cheesecake");
-    public static final ResourceLocation COBWEB_PIE = item("cobweb_pie");
-
     public static final ResourceLocation ROTTEN_FLESH_PIE_SLICE = item("rotten_flesh_pie_slice");
+
+    public static final ResourceLocation SLIMEAPPLE_PIE = item("slimeapple_pie");
     public static final ResourceLocation SLIMEAPPLE_PIE_SLICE = item("slimeapple_pie_slice");
+
+    public static final ResourceLocation SPIDEREYE_PIE = item("spidereye_pie");
     public static final ResourceLocation SPIDEREYE_PIE_SLICE = item("spidereye_pie_slice");
+
+    public static final ResourceLocation GHASTTEAR_PIE = item("ghasttear_pie");
     public static final ResourceLocation GHASTTEAR_PIE_SLICE = item("ghasttear_pie_slice");
+
+    public static final ResourceLocation SOUL_BERRY_CHEESECAKE = item("soul_berry_cheesecake");
     public static final ResourceLocation SOUL_BERRY_CHEESECAKE_SLICE = item("soul_berry_cheesecake_slice");
+
+    public static final ResourceLocation WITHER_BERRY_CHEESECAKE = item("wither_berry_cheesecake");
     public static final ResourceLocation WITHER_BERRY_CHEESECAKE_SLICE = item("wither_berry_cheesecake_slice");
+
+    public static final ResourceLocation COBWEB_PIE = item("cobweb_pie");
     public static final ResourceLocation COBWEB_PIE_SLICE = item("cobweb_pie_slice");
 
     public static final ResourceLocation ROTTEN_FLESH_SYRUP_BOTTLE = item("rotten_flesh_syrup_bottle");
