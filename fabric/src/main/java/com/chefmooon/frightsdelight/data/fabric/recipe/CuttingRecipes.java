@@ -27,6 +27,9 @@ public class CuttingRecipes {
         CuttingBoardRecipeBuilder.create(FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET, Ingredient.of(CommonTags.C_TOOLS_KNIFE), Items.PUMPKIN)
                 .output(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "rope")))
                 .save(exporter, suffix(RecipeProvider.getConversionRecipeName(Items.PUMPKIN, FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET)));
+        CuttingBoardRecipeBuilder.create(FrightsDelightItemsImpl.JACK_O_LANTERN_CANDY_BASKET, Ingredient.of(CommonTags.C_TOOLS_KNIFE), Items.JACK_O_LANTERN)
+                .output(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "rope")))
+                .save(exporter, suffix(RecipeProvider.getConversionRecipeName(Items.JACK_O_LANTERN, FrightsDelightItemsImpl.JACK_O_LANTERN_CANDY_BASKET)));
         CuttingBoardRecipeBuilder.create(FrightsDelightItemsImpl.MELON_CANDY_BASKET, Ingredient.of(CommonTags.C_TOOLS_KNIFE), Items.MELON)
                 .output(BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "rope")))
                 .save(exporter, suffix(RecipeProvider.getConversionRecipeName(Items.MELON, FrightsDelightItemsImpl.MELON_CANDY_BASKET)));

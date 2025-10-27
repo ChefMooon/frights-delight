@@ -69,6 +69,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .save(exporter, RecipeProvider.getSmeltingRecipeName(FrightsDelightItemsImpl.RING_CANDY_MOLD));
 
         candyBasketRecipe(FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET, Items.PUMPKIN, exporter);
+        candyBasketRecipe(FrightsDelightItemsImpl.JACK_O_LANTERN_CANDY_BASKET, Items.JACK_O_LANTERN, exporter);
         candyBasketRecipe(FrightsDelightItemsImpl.MELON_CANDY_BASKET, Items.MELON, exporter);
     }
 

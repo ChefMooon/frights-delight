@@ -36,6 +36,7 @@ public class ClientSetupEventsImpl {
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
                 FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET,
+                FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET,
                 FrightsDelightBlocksImpl.MELON_CANDY_BASKET
 //                FrightsDelightBlocksImpl.CREEPER_CANDY_BASKET,
 //                FrightsDelightBlocksImpl.SKELETON_CANDY_BASKET,

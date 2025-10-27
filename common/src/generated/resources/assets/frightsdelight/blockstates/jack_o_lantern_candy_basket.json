@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "frightsdelight:block/jack_o_lantern_candy_basket",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "frightsdelight:block/jack_o_lantern_candy_basket"
+    },
+    "facing=south": {
+      "model": "frightsdelight:block/jack_o_lantern_candy_basket",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "frightsdelight:block/jack_o_lantern_candy_basket",
+      "y": 270
+    }
+  }
+}

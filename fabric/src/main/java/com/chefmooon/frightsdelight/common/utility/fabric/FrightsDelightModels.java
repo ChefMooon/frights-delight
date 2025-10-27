@@ -30,6 +30,7 @@ public class FrightsDelightModels {
     public static final ModelTemplate TEMPLATE_RING_CANDY_MOLD_SYRUP = block("template_ring_candy_mold_syrup", FrightsDelightTextureSlots.SYRUP, TextureSlot.TOP, TextureSlot.BOTTOM, TextureSlot.SIDE, TextureSlot.PARTICLE);
 
     public static final ModelTemplate TEMPLATE_BLOCK_CANDY_BASKET = block("template_block_candy_basket", FrightsDelightTextureSlots.HANDLE, FrightsDelightTextureSlots.BASKET, TextureSlot.PARTICLE);
+    public static final ModelTemplate TEMPLATE_BLOCK_UNIQUE_CANDY_BASKET = block("template_block_unique_candy_basket", FrightsDelightTextureSlots.HANDLE, FrightsDelightTextureSlots.BASKET, TextureSlot.PARTICLE);
     public static final ModelTemplate TEMPLATE_ENTITY_CANDY_BASKET = block("template_entity_candy_basket", FrightsDelightTextureSlots.HANDLE, FrightsDelightTextureSlots.BASKET, TextureSlot.PARTICLE);
 
     public static final ModelTemplate TEMPLATE_CROP_CROSS = block("template_crop_cross", TextureSlot.CROSS);
