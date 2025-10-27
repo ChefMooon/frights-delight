@@ -27,7 +27,7 @@ Minecraft 1.21.5 Fabric Release!
         - Syrup for each candy type (7 variants)
 - New Blocks
     - Lollipop Mold & Ring Candy Mold
-    - Candy Basket
+    - Candy Basket: Melon Candy Basket, Pumpkin Candy Basket, Jack o'Lantern Candy Basket
         - Can hold up to 9 edible items
         - Items can be added/removed/shuffled in item or block form
 - New Config Options
