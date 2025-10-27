@@ -148,6 +148,7 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(FrightsDelightItemsImpl.COBWEB_RING_CANDY, "Cobweb Ring Candy");
 
         translationBuilder.add(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET, "Pumpkin Candy Basket");
+        translationBuilder.add(FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET, "Jack o'Lantern Candy Basket");
         translationBuilder.add(FrightsDelightBlocksImpl.MELON_CANDY_BASKET, "Melon Candy Basket");
 
         translationBuilder.add(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.getDescriptionId() + ".bone_shard_requirement", "Requires 4 Bone Shards");

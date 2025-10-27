@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-27T09:40:41.0337167	Fright's Delight/Block Loot Tables
+// 1.20.1	2025-10-27T14:17:28.8341137	Fright's Delight/Block Loot Tables
 b1096ebba38c41358312a640469892671ce32a0c data\frightsdelight\loot_tables\blocks\rotten_tomato_crate.json
 198049121ca74e9a3db35143383a6012d0e19301 data\frightsdelight\loot_tables\blocks\bone_crate.json
 8b20a7b76946d349acae067393688261452a9d71 data\frightsdelight\loot_tables\blocks\punch_spidereye.json
@@ -7,6 +7,7 @@ b857c5c4691efc660afae5184b731dd19d5391ed data\frightsdelight\loot_tables\blocks\
 3bec660089b5b092eee1eb3f68dfe0792fe081ba data\frightsdelight\loot_tables\blocks\lollipop_mold.json
 b7cd3385e69d2936dc2ec3636e1f5f7c955870c9 data\frightsdelight\loot_tables\blocks\punch_slimeapple.json
 c22600d6b7c0d3e9234665778e0debc2926e6911 data\frightsdelight\loot_tables\blocks\poisonous_potato_crate.json
+93382889c4dcb92f3a5c98628ce78a264dd415ef data\frightsdelight\loot_tables\blocks\jack_o_lantern_candy_basket.json
 eda6ad55deea98434ffa1840efde51e85faf60c7 data\frightsdelight\loot_tables\blocks\pumpkin_candy_basket.json
 08b3cc395d16a7ce3c9f4b82eee8c24a5c244cc4 data\frightsdelight\loot_tables\blocks\punch_cobweb.json
 7337a0b528a4e91425790feeb720da0018da132d data\frightsdelight\loot_tables\blocks\punch_soul_berry.json

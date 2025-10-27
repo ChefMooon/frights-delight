@@ -25,6 +25,8 @@ public class FrightsDelightBlocksImpl {
 
     public static final Block PUMPKIN_CANDY_BASKET = registerBlock(FrightsDelightBlocks.PUMPKIN_CANDY_BASKET,
             new AbstractCandyBasketBlockImpl(BlockBehaviour.Properties.copy(Blocks.PUMPKIN), CandyBasketType.PUMPKIN));
+    public static final Block JACK_O_LANTERN_CANDY_BASKET = registerBlock(FrightsDelightBlocks.JACK_O_LANTERN_CANDY_BASKET,
+            new AbstractCandyBasketBlockImpl(BlockBehaviour.Properties.copy(Blocks.JACK_O_LANTERN), CandyBasketType.PUMPKIN));
     public static final Block MELON_CANDY_BASKET = registerBlock(FrightsDelightBlocks.MELON_CANDY_BASKET,
             new AbstractCandyBasketBlockImpl(BlockBehaviour.Properties.copy(Blocks.MELON), CandyBasketType.MELON));
 

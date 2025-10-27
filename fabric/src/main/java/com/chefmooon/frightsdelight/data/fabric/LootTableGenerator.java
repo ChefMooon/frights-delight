@@ -38,6 +38,7 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
     public void generate() {
 
         this.createCandyBasketDrops(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET);
+        this.createCandyBasketDrops(FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET);
         this.createCandyBasketDrops(FrightsDelightBlocksImpl.MELON_CANDY_BASKET);
 
         this.dropSelf(FrightsDelightBlocksImpl.FLESH_CRATE);

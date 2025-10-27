@@ -28,6 +28,7 @@ public class FrightsDelightBlockEntitiesImpl {
     public static final Supplier<BlockEntityType<CandyBasketBlockEntity>> CANDY_BASKET = BLOCK_ENTITIES.register(FrightsDelightBlockEntities.CANDY_BASKET.getPath(),
             () -> BlockEntityType.Builder.of(CandyBasketBlockEntity::new,
                     FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get(),
+                    FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET.get(),
                     FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get()
             ).build(null));
 

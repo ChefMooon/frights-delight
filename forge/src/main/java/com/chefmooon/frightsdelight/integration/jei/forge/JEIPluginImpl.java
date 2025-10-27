@@ -56,6 +56,7 @@ public class JEIPluginImpl extends JEIPlugin implements IModPlugin {
 
         List<ItemStack> candyBasketStack = List.of(
                 FrightsDelightItemsImpl.PUMPKIN_CANDY_BASKET.get().getDefaultInstance(),
+                FrightsDelightItemsImpl.JACK_O_LANTERN_CANDY_BASKET.get().getDefaultInstance(),
                 FrightsDelightItemsImpl.MELON_CANDY_BASKET.get().getDefaultInstance()
         );
         registration.addIngredientInfo(candyBasketStack, VanillaTypes.ITEM_STACK, TextUtils.getTranslatable("rei.info.candy_basket"));

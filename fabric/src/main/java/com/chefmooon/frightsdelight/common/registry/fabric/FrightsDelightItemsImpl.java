@@ -29,6 +29,8 @@ public class FrightsDelightItemsImpl {
 
     public static final Item PUMPKIN_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.PUMPKIN_CANDY_BASKET,
             new CandyBasketItem(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET, noStack(), CandyBasketType.PUMPKIN));
+    public static final Item JACK_O_LANTERN_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.JACK_O_LANTERN_CANDY_BASKET,
+            new CandyBasketItem(FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET, noStack(), CandyBasketType.PUMPKIN));
     public static final Item MELON_CANDY_BASKET = registerItemWithTab(FrightsDelightItems.MELON_CANDY_BASKET,
             new CandyBasketItem(FrightsDelightBlocksImpl.MELON_CANDY_BASKET, noStack(), CandyBasketType.MELON));
 
