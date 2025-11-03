@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:wither_berry_cheesecake_from_slices"
+        "recipe": "frightsdelight:wither_berry_cheesecake_from_slices"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:wither_berry_cheesecake_from_slices"
+      "frightsdelight:wither_berry_cheesecake_from_slices"
     ]
   }
 }

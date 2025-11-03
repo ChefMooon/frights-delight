@@ -17,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/punch_rotten_flesh"
+        "recipe": "frightsdelight:cooking/punch_rotten_flesh"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/punch_rotten_flesh"
+      "frightsdelight:cooking/punch_rotten_flesh"
     ]
   }
 }

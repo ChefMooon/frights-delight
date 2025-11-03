@@ -1,6 +1,5 @@
 {
   "type": "farmersdelight:cooking",
-  "category": "meals",
   "container": {
     "count": 1,
     "id": "minecraft:bowl"
@@ -13,6 +12,7 @@
     "minecraft:spider_eye",
     "minecraft:rotten_flesh"
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "count": 1,
     "id": "frightsdelight:monster_mash"

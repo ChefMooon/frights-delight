@@ -1,6 +1,5 @@
 {
   "type": "farmersdelight:cooking",
-  "category": "meals",
   "container": {
     "count": 1,
     "id": "frightsdelight:bone_shard"
@@ -12,6 +11,7 @@
     "minecraft:ghast_tear",
     "minecraft:ghast_tear"
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "count": 1,
     "id": "frightsdelight:bone_kebab_ghast_tear"

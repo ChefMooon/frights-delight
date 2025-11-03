@@ -17,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/punch_spidereye"
+        "recipe": "frightsdelight:cooking/punch_spidereye"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/punch_spidereye"
+      "frightsdelight:cooking/punch_spidereye"
     ]
   }
 }

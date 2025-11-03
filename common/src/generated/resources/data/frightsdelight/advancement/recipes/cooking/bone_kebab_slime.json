@@ -16,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/bone_kebab_slime"
+        "recipe": "frightsdelight:cooking/bone_kebab_slime"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/bone_kebab_slime"
+      "frightsdelight:cooking/bone_kebab_slime"
     ]
   }
 }

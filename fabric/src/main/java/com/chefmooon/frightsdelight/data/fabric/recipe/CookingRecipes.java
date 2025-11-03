@@ -2,6 +2,8 @@ package com.chefmooon.frightsdelight.data.fabric.recipe;
 
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.chefmooon.frightsdelight.common.tag.CommonTags;
+import com.chefmooon.frightsdelight.common.utility.TextUtils;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -21,7 +23,7 @@ public class CookingRecipes {
                 .addIngredient(Items.APPLE)
                 .unlockedByAnyIngredient(Items.SLIME_BALL, Items.APPLE)
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.APPLE_SLIME.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.APPLE_SLIME.get())));
 
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, FrightsDelightItemsImpl.UNDEAD_KEBAB.get(), 1, 100, 1.0F, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .addIngredient(Items.ROTTEN_FLESH)
@@ -29,55 +31,55 @@ public class CookingRecipes {
                 .addIngredient(Items.SPIDER_EYE)
                 .unlockedByAnyIngredient(Items.ROTTEN_FLESH, Items.GHAST_TEAR, Items.SPIDER_EYE, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.UNDEAD_KEBAB.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.UNDEAD_KEBAB.get())));
 
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH.get(), 1, 100, 1.0F, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .addIngredient(Items.ROTTEN_FLESH, 2)
                 .unlockedByAnyIngredient(Items.ROTTEN_FLESH, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH.get())));
 
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, FrightsDelightItemsImpl.BONE_KEBAB_SPIDER_EYE.get(), 1, 100, 1.0F, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .addIngredient(Items.SPIDER_EYE, 3)
                 .unlockedByAnyIngredient(Items.SPIDER_EYE, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_SPIDER_EYE.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_SPIDER_EYE.get())));
 
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, FrightsDelightItemsImpl.BONE_KEBAB_SLIME.get(), 1, 100, 1.0F, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .addIngredient(Items.SLIME_BALL, 3)
                 .unlockedByAnyIngredient(Items.SLIME_BALL, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_SLIME.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_SLIME.get())));
 
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, FrightsDelightItemsImpl.BONE_KEBAB_SLIMEAPPLE.get(), 1, 100, 1.0F, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .addIngredient(FrightsDelightItemsImpl.APPLE_SLIME.get(), 2)
                 .unlockedByAnyIngredient(FrightsDelightItemsImpl.APPLE_SLIME.get(), FrightsDelightItemsImpl.BONE_SHARD.get())
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_SLIMEAPPLE.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_SLIMEAPPLE.get())));
 
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, FrightsDelightItemsImpl.WEB_ON_STICK.get(), 1, 100, 1.0F, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .addIngredient(Items.COBWEB, 2)
                 .unlockedByAnyIngredient(Items.COBWEB, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.WEB_ON_STICK.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.WEB_ON_STICK.get())));
 
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, FrightsDelightItemsImpl.BONE_KEBAB_GHAST_TEAR.get(), 1, 100, 1.0F, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .addIngredient(Items.GHAST_TEAR, 3)
                 .unlockedByAnyIngredient(Items.GHAST_TEAR, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_GHAST_TEAR.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_GHAST_TEAR.get())));
 
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, FrightsDelightItemsImpl.BONE_KEBAB_SOUL_BERRY.get(), 1, 100, 1.0F, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .addIngredient(FrightsDelightItemsImpl.SOUL_BERRY.get(), 2)
                 .unlockedByAnyIngredient(FrightsDelightItemsImpl.SOUL_BERRY.get(), FrightsDelightItemsImpl.BONE_SHARD.get())
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_SOUL_BERRY.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_SOUL_BERRY.get())));
 
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, FrightsDelightItemsImpl.BONE_KEBAB_WITHER_BERRY.get(), 1, 100, 1.0F, FrightsDelightItemsImpl.BONE_SHARD.get())
                 .addIngredient(FrightsDelightItemsImpl.WITHER_BERRY.get(), 2)
                 .unlockedByAnyIngredient(FrightsDelightItemsImpl.WITHER_BERRY.get(), FrightsDelightItemsImpl.BONE_SHARD.get())
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_WITHER_BERRY.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.BONE_KEBAB_WITHER_BERRY.get())));
 
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, FrightsDelightItemsImpl.MONSTER_MASH.get(), 1, 100, 1.0F, Items.BOWL)
                 .addIngredient(Items.GHAST_TEAR)
@@ -85,14 +87,14 @@ public class CookingRecipes {
                 .addIngredient(Items.ROTTEN_FLESH)
                 .unlockedByAnyIngredient(Items.SPIDER_EYE, Items.SPIDER_EYE, Items.ROTTEN_FLESH)
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.MONSTER_MASH.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.MONSTER_MASH.get())));
 
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS.get(), 1, 75, 2.0F, Items.BOWL)
                 .addIngredient(Items.SLIME_BALL, 2)
                 .addIngredient(ModItems.RAW_PASTA.get())
                 .unlockedByAnyIngredient(FrightsDelightItemsImpl.SOUL_BERRY.get())
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS.get()));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS.get())));
 
         punchRecipe(holderGetter, FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get(), Items.ROTTEN_FLESH, recipeOutput);
         punchRecipe(holderGetter, FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get(), Items.SPIDER_EYE, recipeOutput);
@@ -128,16 +130,16 @@ public class CookingRecipes {
                 .addIngredient(Items.WATER_BUCKET)
                 .unlockedByAnyIngredient(mainIngredient, Items.SUGAR, Items.WATER_BUCKET)
                 .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(output));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(output)));
     }
 
     private static void soupRecipe(HolderGetter<Item> holderGetter, Item output, Item mainIngredient, RecipeOutput recipeOutput) {
         CookingPotRecipeBuilder.cookingPotRecipe(holderGetter, output, 1, 200, 2.0F, Items.BOWL)
-                .addIngredient(CommonTags.C_FOODS_VEGETABLE)
+                .addIngredient(ConventionalItemTags.VEGETABLE_FOODS)
                 .addIngredient(mainIngredient)
                 .unlockedByAnyIngredient(mainIngredient)
                 .setRecipeBookCategory(CookingPotBookCategory.MEALS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(output));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(output)));
     }
 
     private static void syrupRecipe(HolderGetter<Item> holderGetter, Item output, Item mainIngredient, RecipeOutput recipeOutput) {
@@ -147,6 +149,6 @@ public class CookingRecipes {
                 .addIngredient(Items.WATER_BUCKET, 1)
                 .unlockedByAnyIngredient(mainIngredient, Items.SUGAR, Items.WATER_BUCKET)
                 .setRecipeBookCategory(CookingPotBookCategory.DRINKS)
-                .build(recipeOutput, RecipeProvider.getSimpleRecipeName(output));
+                .build(recipeOutput, TextUtils.res(RecipeProvider.getSimpleRecipeName(output)));
     }
 }

@@ -1,6 +1,5 @@
 {
   "type": "farmersdelight:cooking",
-  "category": "drinks",
   "container": {
     "count": 1,
     "id": "minecraft:glass_bottle"
@@ -12,6 +11,7 @@
     "minecraft:sugar",
     "minecraft:water_bucket"
   ],
+  "recipe_book_tab": "drinks",
   "result": {
     "count": 4,
     "id": "frightsdelight:punch_slimeapple"

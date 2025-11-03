@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/pasta_with_slimeballs"
+        "recipe": "frightsdelight:cooking/pasta_with_slimeballs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/pasta_with_slimeballs"
+      "frightsdelight:cooking/pasta_with_slimeballs"
     ]
   }
 }

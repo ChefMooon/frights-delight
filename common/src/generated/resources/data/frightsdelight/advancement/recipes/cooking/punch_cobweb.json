@@ -17,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/punch_cobweb"
+        "recipe": "frightsdelight:cooking/punch_cobweb"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/punch_cobweb"
+      "frightsdelight:cooking/punch_cobweb"
     ]
   }
 }

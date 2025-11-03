@@ -6,14 +6,12 @@ import com.chefmooon.frightsdelight.common.FoodValues;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightEffects;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import dev.architectury.injectables.annotations.ExpectPlatform;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.LayeredDraw;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.component.DataComponents;
+import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import org.jetbrains.annotations.NotNull;
@@ -28,8 +26,7 @@ public class FrightsDelightGUI {
     public static int getFoodIconOffset() {
         throw new AssertionError();
     }
-
-    public static abstract class BaseOverlay implements LayeredDraw.Layer {
+    public static abstract class BaseOverlay implements HudElement {
         public abstract void render(Minecraft mc, Player player, GuiGraphics guiGraphics, int left, int right, int top, int guiTicks);
 
         @Override
@@ -185,9 +182,7 @@ public class FrightsDelightGUI {
         int foodLevel = stats.getFoodLevel();
         int ticks = mc.gui.getGuiTicks();
         Random rand = new Random();
-        rand.setSeed(ticks * 312871);
-
-//        RenderSystem.enableBlend();
+        rand.setSeed(ticks * 312871L);
 
         for (int j = 0; j < 10; ++j) {
             int x = right - j * 8 - 9;
@@ -197,20 +192,18 @@ public class FrightsDelightGUI {
                 y = top + (rand.nextInt(3) - 1);
             }
 
-            graphics.blit(RenderType::guiTextured, RESOURCE_LOCATION, x, y, hungerType.getOutlineUOffset(), hungerType.getOutlineVOffset(), 9, 9, 255, 255);
+            graphics.blit(RenderPipelines.GUI_TEXTURED, RESOURCE_LOCATION, x, y, hungerType.getOutlineUOffset(), hungerType.getOutlineVOffset(), 9, 9, 255, 255);
 
             if (hungerType.isHasFill()) {
                 float effectiveHungerOfBar = (stats.getFoodLevel()) / 2.0F - j;
 
                 if (effectiveHungerOfBar >= 1) {
-                    graphics.blit(RenderType::guiTextured, RESOURCE_LOCATION, x, y, hungerType.getOutlineUOffset() + hungerType.getUFillOffset(false), 0, 9, 9, 255, 255);
+                    graphics.blit(RenderPipelines.GUI_TEXTURED, RESOURCE_LOCATION, x, y, hungerType.getOutlineUOffset() + hungerType.getUFillOffset(false), 0, 9, 9, 255, 255);
                 } else if (effectiveHungerOfBar >= .5) {
-                    graphics.blit(RenderType::guiTextured, RESOURCE_LOCATION, x, y, hungerType.getOutlineUOffset() + hungerType.getUFillOffset(true), 0, 9, 9, 255, 255);
+                    graphics.blit(RenderPipelines.GUI_TEXTURED, RESOURCE_LOCATION, x, y, hungerType.getOutlineUOffset() + hungerType.getUFillOffset(true), 0, 9, 9, 255, 255);
                 }
             }
         }
-
-//        RenderSystem.disableBlend();
     }
 
     public static boolean hasPriorityOverlay(Player player) {

@@ -1,10 +1,9 @@
 package com.chefmooon.frightsdelight.client.gui.fabric;
 
 import com.chefmooon.frightsdelight.client.gui.FrightsDelightGUI;
-import com.chefmooon.frightsdelight.common.utility.TextUtils;
-import net.fabricmc.fabric.api.client.rendering.v1.HudLayerRegistrationCallback;
-import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
-import net.fabricmc.fabric.api.client.rendering.v1.IdentifiedLayer;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 
@@ -15,18 +14,16 @@ public class FrightsDelightGUIImpl {
     }
 
     public static void register() {
-        registerOverlay(FrightsDelightGUI.ChillsOverlay.ID, FrightsDelightGUI.ChillsOverlay.INSTANCE, null);
-        registerOverlay(FrightsDelightGUI.CobwebbedOverlay.ID, FrightsDelightGUI.CobwebbedOverlay.INSTANCE, FrightsDelightGUI.ChillsOverlay.ID);
-        registerOverlay(FrightsDelightGUI.HysteriaOverlay.ID, FrightsDelightGUI.HysteriaOverlay.INSTANCE, FrightsDelightGUI.CobwebbedOverlay.ID);
-        registerOverlay(FrightsDelightGUI.InfectedOverlay.ID, FrightsDelightGUI.InfectedOverlay.INSTANCE, FrightsDelightGUI.HysteriaOverlay.ID);
-        registerOverlay(FrightsDelightGUI.SlimedOverlay.ID, FrightsDelightGUI.SlimedOverlay.INSTANCE, FrightsDelightGUI.InfectedOverlay.ID);
-        registerOverlay(FrightsDelightGUI.UndeadHungerOverlay.ID, FrightsDelightGUI.UndeadHungerOverlay.INSTANCE, FrightsDelightGUI.SlimedOverlay.ID);
-        registerOverlay(FrightsDelightGUI.FortifiedMindOverlay.ID, FrightsDelightGUI.FortifiedMindOverlay.INSTANCE, FrightsDelightGUI.UndeadHungerOverlay.ID);
-
+        registerOverlay(null, FrightsDelightGUI.ChillsOverlay.ID, FrightsDelightGUI.ChillsOverlay.INSTANCE);
+        registerOverlay(FrightsDelightGUI.ChillsOverlay.ID, FrightsDelightGUI.CobwebbedOverlay.ID, FrightsDelightGUI.CobwebbedOverlay.INSTANCE);
+        registerOverlay(FrightsDelightGUI.CobwebbedOverlay.ID, FrightsDelightGUI.HysteriaOverlay.ID, FrightsDelightGUI.HysteriaOverlay.INSTANCE);
+        registerOverlay(FrightsDelightGUI.HysteriaOverlay.ID, FrightsDelightGUI.InfectedOverlay.ID, FrightsDelightGUI.InfectedOverlay.INSTANCE);
+        registerOverlay(FrightsDelightGUI.InfectedOverlay.ID, FrightsDelightGUI.SlimedOverlay.ID, FrightsDelightGUI.SlimedOverlay.INSTANCE);
+        registerOverlay(FrightsDelightGUI.SlimedOverlay.ID, FrightsDelightGUI.UndeadHungerOverlay.ID, FrightsDelightGUI.UndeadHungerOverlay.INSTANCE);
+        registerOverlay(FrightsDelightGUI.UndeadHungerOverlay.ID, FrightsDelightGUI.FortifiedMindOverlay.ID, FrightsDelightGUI.FortifiedMindOverlay.INSTANCE);
     }
 
-    private static void registerOverlay(ResourceLocation location, FrightsDelightGUI.BaseOverlay baseOverlay, @Nullable ResourceLocation attachAfterLocation) {
-        HudLayerRegistrationCallback.EVENT.register(layeredDrawer ->
-                layeredDrawer.attachLayerAfter(attachAfterLocation == null ? IdentifiedLayer.HOTBAR_AND_BARS : attachAfterLocation, location, baseOverlay));
+    private static void registerOverlay(@Nullable ResourceLocation attachAfterLocation, ResourceLocation location, HudElement hudElement) {
+        HudElementRegistry.attachElementAfter(attachAfterLocation == null ? VanillaHudElements.FOOD_BAR : attachAfterLocation, location, hudElement);
     }
 }

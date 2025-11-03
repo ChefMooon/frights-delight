@@ -6,16 +6,13 @@ import com.chefmooon.frightsdelight.client.event.fabric.ClientSetupEventsImpl;
 import com.chefmooon.frightsdelight.client.gui.fabric.FrightsDelightGUIImpl;
 import com.chefmooon.frightsdelight.common.fluid.FrDFluidConstants;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
-import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksImpl;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 
 public class FrightsDelightClientImpl implements ClientModInitializer {

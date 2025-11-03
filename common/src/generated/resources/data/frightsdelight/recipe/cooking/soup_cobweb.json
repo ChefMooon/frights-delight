@@ -1,6 +1,5 @@
 {
   "type": "farmersdelight:cooking",
-  "category": "meals",
   "container": {
     "count": 1,
     "id": "minecraft:bowl"
@@ -10,6 +9,7 @@
     "#c:foods/vegetable",
     "minecraft:cobweb"
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "count": 1,
     "id": "frightsdelight:soup_cobweb"

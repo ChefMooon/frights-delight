@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/soup_soul_berry"
+        "recipe": "frightsdelight:cooking/soup_soul_berry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/soup_soul_berry"
+      "frightsdelight:cooking/soup_soul_berry"
     ]
   }
 }

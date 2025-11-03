@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:rotten_flesh_pie"
+        "recipe": "frightsdelight:rotten_flesh_pie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:rotten_flesh_pie"
+      "frightsdelight:rotten_flesh_pie"
     ]
   }
 }

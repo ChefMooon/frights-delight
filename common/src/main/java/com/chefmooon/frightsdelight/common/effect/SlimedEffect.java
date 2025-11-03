@@ -19,7 +19,7 @@ public class SlimedEffect extends MobEffect {
     }
 
     public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player && player.onGround()) {
+        if (!livingEntity.level().isClientSide() && livingEntity instanceof Player player && player.onGround()) {
             if (new Random().nextInt(400) == 0) {
                 player.playNotifySound(FrightsDelightSounds.EFFECT_SLIMED.get(), SoundSource.HOSTILE, 0.3f, 0.6f);
             }

@@ -1,6 +1,5 @@
 {
   "type": "farmersdelight:cooking",
-  "category": "meals",
   "container": {
     "count": 1,
     "id": "minecraft:bowl"
@@ -12,6 +11,7 @@
     "minecraft:slime_ball",
     "farmersdelight:raw_pasta"
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "count": 1,
     "id": "frightsdelight:pasta_with_slimeballs"

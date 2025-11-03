@@ -20,7 +20,7 @@ public class HysteriaEffect extends MobEffect {
         if (livingEntity.hasEffect(FrightsDelightEffects.FORTIFIED_MIND)) {
             return false;
         }
-        if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
+        if (!livingEntity.level().isClientSide() && livingEntity instanceof Player player) {
             if (!player.hasEffect(FrightsDelightEffects.FORTIFIED_MIND)) {
                 Random random = new Random();
                 int soundChance = 200 - player.getFoodData().getFoodLevel() * 5;

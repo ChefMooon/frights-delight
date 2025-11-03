@@ -17,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/punch_soul_berry"
+        "recipe": "frightsdelight:cooking/punch_soul_berry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/punch_soul_berry"
+      "frightsdelight:cooking/punch_soul_berry"
     ]
   }
 }

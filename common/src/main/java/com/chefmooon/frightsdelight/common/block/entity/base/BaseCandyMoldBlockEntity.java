@@ -10,6 +10,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 
 public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
     private int hardenTime;
@@ -19,23 +21,22 @@ public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
     }
 
     @Override
-    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.loadAdditional(tag, provider);
-        this.hardenTime = tag.getIntOr("HardenTime", 0);
-        this.hardenTimeTotal = tag.getIntOr("HardenTimeTotal", 0);
+    protected void loadAdditional(ValueInput input) {
+        super.loadAdditional(input);
+        this.hardenTime = input.getIntOr("HardenTime", 0);
+        this.hardenTimeTotal = input.getIntOr("HardenTimeTotal", 0);
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider provider) {
-        super.saveAdditional(tag, provider);
-        tag.putInt("HardenTime", this.hardenTime);
-        tag.putInt("HardenTimeTotal", this.hardenTimeTotal);
+    protected void saveAdditional(ValueOutput output) {
+        super.saveAdditional(output);
+        output.putInt("HardenTime", this.hardenTime);
+        output.putInt("HardenTimeTotal", this.hardenTimeTotal);
     }
 
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider provider) {
         CompoundTag compound = new CompoundTag();
-        super.saveAdditional(compound, provider);
         compound.putInt("HardenTime", this.hardenTime);
         compound.putInt("HardenTimeTotal", this.hardenTimeTotal);
 

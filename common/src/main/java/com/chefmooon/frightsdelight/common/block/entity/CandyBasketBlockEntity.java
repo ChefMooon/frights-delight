@@ -3,13 +3,10 @@ package com.chefmooon.frightsdelight.common.block.entity;
 import com.chefmooon.frightsdelight.common.block.entity.base.BaseBlockEntity;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlockEntities;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.component.DataComponentGetter;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.ComponentSerialization;
 import net.minecraft.world.Container;
@@ -20,6 +17,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.Nullable;
 
 public class CandyBasketBlockEntity extends BaseBlockEntity implements Container, Nameable {
@@ -33,18 +32,18 @@ public class CandyBasketBlockEntity extends BaseBlockEntity implements Container
     }
 
     @Override
-    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.loadAdditional(tag, registries);
-        ContainerHelper.loadAllItems(tag, this.itemStacks, registries);
-        this.name = parseCustomNameSafe(tag.get("CustomName"), registries);
+    protected void loadAdditional(ValueInput input) {
+        super.loadAdditional(input);
+        ContainerHelper.loadAllItems(input, this.itemStacks);
+        this.name = parseCustomNameSafe(input, "CustomName");
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        super.saveAdditional(tag, registries);
-        ContainerHelper.saveAllItems(tag, this.itemStacks, false, registries);
+    protected void saveAdditional(ValueOutput output) {
+        super.saveAdditional(output);
+        ContainerHelper.saveAllItems(output, this.itemStacks, false);
         if (this.name != null) {
-            tag.put("CustomName", ComponentSerialization.CODEC.encodeStart(registries.createSerializationContext(NbtOps.INSTANCE), this.name).getOrThrow());
+            output.storeNullable("CustomName", ComponentSerialization.CODEC, this.name);
         }
     }
 
@@ -63,9 +62,9 @@ public class CandyBasketBlockEntity extends BaseBlockEntity implements Container
     }
 
     @Override
-    public void removeComponentsFromTag(CompoundTag tag) {
-        tag.remove("CustomName");
-        tag.remove("Items");
+    public void removeComponentsFromTag(ValueOutput output) {
+        output.discard("CustomName");
+        output.discard("Items");
     }
 
     @Override

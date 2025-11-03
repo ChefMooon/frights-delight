@@ -17,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/slimeapple_syrup_bottle"
+        "recipe": "frightsdelight:cooking/slimeapple_syrup_bottle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/slimeapple_syrup_bottle"
+      "frightsdelight:cooking/slimeapple_syrup_bottle"
     ]
   }
 }

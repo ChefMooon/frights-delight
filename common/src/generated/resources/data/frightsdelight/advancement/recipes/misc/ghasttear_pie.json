@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:ghasttear_pie"
+        "recipe": "frightsdelight:ghasttear_pie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:ghasttear_pie"
+      "frightsdelight:ghasttear_pie"
     ]
   }
 }

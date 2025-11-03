@@ -23,21 +23,21 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
         registerMinecraftBlockTags();
     }
     private void registerModTags() {
-        getOrCreateTagBuilder(FrightsDelightTags.SOUL_BERRY_BUSH_GROW_CONDITIION)
+        valueLookupBuilder(FrightsDelightTags.SOUL_BERRY_BUSH_GROW_CONDITIION)
                 .add(Blocks.SOUL_FIRE)
                 .add(Blocks.SOUL_LANTERN)
                 .add(Blocks.SOUL_TORCH)
                 .add(Blocks.SOUL_WALL_TORCH)
                 .add(Blocks.SOUL_CAMPFIRE);
 
-        getOrCreateTagBuilder(FrightsDelightTags.WITHER_BERRY_BUSH_GROW_CONDITIION)
+        valueLookupBuilder(FrightsDelightTags.WITHER_BERRY_BUSH_GROW_CONDITIION)
                 .add(Blocks.WITHER_ROSE)
                 .add(Blocks.WITHER_SKELETON_SKULL)
                 .add(Blocks.WITHER_SKELETON_WALL_SKULL);
     }
 
     private void registerCommonBlockTags() {
-        getOrCreateTagBuilder(CommonTags.C_MINEABLE_KNIFE)
+        valueLookupBuilder(CommonTags.C_MINEABLE_KNIFE)
                 .add(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get())
                 .add(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get())
                 .add(FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET.get())
@@ -56,7 +56,7 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .add(FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE.get())
                 .add(FrightsDelightBlocksImpl.COBWEB_PIE.get());
 
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS)
+        valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS)
                 .addTag(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH)
                 .addTag(CommonTags.C_STORAGE_BLOCKS_BONE)
                 .addTag(CommonTags.C_STORAGE_BLOCKS_PHANTOM_MEMBRANE)
@@ -66,22 +66,22 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .addTag(CommonTags.C_STORAGE_BLOCKS_POISONOUS_POTATO)
                 .addTag(CommonTags.C_STORAGE_BLOCKS_ROTTEN_TOMATO);
 
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH).add(FrightsDelightBlocksImpl.FLESH_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_BONE).add(FrightsDelightBlocksImpl.BONE_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_PHANTOM_MEMBRANE).add(FrightsDelightBlocksImpl.PHANTOM_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_COBWEB).add(FrightsDelightBlocksImpl.WEB_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_SPIDER_EYE).add(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_FERMENTED_SPIDER_EYE).add(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_POISONOUS_POTATO).add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_TOMATO).add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get());
+        valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH).add(FrightsDelightBlocksImpl.FLESH_CRATE.get());
+        valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_BONE).add(FrightsDelightBlocksImpl.BONE_CRATE.get());
+        valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_PHANTOM_MEMBRANE).add(FrightsDelightBlocksImpl.PHANTOM_CRATE.get());
+        valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_COBWEB).add(FrightsDelightBlocksImpl.WEB_CRATE.get());
+        valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_SPIDER_EYE).add(FrightsDelightBlocksImpl.SPIDER_EYE_CRATE.get());
+        valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_FERMENTED_SPIDER_EYE).add(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE.get());
+        valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_POISONOUS_POTATO).add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE.get());
+        valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_TOMATO).add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get());
     }
 
     private void registerMinecraftBlockTags() {
-        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get())
                 .add(FrightsDelightBlocksImpl.RING_CANDY_MOLD.get());
 
-        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_AXE)
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_AXE)
                 .add(FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get())
                 .add(FrightsDelightBlocksImpl.PUMPKIN_CANDY_BASKET.get())
                 .add(FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET.get())
@@ -96,11 +96,11 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE.get())
                 .add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get());
 
-        getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
+        valueLookupBuilder(BlockTags.SWORD_EFFICIENT)
                 .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get())
                 .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get());
 
-        getOrCreateTagBuilder(BlockTags.FALL_DAMAGE_RESETTING)
+        valueLookupBuilder(BlockTags.FALL_DAMAGE_RESETTING)
                 .add(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get())
                 .add(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get());
     }

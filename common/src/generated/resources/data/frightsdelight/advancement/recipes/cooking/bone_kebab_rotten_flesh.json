@@ -16,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/bone_kebab_rotten_flesh"
+        "recipe": "frightsdelight:cooking/bone_kebab_rotten_flesh"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/bone_kebab_rotten_flesh"
+      "frightsdelight:cooking/bone_kebab_rotten_flesh"
     ]
   }
 }

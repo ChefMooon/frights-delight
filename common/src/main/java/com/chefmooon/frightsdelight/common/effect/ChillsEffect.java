@@ -19,7 +19,7 @@ public class ChillsEffect extends MobEffect {
         if (livingEntity.hasEffect(FrightsDelightEffects.FORTIFIED_MIND)) {
             return false;
         }
-        if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
+        if (!livingEntity.level().isClientSide() && livingEntity instanceof Player player) {
             int duration = Objects.requireNonNull(player.getEffect(FrightsDelightEffects.CHILLS)).getDuration();
             if (duration == 1) {
                 player.displayClientMessage(TextUtils.getTranslatable("effect.chills.end"), true);

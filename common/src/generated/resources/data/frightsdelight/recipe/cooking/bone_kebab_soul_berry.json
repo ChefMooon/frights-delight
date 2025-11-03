@@ -1,6 +1,5 @@
 {
   "type": "farmersdelight:cooking",
-  "category": "meals",
   "container": {
     "count": 1,
     "id": "frightsdelight:bone_shard"
@@ -11,6 +10,7 @@
     "frightsdelight:soul_berry",
     "frightsdelight:soul_berry"
   ],
+  "recipe_book_tab": "meals",
   "result": {
     "count": 1,
     "id": "frightsdelight:bone_kebab_soul_berry"

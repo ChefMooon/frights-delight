@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:poisonous_potato_from_poisonous_potato_crate"
+        "recipe": "frightsdelight:poisonous_potato_from_poisonous_potato_crate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:poisonous_potato_from_poisonous_potato_crate"
+      "frightsdelight:poisonous_potato_from_poisonous_potato_crate"
     ]
   }
 }

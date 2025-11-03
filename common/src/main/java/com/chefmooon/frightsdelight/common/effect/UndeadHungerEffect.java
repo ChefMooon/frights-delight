@@ -13,7 +13,7 @@ public class UndeadHungerEffect extends MobEffect {
     }
 
     public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
-        if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
+        if (!livingEntity.level().isClientSide() && livingEntity instanceof Player player) {
             if (player.hasEffect(FrightsDelightEffects.INFECTED)) {
                 player.removeEffect(FrightsDelightEffects.INFECTED);
             }

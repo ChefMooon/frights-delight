@@ -17,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/punch_slimeapple"
+        "recipe": "frightsdelight:cooking/punch_slimeapple"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/punch_slimeapple"
+      "frightsdelight:cooking/punch_slimeapple"
     ]
   }
 }

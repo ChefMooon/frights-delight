@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cookie_flesh"
+        "recipe": "frightsdelight:cookie_flesh"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cookie_flesh"
+      "frightsdelight:cookie_flesh"
     ]
   }
 }

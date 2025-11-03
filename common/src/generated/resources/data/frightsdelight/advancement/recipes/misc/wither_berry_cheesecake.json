@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:wither_berry_cheesecake"
+        "recipe": "frightsdelight:wither_berry_cheesecake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:wither_berry_cheesecake"
+      "frightsdelight:wither_berry_cheesecake"
     ]
   }
 }

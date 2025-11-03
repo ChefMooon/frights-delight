@@ -16,7 +16,7 @@ public class InfectedEffect extends MobEffect {
         if (livingEntity.hasEffect(FrightsDelightEffects.UNDEAD_HUNGER)) {
             return false;
         }
-        if (!livingEntity.getCommandSenderWorld().isClientSide() && livingEntity instanceof Player player) {
+        if (!livingEntity.level().isClientSide() && livingEntity instanceof Player player) {
             if (player.hasEffect(MobEffects.HUNGER)) {
                 player.removeEffect(MobEffects.HUNGER);
             }

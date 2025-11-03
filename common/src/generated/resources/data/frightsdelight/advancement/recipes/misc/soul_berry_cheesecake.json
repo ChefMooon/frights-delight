@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:soul_berry_cheesecake"
+        "recipe": "frightsdelight:soul_berry_cheesecake"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:soul_berry_cheesecake"
+      "frightsdelight:soul_berry_cheesecake"
     ]
   }
 }

@@ -17,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/punch_ghasttear"
+        "recipe": "frightsdelight:cooking/punch_ghasttear"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/punch_ghasttear"
+      "frightsdelight:cooking/punch_ghasttear"
     ]
   }
 }

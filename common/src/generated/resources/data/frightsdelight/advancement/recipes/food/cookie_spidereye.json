@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cookie_spidereye"
+        "recipe": "frightsdelight:cookie_spidereye"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cookie_spidereye"
+      "frightsdelight:cookie_spidereye"
     ]
   }
 }

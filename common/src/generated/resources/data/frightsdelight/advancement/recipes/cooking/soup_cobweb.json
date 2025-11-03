@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cooking/soup_cobweb"
+        "recipe": "frightsdelight:cooking/soup_cobweb"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cooking/soup_cobweb"
+      "frightsdelight:cooking/soup_cobweb"
     ]
   }
 }
