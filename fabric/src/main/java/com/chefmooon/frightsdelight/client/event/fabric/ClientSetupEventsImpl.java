@@ -8,10 +8,9 @@ import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightBlocksI
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightEntityTypesImpl;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
 public class ClientSetupEventsImpl {
@@ -50,6 +49,6 @@ public class ClientSetupEventsImpl {
     }
 
     public static void onEntityRendererRegister() {
-        EntityRendererRegistry.register(FrightsDelightEntityTypesImpl.BONE_SHARD.get(), ThrownItemRenderer::new);
+        EntityRenderers.register(FrightsDelightEntityTypesImpl.BONE_SHARD.get(), ThrownItemRenderer::new);
     }
 }

@@ -127,7 +127,7 @@
               "block": "frightsdelight:wither_berry_cheesecake",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "bites": "4"
+                "bites": "3"
               }
             },
             {

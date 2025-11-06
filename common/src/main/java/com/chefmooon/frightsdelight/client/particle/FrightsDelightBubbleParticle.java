@@ -2,11 +2,13 @@ package com.chefmooon.frightsdelight.client.particle;
 
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.util.RandomSource;
 
-public class FrightsDelightBubbleParticle extends TextureSheetParticle {
-    protected FrightsDelightBubbleParticle(ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-        super(level, x, y, z);
+public class FrightsDelightBubbleParticle extends SingleQuadParticle {
+    protected FrightsDelightBubbleParticle(ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, TextureAtlasSprite textureAtlasSprite) {
+        super(level, x, y, z, textureAtlasSprite);
         this.scale(this.random.nextFloat() * 0.5F + 0.2F);
         this.setSize(0.25F, 0.25F);
         this.xd = xSpeed * 0.10000000298023224 + (this.random.nextDouble() * 0.6 - 0.3) * 0.01;
@@ -34,8 +36,8 @@ public class FrightsDelightBubbleParticle extends TextureSheetParticle {
     }
 
     @Override
-    public ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+    public Layer getLayer() {
+        return Layer.TRANSLUCENT;
     }
 
     public static class Factory implements ParticleProvider<SimpleParticleType> {
@@ -45,10 +47,9 @@ public class FrightsDelightBubbleParticle extends TextureSheetParticle {
         }
 
         @Override
-        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed) {
-            FrightsDelightBubbleParticle particle = new FrightsDelightBubbleParticle(level, x, y, z, xSpeed, ySpeed, zSpeed);
+        public Particle createParticle(SimpleParticleType type, ClientLevel level, double x, double y, double z, double xSpeed, double ySpeed, double zSpeed, RandomSource random) {
+            FrightsDelightBubbleParticle particle = new FrightsDelightBubbleParticle(level, x, y, z, xSpeed, ySpeed, zSpeed, this.spriteSet.get(random));
             particle.setAlpha(0.8F);
-            particle.pickSprite(this.spriteSet);
             return particle;
         }
     }

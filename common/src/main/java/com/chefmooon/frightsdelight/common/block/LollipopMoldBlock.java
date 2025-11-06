@@ -81,7 +81,7 @@ public class LollipopMoldBlock extends AbstractMoldBlock {
                             }
                         }
                     } else if (syrup == Syrups.EMPTY) {
-                        if (level.isClientSide) {
+                        if (level.isClientSide()) {
                             player.displayClientMessage(Component.translatable(this.getDescriptionId() + ".bone_shard_requirement"), true);
                         }
                     }
@@ -145,7 +145,7 @@ public class LollipopMoldBlock extends AbstractMoldBlock {
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
+    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos, Direction direction) {
         int signal = 0;
         int shards = state.getValue(SHARDS);
         if (shards > 0) signal += shards;

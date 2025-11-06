@@ -1,65 +1,85 @@
 package com.chefmooon.frightsdelight.client.renderer.fabric;
 
 import com.chefmooon.frightsdelight.client.renderer.LollipopMoldBlockEntityRenderer;
+import com.chefmooon.frightsdelight.client.renderer.state.fabric.LollipopMoldRenderState;
 import com.chefmooon.frightsdelight.common.block.LollipopMoldBlock;
 import com.chefmooon.frightsdelight.common.block.entity.LollipopMoldBlockEntity;
 import com.chefmooon.frightsdelight.common.registry.fabric.FrightsDelightItemsImpl;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.LevelRenderer;
-import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
+import net.minecraft.client.renderer.item.ItemModelResolver;
+import net.minecraft.client.renderer.item.ItemStackRenderState;
+import net.minecraft.client.renderer.state.CameraRenderState;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
 
-public class LollipopMoldBlockEntityRendererImpl<T extends LollipopMoldBlockEntity> extends LollipopMoldBlockEntityRenderer implements BlockEntityRenderer<T> {
+public class LollipopMoldBlockEntityRendererImpl extends LollipopMoldBlockEntityRenderer implements BlockEntityRenderer<LollipopMoldBlockEntity, LollipopMoldRenderState> {
+    private final ItemModelResolver itemModelResolver;
     public LollipopMoldBlockEntityRendererImpl(BlockEntityRendererProvider.Context context) {
+        itemModelResolver = context.itemModelResolver();
     }
+
     @Override
-    public void render(T blockEntity, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay, Vec3 cameraPos) {
-        Level level = blockEntity.getLevel();
-        Minecraft minecraft = Minecraft.getInstance();
-        if (level == null) return;
+    public void extractRenderState(LollipopMoldBlockEntity blockEntity, LollipopMoldRenderState renderState, float partialTick, Vec3 cameraPosition, @Nullable ModelFeatureRenderer.CrumblingOverlay breakProgress) {
+        BlockEntityRenderer.super.extractRenderState(blockEntity, renderState, partialTick, cameraPosition, breakProgress);
+        renderState.direction = blockEntity.getBlockState().getValue(LollipopMoldBlock.FACING);
+        int posLong = (int) blockEntity.getBlockPos().asLong();
 
-        BlockState state = level.getBlockState(blockEntity.getBlockPos());
-        if (!(state.getBlock() instanceof LollipopMoldBlock)) return;
-
-        Direction facing = state.getValue(LollipopMoldBlock.FACING);
-        Direction.Axis axis = facing.getAxis();
-        boolean facingAxisX = axis == Direction.Axis.X;
-        int shards = state.getValue(LollipopMoldBlock.SHARDS);
+        renderState.shards = blockEntity.getBlockState().getValue(LollipopMoldBlock.SHARDS);
+        renderState.boneShards = new ItemStackRenderState[renderState.shards];
         ItemStack boneShard = new ItemStack(FrightsDelightItemsImpl.BONE_SHARD.get());
+        for (int i = 0; i < renderState.shards; i++) {
+            renderState.boneShards[i] = new ItemStackRenderState();
+            this.itemModelResolver.updateForTopItem(renderState.boneShards[i], boneShard, ItemDisplayContext.FIXED, blockEntity.getLevel(), null, posLong + i);
+        }
+    }
 
-        if (shards >= 1) {
+    @Override
+    public LollipopMoldRenderState createRenderState() {
+        return new LollipopMoldRenderState();
+    }
+
+    @Override
+    public void submit(LollipopMoldRenderState renderState, PoseStack poseStack, SubmitNodeCollector nodeCollector, CameraRenderState cameraRenderState) {
+        Direction facing = renderState.direction;
+        boolean facingAxisX = facing.getAxis() == Direction.Axis.X;
+
+        if (renderState.shards >= 1) {
             poseStack.pushPose();
             transformShard1(poseStack, facingAxisX);
-            minecraft.getItemRenderer().renderStatic(boneShard, ItemDisplayContext.FIXED, LevelRenderer.getLightColor(blockEntity.getLevel(), blockEntity.getBlockPos()), packedOverlay, poseStack, bufferSource, blockEntity.getLevel(), (int) blockEntity.getBlockPos().asLong());
+
+            renderState.boneShards[0].submit(poseStack, nodeCollector, renderState.lightCoords, OverlayTexture.NO_OVERLAY, 0);
             poseStack.popPose();
         }
 
-        if (shards >= 2) {
+        if (renderState.shards >= 2) {
             poseStack.pushPose();
             transformShard2(poseStack, facingAxisX);
-            minecraft.getItemRenderer().renderStatic(boneShard, ItemDisplayContext.FIXED, LevelRenderer.getLightColor(blockEntity.getLevel(), blockEntity.getBlockPos()), packedOverlay, poseStack, bufferSource, blockEntity.getLevel(), (int) blockEntity.getBlockPos().asLong());
+
+            renderState.boneShards[1].submit(poseStack, nodeCollector, renderState.lightCoords, OverlayTexture.NO_OVERLAY, 0);
             poseStack.popPose();
         }
 
-        if (shards >= 3) {
+        if (renderState.shards >= 3) {
             poseStack.pushPose();
             transformShard3(poseStack, facingAxisX);
-            minecraft.getItemRenderer().renderStatic(boneShard, ItemDisplayContext.FIXED, LevelRenderer.getLightColor(blockEntity.getLevel(), blockEntity.getBlockPos()), packedOverlay, poseStack, bufferSource, blockEntity.getLevel(), (int) blockEntity.getBlockPos().asLong());
+
+            renderState.boneShards[2].submit(poseStack, nodeCollector, renderState.lightCoords, OverlayTexture.NO_OVERLAY, 0);
             poseStack.popPose();
         }
 
-        if (shards >= 4) {
+        if (renderState.shards >= 4) {
             poseStack.pushPose();
             transformShard4(poseStack, facingAxisX);
-            minecraft.getItemRenderer().renderStatic(boneShard, ItemDisplayContext.FIXED, LevelRenderer.getLightColor(blockEntity.getLevel(), blockEntity.getBlockPos()), packedOverlay, poseStack, bufferSource, blockEntity.getLevel(), (int) blockEntity.getBlockPos().asLong());
+
+            renderState.boneShards[3].submit(poseStack, nodeCollector, renderState.lightCoords, OverlayTexture.NO_OVERLAY, 0);
             poseStack.popPose();
         }
 

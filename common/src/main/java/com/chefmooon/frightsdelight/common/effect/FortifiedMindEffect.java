@@ -1,6 +1,7 @@
 package com.chefmooon.frightsdelight.common.effect;
 
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightEffects;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -11,7 +12,7 @@ public class FortifiedMindEffect extends MobEffect {
         super(MobEffectCategory.BENEFICIAL, 0x66d0e9);
     }
 
-    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
+    public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.level().isClientSide() && livingEntity instanceof Player player) {
             if (player.hasEffect(FrightsDelightEffects.HYSTERIA)) {
                 player.removeEffect(FrightsDelightEffects.HYSTERIA);

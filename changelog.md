@@ -7,6 +7,12 @@ This mod is compatible with Minecraft 1.21.5 and Farmer's Delight Refabricated
 
 ***
 
+## V1.4.1
+
+Includes important fixes for the 1.21.5 Fabric release.
+
+## V1.4.0
+
 Minecraft 1.21.5 Fabric Release!
 
 ### Added

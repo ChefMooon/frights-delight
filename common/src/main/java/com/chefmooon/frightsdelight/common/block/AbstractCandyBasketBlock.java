@@ -173,7 +173,7 @@ public class AbstractCandyBasketBlock extends BaseEntityBlock implements SimpleW
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
+    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos, Direction direction) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
         if (blockEntity instanceof Container container) {
             int count = 0;
@@ -201,7 +201,7 @@ public class AbstractCandyBasketBlock extends BaseEntityBlock implements SimpleW
     public @NotNull BlockState playerWillDestroy(Level level, BlockPos pos, BlockState state, Player player) {
         BlockEntity blockEntity = level.getBlockEntity(pos);
         if (blockEntity instanceof CandyBasketBlockEntity candyBasketBlockEntity) {
-            if (!level.isClientSide && player.isCreative() && !candyBasketBlockEntity.isEmpty()) {
+            if (!level.isClientSide() && player.isCreative() && !candyBasketBlockEntity.isEmpty()) {
                 ItemStack itemStack = new ItemStack(this);
                 itemStack.applyComponents(blockEntity.collectComponents());
                 ItemEntity itemEntity = new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, itemStack);

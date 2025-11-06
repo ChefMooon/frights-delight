@@ -59,7 +59,7 @@ public class FrightsDelightBushBlock extends BushBlock implements BonemealableBl
     public void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity && entity.getType() != EntityType.FOX && entity.getType() != EntityType.BEE) {
             entity.makeStuckInBlock(state, new Vec3(0.800000011920929, 0.75, 0.800000011920929));
-            if (!level.isClientSide && (Integer)state.getValue(AGE) > 0 && (entity.xOld != entity.getX() || entity.zOld != entity.getZ())) {
+            if (!level.isClientSide() && (Integer)state.getValue(AGE) > 0 && (entity.xOld != entity.getX() || entity.zOld != entity.getZ())) {
                 double d = Math.abs(entity.getX() - entity.xOld);
                 double e = Math.abs(entity.getZ() - entity.zOld);
                 if (d >= HURT_SPEED_THRESHOLD || e >= HURT_SPEED_THRESHOLD) {

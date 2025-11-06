@@ -5,6 +5,7 @@ import com.chefmooon.frightsdelight.common.data.types.Syrups;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlockEntities;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
@@ -94,7 +95,7 @@ public class RingCandyMoldBlock extends AbstractMoldBlock{
     }
 
     @Override
-    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
+    public int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos, Direction direction) {
         int signal = 0;
         if (state.getValue(SYRUP_TYPE) != Syrups.EMPTY) signal += 6;
         if (state.getValue(HARDENED)) signal += 4;
