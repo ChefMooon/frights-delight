@@ -7,6 +7,10 @@ This mod is compatible with Minecraft 1.21.5 and Farmer's Delight Refabricated
 
 ***
 
+### Added
+
+ - [1.21.5+] Extended ItemView (EIV) support
+
 ### Fixed
 
 - [1.21.5+] Fixed Rotten Flesh Punchbowl not dropping Punch when broken with a knife
