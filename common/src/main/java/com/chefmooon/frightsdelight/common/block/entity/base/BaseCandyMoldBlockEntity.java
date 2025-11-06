@@ -4,7 +4,6 @@ import com.chefmooon.frightsdelight.common.block.LollipopMoldBlock;
 import com.chefmooon.frightsdelight.common.data.types.Syrups;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
@@ -12,8 +11,9 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
+    private final int MAX_HARDEN_TIME = 900;
     private int hardenTime;
-    private int hardenTimeTotal = 900;
+    private int hardenTimeTotal = MAX_HARDEN_TIME;
     public BaseCandyMoldBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState blockState) {
         super(type, pos, blockState);
     }
@@ -63,7 +63,7 @@ public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
 
     private boolean processHardening(Level level, BlockPos pos, BlockState state, BaseCandyMoldBlockEntity blockEntity) {
         if (blockEntity.hardenTimeTotal == 0) {
-            blockEntity.hardenTimeTotal = 200;
+            blockEntity.hardenTimeTotal = MAX_HARDEN_TIME;
         }
 
         blockEntity.hardenTime++;
@@ -71,7 +71,7 @@ public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
             setChanged();
             return false;
         } else {
-            level.playLocalSound(pos, FrightsDelightSounds.BLOCK_CANDY_MOLD_HARDEN.get(), SoundSource.BLOCKS, 0.5f, 0.75f, false);
+            level.playSound(null, pos, FrightsDelightSounds.BLOCK_CANDY_MOLD_HARDEN.get(), SoundSource.BLOCKS, 0.5f, 0.75f);
             level.setBlockAndUpdate(pos, state.setValue(LollipopMoldBlock.HARDENED, Boolean.TRUE));
             blockEntity.hardenTime = 0;
             blockEntity.hardenTimeTotal = 0;
