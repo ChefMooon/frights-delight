@@ -25,6 +25,9 @@
     "fabric-datagen": [
       "com.chefmooon.frightsdelight.data.fabric.DataGenerationFabric"
     ],
+    "jei_mod_plugin": [
+      "com.chefmooon.frightsdelight.integration.jei.fabric.JEIPluginImpl"
+    ],
     "eiv": [
         "com.chefmooon.frightsdelight.integration.eiv.fabric.EIVPluginImpl"
     ],
