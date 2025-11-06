@@ -9,6 +9,7 @@ This mod is compatible with Minecraft 1.21.5 and Farmer's Delight Refabricated
 
 ### Fixed
 
-- Fixed [1.21.5+] Rotten Flesh Punchbowl not dropping Punch when broken with a knife
+- [1.21.5+] Fixed Rotten Flesh Punchbowl not dropping Punch when broken with a knife
+- [1.20.1+] Fixed Candy Mold hardening time after first craft
 
 [Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)
