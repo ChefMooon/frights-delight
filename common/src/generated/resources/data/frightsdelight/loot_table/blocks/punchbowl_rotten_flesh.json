@@ -13,10 +13,10 @@
           "condition": "minecraft:all_of",
           "terms": [
             {
-              "block": "frightsdelight:soul_berry_cheesecake",
+              "block": "frightsdelight:punchbowl_rotten_flesh",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "bites": "0"
+                "servings": "4"
               }
             },
             {
@@ -38,7 +38,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "frightsdelight:soul_berry_cheesecake_slice"
+          "name": "frightsdelight:punch_rotten_flesh"
         }
       ],
       "rolls": 1.0
@@ -50,10 +50,10 @@
           "condition": "minecraft:all_of",
           "terms": [
             {
-              "block": "frightsdelight:soul_berry_cheesecake",
+              "block": "frightsdelight:punchbowl_rotten_flesh",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "bites": "1"
+                "servings": "3"
               }
             },
             {
@@ -75,7 +75,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "frightsdelight:soul_berry_cheesecake_slice"
+          "name": "frightsdelight:punch_rotten_flesh"
         }
       ],
       "rolls": 1.0
@@ -87,10 +87,10 @@
           "condition": "minecraft:all_of",
           "terms": [
             {
-              "block": "frightsdelight:soul_berry_cheesecake",
+              "block": "frightsdelight:punchbowl_rotten_flesh",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "bites": "2"
+                "servings": "2"
               }
             },
             {
@@ -112,7 +112,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "frightsdelight:soul_berry_cheesecake_slice"
+          "name": "frightsdelight:punch_rotten_flesh"
         }
       ],
       "rolls": 1.0
@@ -124,10 +124,10 @@
           "condition": "minecraft:all_of",
           "terms": [
             {
-              "block": "frightsdelight:soul_berry_cheesecake",
+              "block": "frightsdelight:punchbowl_rotten_flesh",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "bites": "3"
+                "servings": "1"
               }
             },
             {
@@ -149,7 +149,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "frightsdelight:soul_berry_cheesecake_slice"
+          "name": "frightsdelight:punch_rotten_flesh"
         }
       ],
       "rolls": 1.0
