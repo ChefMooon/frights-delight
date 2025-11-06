@@ -25,7 +25,7 @@ public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
     protected void loadAdditional(ValueInput input) {
         super.loadAdditional(input);
         this.hardenTime = input.getIntOr("HardenTime", 0);
-        this.hardenTimeTotal = input.getIntOr("HardenTimeTotal", MAX_HARDEN_TIME);
+        this.hardenTimeTotal = input.getIntOr("HardenTimeTotal", 0);
     }
 
     @Override
@@ -64,14 +64,19 @@ public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
     }
 
     private boolean processHardening(Level level, BlockPos pos, BlockState state, BaseCandyMoldBlockEntity blockEntity) {
+        if (blockEntity.hardenTimeTotal == 0) {
+            blockEntity.hardenTimeTotal = MAX_HARDEN_TIME;
+        }
+
         blockEntity.hardenTime++;
         if (blockEntity.hardenTime < blockEntity.hardenTimeTotal) {
             setChanged();
             return false;
         } else {
-            level.playLocalSound(pos, FrightsDelightSounds.BLOCK_CANDY_MOLD_HARDEN.get(), SoundSource.BLOCKS, 0.5f, 0.75f, false);
+            level.playSound(null, pos, FrightsDelightSounds.BLOCK_CANDY_MOLD_HARDEN.get(), SoundSource.BLOCKS, 0.5f, 0.75f);
             level.setBlockAndUpdate(pos, state.setValue(LollipopMoldBlock.HARDENED, Boolean.TRUE));
             blockEntity.hardenTime = 0;
+            blockEntity.hardenTimeTotal = 0;
             return true;
         }
     }
