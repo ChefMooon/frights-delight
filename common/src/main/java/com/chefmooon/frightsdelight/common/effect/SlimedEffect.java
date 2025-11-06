@@ -2,6 +2,7 @@ package com.chefmooon.frightsdelight.common.effect;
 
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -18,7 +19,7 @@ public class SlimedEffect extends MobEffect {
         this.addAttributeModifier(Attributes.MOVEMENT_SPEED, ResourceLocation.withDefaultNamespace("effect.slowness"), -0.05, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
     }
 
-    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
+    public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.level().isClientSide() && livingEntity instanceof Player player && player.onGround()) {
             if (new Random().nextInt(400) == 0) {
                 player.playNotifySound(FrightsDelightSounds.EFFECT_SLIMED.get(), SoundSource.HOSTILE, 0.3f, 0.6f);

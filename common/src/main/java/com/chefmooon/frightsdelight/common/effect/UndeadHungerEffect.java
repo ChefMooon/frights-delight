@@ -1,6 +1,7 @@
 package com.chefmooon.frightsdelight.common.effect;
 
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightEffects;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffects;
@@ -12,7 +13,7 @@ public class UndeadHungerEffect extends MobEffect {
         super(MobEffectCategory.NEUTRAL, 0x6f4d1b);
     }
 
-    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
+    public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity livingEntity, int amplifier) {
         if (!livingEntity.level().isClientSide() && livingEntity instanceof Player player) {
             if (player.hasEffect(FrightsDelightEffects.INFECTED)) {
                 player.removeEffect(FrightsDelightEffects.INFECTED);

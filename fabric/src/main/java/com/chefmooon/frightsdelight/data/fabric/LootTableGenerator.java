@@ -158,7 +158,7 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
                                 .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemGetter, CommonTags.C_TOOLS_KNIFE)))))
                 .withPool(LootPool.lootPool().add(LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0f))))
                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 4))
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(PieBlock.BITES, 3))
                                 .and(MatchTool.toolMatches(ItemPredicate.Builder.item().of(itemGetter, CommonTags.C_TOOLS_KNIFE)))))
         ));
     }

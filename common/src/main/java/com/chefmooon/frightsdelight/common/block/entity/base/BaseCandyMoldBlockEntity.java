@@ -14,8 +14,9 @@ import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 
 public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
+    private final int MAX_HARDEN_TIME = 900;
     private int hardenTime;
-    private int hardenTimeTotal = 900;
+    private int hardenTimeTotal = MAX_HARDEN_TIME;
     public BaseCandyMoldBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState blockState) {
         super(type, pos, blockState);
     }
@@ -24,7 +25,7 @@ public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
     protected void loadAdditional(ValueInput input) {
         super.loadAdditional(input);
         this.hardenTime = input.getIntOr("HardenTime", 0);
-        this.hardenTimeTotal = input.getIntOr("HardenTimeTotal", 0);
+        this.hardenTimeTotal = input.getIntOr("HardenTimeTotal", MAX_HARDEN_TIME);
     }
 
     @Override
@@ -63,10 +64,6 @@ public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
     }
 
     private boolean processHardening(Level level, BlockPos pos, BlockState state, BaseCandyMoldBlockEntity blockEntity) {
-        if (blockEntity.hardenTimeTotal == 0) {
-            blockEntity.hardenTimeTotal = 200;
-        }
-
         blockEntity.hardenTime++;
         if (blockEntity.hardenTime < blockEntity.hardenTimeTotal) {
             setChanged();
@@ -75,7 +72,6 @@ public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
             level.playLocalSound(pos, FrightsDelightSounds.BLOCK_CANDY_MOLD_HARDEN.get(), SoundSource.BLOCKS, 0.5f, 0.75f, false);
             level.setBlockAndUpdate(pos, state.setValue(LollipopMoldBlock.HARDENED, Boolean.TRUE));
             blockEntity.hardenTime = 0;
-            blockEntity.hardenTimeTotal = 0;
             return true;
         }
     }
