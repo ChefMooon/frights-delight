@@ -2,6 +2,7 @@ package com.chefmooon.frightsdelight.common.effect;
 
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightEffects;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,7 +16,7 @@ public class ChillsEffect extends MobEffect {
         super(MobEffectCategory.HARMFUL, 0x000000);
     }
 
-    public boolean applyEffectTick(LivingEntity livingEntity, int amplifier) {
+    public boolean applyEffectTick(ServerLevel serverLevel, LivingEntity livingEntity, int amplifier) {
         if (livingEntity.hasEffect(FrightsDelightEffects.FORTIFIED_MIND)) {
             return false;
         }
