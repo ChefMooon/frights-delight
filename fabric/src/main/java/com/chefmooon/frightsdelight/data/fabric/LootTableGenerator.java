@@ -68,6 +68,7 @@ public class LootTableGenerator extends FabricBlockLootTableProvider {
         createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_WITHER_BERRY.get(), FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get());
         createGlassCupDrops(FrightsDelightBlocksImpl.PUNCH_COBWEB.get(), FrightsDelightItemsImpl.PUNCH_COBWEB.get());
 
+        createPunchbowlDrops(itemGetter, FrightsDelightBlocksImpl.PUNCHBOWL_ROTTEN_FLESH.get(), FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get());
         createPunchbowlDrops(itemGetter, FrightsDelightBlocksImpl.PUNCHBOWL_SLIMEAPPLE.get(), FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get());
         createPunchbowlDrops(itemGetter, FrightsDelightBlocksImpl.PUNCHBOWL_SPIDEREYE.get(), FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get());
         createPunchbowlDrops(itemGetter, FrightsDelightBlocksImpl.PUNCHBOWL_GHASTTEAR.get(), FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get());
