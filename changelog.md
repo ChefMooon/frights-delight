@@ -22,8 +22,6 @@ This mod is compatible with Minecraft 1.21.10 (1.21.9) and Farmer's Delight Refa
 
 ## V1.4.0
 
-Minecraft 1.21.5 Fabric Release!
-
 ### Added
 
 - Advancements
