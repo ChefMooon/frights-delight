@@ -22,8 +22,6 @@ This mod is compatible with Minecraft 1.21.8 (1.21.6, 1.21.7) and Farmer's Delig
 
 ## V1.4.0
 
-Minecraft 1.21.5 Fabric Release!
-
 ### Added
 
 - Advancements
