@@ -1,8 +1,12 @@
 // 1.21.10	-999999999-01-01T00:00:00	Fright's Delight/Tags for minecraft:item
-4428b880e602175ed410cdfc51fe359659451d82 data/c/tags/item/foods.json
+ed396c8c7f61f53d69376ec1b86c14f8f05256ef data/c/tags/item/drinks/magic.json
+b95139918447ec0f85fc07b39b3e1fbd7d1f1638 data/c/tags/item/foods.json
 ea1a0df32ca387e02411d7d7d5228156155421ee data/c/tags/item/foods/berry.json
+27be01777fea92d2c3ed95283f4b0c596b8ef34b data/c/tags/item/foods/candy.json
 bc224074ff620e5ce7822a10ec8a96c7b5dfe2c3 data/c/tags/item/foods/cookie.json
-77d84d3005874057b9fea305f20b948a664ab44c data/c/tags/item/foods/soup.json
+362bdd13994f842ee7080f40e032ceb0714a54d6 data/c/tags/item/foods/edible_when_placed.json
+888f07145e224137d743748ae8d7fe10069fe129 data/c/tags/item/foods/pie.json
+1b0f5be3ff14e29d836354e4aa153c78ef637f65 data/c/tags/item/foods/soup.json
 b8c472f7bfd6c29e0df7dfb866e989443d7cda7e data/c/tags/item/storage_blocks.json
 8f411df297e1403c1743d486bf1fa95585330d0c data/c/tags/item/storage_blocks/bone.json
 a16960af0001a9462c1ee21b876d2f6771f25dbe data/c/tags/item/storage_blocks/cobweb.json
