@@ -164,6 +164,7 @@ if (env.MODRINTH_TOKEN) {
             optional.project "jei"
             optional.project "rei"
             optional.project "emi"
+            optional.project "eiv"
         }
     }
 }
@@ -194,6 +195,7 @@ if (env.CURSEFORGE_TOKEN) {
                 optionalDependency "jei"
                 optionalDependency "roughly-enough-items"
                 optionalDependency "emi"
+                optionalDependency "extended-itemview-eiv"
             }
         }
     }
