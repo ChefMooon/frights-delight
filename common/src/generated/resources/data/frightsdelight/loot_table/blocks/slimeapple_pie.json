@@ -127,7 +127,7 @@
               "block": "frightsdelight:slimeapple_pie",
               "condition": "minecraft:block_state_property",
               "properties": {
-                "bites": "4"
+                "bites": "3"
               }
             },
             {
