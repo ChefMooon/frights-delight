@@ -5,6 +5,7 @@ import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import com.chefmooon.frightsdelight.common.tag.CompatibilityTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 
@@ -19,6 +20,7 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
     protected void addTags(HolderLookup.Provider arg) {
         registerMinecraftItemTags();
         registerCommonTags();
+        registerConventionalItemTags();
         registerCompatibilityItemTags();
     }
 
@@ -45,21 +47,22 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
     }
 
     private void registerCommonTags() {
-        getOrCreateTagBuilder(CommonTags.C_FOODS_BERRY)
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_FLESH).add(FrightsDelightItemsImpl.FLESH_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_BONE).add(FrightsDelightItemsImpl.BONE_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_PHANTOM_MEMBRANE).add(FrightsDelightItemsImpl.PHANTOM_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_COBWEB).add(FrightsDelightItemsImpl.WEB_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_SPIDER_EYE).add(FrightsDelightItemsImpl.SPIDER_EYE_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_FERMENTED_SPIDER_EYE).add(FrightsDelightItemsImpl.FERMENTED_SPIDER_EYE_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO).add(FrightsDelightItemsImpl.POISONOUS_POTATO_CRATE.get());
+        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO).add(FrightsDelightItemsImpl.ROTTEN_TOMATO_CRATE.get());
+    }
+
+    private void registerConventionalItemTags() {
+        getOrCreateTagBuilder(ConventionalItemTags.BERRY_FOODS)
                 .add(FrightsDelightItemsImpl.SOUL_BERRY.get())
                 .add(FrightsDelightItemsImpl.WITHER_BERRY.get());
 
-        getOrCreateTagBuilder(CommonTags.C_FOODS_SOUP)
-                .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH.get())
-                .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE.get())
-                .add(FrightsDelightItemsImpl.SOUP_SLIME.get())
-                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE.get())
-                .add(FrightsDelightItemsImpl.SOUP_COBWEB.get())
-                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR.get())
-                .add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY.get())
-                .add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY.get());
-
-        getOrCreateTagBuilder(CommonTags.C_FOODS_COOKIE)
+        getOrCreateTagBuilder(ConventionalItemTags.COOKIE_FOODS)
                 .add(FrightsDelightItemsImpl.COOKIE_ROTTEN_FLESH.get())
                 .add(FrightsDelightItemsImpl.COOKIE_SPIDER_EYE.get())
                 .add(FrightsDelightItemsImpl.COOKIE_SLIMEAPPLE.get())
@@ -69,26 +72,79 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.COOKIE_SOUL_BERRY.get())
                 .add(FrightsDelightItemsImpl.COOKIE_WITHER_BERRY.get());
 
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_FLESH)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_BONE)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_PHANTOM_MEMBRANE)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_COBWEB)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_SPIDER_EYE)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_FERMENTED_SPIDER_EYE)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO);
+        getOrCreateTagBuilder(ConventionalItemTags.EDIBLE_WHEN_PLACED_FOODS)
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_GHASTTEAR.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY.get());
 
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_FLESH).add(FrightsDelightItemsImpl.FLESH_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_BONE).add(FrightsDelightItemsImpl.BONE_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_PHANTOM_MEMBRANE).add(FrightsDelightItemsImpl.PHANTOM_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_COBWEB).add(FrightsDelightItemsImpl.WEB_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_SPIDER_EYE).add(FrightsDelightItemsImpl.SPIDER_EYE_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_FERMENTED_SPIDER_EYE).add(FrightsDelightItemsImpl.FERMENTED_SPIDER_EYE_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO).add(FrightsDelightItemsImpl.POISONOUS_POTATO_CRATE.get());
-        getOrCreateTagBuilder(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO).add(FrightsDelightItemsImpl.ROTTEN_TOMATO_CRATE.get());
+        getOrCreateTagBuilder(ConventionalItemTags.SOUP_FOODS)
+                .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE.get())
+                .add(FrightsDelightItemsImpl.SOUP_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.SOUP_SLIME.get())
+                .add(FrightsDelightItemsImpl.SOUP_COBWEB.get())
+                .add(FrightsDelightItemsImpl.SOUP_GHAST_TEAR.get())
+                .add(FrightsDelightItemsImpl.SOUP_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.SOUP_WITHER_BERRY.get());
 
-        getOrCreateTagBuilder(CommonTags.C_FOODS)
+        getOrCreateTagBuilder(ConventionalItemTags.CANDY_FOODS)
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.COBWEB_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_LOLLIPOP.get())
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.COBWEB_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_RING_CANDY.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY.get())
+        ;
+
+        getOrCreateTagBuilder(ConventionalItemTags.PIE_FOODS)
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_PIE.get())
+                .add(FrightsDelightItemsImpl.COBWEB_PIE.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_PIE.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_PIE.get())
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE.get());
+
+        getOrCreateTagBuilder(ConventionalItemTags.STORAGE_BLOCKS).forceAddTags(
+                CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_FLESH,
+                CommonTags.C_STORAGE_BLOCKS_ITEM_BONE,
+                CommonTags.C_STORAGE_BLOCKS_ITEM_PHANTOM_MEMBRANE,
+                CommonTags.C_STORAGE_BLOCKS_ITEM_COBWEB,
+                CommonTags.C_STORAGE_BLOCKS_ITEM_SPIDER_EYE,
+                CommonTags.C_STORAGE_BLOCKS_ITEM_FERMENTED_SPIDER_EYE,
+                CommonTags.C_STORAGE_BLOCKS_ITEM_POISONOUS_POTATO,
+                CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_TOMATO
+        );
+
+        getOrCreateTagBuilder(ConventionalItemTags.MAGIC_DRINKS)
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.COBWEB_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get())
+                .add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get())
+                .add(FrightsDelightItemsImpl.PUNCH_COBWEB.get());
+
+        getOrCreateTagBuilder(ConventionalItemTags.FOODS)
                 .add(FrightsDelightItemsImpl.APPLE_SLIME.get())
                 .add(FrightsDelightItemsImpl.UNDEAD_KEBAB.get())
                 .add(FrightsDelightItemsImpl.BONE_KEBAB_ROTTEN_FLESH.get())
@@ -122,13 +178,6 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.SOUL_BERRY_RING_CANDY.get())
                 .add(FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY.get())
                 .add(FrightsDelightItemsImpl.COBWEB_RING_CANDY.get())
-                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE.get())
-                .add(FrightsDelightItemsImpl.SLIMEAPPLE_SYRUP_BOTTLE.get())
-                .add(FrightsDelightItemsImpl.SPIDEREYE_SYRUP_BOTTLE.get())
-                .add(FrightsDelightItemsImpl.GHASTTEAR_SYRUP_BOTTLE.get())
-                .add(FrightsDelightItemsImpl.SOUL_BERRY_SYRUP_BOTTLE.get())
-                .add(FrightsDelightItemsImpl.WITHER_BERRY_SYRUP_BOTTLE.get())
-                .add(FrightsDelightItemsImpl.COBWEB_SYRUP_BOTTLE.get())
         ;
     }
 
