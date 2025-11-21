@@ -24,14 +24,14 @@ public class BaseCandyMoldBlockEntity extends BaseBlockEntity {
     @Override
     protected void loadAdditional(ValueInput input) {
         super.loadAdditional(input);
-        this.hardenTime = input.getIntOr("HardenTime", 0); // TODO: Review with NeoForge update, this depends on Fabric API
+        this.hardenTime = input.getIntOr("HardenTime", 0);
         this.hardenTimeTotal = input.getIntOr("HardenTimeTotal", 0);
     }
 
     @Override
     protected void saveAdditional(ValueOutput output) {
         super.saveAdditional(output);
-        output.putInt("HardenTime", this.hardenTime); // TODO: Review with NeoForge update, this depends on Fabric API
+        output.putInt("HardenTime", this.hardenTime);
         output.putInt("HardenTimeTotal", this.hardenTimeTotal);
     }
 

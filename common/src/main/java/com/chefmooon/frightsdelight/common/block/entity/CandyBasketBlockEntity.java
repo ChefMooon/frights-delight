@@ -43,7 +43,7 @@ public class CandyBasketBlockEntity extends BaseBlockEntity implements Container
         super.saveAdditional(output);
         ContainerHelper.saveAllItems(output, this.itemStacks, false);
         if (this.name != null) {
-            output.storeNullable("CustomName", ComponentSerialization.CODEC, this.name); // TODO: Review with NeoForge update, this depends on Fabric API
+            output.storeNullable("CustomName", ComponentSerialization.CODEC, this.name);
         }
     }
 
@@ -63,8 +63,8 @@ public class CandyBasketBlockEntity extends BaseBlockEntity implements Container
 
     @Override
     public void removeComponentsFromTag(ValueOutput output) {
-//        output.discard("CustomName"); // TODO: Fix
-//        output.discard("Items");
+        output.discard("CustomName");
+        output.discard("Items");
     }
 
     @Override

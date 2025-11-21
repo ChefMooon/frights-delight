@@ -11,14 +11,6 @@ dependencies {
     // Do NOT use other classes from fabric loader
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
 
-    // *** This MUST be removed upon NeoForge update ***
-    // The common project should not depend on fabric-api,
-    // Public Interface ValueOutput uses Fabric API annotations.
-    // This is used in CandyBasketBlockEntity & BaseCandyMoldBlockEntity.
-    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-    // TODO: Review upon NeoForge update
-    // ***
-
     // Remove the next line if you don't want to depend on the API
     //modApi "dev.architectury:architectury:${rootProject.architectury_version}"
 
