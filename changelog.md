@@ -10,6 +10,7 @@ NeoForge, and Fabric
 
 ### Fixed
 
-- [1.20.1+] Fixed Candy Mold hardening time after first craft
+- [1.21.5+] Fixed duplicate/missing item tags
+- [1.20.1 forge] Fixed crash with MidnightLib 1.9.0+ (Thank you, TwoBluDogs!)
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
