@@ -7,15 +7,9 @@ This mod is compatible with Minecraft 1.21.5 and Farmer's Delight Refabricated
 
 ***
 
-### Added
-
- - [1.21.5+] Extended ItemView (EIV) support
-
 ### Fixed
 
-- [1.21.5+] Fixed Rotten Flesh Punchbowl not dropping Punch when broken with a knife
-- [1.21.5+] Fixed Pie block loot table at 3/4 bites not dropping Pie Slice
-- [1.21.5+] Fixed Effects not applying correctly
-- [1.20.1+] Fixed Candy Mold hardening time after first craft
+- [1.21.5+] Fixed duplicate/missing item tags
+- [1.20.1 forge] Fixed crash with MidnightLib 1.9.0+ (Thank you, TwoBluDogs!)
 
-[Detailed Changelog](https://github.com/ChefMooon/frights-delight/wiki/Detailed-Changelog)
+[Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
