@@ -9,7 +9,6 @@ This mod is compatible with Minecraft 1.21.8 (1.21.6, 1.21.7) and Farmer's Delig
 
 ### Fixed
 
-- [1.21.5+] Fixed duplicate/missing item tags
-- [1.20.1 forge] Fixed crash with MidnightLib 1.9.0+ (Thank you, TwoBluDogs!)
+- [Fabric only] Fixed the Create recipe for emptying a Wither Berry Syrup Bottle
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
