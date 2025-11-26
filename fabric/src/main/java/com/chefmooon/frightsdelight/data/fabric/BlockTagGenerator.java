@@ -5,6 +5,7 @@ import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import com.chefmooon.frightsdelight.common.tag.FrightsDelightTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Blocks;
@@ -20,6 +21,7 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
     protected void addTags(HolderLookup.Provider arg) {
         registerModTags();
         registerCommonBlockTags();
+        registerConventionalBlockTags();
         registerMinecraftBlockTags();
     }
     private void registerModTags() {
@@ -56,16 +58,6 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
                 .add(FrightsDelightBlocksImpl.WITHER_BERRY_CHEESECAKE.get())
                 .add(FrightsDelightBlocksImpl.COBWEB_PIE.get());
 
-        valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_BONE)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_PHANTOM_MEMBRANE)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_COBWEB)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_SPIDER_EYE)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_FERMENTED_SPIDER_EYE)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_POISONOUS_POTATO)
-                .addTag(CommonTags.C_STORAGE_BLOCKS_ROTTEN_TOMATO);
-
         valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH).add(FrightsDelightBlocksImpl.FLESH_CRATE.get());
         valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_BONE).add(FrightsDelightBlocksImpl.BONE_CRATE.get());
         valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_PHANTOM_MEMBRANE).add(FrightsDelightBlocksImpl.PHANTOM_CRATE.get());
@@ -74,6 +66,19 @@ public class BlockTagGenerator extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_FERMENTED_SPIDER_EYE).add(FrightsDelightBlocksImpl.FERMENTED_SPIDER_EYE_CRATE.get());
         valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_POISONOUS_POTATO).add(FrightsDelightBlocksImpl.POISONOUS_POTATO_CRATE.get());
         valueLookupBuilder(CommonTags.C_STORAGE_BLOCKS_ROTTEN_TOMATO).add(FrightsDelightBlocksImpl.ROTTEN_TOMATO_CRATE.get());
+    }
+
+    @SuppressWarnings("unchecked")
+    private void registerConventionalBlockTags() {
+        valueLookupBuilder(ConventionalBlockTags.STORAGE_BLOCKS)
+                .forceAddTag(CommonTags.C_STORAGE_BLOCKS_ROTTEN_FLESH)
+                .forceAddTag(CommonTags.C_STORAGE_BLOCKS_BONE)
+                .forceAddTag(CommonTags.C_STORAGE_BLOCKS_PHANTOM_MEMBRANE)
+                .forceAddTag(CommonTags.C_STORAGE_BLOCKS_COBWEB)
+                .forceAddTag(CommonTags.C_STORAGE_BLOCKS_SPIDER_EYE)
+                .forceAddTag(CommonTags.C_STORAGE_BLOCKS_FERMENTED_SPIDER_EYE)
+                .forceAddTag(CommonTags.C_STORAGE_BLOCKS_POISONOUS_POTATO)
+                .forceAddTag(CommonTags.C_STORAGE_BLOCKS_ROTTEN_TOMATO);
     }
 
     private void registerMinecraftBlockTags() {
