@@ -8,6 +8,10 @@ NeoForge, and Fabric
 
 ***
 
+### Added
+
+- Korean (ko_kr) translations, Thank you Copy-TT!
+
 ### Fixed
 
 - [Fabric only] Fixed the Create recipe for emptying a Wither Berry Syrup Bottle
