@@ -7,6 +7,10 @@ This mod is compatible with Minecraft 1.21.8 (1.21.6, 1.21.7) and Farmer's Delig
 
 ***
 
+### Added
+
+- Korean (ko_kr) translations, Thank you Copy-TT!
+
 ### Fixed
 
 - [Fabric only] Fixed the Create recipe for emptying a Wither Berry Syrup Bottle
