@@ -10,5 +10,6 @@ NeoForge, and Fabric
 ### Fixed
 
 - [Fabric only] Fixed the Create recipe for emptying a Wither Berry Syrup Bottle
+- [1.20.1 Fabric only] Fixed sliced pie drops (Thank you, OldieFox!)
 
-[Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
+[Detailed Changelog](https://chefmooon.github.io/frightsdelight/kchangelog)
