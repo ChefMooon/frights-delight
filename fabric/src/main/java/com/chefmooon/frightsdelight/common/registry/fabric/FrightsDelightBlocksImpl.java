@@ -90,20 +90,20 @@ public class FrightsDelightBlocksImpl {
                     BlockBehaviour.Properties.copy(Blocks.GLASS).strength(2.0F).sound(SoundType.GLASS)));
 
     public static final Block ROTTEN_FLESH_PIE = registerBlock(FrightsDelightBlocks.ROTTEN_FLESH_PIE,
-            new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), () -> FrightsDelightItemsImpl.ROTTEN_FLESH_PIE));
+            new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), () -> FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE));
     public static final Block SLIMEAPPLE_PIE = registerBlock(FrightsDelightBlocks.SLIMEAPPLE_PIE,
             new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE).lightLevel(FrightsDelightBlocks.slimeApplePieLight()),
-                    () -> FrightsDelightItemsImpl.SLIMEAPPLE_PIE));
+                    () -> FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE));
     public static final Block SPIDEREYE_PIE = registerBlock(FrightsDelightBlocks.SPIDEREYE_PIE,
-            new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), () -> FrightsDelightItemsImpl.SPIDEREYE_PIE));
+            new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), () -> FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE));
     public static final Block GHASTTEAR_PIE = registerBlock(FrightsDelightBlocks.GHASTTEAR_PIE,
-            new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), () -> FrightsDelightItemsImpl.GHASTTEAR_PIE));
+            new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), () -> FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE));
     public static final Block SOUL_BERRY_CHEESECAKE = registerBlock(FrightsDelightBlocks.SOUL_BERRY_CHEESECAKE,
             new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), () -> FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE));
     public static final Block WITHER_BERRY_CHEESECAKE = registerBlock(FrightsDelightBlocks.WITHER_BERRY_CHEESECAKE,
             new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), () -> FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE));
     public static final Block COBWEB_PIE = registerBlock(FrightsDelightBlocks.COBWEB_PIE,
-            new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), () -> FrightsDelightItemsImpl.COBWEB_PIE));
+            new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), () -> FrightsDelightItemsImpl.COBWEB_PIE_SLICE));
 
     public static final Block ROTTEN_FLESH_SYRUP = registerBlock(FrightsDelightBlocks.ROTTEN_FLESH_SYRUP,
             new LiquidBlock(FrightsDelightFluids.ROTTEN_FLESH_SYRUP, BlockBehaviour.Properties.copy(Blocks.WATER)));
