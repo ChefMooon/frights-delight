@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-27T16:35:43.245647	Fright's Delight/Recipes
+// 1.21.1	2026-01-03T09:16:37.0281368	Fright's Delight/Recipes
 b6539c1dc1a72b863d79effd0e6e393f26804e3a data\frightsdelight\advancement\recipes\food\punchbowl_ghasttear.json
 4a562a75d6b98e06547f5cc724e61ae3ac4c5eec data\frightsdelight\advancement\recipes\misc\ghasttear_pie.json
 0f3d12f4172509413ef25fe7a1cba63dee39a7da data\frightsdelight\advancement\recipes\misc\fermented_spider_eye_from_fermented_spider_eye_crate.json
@@ -104,7 +104,7 @@ fb2dcabbe9d00611cf9fea67c772e0b6def83559 data\frightsdelight\recipe\farmersdelig
 e893e91f7f1fd550fe10b761ab5a83e123c1116f data\frightsdelight\recipe\poisonous_potato_from_poisonous_potato_crate.json
 fb3e3c4f4b7f1e508acc73754ea332860be90da6 data\frightsdelight\recipe\cookie_ghast_tear.json
 bc01e292dcff15f7a6baf7ff3708e2470b8a3ffb data\frightsdelight\recipe\punchbowl_rotten_flesh.json
-e999dde9f57ae4b396bd77eb1073ce908136dca3 data\frightsdelight\recipe\slimeapple_pie.json
+b3f5d80ba83d9349243d3916023b8331fa3be103 data\frightsdelight\recipe\slimeapple_pie.json
 dc8957c0c1f8d2db3c47edfe7d90609715414e0c data\frightsdelight\advancement\farmersdelight\recipes\cooking\bone_kebab_ghast_tear.json
 4188a51384c091bf3862353a923c1c8470328c84 data\frightsdelight\recipe\cookie_soul_berry.json
 4f0b481f829bbae3652b314beea31a31baf5c290 data\frightsdelight\advancement\recipes\food\slimeapple_pie_from_slices.json

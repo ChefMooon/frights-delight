@@ -54,7 +54,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
         punchbowlFromPunch(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB, FrightsDelightItemsImpl.PUNCH_COBWEB, exporter);
 
         pieRecipe(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE, FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE, Items.ROTTEN_FLESH, exporter);
-        pieRecipe(FrightsDelightItemsImpl.SLIMEAPPLE_PIE, FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE, FrightsDelightItemsImpl.SLIMEAPPLE_PIE, exporter);
+        pieRecipe(FrightsDelightItemsImpl.SLIMEAPPLE_PIE, FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE, FrightsDelightItemsImpl.APPLE_SLIME, exporter);
         pieRecipe(FrightsDelightItemsImpl.SPIDEREYE_PIE, FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE, Items.SPIDER_EYE, exporter);
         pieRecipe(FrightsDelightItemsImpl.GHASTTEAR_PIE, FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE, Items.GHAST_TEAR, exporter);
         pieRecipe(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE, FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE, FrightsDelightItemsImpl.SOUL_BERRY, exporter);
