@@ -7,12 +7,8 @@ This mod is compatible with Minecraft 1.21.10 (1.21.9) and Farmer's Delight Refa
 
 ***
 
-### Added
-
-- Korean (ko_kr) translations, Thank you Copy-TT!
-
 ### Fixed
 
-- [Fabric only] Fixed the Create recipe for emptying a Wither Berry Syrup Bottle
+- [1.21.1+] Fixed Slime-Apple Pie crafting recipe
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
