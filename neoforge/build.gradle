@@ -55,7 +55,6 @@ dependencies {
         case "jei": modLocalRuntime("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"); break
         case "rei": modLocalRuntime("me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"); break
         case "emi": modLocalRuntime("dev.emi:emi-neoforge:${emi_version}"); break
-        case "eiv": modLocalRuntime("maven.modrinth:eiv:${eiv_version}+${minecraft_version}"); break // test me
         case "disabled": break
         default: println("Unknown recipe viewer specified: ${recipe_viewer}. Must be JEI, REI, EMI, or disabled.")
     }
