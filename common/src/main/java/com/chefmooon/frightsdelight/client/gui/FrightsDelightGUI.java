@@ -11,7 +11,7 @@ import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.RenderPipelines;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +20,7 @@ import java.util.Random;
 
 public class FrightsDelightGUI {
     public static int foodIconsOffset = getFoodIconOffset();
-    public static final ResourceLocation RESOURCE_LOCATION = ResourceLocation.fromNamespaceAndPath(FrightsDelight.MOD_ID, "textures/gui/frd_icons.png");
+    public static final Identifier RESOURCE_LOCATION = Identifier.fromNamespaceAndPath(FrightsDelight.MOD_ID, "textures/gui/frd_icons.png");
 
     @ExpectPlatform
     public static int getFoodIconOffset() {
@@ -48,7 +48,7 @@ public class FrightsDelightGUI {
     }
 
     public static class ChillsOverlay extends BaseOverlay {
-        public static final ResourceLocation ID = TextUtils.res("chills");
+        public static final Identifier ID = TextUtils.res("chills");
         public static final ChillsOverlay INSTANCE = new ChillsOverlay();
         @Override
         public void render(Minecraft mc, Player player, GuiGraphics graphics, int left, int right, int top, int guiTicks) {
@@ -66,7 +66,7 @@ public class FrightsDelightGUI {
     }
 
     public static class CobwebbedOverlay extends BaseOverlay {
-        public static final ResourceLocation ID = TextUtils.res("cobwebbed");
+        public static final Identifier ID = TextUtils.res("cobwebbed");
         public static final CobwebbedOverlay INSTANCE = new CobwebbedOverlay();
         @Override
         public void render(Minecraft mc, Player player, GuiGraphics graphics, int left, int right, int top, int guiTicks) {
@@ -85,7 +85,7 @@ public class FrightsDelightGUI {
     }
 
     public static class FortifiedMindOverlay extends BaseOverlay {
-        public static final ResourceLocation ID = TextUtils.res("fortified_mind");
+        public static final Identifier ID = TextUtils.res("fortified_mind");
         public static final FortifiedMindOverlay INSTANCE = new FortifiedMindOverlay();
         @Override
         public void render(Minecraft mc, Player player, GuiGraphics graphics, int left, int right, int top, int guiTicks) {
@@ -103,7 +103,7 @@ public class FrightsDelightGUI {
     }
 
     public static class HysteriaOverlay extends BaseOverlay {
-        public static final ResourceLocation ID = TextUtils.res("hysteria");
+        public static final Identifier ID = TextUtils.res("hysteria");
         public static final HysteriaOverlay INSTANCE = new HysteriaOverlay();
         @Override
         public void render(Minecraft mc, Player player, GuiGraphics graphics, int left, int right, int top, int guiTicks) {
@@ -121,7 +121,7 @@ public class FrightsDelightGUI {
     }
 
     public static class InfectedOverlay extends BaseOverlay {
-        public static final ResourceLocation ID = TextUtils.res("infected");
+        public static final Identifier ID = TextUtils.res("infected");
         public static final InfectedOverlay INSTANCE = new InfectedOverlay();
         @Override
         public void render(Minecraft mc, Player player, GuiGraphics graphics, int left, int right, int top, int guiTicks) {
@@ -140,7 +140,7 @@ public class FrightsDelightGUI {
     }
 
     public static class SlimedOverlay extends BaseOverlay {
-        public static final ResourceLocation ID = TextUtils.res("slimed");
+        public static final Identifier ID = TextUtils.res("slimed");
         public static final SlimedOverlay INSTANCE = new SlimedOverlay();
         @Override
         public void render(Minecraft mc, Player player, GuiGraphics graphics, int left, int right, int top, int guiTicks) {
@@ -159,7 +159,7 @@ public class FrightsDelightGUI {
     }
 
     public static class UndeadHungerOverlay extends BaseOverlay {
-        public static final ResourceLocation ID = TextUtils.res("undead_hunger");
+        public static final Identifier ID = TextUtils.res("undead_hunger");
         public static final UndeadHungerOverlay INSTANCE = new UndeadHungerOverlay();
         @Override
         public void render(Minecraft mc, Player player, GuiGraphics graphics, int left, int right, int top, int guiTicks) {

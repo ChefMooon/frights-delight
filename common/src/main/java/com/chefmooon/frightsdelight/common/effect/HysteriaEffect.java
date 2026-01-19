@@ -33,19 +33,22 @@ public class HysteriaEffect extends MobEffect {
                         double dx = pos.x() + ((random.nextDouble() * range) - range / 2);
                         double dy = pos.y() + 1;
                         double dz = pos.z() + ((random.nextDouble() * range) - range / 2);
-                        player.playNotifySound(FrightsDelightSounds.EFFECT_HYSTERIA_CLOSE.get(), SoundSource.HOSTILE, 0.2f, 0.6f);
+//                        player.playNotifySound(FrightsDelightSounds.EFFECT_HYSTERIA_CLOSE.get(), SoundSource.HOSTILE, 0.2f, 0.6f);
+                        player.playSound(FrightsDelightSounds.EFFECT_HYSTERIA_CLOSE.get(), 0.2f, 0.6f);
                     } else if (distance == 1) {
                         double range = 8;
                         double dx = pos.x() + ((random.nextDouble() * range) - range / 2);
                         double dy = pos.y() + 1;
                         double dz = pos.z() + ((random.nextDouble() * range) - range / 2);
-                        player.playNotifySound(FrightsDelightSounds.EFFECT_HYSTERIA_MID.get(), SoundSource.HOSTILE, 0.2f, 0.6f);
+//                        player.playNotifySound(FrightsDelightSounds.EFFECT_HYSTERIA_MID.get(), SoundSource.HOSTILE, 0.2f, 0.6f);
+                        player.playSound(FrightsDelightSounds.EFFECT_HYSTERIA_MID.get(), 0.2f, 0.6f);
                     } else{
                         double range = 16;
                         double dx = pos.x() + ((random.nextDouble() * range) - range / 2);
                         double dy = pos.y() + 1;
                         double dz = pos.z() + ((random.nextDouble() * range) - range / 2);
-                        player.playNotifySound(FrightsDelightSounds.EFFECT_HYSTERIA_FAR.get(), SoundSource.HOSTILE, 0.2f, 0.6f);
+//                        player.playNotifySound(FrightsDelightSounds.EFFECT_HYSTERIA_FAR.get(), SoundSource.HOSTILE, 0.2f, 0.6f);
+                        player.playSound(FrightsDelightSounds.EFFECT_HYSTERIA_FAR.get(), 0.2f, 0.6f);
                     }
                 }
             }

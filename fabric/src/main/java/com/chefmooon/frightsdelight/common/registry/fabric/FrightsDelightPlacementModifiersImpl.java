@@ -5,14 +5,14 @@ import com.chefmooon.frightsdelight.common.world.placement.fabric.BiomeIsNetherP
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.PlacementModifierType;
 
 public class FrightsDelightPlacementModifiersImpl {
     public static final PlacementModifierType<? extends PlacementModifier> BIOME_IS_NETHER = registerBiomeTag(FrightsDelightPlacementModifiers.BIOME_IS_NETHER, BiomeIsNetherPlacementModifier.CODEC);
 
-    public static PlacementModifierType<? extends PlacementModifier> registerBiomeTag(ResourceLocation location, MapCodec<? extends PlacementModifier> codec) {
+    public static PlacementModifierType<? extends PlacementModifier> registerBiomeTag(Identifier location, MapCodec<? extends PlacementModifier> codec) {
         return Registry.register(BuiltInRegistries.PLACEMENT_MODIFIER_TYPE, location, typeConvert(codec));
     }
 

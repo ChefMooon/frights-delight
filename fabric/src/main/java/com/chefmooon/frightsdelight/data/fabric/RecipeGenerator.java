@@ -6,13 +6,13 @@ import com.chefmooon.frightsdelight.data.fabric.recipe.CookingRecipes;
 import com.chefmooon.frightsdelight.data.fabric.recipe.CuttingRecipes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -111,7 +111,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
     }
 
     private static void pieRecipe(HolderGetter<Item> holderGetter, Item pie, Item pieSlice, Item mainIngredient, RecipeOutput exporter) {
-        Item crust = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "pie_crust")).get().value();
+        Item crust = BuiltInRegistries.ITEM.get(Identifier.fromNamespaceAndPath("farmersdelight", "pie_crust")).get().value();
         ShapedRecipeBuilder.shaped(holderGetter, RecipeCategory.MISC, pie)
                 .pattern("AAA")
                 .pattern("AAA")
@@ -134,7 +134,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
     }
 
     private static void candyBasketRecipe(HolderGetter<Item> holderGetter, Item candyBasket, Item mainIngredient, RecipeOutput exporter) {
-        Item rope = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("farmersdelight", "rope")).get().value();
+        Item rope = BuiltInRegistries.ITEM.get(Identifier.fromNamespaceAndPath("farmersdelight", "rope")).get().value();
         ShapedRecipeBuilder.shaped(holderGetter, RecipeCategory.MISC, candyBasket)
                 .pattern("A")
                 .pattern("B")

@@ -13,7 +13,7 @@ import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public class FrightsDelightClientImpl implements ClientModInitializer {
 
@@ -72,7 +72,7 @@ public class FrightsDelightClientImpl implements ClientModInitializer {
     public static void onBuiltinPackRegistration() {
         if (isModLoaded("presencefootsteps")) {
             FabricLoader.getInstance().getModContainer(FrightsDelight.MOD_ID).ifPresent(frdpresencefootsteps ->
-                    ResourceManagerHelper.registerBuiltinResourcePack(ResourceLocation.parse("frdpresencefootsteps"), frdpresencefootsteps, ResourcePackActivationType.DEFAULT_ENABLED));
+                    ResourceManagerHelper.registerBuiltinResourcePack(Identifier.parse("frdpresencefootsteps"), frdpresencefootsteps, ResourcePackActivationType.DEFAULT_ENABLED));
         }
     }
 

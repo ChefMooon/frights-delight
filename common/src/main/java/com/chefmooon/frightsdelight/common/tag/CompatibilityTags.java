@@ -1,7 +1,7 @@
 package com.chefmooon.frightsdelight.common.tag;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -26,9 +26,9 @@ public class CompatibilityTags {
     public static final TagKey<Item> CREATE_ADDITION_PLANT_FOODS = getItemTagKey(CREATE_ADDITION, "plant_foods");
 
     public static TagKey<Item> getItemTagKey(String namespace, String path) {
-        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(namespace, path));
+        return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(namespace, path));
     }
     public static TagKey<Block> getBlockTagKey(String namespace, String path) {
-        return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(namespace, path));
+        return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(namespace, path));
     }
 }

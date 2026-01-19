@@ -7,7 +7,7 @@ import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -33,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 
 public class AbstractMoldBlock extends BaseEntityBlock implements SimpleWaterloggedBlock {
-    protected static Map<ResourceLocation, Syrups> ITEM_TO_SYRUP = Map.of(
+    protected static Map<Identifier, Syrups> ITEM_TO_SYRUP = Map.of(
             Syrups.ROTTEN_FLESH.getSyrupBottleItem(), Syrups.ROTTEN_FLESH,
             Syrups.SLIMEAPPLE.getSyrupBottleItem(), Syrups.SLIMEAPPLE,
             Syrups.SPIDEREYE.getSyrupBottleItem(), Syrups.SPIDEREYE,

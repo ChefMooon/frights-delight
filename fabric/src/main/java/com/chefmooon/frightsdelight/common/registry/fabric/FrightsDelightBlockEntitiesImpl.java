@@ -7,7 +7,7 @@ import com.chefmooon.frightsdelight.common.registry.FrightsDelightBlockEntities;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -25,7 +25,7 @@ public class FrightsDelightBlockEntitiesImpl {
             FrightsDelightBlocksImpl.JACK_O_LANTERN_CANDY_BASKET.get(),
             FrightsDelightBlocksImpl.MELON_CANDY_BASKET.get());
 
-    public static <T extends BlockEntity> BlockEntityType<T> registerBlockEntityType(ResourceLocation location, FabricBlockEntityTypeBuilder.Factory<T> blockEntitySupplier, Block... blocks) {
+    public static <T extends BlockEntity> BlockEntityType<T> registerBlockEntityType(Identifier location, FabricBlockEntityTypeBuilder.Factory<T> blockEntitySupplier, Block... blocks) {
         return Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, location, FabricBlockEntityTypeBuilder.create(blockEntitySupplier, blocks).build(null));
     }
 

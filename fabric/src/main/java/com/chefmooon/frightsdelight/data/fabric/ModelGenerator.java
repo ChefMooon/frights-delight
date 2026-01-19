@@ -19,7 +19,7 @@ import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.client.renderer.item.ItemModel;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -83,12 +83,12 @@ public class ModelGenerator extends FabricModelProvider {
         registerSyrupBlock(FrightsDelightBlocksImpl.WITHER_BERRY_SYRUP.get(), blockModelGenerators);
         registerSyrupBlock(FrightsDelightBlocksImpl.COBWEB_SYRUP.get(), blockModelGenerators);
 
-        ResourceLocation SOUL_BERRY_BUSH_STAGE0 = registerBushModel("_stage0", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
-        ResourceLocation SOUL_BERRY_BUSH_STAGE1 = registerBushModel("_stage1", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
-        ResourceLocation SOUL_BERRY_BUSH_STAGE2 = registerBushModel("_stage2", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
-        ResourceLocation SOUL_BERRY_BUSH_STAGE2_GROW = registerBushModel("_stage2_grow", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
-        ResourceLocation SOUL_BERRY_BUSH_STAGE3 = registerBushModel("_stage3", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
-        ResourceLocation SOUL_BERRY_BUSH_STAGE3_GROW = registerBushModel("_stage3_grow", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier SOUL_BERRY_BUSH_STAGE0 = registerBushModel("_stage0", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier SOUL_BERRY_BUSH_STAGE1 = registerBushModel("_stage1", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier SOUL_BERRY_BUSH_STAGE2 = registerBushModel("_stage2", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier SOUL_BERRY_BUSH_STAGE2_GROW = registerBushModel("_stage2_grow", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier SOUL_BERRY_BUSH_STAGE3 = registerBushModel("_stage3", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier SOUL_BERRY_BUSH_STAGE3_GROW = registerBushModel("_stage3_grow", FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get(), blockModelGenerators);
         blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(FrightsDelightBlocksImpl.SOUL_BERRY_BUSH.get())
                         .with(PropertyDispatch.initial(BlockStateProperties.AGE_3, FrightsDelightBushBlock.GROW_CONDITION)
                         .select(0, false,  BlockModelGenerators.plainVariant(SOUL_BERRY_BUSH_STAGE0))
@@ -101,12 +101,12 @@ public class ModelGenerator extends FabricModelProvider {
                         .select(3, true, BlockModelGenerators.plainVariant(SOUL_BERRY_BUSH_STAGE3_GROW))
                         ));
 
-        ResourceLocation WITHER_BERRY_BUSH_STAGE0 = registerBushModel("_stage0", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
-        ResourceLocation WITHER_BERRY_BUSH_STAGE1 = registerBushModel("_stage1", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
-        ResourceLocation WITHER_BERRY_BUSH_STAGE2 = registerBushModel("_stage2", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
-        ResourceLocation WITHER_BERRY_BUSH_STAGE2_GROW = registerBushModel("_stage2_grow", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
-        ResourceLocation WITHER_BERRY_BUSH_STAGE3 = registerBushModel("_stage3", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
-        ResourceLocation WITHER_BERRY_BUSH_STAGE3_GROW = registerBushModel("_stage3_grow", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier WITHER_BERRY_BUSH_STAGE0 = registerBushModel("_stage0", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier WITHER_BERRY_BUSH_STAGE1 = registerBushModel("_stage1", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier WITHER_BERRY_BUSH_STAGE2 = registerBushModel("_stage2", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier WITHER_BERRY_BUSH_STAGE2_GROW = registerBushModel("_stage2_grow", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier WITHER_BERRY_BUSH_STAGE3 = registerBushModel("_stage3", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
+        Identifier WITHER_BERRY_BUSH_STAGE3_GROW = registerBushModel("_stage3_grow", FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get(), blockModelGenerators);
         blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(FrightsDelightBlocksImpl.WITHER_BERRY_BUSH.get())
                 .with(PropertyDispatch.initial(BlockStateProperties.AGE_3, FrightsDelightBushBlock.GROW_CONDITION)
                         .select(0,false, BlockModelGenerators.plainVariant(WITHER_BERRY_BUSH_STAGE0))
@@ -119,7 +119,7 @@ public class ModelGenerator extends FabricModelProvider {
                         .select(3,true, BlockModelGenerators.plainVariant(WITHER_BERRY_BUSH_STAGE3_GROW))
                 ));
 
-        ResourceLocation LOLLIPOP_MOLD_LOCATION = ModelLocationUtils.getModelLocation(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get());
+        Identifier LOLLIPOP_MOLD_LOCATION = ModelLocationUtils.getModelLocation(FrightsDelightBlocksImpl.LOLLIPOP_MOLD.get());
         FrightsDelightModels.TEMPLATE_LOLLIPOP_MOLD.create(LOLLIPOP_MOLD_LOCATION,
                 new TextureMapping()
                         .put(TextureSlot.TOP, LOLLIPOP_MOLD_LOCATION.withSuffix("_top"))
@@ -173,7 +173,7 @@ public class ModelGenerator extends FabricModelProvider {
                 .with(createHorizontalFacingDispatch())
         );
 
-        ResourceLocation RING_CANDY_MOLD_LOCATION = ModelLocationUtils.getModelLocation(FrightsDelightBlocksImpl.RING_CANDY_MOLD.get());
+        Identifier RING_CANDY_MOLD_LOCATION = ModelLocationUtils.getModelLocation(FrightsDelightBlocksImpl.RING_CANDY_MOLD.get());
         FrightsDelightModels.TEMPLATE_RING_CANDY_MOLD.create(RING_CANDY_MOLD_LOCATION,
                 new TextureMapping()
                         .put(TextureSlot.TOP, RING_CANDY_MOLD_LOCATION.withSuffix("_top"))
@@ -351,7 +351,7 @@ public class ModelGenerator extends FabricModelProvider {
     }
 
     private static void registerDrinkFeast(Block block, BlockModelGenerators blockStateModelGenerator) {
-        ResourceLocation punchBowl = TextUtils.res("block/punch_bowl");
+        Identifier punchBowl = TextUtils.res("block/punch_bowl");
 
         FrightsDelightModels.TEMPLATE_DRINK_FEAST_LEFTOVER.createWithSuffix(block, "_leftover",
                 ModelGenerator.punchBowl(block), blockStateModelGenerator.modelOutput);
@@ -362,7 +362,7 @@ public class ModelGenerator extends FabricModelProvider {
                 FrightsDelightModels.TEMPLATE_DRINK_FEAST_STAGE2,
                 FrightsDelightModels.TEMPLATE_DRINK_FEAST_STAGE3);
         for (int i = 0; i < stages.size(); i++) {
-            stages.get(i).create(ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_stage" + i),
+            stages.get(i).create(Identifier.parse(ModelLocationUtils.getModelLocation(block) + "_stage" + i),
                     ModelGenerator.punchBowl(block), blockStateModelGenerator.modelOutput);
         }
 
@@ -376,19 +376,19 @@ public class ModelGenerator extends FabricModelProvider {
                 ).with(createHorizontalFacingDispatch()));
     }
 
-    private static ResourceLocation registerBushModel(String stage, Block block, BlockModelGenerators blockModelGenerators) {
+    private static Identifier registerBushModel(String stage, Block block, BlockModelGenerators blockModelGenerators) {
         return FrightsDelightModels.TEMPLATE_CROP_CROSS.createWithSuffix(block, stage,
                 (TextureMapping)TextureMapping.cross(TextureMapping.getBlockTexture(block, stage)), blockModelGenerators.modelOutput);
     }
 
     private static void registerGlassCup(Block block, BlockModelGenerators blockModelGenerators) {
-        ResourceLocation TEMPLATE_GLASS_CUP_1_LOCATION = FrightsDelightModels.TEMPLATE_GLASS_CUP_1.createWithSuffix(block, "_servings1",
+        Identifier TEMPLATE_GLASS_CUP_1_LOCATION = FrightsDelightModels.TEMPLATE_GLASS_CUP_1.createWithSuffix(block, "_servings1",
                 ModelGenerator.cupBlock(block), blockModelGenerators.modelOutput);
-        ResourceLocation TEMPLATE_GLASS_CUP_2_LOCATION = FrightsDelightModels.TEMPLATE_GLASS_CUP_2.createWithSuffix(block, "_servings2",
+        Identifier TEMPLATE_GLASS_CUP_2_LOCATION = FrightsDelightModels.TEMPLATE_GLASS_CUP_2.createWithSuffix(block, "_servings2",
                 ModelGenerator.cupBlock(block), blockModelGenerators.modelOutput);
-        ResourceLocation TEMPLATE_GLASS_CUP_3_LOCATION = FrightsDelightModels.TEMPLATE_GLASS_CUP_3.createWithSuffix(block, "_servings3",
+        Identifier TEMPLATE_GLASS_CUP_3_LOCATION = FrightsDelightModels.TEMPLATE_GLASS_CUP_3.createWithSuffix(block, "_servings3",
                 ModelGenerator.cupBlock(block), blockModelGenerators.modelOutput);
-        ResourceLocation TEMPLATE_GLASS_CUP_4_LOCATION = FrightsDelightModels.TEMPLATE_GLASS_CUP_4.createWithSuffix(block, "_servings4",
+        Identifier TEMPLATE_GLASS_CUP_4_LOCATION = FrightsDelightModels.TEMPLATE_GLASS_CUP_4.createWithSuffix(block, "_servings4",
                 ModelGenerator.cupBlock(block), blockModelGenerators.modelOutput);
 
         blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block)
@@ -402,13 +402,13 @@ public class ModelGenerator extends FabricModelProvider {
 
     private static TextureMapping crateBlock(Block block) {
         return (new TextureMapping())
-                .put(TextureSlot.SIDE, ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_side"))
-                .put(TextureSlot.TOP, ResourceLocation.parse(ModelLocationUtils.getModelLocation(block) + "_top"))
-                .put(TextureSlot.BOTTOM, ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/crate_bottom"));
+                .put(TextureSlot.SIDE, Identifier.parse(ModelLocationUtils.getModelLocation(block) + "_side"))
+                .put(TextureSlot.TOP, Identifier.parse(ModelLocationUtils.getModelLocation(block) + "_top"))
+                .put(TextureSlot.BOTTOM, Identifier.fromNamespaceAndPath("farmersdelight", "block/crate_bottom"));
     }
 
     private static TextureMapping punchBowl(Block block) {
-        ResourceLocation punchBowl = TextUtils.res("block/punch_bowl");
+        Identifier punchBowl = TextUtils.res("block/punch_bowl");
         return (new TextureMapping())
                 .put(FrightsDelightTextureSlots.PUNCH_BOWL, punchBowl)
                 .put(FrightsDelightTextureSlots.DRINK_FEAST_INSIDE, TextureMapping.getBlockTexture(block))
@@ -430,19 +430,19 @@ public class ModelGenerator extends FabricModelProvider {
     }
 
     private static void registerPieBlock(Block block, BlockModelGenerators blockModelGenerators) {
-        ResourceLocation blockLocation = ModelLocationUtils.getModelLocation(block);
+        Identifier blockLocation = ModelLocationUtils.getModelLocation(block);
         TextureSlot INNER = TextureSlot.create("inner");
-        ModelTemplate PIE_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie")), Optional.empty(),
+        ModelTemplate PIE_MODEL = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("farmersdelight", "block/pie")), Optional.empty(),
                 TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
-        ModelTemplate PIE_SLICE_1_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_slice1")), Optional.empty(),
+        ModelTemplate PIE_SLICE_1_MODEL = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("farmersdelight", "block/pie_slice1")), Optional.empty(),
                 TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
-        ModelTemplate PIE_SLICE_2_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_slice2")), Optional.empty(),
+        ModelTemplate PIE_SLICE_2_MODEL = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("farmersdelight", "block/pie_slice2")), Optional.empty(),
                 TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
-        ModelTemplate PIE_SLICE_3_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_slice3")), Optional.empty(),
+        ModelTemplate PIE_SLICE_3_MODEL = new ModelTemplate(Optional.of(Identifier.fromNamespaceAndPath("farmersdelight", "block/pie_slice3")), Optional.empty(),
                 TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
 
-        ResourceLocation pie_bottom = ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_bottom");
-        ResourceLocation pide_side = ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_side");
+        Identifier pie_bottom = Identifier.fromNamespaceAndPath("farmersdelight", "block/pie_bottom");
+        Identifier pide_side = Identifier.fromNamespaceAndPath("farmersdelight", "block/pie_side");
 
         TextureMapping textureMapping = TextureMapping.particle(blockLocation.withSuffix("_top"))
                 .put(TextureSlot.BOTTOM, pie_bottom)
@@ -450,10 +450,10 @@ public class ModelGenerator extends FabricModelProvider {
                 .put(TextureSlot.SIDE, pide_side)
                 .put(TextureSlot.TOP, blockLocation.withSuffix("_top"));
 
-        ResourceLocation PIE = PIE_MODEL.create(blockLocation, textureMapping, blockModelGenerators.modelOutput);
-        ResourceLocation PIE_SLICE_1 = PIE_SLICE_1_MODEL.create(blockLocation.withSuffix("_slice1"), textureMapping, blockModelGenerators.modelOutput);
-        ResourceLocation PIE_SLICE_2 = PIE_SLICE_2_MODEL.create(blockLocation.withSuffix("_slice2"), textureMapping, blockModelGenerators.modelOutput);
-        ResourceLocation PIE_SLICE_3 = PIE_SLICE_3_MODEL.create(blockLocation.withSuffix("_slice3"), textureMapping, blockModelGenerators.modelOutput);
+        Identifier PIE = PIE_MODEL.create(blockLocation, textureMapping, blockModelGenerators.modelOutput);
+        Identifier PIE_SLICE_1 = PIE_SLICE_1_MODEL.create(blockLocation.withSuffix("_slice1"), textureMapping, blockModelGenerators.modelOutput);
+        Identifier PIE_SLICE_2 = PIE_SLICE_2_MODEL.create(blockLocation.withSuffix("_slice2"), textureMapping, blockModelGenerators.modelOutput);
+        Identifier PIE_SLICE_3 = PIE_SLICE_3_MODEL.create(blockLocation.withSuffix("_slice3"), textureMapping, blockModelGenerators.modelOutput);
 
         blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block)
                 .with(PropertyDispatch.initial(PieBlock.BITES)
@@ -465,7 +465,7 @@ public class ModelGenerator extends FabricModelProvider {
     }
 
     private static void registerSyrupBlock(Block block, BlockModelGenerators blockModelGenerators) {
-        ResourceLocation SOUL_BERRY_SYRUP_LOCATION = ModelLocationUtils.getModelLocation(block);
+        Identifier SOUL_BERRY_SYRUP_LOCATION = ModelLocationUtils.getModelLocation(block);
         FrightsDelightModels.TEMPLATE_SYRUP.create(SOUL_BERRY_SYRUP_LOCATION,
                 new TextureMapping().put(TextureSlot.PARTICLE, SOUL_BERRY_SYRUP_LOCATION.withSuffix("_still")),
                 blockModelGenerators.modelOutput);
@@ -491,7 +491,7 @@ public class ModelGenerator extends FabricModelProvider {
     }
 
     private static void registerCandyBasketBlock(Block block, BlockModelGenerators blockModelGenerators) {
-        ResourceLocation LOCATION = ModelLocationUtils.getModelLocation(block);
+        Identifier LOCATION = ModelLocationUtils.getModelLocation(block);
         TextureMapping textureMapping = new TextureMapping()
                 .put(FrightsDelightTextureSlots.HANDLE, TextUtils.res("block/rope_handle_3d"))
                 .put(FrightsDelightTextureSlots.BASKET, LOCATION)
@@ -502,7 +502,7 @@ public class ModelGenerator extends FabricModelProvider {
     }
 
     private static void registerUniqueCandyBasketBlock(Block block, BlockModelGenerators blockModelGenerators) {
-        ResourceLocation LOCATION = ModelLocationUtils.getModelLocation(block);
+        Identifier LOCATION = ModelLocationUtils.getModelLocation(block);
         TextureMapping textureMapping = new TextureMapping()
                 .put(FrightsDelightTextureSlots.HANDLE, TextUtils.res("block/rope_handle_3d"))
                 .put(FrightsDelightTextureSlots.BASKET, LOCATION)

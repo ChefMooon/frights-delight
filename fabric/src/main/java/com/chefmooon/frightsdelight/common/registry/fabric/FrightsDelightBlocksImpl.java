@@ -1,6 +1,9 @@
 package com.chefmooon.frightsdelight.common.registry.fabric;
 
-import com.chefmooon.frightsdelight.common.block.*;
+import com.chefmooon.frightsdelight.common.block.LollipopMoldBlock;
+import com.chefmooon.frightsdelight.common.block.RingCandyMoldBlock;
+import com.chefmooon.frightsdelight.common.block.SoulBerryBushBlock;
+import com.chefmooon.frightsdelight.common.block.WitherBerryBushBlock;
 import com.chefmooon.frightsdelight.common.block.drinkableFeastBlocks.*;
 import com.chefmooon.frightsdelight.common.block.fabric.AbstractCandyBasketBlockImpl;
 import com.chefmooon.frightsdelight.common.block.glassCupBlocks.*;
@@ -10,17 +13,14 @@ import com.chefmooon.frightsdelight.common.registry.FrightsDelightFluids;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.storage.loot.LootTable;
-import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.PieBlock;
-import vectorwing.farmersdelight.refabricated.RegUtils;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -147,12 +147,12 @@ public class FrightsDelightBlocksImpl {
             (properties) -> new LiquidBlock(FrightsDelightFluids.COBWEB_SYRUP, properties),
             BlockBehaviour.Properties.ofFullCopy(Blocks.WATER));
 
-    public static Supplier<Block> registerBlock(final ResourceLocation location, final Function<BlockBehaviour.Properties, Block> function, final BlockBehaviour.Properties properties) {
+    public static Supplier<Block> registerBlock(final Identifier location, final Function<BlockBehaviour.Properties, Block> function, final BlockBehaviour.Properties properties) {
         properties.setId(ResourceKey.create(Registries.BLOCK, location));
         return regBlock(location, () -> function.apply(properties));
     }
 
-    private static <B extends Block> Supplier<B> regBlock(final ResourceLocation location, Supplier<B> supplier) {
+    private static <B extends Block> Supplier<B> regBlock(final Identifier location, Supplier<B> supplier) {
         B object = supplier.get();
         Registry.register(BuiltInRegistries.BLOCK, location, object);
         return () -> object;

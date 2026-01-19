@@ -10,8 +10,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
@@ -331,14 +331,14 @@ public class FrightsDelightItemsImpl {
             (properties) -> new FrightsDelightConsumableItem(properties, true),
             foodItem(FoodValues.COBWEB_PIE_SLICE, FoodValues.ConsumableValues.COBWEB_PIE_SLICE));
 
-    public static Supplier<Item> registerItemWithTab(final ResourceLocation location, final Function<Item.Properties, Item> function, final Item.Properties properties) {
+    public static Supplier<Item> registerItemWithTab(final Identifier location, final Function<Item.Properties, Item> function, final Item.Properties properties) {
         properties.setId(ResourceKey.create(Registries.ITEM, location));
         Supplier<Item> item = registerItem(location, () -> function.apply(properties));
         ItemGroupEvents.modifyEntriesEvent(FrightsDelightCreativeTabs.ITEM_GROUP).register(entries -> entries.accept(item.get()));
         return item;
     }
 
-    public static Supplier<Item> registerBlockWithTab(final ResourceLocation location, final BiFunction<Block, Item.Properties, Item> function, final Block block, final Item.Properties properties) {
+    public static Supplier<Item> registerBlockWithTab(final Identifier location, final BiFunction<Block, Item.Properties, Item> function, final Block block, final Item.Properties properties) {
         properties.setId(ResourceKey.create(Registries.ITEM, location));
         properties.useBlockDescriptionPrefix();
         Supplier<Item> item = registerItem(location, () -> function.apply(block, properties));
@@ -346,13 +346,13 @@ public class FrightsDelightItemsImpl {
         return item;
     }
 
-    private static <T extends Item> Supplier<T> registerItem(ResourceLocation location, Supplier<T> supplier) {
+    private static <T extends Item> Supplier<T> registerItem(Identifier location, Supplier<T> supplier) {
         T object = supplier.get();
         Registry.register(BuiltInRegistries.ITEM, location, object);
         return () -> object;
     }
 
-    private static ResourceKey<Item> key(ResourceLocation resourceLocation) {
+    private static ResourceKey<Item> key(Identifier resourceLocation) {
         return ResourceKey.create(Registries.ITEM, resourceLocation);
     }
 

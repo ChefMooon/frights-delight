@@ -6,8 +6,8 @@ import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 
@@ -23,7 +23,7 @@ public class FrightsDelightEntityTypesImpl {
     );
 
 
-    public static <R, T extends R> Supplier<T> registerEntityType(ResourceLocation resourceLocation, Registry<R> registry, Supplier<T> supplier) {
+    public static <R, T extends R> Supplier<T> registerEntityType(Identifier resourceLocation, Registry<R> registry, Supplier<T> supplier) {
         T object = supplier.get();
         Registry.register(registry, resourceLocation, object);
         return () -> object;

@@ -1,7 +1,7 @@
 package com.chefmooon.frightsdelight.common.tag;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -45,10 +45,10 @@ public class CommonTags {
     public static final TagKey<Item> C_FOODS_VEGETABLE = getCommonItemTagKey("foods/vegetable");
 
     public static TagKey<Item> getCommonItemTagKey(String path) {
-        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", path));
+        return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("c", path));
     }
     public static TagKey<Block> getCommonBlockTagKey(String path) {
-        return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", path));
+        return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", path));
     }
 
 }

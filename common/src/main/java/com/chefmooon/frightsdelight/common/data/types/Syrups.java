@@ -4,7 +4,7 @@ import com.chefmooon.frightsdelight.common.registry.FrightsDelightItems;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightParticleTypes;
 import com.chefmooon.frightsdelight.common.registry.FrightsDelightSounds;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.StringRepresentable;
 import org.jetbrains.annotations.NotNull;
@@ -30,13 +30,13 @@ public enum Syrups implements StringRepresentable {
             FrightsDelightParticleTypes.COBWEB_BUBBLE, FrightsDelightSounds.BLOCK_DRINKABLE_FEAST_COBWEB_BUBBLE)
     ;
 
-    private final ResourceLocation syrupBottleItem;
-    private final ResourceLocation lollipopItem;
-    private final ResourceLocation ringCandyItem;
+    private final Identifier syrupBottleItem;
+    private final Identifier lollipopItem;
+    private final Identifier ringCandyItem;
     private final Supplier<SimpleParticleType> particle;
     private final Supplier<SoundEvent> animateSound;
 
-    Syrups(ResourceLocation syrupBottleItem, ResourceLocation lollipopItem, ResourceLocation ringCandyItem, Supplier<SimpleParticleType> particle, Supplier<SoundEvent> animateSound) {
+    Syrups(Identifier syrupBottleItem, Identifier lollipopItem, Identifier ringCandyItem, Supplier<SimpleParticleType> particle, Supplier<SoundEvent> animateSound) {
         this.syrupBottleItem = syrupBottleItem;
         this.lollipopItem = lollipopItem;
         this.ringCandyItem = ringCandyItem;
@@ -44,15 +44,15 @@ public enum Syrups implements StringRepresentable {
         this.animateSound = animateSound;
     }
 
-    public ResourceLocation getSyrupBottleItem() {
+    public Identifier getSyrupBottleItem() {
         return syrupBottleItem;
     }
 
-    public ResourceLocation getLollipopItem() {
+    public Identifier getLollipopItem() {
         return lollipopItem;
     }
 
-    public ResourceLocation getRingCandyItem() {
+    public Identifier getRingCandyItem() {
         return ringCandyItem;
     }
 

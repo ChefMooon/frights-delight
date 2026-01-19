@@ -8,14 +8,14 @@ import com.chefmooon.frightsdelight.integration.wthit.provider.DrinkableFeastPro
 import mcp.mobius.waila.api.IRegistrar;
 import mcp.mobius.waila.api.IWailaPlugin;
 import mcp.mobius.waila.api.TooltipPosition;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public class FrightsDelightWailiaPlugin implements IWailaPlugin {
     public static class Options {
-        public static final ResourceLocation CROP_PROGRESS = ResourceLocation.parse("crop_progress");
-        public static final ResourceLocation BUSH_GROWTH_CONDITION = TextUtils.res("bush_growth_condition");
-        public static final ResourceLocation BUSH_TRANSFORM_CONDITION = TextUtils.res("bush_transform_condition");
-        public static final ResourceLocation PUNCHBOWL_SERVINGS = TextUtils.res("punchbowl_servings");
+        public static final Identifier CROP_PROGRESS = Identifier.parse("crop_progress");
+        public static final Identifier BUSH_GROWTH_CONDITION = TextUtils.res("bush_growth_condition");
+        public static final Identifier BUSH_TRANSFORM_CONDITION = TextUtils.res("bush_transform_condition");
+        public static final Identifier PUNCHBOWL_SERVINGS = TextUtils.res("punchbowl_servings");
     }
 
     @Override

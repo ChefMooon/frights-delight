@@ -11,11 +11,11 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.advancements.AdvancementRequirements;
 import net.minecraft.advancements.AdvancementType;
-import net.minecraft.advancements.critereon.*;
+import net.minecraft.advancements.criterion.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
@@ -37,7 +37,7 @@ public class AdvancementGenerator extends FabricAdvancementProvider {
                 .display(FrightsDelightItemsImpl.APPLE_SLIME.get(),
                         TextUtils.getTranslatable("advancement.root"),
                         TextUtils.getTranslatable("advancement.root.desc"),
-                        ResourceLocation.parse("minecraft:block/soul_sand"),
+                        Identifier.parse("minecraft:block/soul_sand"),
                         AdvancementType.TASK, true, false, false)
                 .addCriterion("has_monster_drop", InventoryChangeTrigger.TriggerInstance.hasItems(Items.DIRT))
                 .save(consumer, getAdvancementName("root"));

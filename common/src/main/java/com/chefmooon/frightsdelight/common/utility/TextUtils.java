@@ -10,13 +10,12 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffectUtil;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
@@ -33,8 +32,8 @@ public class TextUtils {
         return Component.translatable(FrightsDelight.MOD_ID + "." + string, args);
     }
 
-    public static ResourceLocation res(String string) {
-        return ResourceLocation.fromNamespaceAndPath(FrightsDelight.MOD_ID, string);
+    public static Identifier res(String string) {
+        return Identifier.fromNamespaceAndPath(FrightsDelight.MOD_ID, string);
     }
 
     public static void addFoodEffectTooltip(ItemStack itemIn, Consumer<Component> lores, float durationFactor, float tickRate) {

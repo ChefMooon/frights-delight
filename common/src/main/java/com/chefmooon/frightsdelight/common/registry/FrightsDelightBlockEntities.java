@@ -5,14 +5,14 @@ import com.chefmooon.frightsdelight.common.block.entity.LollipopMoldBlockEntity;
 import com.chefmooon.frightsdelight.common.block.entity.RingCandyMoldBlockEntity;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import dev.architectury.injectables.annotations.ExpectPlatform;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
 public class FrightsDelightBlockEntities {
-    public static final ResourceLocation LOLLIPOP_MOLD = blockEntity("lollipop_mold");
-    public static final ResourceLocation RING_CANDY_MOLD = blockEntity("ring_candy_mold");
-    public static final ResourceLocation CANDY_BASKET = blockEntity("candy_basket");
-    private static ResourceLocation blockEntity(String string) {
+    public static final Identifier LOLLIPOP_MOLD = blockEntity("lollipop_mold");
+    public static final Identifier RING_CANDY_MOLD = blockEntity("ring_candy_mold");
+    public static final Identifier CANDY_BASKET = blockEntity("candy_basket");
+    private static Identifier blockEntity(String string) {
         return TextUtils.res(string);
     }
 

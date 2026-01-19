@@ -4,7 +4,7 @@ import com.chefmooon.frightsdelight.client.gui.FrightsDelightGUI;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElement;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import org.jetbrains.annotations.Nullable;
 
 public class FrightsDelightGUIImpl {
@@ -23,7 +23,7 @@ public class FrightsDelightGUIImpl {
         registerOverlay(FrightsDelightGUI.UndeadHungerOverlay.ID, FrightsDelightGUI.FortifiedMindOverlay.ID, FrightsDelightGUI.FortifiedMindOverlay.INSTANCE);
     }
 
-    private static void registerOverlay(@Nullable ResourceLocation attachAfterLocation, ResourceLocation location, HudElement hudElement) {
+    private static void registerOverlay(@Nullable Identifier attachAfterLocation, Identifier location, HudElement hudElement) {
         HudElementRegistry.attachElementAfter(attachAfterLocation == null ? VanillaHudElements.FOOD_BAR : attachAfterLocation, location, hudElement);
     }
 }

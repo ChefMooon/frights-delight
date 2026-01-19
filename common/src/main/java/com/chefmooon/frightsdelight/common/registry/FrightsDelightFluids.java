@@ -4,24 +4,24 @@ import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.material.FlowingFluid;
 
 public class FrightsDelightFluids {
-    public static ResourceLocation ROTTEN_FLESH_SYRUP_LOCATION = fluid("rotten_flesh_syrup");
-    public static ResourceLocation FLOWING_ROTTEN_FLESH_SYRUP_LOCATION = fluid("flowing_rotten_flesh_syrup");
-    public static ResourceLocation SLIMEAPPLE_SYRUP_LOCATION = fluid("slimeapple_syrup");
-    public static ResourceLocation FLOWING_SLIMEAPPLE_SYRUP_LOCATION = fluid("flowing_slimeapple_syrup");
-    public static ResourceLocation SPIDEREYE_SYRUP_LOCATION = fluid("spidereye_syrup");
-    public static ResourceLocation FLOWING_SPIDEREYE_SYRUP_LOCATION = fluid("flowing_spidereye_syrup");
-    public static ResourceLocation GHASTTEAR_SYRUP_LOCATION = fluid("ghasttear_syrup");
-    public static ResourceLocation FLOWING_GHASTTEAR_SYRUP_LOCATION = fluid("flowing_ghasttear_syrup");
-    public static ResourceLocation SOUL_BERRY_SYRUP_LOCATION = fluid("soul_berry_syrup");
-    public static ResourceLocation FLOWING_SOUL_BERRY_SYRUP_LOCATION = fluid("flowing_soul_berry_syrup");
-    public static ResourceLocation WITHER_BERRY_SYRUP_LOCATION = fluid("wither_berry_syrup");
-    public static ResourceLocation FLOWING_WITHER_BERRY_SYRUP_LOCATION = fluid("flowing_wither_berry_syrup");
-    public static ResourceLocation COBWEB_SYRUP_LOCATION = fluid("cobweb_syrup");
-    public static ResourceLocation FLOWING_COBWEB_SYRUP_LOCATION = fluid("flowing_cobweb_syrup");
+    public static Identifier ROTTEN_FLESH_SYRUP_LOCATION = fluid("rotten_flesh_syrup");
+    public static Identifier FLOWING_ROTTEN_FLESH_SYRUP_LOCATION = fluid("flowing_rotten_flesh_syrup");
+    public static Identifier SLIMEAPPLE_SYRUP_LOCATION = fluid("slimeapple_syrup");
+    public static Identifier FLOWING_SLIMEAPPLE_SYRUP_LOCATION = fluid("flowing_slimeapple_syrup");
+    public static Identifier SPIDEREYE_SYRUP_LOCATION = fluid("spidereye_syrup");
+    public static Identifier FLOWING_SPIDEREYE_SYRUP_LOCATION = fluid("flowing_spidereye_syrup");
+    public static Identifier GHASTTEAR_SYRUP_LOCATION = fluid("ghasttear_syrup");
+    public static Identifier FLOWING_GHASTTEAR_SYRUP_LOCATION = fluid("flowing_ghasttear_syrup");
+    public static Identifier SOUL_BERRY_SYRUP_LOCATION = fluid("soul_berry_syrup");
+    public static Identifier FLOWING_SOUL_BERRY_SYRUP_LOCATION = fluid("flowing_soul_berry_syrup");
+    public static Identifier WITHER_BERRY_SYRUP_LOCATION = fluid("wither_berry_syrup");
+    public static Identifier FLOWING_WITHER_BERRY_SYRUP_LOCATION = fluid("flowing_wither_berry_syrup");
+    public static Identifier COBWEB_SYRUP_LOCATION = fluid("cobweb_syrup");
+    public static Identifier FLOWING_COBWEB_SYRUP_LOCATION = fluid("flowing_cobweb_syrup");
 
     public static FlowingFluid ROTTEN_FLESH_SYRUP;
     public static FlowingFluid FLOWING_ROTTEN_FLESH_SYRUP;
@@ -38,7 +38,7 @@ public class FrightsDelightFluids {
     public static FlowingFluid COBWEB_SYRUP;
     public static FlowingFluid FLOWING_COBWEB_SYRUP;
 
-    private static ResourceLocation fluid(String string) {
+    private static Identifier fluid(String string) {
         return TextUtils.res(string);
     }
 

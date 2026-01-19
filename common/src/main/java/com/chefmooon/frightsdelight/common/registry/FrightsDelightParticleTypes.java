@@ -3,7 +3,7 @@ package com.chefmooon.frightsdelight.common.registry;
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
 import dev.architectury.injectables.annotations.ExpectPlatform;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.util.function.Supplier;
 
@@ -22,7 +22,7 @@ public class FrightsDelightParticleTypes {
     }
 
     @ExpectPlatform
-    public static Supplier<SimpleParticleType> registerParticleType(ResourceLocation location) {
+    public static Supplier<SimpleParticleType> registerParticleType(Identifier location) {
         throw new AssertionError();
     }
 

@@ -1,12 +1,12 @@
 package com.chefmooon.frightsdelight.common.registry;
 
 import com.chefmooon.frightsdelight.common.utility.TextUtils;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public class FrightsDelightEntityTypes {
-    public static final ResourceLocation BONE_SHARD = entityType("bone_shard");
+    public static final Identifier BONE_SHARD = entityType("bone_shard");
 
-    private static ResourceLocation entityType(String string) {
+    private static Identifier entityType(String string) {
         return TextUtils.res(string);
     }
 

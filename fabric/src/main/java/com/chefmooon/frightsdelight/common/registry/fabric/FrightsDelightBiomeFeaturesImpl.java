@@ -5,15 +5,14 @@ import com.chefmooon.frightsdelight.common.world.configuration.WildBushConfigura
 import com.chefmooon.frightsdelight.common.world.feature.WildBushFeature;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import vectorwing.farmersdelight.refabricated.RegUtils;
 
 public class FrightsDelightBiomeFeaturesImpl {
     public static final Feature<? extends FeatureConfiguration> WILD_BUSH = registerFeature(FrightsDelightBiomeFeatures.WILD_BUSH, new WildBushFeature(WildBushConfiguration.CODEC));
 
-    public static Feature<? extends FeatureConfiguration> registerFeature(ResourceLocation location, Feature<? extends FeatureConfiguration> feature) {
+    public static Feature<? extends FeatureConfiguration> registerFeature(Identifier location, Feature<? extends FeatureConfiguration> feature) {
         return Registry.register(BuiltInRegistries.FEATURE, location, feature);
     }
 
