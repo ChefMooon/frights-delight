@@ -27,7 +27,7 @@ public class BoneShardItemImpl extends Item implements ProjectileItem {
 
     @Override
     public ItemUseAnimation getUseAnimation(ItemStack stack) {
-        return ItemUseAnimation.SPEAR;
+        return ItemUseAnimation.TRIDENT;
     }
 
     @Override
