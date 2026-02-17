@@ -7,14 +7,8 @@ NeoForge, and Fabric
 
 ***
 
-### Added
+### Changed
 
-- Korean (ko_kr) translations, Thank you Copy-TT!
-
-### Fixed
-
-- [Fabric only] Fixed the Create recipe for emptying a Wither Berry Syrup Bottle
-- [1.20.1 Fabric only] Fixed sliced pie drops (Thank you, OldieFox!)
-- [1.20.1 only] Fixed pies being uncraftable (Thank you, OldieFox!)
+- MidnightLib version updated
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/kchangelog)
