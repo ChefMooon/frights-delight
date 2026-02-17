@@ -8,8 +8,8 @@ NeoForge, and Fabric
 
 ***
 
-### Fixed
+### Changed
 
-- [1.21.1+] Fixed Slime-Apple Pie crafting recipe
+- MidnightLib version updated
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
