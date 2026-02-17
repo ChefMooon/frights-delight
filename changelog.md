@@ -7,8 +7,8 @@ This mod is compatible with Minecraft 1.21.8 (1.21.6, 1.21.7) and Farmer's Delig
 
 ***
 
-### Fixed
+### Changed
 
-- [1.21.1+] Fixed Slime-Apple Pie crafting recipe
+- MidnightLib version updated
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
