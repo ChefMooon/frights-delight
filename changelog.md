@@ -16,5 +16,6 @@ This mod is compatible with Minecraft 1.21.11 and Farmer's Delight Refabricated
   - All Punch added to `c:drinks/punch`
   - All Syrup added to `c:drinks/syrup`
   - Added `c:drinks/punch` & `c:drinks/syrup` to `c:drinks`
+- Added Syrups, Monster Mash, and Slimeball Spaghetti to `create:upright_on_belt`
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)

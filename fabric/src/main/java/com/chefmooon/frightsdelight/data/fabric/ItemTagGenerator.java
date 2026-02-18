@@ -232,6 +232,13 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get())
                 .add(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get())
                 .add(FrightsDelightItemsImpl.PUNCH_COBWEB.get())
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.COBWEB_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_SYRUP_BOTTLE.get())
                 .add(FrightsDelightItemsImpl.PUNCHBOWL_ROTTEN_FLESH.get())
                 .add(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE.get())
                 .add(FrightsDelightItemsImpl.PUNCHBOWL_SLIMEAPPLE.get())
@@ -253,7 +260,10 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.GHASTTEAR_PIE.get())
                 .add(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE.get())
                 .add(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE.get())
-                .add(FrightsDelightItemsImpl.COBWEB_PIE.get());
+                .add(FrightsDelightItemsImpl.COBWEB_PIE.get())
+                .add(FrightsDelightItemsImpl.MONSTER_MASH.get())
+                .add(FrightsDelightItemsImpl.PASTA_WITH_SLIMEBALLS.get())
+        ;
 
         // Create: Craft's and Additions
         valueLookupBuilder(CompatibilityTags.CREATE_ADDITION_PLANT_FOODS)
