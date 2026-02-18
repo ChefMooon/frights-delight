@@ -8,6 +8,13 @@
     "frightsdelight:punch_soul_berry",
     "frightsdelight:punch_wither_berry",
     "frightsdelight:punch_cobweb",
+    "frightsdelight:rotten_flesh_syrup_bottle",
+    "frightsdelight:slimeapple_syrup_bottle",
+    "frightsdelight:spidereye_syrup_bottle",
+    "frightsdelight:ghasttear_syrup_bottle",
+    "frightsdelight:cobweb_syrup_bottle",
+    "frightsdelight:soul_berry_syrup_bottle",
+    "frightsdelight:wither_berry_syrup_bottle",
     "frightsdelight:punchbowl_rotten_flesh",
     "frightsdelight:punchbowl_spidereye",
     "frightsdelight:punchbowl_slimeapple",
@@ -29,6 +36,8 @@
     "frightsdelight:ghasttear_pie",
     "frightsdelight:soul_berry_cheesecake",
     "frightsdelight:wither_berry_cheesecake",
-    "frightsdelight:cobweb_pie"
+    "frightsdelight:cobweb_pie",
+    "frightsdelight:monster_mash",
+    "frightsdelight:pasta_with_slimeballs"
   ]
 }

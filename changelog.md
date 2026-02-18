@@ -9,6 +9,7 @@ NeoForge, and Fabric
 
 ### Changed
 
+- Added Syrups, Monster Mash, and Slimeball Spaghetti to `create:upright_on_belt`
 - MidnightLib version updated
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/kchangelog)
