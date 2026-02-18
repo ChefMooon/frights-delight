@@ -89,6 +89,15 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY.get())
                 .add(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY.get());
 
+        valueLookupBuilder(ConventionalItemTags.PIE_FOODS)
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE_SLICE.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_PIE_SLICE.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_PIE_SLICE.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_PIE_SLICE.get())
+                .add(FrightsDelightItemsImpl.COBWEB_PIE_SLICE.get())
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE_SLICE.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE_SLICE.get());
+
         valueLookupBuilder(ConventionalItemTags.SOUP_FOODS)
                 .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH.get())
                 .add(FrightsDelightItemsImpl.SOUP_SPIDER_EYE.get())
