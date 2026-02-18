@@ -5,6 +5,7 @@ import com.chefmooon.frightsdelight.common.tag.CommonTags;
 import com.chefmooon.frightsdelight.common.tag.CompatibilityTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.tags.ItemTags;
 
@@ -48,6 +49,22 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(CommonTags.C_FOODS_BERRY)
                 .add(FrightsDelightItemsImpl.SOUL_BERRY)
                 .add(FrightsDelightItemsImpl.WITHER_BERRY);
+
+        getOrCreateTagBuilder(ConventionalItemTags.EDIBLE_WHEN_PLACED_FOODS)
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_PIE)
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_PIE)
+                .add(FrightsDelightItemsImpl.SPIDEREYE_PIE)
+                .add(FrightsDelightItemsImpl.GHASTTEAR_PIE)
+                .add(FrightsDelightItemsImpl.COBWEB_PIE)
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_CHEESECAKE)
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_CHEESECAKE)
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_ROTTEN_FLESH)
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_SPIDEREYE)
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_SLIMEAPPLE)
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_COBWEB)
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_GHASTTEAR)
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_SOUL_BERRY)
+                .add(FrightsDelightItemsImpl.PUNCHBOWL_WITHER_BERRY);
 
         getOrCreateTagBuilder(CommonTags.C_FOODS_SOUP)
                 .add(FrightsDelightItemsImpl.SOUP_ROTTEN_FLESH)
