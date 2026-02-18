@@ -234,5 +234,7 @@
   "item.frightsdelight.wither_berry_cheesecake_slice": "Slice of Wither Berry Cheesecake",
   "item.frightsdelight.wither_berry_lollipop": "Wither Berry Lollipop",
   "item.frightsdelight.wither_berry_ring_candy": "Wither Berry Ring Candy",
-  "item.frightsdelight.wither_berry_syrup_bottle": "Bottle of Wither Berry Syrup"
+  "item.frightsdelight.wither_berry_syrup_bottle": "Bottle of Wither Berry Syrup",
+  "tag.item.c.drinks.punch": "Punches",
+  "tag.item.c.drinks.syrup": "Syrups"
 }

@@ -225,6 +225,8 @@
   "item.frightsdelight.wither_berry_ring_candy": "Wither Berry Ring Candy",
   "item.frightsdelight.wither_berry_syrup_bottle": "Bottle of Wither Berry Syrup",
   "itemGroup.frightsdelight": "Fright's Delight",
+  "tag.item.c.drinks.punch": "Punches",
+  "tag.item.c.drinks.syrup": "Syrups",
   "tag.item.c.storage_blocks.bone": "Bone Storage Blocks",
   "tag.item.c.storage_blocks.cobweb": "Cobweb Storage Blocks",
   "tag.item.c.storage_blocks.fermented_spider_eye": "Fermented Spider Eye Storage Blocks",
