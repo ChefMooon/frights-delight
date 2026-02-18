@@ -19,6 +19,7 @@ NeoForge, and Fabric
   - All Syrup added to `c:drinks/syrup`
   - Added `c:drinks/punch` & `c:drinks/syrup` to `c:drinks`
   - [1.21.1 only] Removed syrups from `c:foods`
+- Added Syrups, Monster Mash, and Slimeball Spaghetti to `create:upright_on_belt`
 - MidnightLib version updated
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
