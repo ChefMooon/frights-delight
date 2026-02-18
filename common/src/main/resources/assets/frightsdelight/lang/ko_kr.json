@@ -232,5 +232,7 @@
   "tag.item.c.storage_blocks.poisonous_potato": "Poisonous Potato Storage Blocks",
   "tag.item.c.storage_blocks.rotten_flesh": "Rotten Flesh Storage Blocks",
   "tag.item.c.storage_blocks.rotten_tomato": "Rotten Tomato Storage Blocks",
-  "tag.item.c.storage_blocks.spider_eye": "Spider Eye Storage Blocks"
+  "tag.item.c.storage_blocks.spider_eye": "Spider Eye Storage Blocks",
+  "tag.item.c.drinks.punch": "Punches",
+  "tag.item.c.drinks.syrup": "Syrups"
 }

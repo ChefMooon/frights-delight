@@ -304,6 +304,9 @@ public class TranslationGenerator extends FabricLanguageProvider {
         translationBuilder.add(WAILA_CONFIG + ".bush_transform_condition", "Bush Transform Condition");
         translationBuilder.add(WAILA_CONFIG + ".punchbowl_servings", "Punch Bowl Servings");
 
+        translationBuilder.add(CommonTags.PUNCH_DRINKS, "Punches");
+        translationBuilder.add(CommonTags.SYRUP_DRINKS, "Syrups");
+
         translationBuilder.add(CommonTags.C_STORAGE_BLOCKS_ITEM_ROTTEN_FLESH, "Rotten Flesh Storage Blocks");
         translationBuilder.add(CommonTags.C_STORAGE_BLOCKS_ITEM_BONE, "Bone Storage Blocks");
         translationBuilder.add(CommonTags.C_STORAGE_BLOCKS_ITEM_PHANTOM_MEMBRANE, "Phantom Membrane Storage Blocks");
