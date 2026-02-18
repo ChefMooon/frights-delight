@@ -15,6 +15,10 @@ NeoForge, and Fabric
   - Pie/Cheesecake added to `c:foods/edible_when_placed`
     - [1.21.1 only] Punch Bowls added to `c:foods/edible_when_placed`
   - Pie/Cheesecake slices added to `c:foods/pie`
+  - All Punch added to `c:drinks/punch`
+  - All Syrup added to `c:drinks/syrup`
+  - Added `c:drinks/punch` & `c:drinks/syrup` to `c:drinks`
+  - [1.21.1 only] Removed syrups from `c:foods`
 - MidnightLib version updated
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
