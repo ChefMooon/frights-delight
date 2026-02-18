@@ -167,7 +167,7 @@ publishMods {
         optional("jei")
         optional("roughly-enough-items")
         optional("emi")
-        optional("reliable-recipe-viewer-rrv")
+        optional("rrv")
     }
 
     modrinth("modrinthFabric") {
