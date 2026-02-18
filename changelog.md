@@ -13,7 +13,8 @@ NeoForge, and Fabric
 - Match FD 1.2.10 - 1.21.1 Tag Changes:
   - All usages of `c:foods/milk` -> `c:drinks/milk`
   - Pie/Cheesecake added to `c:foods/edible_when_placed`
-      - [1.21.1 only] Punch Bowls added to `c:foods/edible_when_placed`
+    - [1.21.1 only] Punch Bowls added to `c:foods/edible_when_placed`
+  - Pie/Cheesecake slices added to `c:foods/pie`
 - MidnightLib version updated
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
