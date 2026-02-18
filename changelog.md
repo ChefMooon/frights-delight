@@ -13,5 +13,8 @@ This mod is compatible with Minecraft 1.21.11 and Farmer's Delight Refabricated
   - All usages of `c:foods/milk` -> `c:drinks/milk`
   - Pie/Cheesecake added to `c:foods/edible_when_placed`
   - Pie/Cheesecake slices added to `c:foods/pie
+  - All Punch added to `c:drinks/punch`
+  - All Syrup added to `c:drinks/syrup`
+  - Added `c:drinks/punch` & `c:drinks/syrup` to `c:drinks`
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)

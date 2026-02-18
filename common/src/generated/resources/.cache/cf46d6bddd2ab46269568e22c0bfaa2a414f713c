@@ -1,5 +1,8 @@
 // 1.21.11	-999999999-01-01T00:00:00	Fright's Delight/Tags for minecraft:item
+fb03b7eb6b8b09a8242134ba03987e9f8f632eec data/c/tags/item/drinks.json
 ed396c8c7f61f53d69376ec1b86c14f8f05256ef data/c/tags/item/drinks/magic.json
+176e6a772eb3bf5ce2c7ca9fc8b400aeaf6b0721 data/c/tags/item/drinks/punch.json
+b69da7aeb5f83216407e8b8ac63ae66be3159fb6 data/c/tags/item/drinks/syrup.json
 b95139918447ec0f85fc07b39b3e1fbd7d1f1638 data/c/tags/item/foods.json
 ea1a0df32ca387e02411d7d7d5228156155421ee data/c/tags/item/foods/berry.json
 27be01777fea92d2c3ed95283f4b0c596b8ef34b data/c/tags/item/foods/candy.json

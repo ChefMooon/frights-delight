@@ -195,6 +195,31 @@ public class ItemTagGenerator extends FabricTagProvider.ItemTagProvider {
                 .add(FrightsDelightItemsImpl.WITHER_BERRY_RING_CANDY.get())
                 .add(FrightsDelightItemsImpl.COBWEB_RING_CANDY.get())
         ;
+
+        valueLookupBuilder(CommonTags.SYRUP_DRINKS)
+                .add(FrightsDelightItemsImpl.ROTTEN_FLESH_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SLIMEAPPLE_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SPIDEREYE_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.GHASTTEAR_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.COBWEB_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.SOUL_BERRY_SYRUP_BOTTLE.get())
+                .add(FrightsDelightItemsImpl.WITHER_BERRY_SYRUP_BOTTLE.get())
+        ;
+
+        valueLookupBuilder(CommonTags.PUNCH_DRINKS)
+                .add(FrightsDelightItemsImpl.PUNCH_ROTTEN_FLESH.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SLIMEAPPLE.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SPIDEREYE.get())
+                .add(FrightsDelightItemsImpl.PUNCH_GHASTTEAR.get())
+                .add(FrightsDelightItemsImpl.PUNCH_COBWEB.get())
+                .add(FrightsDelightItemsImpl.PUNCH_SOUL_BERRY.get())
+                .add(FrightsDelightItemsImpl.PUNCH_WITHER_BERRY.get())
+        ;
+
+        valueLookupBuilder(ConventionalItemTags.DRINKS)
+                .addTag(CommonTags.SYRUP_DRINKS)
+                .addTag(CommonTags.PUNCH_DRINKS)
+        ;
     }
 
     private void registerCompatibilityItemTags() {
