@@ -11,5 +11,6 @@ This mod is compatible with Minecraft 1.21.11 and Farmer's Delight Refabricated
 
 - Match FD 1.2.10 - 1.21.1 Tag Changes:
     - All usages of `c:foods/milk` -> `c:drinks/milk`
+    - Pie/Cheesecake added to `c:foods/edible_when_placed`
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
