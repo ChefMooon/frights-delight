@@ -6,6 +6,7 @@ import com.chefmooon.frightsdelight.data.fabric.recipe.CookingRecipes;
 import com.chefmooon.frightsdelight.data.fabric.recipe.CuttingRecipes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.*;
@@ -107,7 +108,7 @@ public class RecipeGenerator extends FabricRecipeProvider {
                 .pattern("AAA")
                 .pattern("BCB")
                 .define('A', mainIngredient)
-                .define('B', CommonTags.C_FOODS_MILK)
+                .define('B', ConventionalItemTags.MILK_DRINKS)
                 .define('C', crust)
                 .unlockedBy("has_pie_crust", RecipeProvider.has(crust))
                 .group("frd_" + pie.getDescriptionId().replace("block.frightsdelight.", ""))

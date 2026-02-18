@@ -17,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:farmersdelight/cooking/rotten_flesh_syrup_bottle"
+        "recipe": "frightsdelight:farmersdelight/cooking/rotten_flesh_syrup_bottle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:farmersdelight/cooking/rotten_flesh_syrup_bottle"
+      "frightsdelight:farmersdelight/cooking/rotten_flesh_syrup_bottle"
     ]
   }
 }

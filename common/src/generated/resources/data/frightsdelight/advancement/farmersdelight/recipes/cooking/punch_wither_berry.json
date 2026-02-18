@@ -17,7 +17,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:farmersdelight/cooking/punch_wither_berry"
+        "recipe": "frightsdelight:farmersdelight/cooking/punch_wither_berry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -30,7 +30,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:farmersdelight/cooking/punch_wither_berry"
+      "frightsdelight:farmersdelight/cooking/punch_wither_berry"
     ]
   }
 }

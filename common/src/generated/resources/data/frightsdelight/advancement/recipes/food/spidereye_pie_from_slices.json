@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:spidereye_pie_from_slices"
+        "recipe": "frightsdelight:spidereye_pie_from_slices"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:spidereye_pie_from_slices"
+      "frightsdelight:spidereye_pie_from_slices"
     ]
   }
 }

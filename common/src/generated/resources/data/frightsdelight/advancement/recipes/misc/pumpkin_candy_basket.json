@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pumpkin_candy_basket"
+        "recipe": "frightsdelight:pumpkin_candy_basket"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pumpkin_candy_basket"
+      "frightsdelight:pumpkin_candy_basket"
     ]
   }
 }

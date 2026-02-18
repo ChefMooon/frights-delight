@@ -23,7 +23,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:jack_o_lantern_candy_basket"
+        "recipe": "frightsdelight:jack_o_lantern_candy_basket"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:jack_o_lantern_candy_basket"
+      "frightsdelight:jack_o_lantern_candy_basket"
     ]
   }
 }

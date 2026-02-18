@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:farmersdelight/cooking/soup_slimeapple"
+        "recipe": "frightsdelight:farmersdelight/cooking/soup_slimeapple"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:farmersdelight/cooking/soup_slimeapple"
+      "frightsdelight:farmersdelight/cooking/soup_slimeapple"
     ]
   }
 }

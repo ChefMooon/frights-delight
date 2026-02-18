@@ -18,7 +18,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:farmersdelight/cooking/undead_kebab"
+        "recipe": "frightsdelight:farmersdelight/cooking/undead_kebab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -31,7 +31,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:farmersdelight/cooking/undead_kebab"
+      "frightsdelight:farmersdelight/cooking/undead_kebab"
     ]
   }
 }

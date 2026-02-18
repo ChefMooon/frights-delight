@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cobweb_pie"
+        "recipe": "frightsdelight:cobweb_pie"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cobweb_pie"
+      "frightsdelight:cobweb_pie"
     ]
   }
 }

@@ -10,6 +10,8 @@ NeoForge, and Fabric
 
 ### Changed
 
+- Match FD 1.2.10 - 1.21.1 Tag Changes:
+  - All usages of `c:foods/milk` -> `c:drinks/milk`
 - MidnightLib version updated
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)

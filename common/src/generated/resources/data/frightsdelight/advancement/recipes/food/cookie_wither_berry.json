@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cookie_wither_berry"
+        "recipe": "frightsdelight:cookie_wither_berry"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cookie_wither_berry"
+      "frightsdelight:cookie_wither_berry"
     ]
   }
 }

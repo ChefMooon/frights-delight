@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:lollipop_mold_from_smelting"
+        "recipe": "frightsdelight:lollipop_mold_from_smelting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:lollipop_mold_from_smelting"
+      "frightsdelight:lollipop_mold_from_smelting"
     ]
   }
 }

@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:punchbowl_wither_berry"
+        "recipe": "frightsdelight:punchbowl_wither_berry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:punchbowl_wither_berry"
+      "frightsdelight:punchbowl_wither_berry"
     ]
   }
 }

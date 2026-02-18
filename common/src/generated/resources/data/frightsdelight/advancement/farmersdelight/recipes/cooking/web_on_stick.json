@@ -16,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:farmersdelight/cooking/web_on_stick"
+        "recipe": "frightsdelight:farmersdelight/cooking/web_on_stick"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:farmersdelight/cooking/web_on_stick"
+      "frightsdelight:farmersdelight/cooking/web_on_stick"
     ]
   }
 }

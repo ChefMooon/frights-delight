@@ -16,7 +16,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:farmersdelight/cooking/bone_kebab_slimeapple"
+        "recipe": "frightsdelight:farmersdelight/cooking/bone_kebab_slimeapple"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -29,7 +29,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:farmersdelight/cooking/bone_kebab_slimeapple"
+      "frightsdelight:farmersdelight/cooking/bone_kebab_slimeapple"
     ]
   }
 }

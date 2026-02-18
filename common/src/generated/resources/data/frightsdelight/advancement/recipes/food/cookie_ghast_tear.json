@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cookie_ghast_tear"
+        "recipe": "frightsdelight:cookie_ghast_tear"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
@@ -37,7 +37,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cookie_ghast_tear"
+      "frightsdelight:cookie_ghast_tear"
     ]
   }
 }

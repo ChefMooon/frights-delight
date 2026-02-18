@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:rotten_tomato_from_rotten_tomato_crate"
+        "recipe": "frightsdelight:rotten_tomato_from_rotten_tomato_crate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:rotten_tomato_from_rotten_tomato_crate"
+      "frightsdelight:rotten_tomato_from_rotten_tomato_crate"
     ]
   }
 }

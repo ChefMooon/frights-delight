@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:spider_eye_from_spider_eye_crate"
+        "recipe": "frightsdelight:spider_eye_from_spider_eye_crate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:spider_eye_from_spider_eye_crate"
+      "frightsdelight:spider_eye_from_spider_eye_crate"
     ]
   }
 }
