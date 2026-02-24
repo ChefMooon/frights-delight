@@ -7,15 +7,8 @@ This mod is compatible with Minecraft 1.21.11 and Farmer's Delight Refabricated
 
 ***
 
-### Changed
+### Fixed
 
-- Match FD 1.2.10 - 1.21.1+ Tag Changes:
-  - All usages of `c:foods/milk` -> `c:drinks/milk`
-  - Pie/Cheesecake added to `c:foods/edible_when_placed`
-  - Pie/Cheesecake slices added to `c:foods/pie
-  - All Punch added to `c:drinks/punch`
-  - All Syrup added to `c:drinks/syrup`
-  - Added `c:drinks/punch` & `c:drinks/syrup` to `c:drinks`
-- Added Syrups, Monster Mash, and Slimeball Spaghetti to `create:upright_on_belt`
+- Fixed Create Fly compatibility
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/changelog)
