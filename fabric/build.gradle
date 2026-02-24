@@ -166,7 +166,7 @@ publishMods {
         optional("modmenu")
         optional("jei")
         optional("roughly-enough-items")
-        optional("emi")
+//        optional("emi")
         optional("rrv")
     }
 
@@ -182,7 +182,7 @@ publishMods {
         optional("modmenu")
         optional("jei")
         optional("rei")
-        optional("emi")
+//        optional("emi")
         optional("rrv")
     }
 }
