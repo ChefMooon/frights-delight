@@ -435,13 +435,13 @@ public class ModelGenerator extends FabricModelProvider {
     private static void registerPieBlock(Block block, BlockModelGenerators blockModelGenerators) {
         ResourceLocation blockLocation = ModelLocationUtils.getModelLocation(block);
         TextureSlot INNER = TextureSlot.create("inner");
-        ModelTemplate PIE_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie")), Optional.empty(),
+        ModelTemplate PIE_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/template_pie")), Optional.empty(),
                 TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
-        ModelTemplate PIE_SLICE_1_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_slice1")), Optional.empty(),
+        ModelTemplate PIE_SLICE_1_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/template_pie_slice1")), Optional.empty(),
                 TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
-        ModelTemplate PIE_SLICE_2_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_slice2")), Optional.empty(),
+        ModelTemplate PIE_SLICE_2_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/template_pie_slice2")), Optional.empty(),
                 TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
-        ModelTemplate PIE_SLICE_3_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_slice3")), Optional.empty(),
+        ModelTemplate PIE_SLICE_3_MODEL = new ModelTemplate(Optional.of(ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/template_pie_slice3")), Optional.empty(),
                 TextureSlot.PARTICLE, TextureSlot.BOTTOM, INNER, TextureSlot.SIDE, TextureSlot.TOP);
 
         ResourceLocation pie_bottom = ResourceLocation.fromNamespaceAndPath("farmersdelight", "block/pie_bottom");

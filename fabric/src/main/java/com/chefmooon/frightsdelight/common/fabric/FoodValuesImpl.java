@@ -32,10 +32,6 @@ public class FoodValuesImpl {
         return builder.build();
     }
 
-    public static Holder<MobEffect> getComfort() {
-        return ModEffects.COMFORT;
-    }
-
     public static Holder<MobEffect> getNourishment() {
         return ModEffects.NOURISHMENT;
     }

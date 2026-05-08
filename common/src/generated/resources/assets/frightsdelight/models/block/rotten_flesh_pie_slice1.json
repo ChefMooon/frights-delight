@@ -1,5 +1,5 @@
 {
-  "parent": "farmersdelight:block/pie_slice1",
+  "parent": "farmersdelight:block/template_pie_slice1",
   "textures": {
     "bottom": "farmersdelight:block/pie_bottom",
     "inner": "frightsdelight:block/rotten_flesh_pie_inner",

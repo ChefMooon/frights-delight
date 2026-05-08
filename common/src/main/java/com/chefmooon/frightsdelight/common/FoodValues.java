@@ -17,7 +17,6 @@ public class FoodValues {
     public static final int MEDIUM_DURATION = 3600;    // 3 minutes
     public static final int LONG_DURATION = 6000;    // 5 minutes
 
-    private static final Holder<MobEffect> COMFORT = getComfort();
     private static final Holder<MobEffect> NOURISHMENT = getNourishment();
 
     private static final Holder<MobEffect> FORTIFIED_MIND = FrightsDelightEffects.FORTIFIED_MIND;
@@ -79,26 +78,26 @@ public class FoodValues {
 
     public static final FoodProperties SOUP_ROTTEN_FLESH = foodProperty(8, 0.7f, false, false,
             List.of(new MobEffectInfo(INFECTED, MEDIUM_DURATION, .5f),
-                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+                    new MobEffectInfo(NOURISHMENT, LONG_DURATION, 1.f)));
     public static final FoodProperties SOUP_SPIDER_EYE = foodProperty(8, 0.7f, false, false,
             List.of(new MobEffectInfo(HYSTERIA, MEDIUM_DURATION, .5f),
-                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+                    new MobEffectInfo(NOURISHMENT, LONG_DURATION, 1.f)));
     public static final FoodProperties SOUP_SLIME = foodProperty(8, 0.7f,
             List.of(new MobEffectInfo(SLIMED, MEDIUM_DURATION, .5f),
-                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+                    new MobEffectInfo(NOURISHMENT, LONG_DURATION, 1.f)));
     public static final FoodProperties SOUP_COBWEB = foodProperty(8, 0.7f,
             List.of(new MobEffectInfo(COBWEBBED, MEDIUM_DURATION, .5f),
-                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+                    new MobEffectInfo(NOURISHMENT, LONG_DURATION, 1.f)));
     public static final FoodProperties SOUP_GHAST_TEAR = foodProperty(8, 0.7f,
             List.of(new MobEffectInfo(CHILLS, MEDIUM_DURATION, .5f),
-                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+                    new MobEffectInfo(NOURISHMENT, LONG_DURATION, 1.f)));
 
     public static final FoodProperties SOUP_SOUL_BERRY = foodProperty(8, 0.7f,
             List.of(new MobEffectInfo(FORTIFIED_MIND, MEDIUM_DURATION, 1.f),
-                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+                    new MobEffectInfo(NOURISHMENT, LONG_DURATION, 1.f)));
     public static final FoodProperties SOUP_WITHER_BERRY = foodProperty(8, 0.7f,
             List.of(new MobEffectInfo(UNDEAD_HUNGER, MEDIUM_DURATION, 1.f),
-                    new MobEffectInfo(COMFORT, LONG_DURATION, 1.f)));
+                    new MobEffectInfo(NOURISHMENT, LONG_DURATION, 1.f)));
 
     // *** COOKIES *** //
 
@@ -220,11 +219,6 @@ public class FoodValues {
     // The below methods[getComfort()/getNourishment()] may fix this
     public static Holder<MobEffect> nonNullEffect(Holder<MobEffect> effect) {
         return effect != null ? effect : MobEffects.HEAL;
-    }
-
-    @ExpectPlatform
-    public static Holder<MobEffect> getComfort() {
-        throw new AssertionError();
     }
 
     @ExpectPlatform
