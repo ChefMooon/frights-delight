@@ -7,10 +7,12 @@ NeoForge, and Fabric
 
 ***
 
-### Changed
+### Updated
 
-- Added Syrups, Monster Mash, and Slimeball Spaghetti to `create:upright_on_belt`
-- [1.20.1, 1.21.1] Removed syrups from `c:foods`
-- MidnightLib version updated
+**FD 1.3 Updates** (Forge only)
+- Updated to match Farmer's Delight 1.3.0 Changes
+- Now requires Farmer's Delight 1.3.0(Farmer's Delight Refabricated 3.3.0) or higher
+- Updated comfort to new nourishment effect
+- Updated bush and pie model references
 
 [Detailed Changelog](https://chefmooon.github.io/frightsdelight/kchangelog)
